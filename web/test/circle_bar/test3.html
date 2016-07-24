@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<title>圆环进度条</title>
+<style>
+.circle-p2 {
+	top:50px;left:50px;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    border-radius: 50%;
+	background: linear-gradient(rgba(144,235,244,0.9), rgba(144,235,244,0.1));
+	transform: rotate(0deg);
+}
+.c2-p2 {
+	width: 300px;
+	height: 30px;
+	position:absolute;
+	top:135px;
+	transform: rotate(45deg);
+}
+.c2-p2:before {
+	content:'';
+	width: 100px;
+	height: 30px;
+	position:absolute;
+	border-radius:2px;
+	background: linear-gradient(rgba(144,235,244,1), rgba(144,235,244,0.3));
+}
+</style>
+</head>
+
+<body>
+
+<div class="circle-p2">
+	<div class="c2-p2"></div>
+</div>
+
+<script src="http://f.jiaolj.com/js/b2.js"></script>
+<script>
+
+    /*$('.circle').each(function(index, el) {
+        var num = $(this).find('span').text() * 3.6;
+        if (num<=180) {
+            $(this).find('.right').css('transform', "rotate(" + num + "deg)");
+        } else {
+            $(this).find('.right').css('transform', "rotate(180deg)");
+            $(this).find('.left').css('transform', "rotate(" + (num - 180) + "deg)");
+        };
+    });
+
+	var numb=90,
+		start = setInterval(function(){
+			numb++;
+			if (numb<=180){
+				$('.pie_right .right').css('transform', "rotate(" + numb + "deg)");
+			}else if(numb<=360) {
+				$('.pie_right .right').css('transform', "rotate(180deg)");
+				$('.pie_left .left').css('transform', "rotate(" + (numb - 180) + "deg)");
+			}else{
+				clearInterval(start);
+				//numb=0;
+				//$('.pie_right .right').css('transform', "rotate(0deg)");
+				//$('.pie_left .left').css('transform', "rotate(0deg)");
+			}
+			$('.mask span').text(parseInt(numb/3.6));
+		},5)*/
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<script src="cityData.js"></script>
+<script src="pinyin.js"></script>
+<script src="jquery-2.2.2.min.js"></script>
+<script>
+var num = 1000,
+	save = function(name,num,tp,p){
+		$.ajax({
+			async : false,
+			url : 'http://server.jiaolj.com/save',
+			data : {name:name,num:num,name_en:codefans_net_CC2PY(name),tp:tp,p:p},
+			dataType : 'json',
+			success : function(back){
+				console.log(back);
+			}
+		})
+	}
+;
+$.each(ChineseDistricts[86],function(m,n){
+	//save(n.address,num,'province','中国');
+	num ++;
+	var cnum = 1000;
+	$.each(ChineseDistricts[n.code],function(k,j){
+		//save(j,num+''+cnum,'city',n.address);
+		//console.log(k,j);
+		var anum = 1000;
+		$.each(ChineseDistricts[k],function(x,y){
+			//save(y,num+''+cnum+anum,'area',j);
+			anum ++;
+		})
+		cnum ++;
+	})
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<style>
+html {
+	height:100%;
+}
+body {
+	margin:0;
+	border:1px solid #eee;
+	height:100%;
+	position:relative;
+	background:#F3F8FC;
+}
+.chart{
+	width:100%;
+	height:100%;
+	left:0;
+	width:50%;
+	position:absolute;
+}
+.text {
+	right:0;
+	width:50%;
+	height:100%;
+	border-left:1px solid #eee;
+	position:absolute;
+	overflow:auto;
+}
+.text nav p,.operation {
+	line-height:30px;
+}
+.text nav p {
+	float:left;
+	cursor:pointer;
+	margin:0 10px;
+}
+.text nav p.active {
+	color:#01c;
+}
+.text .operation{
+	float:right;
+}
+.text table {
+	margin:10px 20px;
+	position:absolute;
+	left:10px;
+	top:40px;
+	border-right:1px solid #eee;
+	border-bottom:1px solid #eee;
+}
+.text table td {
+	border-left:1px solid #eee;
+	border-top:1px solid #eee;
+}
+
+circle {
+	cursor:pointer;
+}
+</style>
+<script language="javascript"> 
+function autoLength(which) {
+    var maxchar=100; 
+	iCount = which.value.replace(/[^\u0000-\u00ff]/g,"aa").length; 
+    if(iCount<=maxchar) which.size=iCount+2;
+    else alert("请不要超过"+maxchar); 
+} 
+</script>
+</head>
+<body>
+<div class="chart" id="chartDiv">
+	<svg width="100%" height="100%">
+		<!--
+		<line x1="100" y1="50" x2="150" y2="25" style="stroke:#48b"/>
+		<line x1="100" y1="50" x2="150" y2="75" style="stroke:#48b"/>
+		<circle d="_root" cx="100" cy="50" r="10" fill="#FF7F50"/>
+		<circle d="name" cx="150" cy="25" r="10" fill="#FF7F50"/>
+		<circle d="remark" cx="150" cy="75" r="10" fill="#FF7F50"/>
+		<text x="50" y="55" fill="">_root</text>
+		<text x="100" y="30" fill="">name</text>
+		<text x="90" y="80" fill="">remark</text>
+		-->
+	</svg>
+</div>
+<div class="text">
+	<nav>
+		<p class="active">基本属性</p>
+		<p>节点配置</p>
+	</nav>
+	<div class="operation">
+		<input type="button" value="保存" />
+		<input type="button" value="取消" />
+	</div>
+	<br style="clear:both" />
+	<div class="content">
+		<table cellpadding="5" cellspacing="0" id="text">
+		</table>
+		<table cellpadding="5" cellspacing="0" id="text2" style="display:none">
+		</table>
+	</div>
+</div>
+</body>
+<script src="../../files/js/b1.js"></script>
+<script>
+var getSvg = (function(){
+	var ddList = {"status":{"id":1,"_list":[{"id":1,"name":"active"},{"id":3,"name":"deleted"},{"id":2,"name":"inactive"}],"name":"active"},"remark":"抽取tbt-sps的通报号、通报标题、通报成员、上报部门、通报时间。","group":{"id":1,"_list":[{"id":1,"name":"疾控"}],"name":"疾控"},"name":"tbt-sps","content":"{\"dyStartUrl\": {\"params\": {\"p\": {\"type\": \"emun\", \"value\": [\"2\", \"3\"]}}, \"urlTemplate\": \"http://www.tbt-sps.gov.cn/tbtTbcx/getList.action{p}\"}, \"requestPageType\": {\"requestType\": \"Request\", \"contentType\": \"HTML\", \"method\": \"get\", \"renderJs\": true}, \"schedulerType\": \"interval\", \"selectors\": [{\"currentUrl\": \"\", \"multiple\": true, \"requestPageTypes\": {}, \"parentSelectors\": [\"_root\", \"next_page\"], \"selector\": \"table.right_nr_xx tr\", \"delay\": \"\", \"typename\": \"\\u7ec4\\u5408\\u578b(Element)\", \"type\": \"SelectorElement\", \"id\": \"items\"}, {\"regex\": \"\", \"currentUrl\": \"http://www.tbt-sps.gov.cn/tbtTbcx/getList.action\", \"multiple\": false, \"requestPageTypes\": {}, \"parentSelectors\": [\"items\"], \"selector\": \"td:nth-of-type(1) a\", \"delay\": \"\", \"typename\": \"\\u6587\\u672c\\u578b(Text)\", \"type\": \"SelectorText\", \"id\": \"number\"}, {\"currentUrl\": \"http://www.tbt-sps.gov.cn/tbtTbcx/getList.action\", \"multiple\": false, \"requestPageTypes\": {}, \"parentSelectors\": [\"items\"], \"selector\": \"td:nth-of-type(2) a\", \"delay\": \"\", \"typename\": \"\\u94fe\\u63a5\\u578b(Link)\", \"type\": \"SelectorLink\", \"id\": \"title\"}, {\"regex\": \"\", \"currentUrl\": \"http://www.tbt-sps.gov.cn/tbtTbcx/getTbcxContent.action?mid=21869&TBType=4\", \"multiple\": false, \"requestPageTypes\": {}, \"parentSelectors\": [\"title\"], \"selector\": \"tr:nth-of-type(3) > td:nth-of-type(3)\", \"delay\": \"\", \"typename\": \"\\u6e90\\u7801\\u578b(Html)\", \"type\": \"SelectorHTML\", \"id\": \"content\"}, {\"regex\": \"\", \"currentUrl\": \"http://www.tbt-sps.gov.cn/tbtTbcx/getList.action\", \"multiple\": false, \"requestPageTypes\": {}, \"parentSelectors\": [\"items\"], \"selector\": \"td:nth-of-type(3)\", \"delay\": \"\", \"typename\": \"\\u6587\\u672c\\u578b(Text)\", \"type\": \"SelectorText\", \"id\": \"member\"}, {\"regex\": \"\", \"currentUrl\": \"http://www.tbt-sps.gov.cn/tbtTbcx/getList.action\", \"multiple\": false, \"requestPageTypes\": {}, \"parentSelectors\": [\"items\"], \"selector\": \"td:nth-of-type(4)\", \"delay\": \"\", \"typename\": \"\\u6587\\u672c\\u578b(Text)\", \"type\": \"SelectorText\", \"id\": \"department\"}, {\"regex\": \"\", \"currentUrl\": \"http://www.tbt-sps.gov.cn/tbtTbcx/getList.action\", \"multiple\": false, \"processors\": [{\"name\": \"ProcessorDatetime\", \"context\": [\"%Y-%m-%d\"]}], \"requestPageTypes\": {}, \"parentSelectors\": [\"items\"], \"selector\": \"td:nth-of-type(5)\", \"delay\": \"\", \"typename\": \"\\u6587\\u672c\\u578b(Text)\", \"type\": \"SelectorText\", \"id\": \"pubdate\"}, {\"currentUrl\": \"\", \"multiple\": false, \"parentSelectors\": [\"_root\", \"next_page\"], \"selector\": \"li.nextpage a\", \"delay\": \"\", \"typename\": \"\\u94fe\\u63a5\\u578b(Link)\", \"requestPageType\": {\"requestType\": \"Request\", \"contentType\": \"HTML\", \"method\": \"get\", \"renderJs\": \"true\"}, \"type\": \"SelectorClick\", \"id\": \"next_page\"}], \"scheduler\": {\"every\": 1, \"period\": \"hours\"}, \"_id\": \"tbt-sps\", \"startUrl\": \"http://www.tbt-sps.gov.cn/tbtTbcx/getList.action\"}","ower":{"id":3,"_list":[{"id":1,"name":"root"},{"id":2,"name":"wtlu"},{"id":3,"name":"test"},{"id":4,"name":"test2"}],"name":"test"},"id":100}
+	var _chartData = json(ddList.content),
+		_chartList = _chartData.selectors;
+	log(_chartData);
+	var _svgDom = $('#chartDiv>svg'),
+		_textDom = $('#text'),
+		_textDom2 = $('#text2'),
+		_w = _svgDom[0].clientWidth,
+		_h = _svgDom[0].clientHeight,
+		_r = 6,
+		_bw = 60,
+		_ew = 80,
+		_getH = function(f,l,n,a){
+			var he = _h/l,
+				al = (f-1)*he,
+				h = al + parseInt(he*n/(a+1));
+			return h;
+		},
+		_cache = {
+			_root :{
+				htm : '<circle t="SelectorElement" f="1" i="1" l="1" d="_root" lev="1" cx="'+_bw+'" cy="'+_getH(1,1,1,1)+'" r="'+_r+'" stroke="#4682B4" fill="#B0C4DE"/>',
+				lineHtm : '',
+				textHtm : '<text x="'+_bw+'" y="'+(_getH(1,1,1,1)+3)+'" fill="">_root</text>',
+				son : {}
+			}
+		},
+		_getOpts = function(lsts){
+			var htm = '',
+				lst = lsts._list;
+			for(var s in lst) htm += '<option value="'+lst[s].id+'">'+lst[s].name+'</option>';
+			return '<select>'+htm+'</select>';
+		},
+		_getCnt = function(k,d){
+			if(k=='content') d=str(d);
+			else if(typeof(d)=='object') d = _getOpts(d);
+			else if(typeof(d)=='number') ;
+			else{
+				d = '<input onkeyup="autoLength(this)" type="text" value="'+d+'"/>'
+			}
+			return d;
+		},
+		_getCnt2 = function(k,d){
+			if(typeof(d)=='object') d = str(d);
+			else if(typeof(d)=='number') ;
+			else{
+				d = '<input onkeyup="autoLength(this)" type="text" value="'+d+'"/>'
+			}
+			return d;
+		},
+		_getText = function(){
+			_textDom.html(function(){
+				var htm = '';
+				for(var dd in ddList) {
+					if(dd!='content') htm += '<tr><td>'+dd+'</td><td>'+_getCnt(dd,ddList[dd])+'</td></tr>';
+				}
+				return htm;
+			})
+		},
+		_getText2 = function(data){
+			_textDom2.html(function(){
+				var htm = '';
+				for(var dd in data) htm += '<tr><td>'+dd+'</td><td>'+_getCnt2(dd,data[dd])+'</td></tr>';
+				return htm;
+			})
+		},
+		_forChartHtm = function(d){
+			var htm = d[0],
+				lineHtm = d[1],
+				textHtm = d[2],
+				prt = d[3],
+				dd
+			;
+			for(var c in prt){
+				htm += prt[c].htm;
+				lineHtm += prt[c].lineHtm;
+				textHtm += prt[c].textHtm;
+				if(str(prt[c].son)!='{}'){
+					 dd = _forChartHtm([htm,lineHtm,textHtm,prt[c].son]);
+					 htm += dd[0];
+					 lineHtm += dd[1];
+					 textHtm += dd[2];
+				}
+			}
+			return [htm,lineHtm,textHtm];
+		},
+		_getChartHtm = function(){
+			var d = _forChartHtm(['','','',_cache]);
+			_svgDom.html(d[1]+d[2]+d[0]).find('text').each(function(k,t){
+				$(t).attr('x',$(t).attr('x')-$(t)[0].clientWidth-_r*1.2);
+			});
+		},
+		getChart = function(t,f,l,i,s,lev,cx,cy){
+			log(t+','+f+','+l);
+			var lst = [],
+				slev = lev+1,
+				htm = '',
+				lineHtm = '',
+				textHtm = ''
+				dir = {}
+			;
+			//log(cx+','+cy);
+			for(var c in _chartList){
+				if (_chartList[c].parentSelectors.indexOf(s)!=-1) lst.push({k:_chartList[c].id,v:_chartList[c],t:_chartList[c].type});
+			}
+			_getText2(lst);
+			for(var t1 in lst){
+				htm += '<circle lev="'+slev+'" i="'+1/lst.length+'" f="'+(parseInt(t1)+1)+'" l="'+lst.length+'" class="'+s+'" t="'+lst[t1].t+'" d="'+lst[t1].k+'" cx="'+(cx+_ew)+'" cy="'+_getH(f,l,(parseInt(t1)+1),lst.length)+'" r="'+_r+'" stroke="#4682B4" fill="#B0C4DE"/>';
+				lineHtm += '<line lev="'+slev+'" class="'+s+'" x1="'+cx+'" y1="'+cy+'" x2="'+(cx+_ew)+'" y2="'+_getH(f,l,(parseInt(t1)+1),lst.length)+'" style="stroke:#ccc"/>';
+				textHtm += '<text lev="'+slev+'" class="'+s+'" x="'+(cx+_ew)+'" y="'+(_getH(f,l,(parseInt(t1)+1),lst.length)+4)+'" fill="">'+lst[t1].k+'</text>';
+				dir = {
+					htm : htm,
+					lineHtm : lineHtm,
+					textHtm : textHtm,
+					son : {}
+				};
+				//log(dir);
+				if(lev==1) _cache[s].son[lst[t1].k] = dir;
+				else if(lev==2) _cache._root.son[s].son[lst[t1].k] = dir;
+			}
+			_getChartHtm();
+			//_svgDom.html(lineHtm+htm+textHtm).find('text').each(function(k,t){
+			//	$(t).attr('x',$(t).attr('x')-$(t)[0].clientWidth-_r*1.2);
+			//});
+		}
+	;
+	_svgDom.html(_cache._root.htm+_cache._root.textHtm).find('text').each(function(k,t){
+		$(t).attr('x',$(t).attr('x')-$(t)[0].clientWidth-_r*1.2);
+	});
+	_getText();
+	$('#chartDiv').click(function(e){
+		var tar = e.target,
+			obj = $(tar)
+		;
+		_textDom.hide();
+		_textDom2.show();
+		$('.text nav p:eq(0)').removeClass('active');
+		$('.text nav p:eq(1)').addClass('active');
+		if(tar.nodeName=='circle'){
+			getChart(obj.attr('t'),parseInt(obj.attr('f')),parseInt(obj.attr('l')),parseFloat(obj.attr('i')),obj.attr('d'),parseInt(obj.attr('lev')),parseInt(obj.attr('cx')),parseInt(obj.attr('cy')));
+			/*if(d=='_root'){
+				if(_root.open==0){
+					_getText2();
+					_root.open = 1;
+					if(_root.hasSon==0){
+						for(var dd in chartData){
+							var d = chartData[dd];
+							lst.push({k:dd,v:d});
+						}
+						for(var t1 in lst){
+							htm += '<circle class="'+_root.sonClass+'" title="'+lst[t1].k+'" d="'+lst[t1].k+'" cx="'+_ew*2+'" cy="'+_getH((parseInt(t1)+1),lst.length)+'" r="'+_r+'" stroke="#4682B4" fill="#B0C4DE"/>';
+							lineHtm += '<line class="'+_root.sonClass+'" x1="'+_bw+'" y1="'+_getH(1,1)+'" x2="'+_ew*2+'" y2="'+_getH((parseInt(t1)+1),lst.length)+'" style="stroke:#ccc"/>';
+							textHtm += '<text class="'+_root.sonClass+'" x="'+_ew*2+'" y="'+(_getH((parseInt(t1)+1),lst.length)+4)+'" fill="">'+lst[t1].k+'</text>';
+						}
+						_svgDom.html(lineHtm+htm+textHtm).find('text').each(function(k,t){
+							$(t).attr('x',$(t).attr('x')-$(t)[0].clientWidth-_r*1.2);
+						});
+						_root.hasSon = 1;
+					}
+					else _svgDom.find('.'+_root.sonClass).show();
+				}
+				else{
+					_textDom.empty();
+					_root.open = 0;
+					if(_root.hasSon==1){
+						_svgDom.find('.'+_root.sonClass).hide();
+					}
+				}
+			}else{
+				_root.open = 0;
+				_textDom2.html('<tr><td>'+d+'</td><td>'+_getCnt(d,ddList[d])+'</td></tr>');
+				if(d=='content') ;
+				if(typeof(ddList[d])=='object') _textDom.find('select').val(ddList[d].id);
+				else if(typeof(ddList[d])=='number') ;
+				else autoLength(_textDom.find('input')[0]);
+			}*/
+		}
+	});
+	$('.text nav p').click(function(){
+		var txt = $(this).text();
+		$(this).parent().find('.active').removeClass('active');
+		$(this).addClass('active');
+		switch(txt){
+			case '基本属性':
+				_textDom.show();
+				_textDom2.hide();
+				_getText();
+				break;
+			case '节点配置':
+				_getText2(_chartData);
+				_textDom.hide();
+				_textDom2.show();
+				break;
+		}
+	})
+})();
+</script>
+</html>

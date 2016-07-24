@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="index.css" />
+<link rel="stylesheet" type="text/css" href="tiaose/tiaose.css" />
+<script src="tiaose/tiaose.js"></script>
+<script src="jquery.min.js"></script>
+</head>
+<body>
+<div class="main">
+	<div id="tishi"></div>
+	<canvas id="myCanvas" width="500" height="500" onmousemove="getpoint(event)" onmouseout="clear_point()">您的浏览器不支持html绘图功能</canvas>
+	<div class="tools">
+		<ul>
+		<li>直线 <span id="isline">关</span></li>
+		<li>矩形 <span id="isrect">关</span></li>
+		<li>圆形 <span id="isarc">关</span></li>
+		<li>文字 <span id="isword">关</span></li>
+		<li>
+		<div style="width:400px;">
+			<div class="lineClass"><input type="radio" name="lcType" value="1" checked="checked" id="xiantiao">线条<input type="radio" name="lcType" value="2" id="tianchong">填充</a></div>
+			<div id="pageColorViews" class="lineClass"></div>
+			<div class="lineClass"><input type="text" value="#000000" id="nowColor" /></div>
+			<div class="lineClass"><a href="javascript:;" onclick="colorSelect('nowColor','pageColorViews',event)">选择颜色</a></div>
+		</div>
+		</li>
+		</ul>
+	</div>
+	<div class="cb"></div>
+	<div id="ponits"></div>
+</div>
+<script src="huitu.js"></script>
+</body>
+</html>
+<div id="showtu" style="display:none"><br />cxt=document.getElementById("myCanvas").getContext("2d");cxt.beginPath();<span id="pointlist"></span>cxt.stroke();</div>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<title>Demo</title>
+<style>
+.dotting {
+display: inline-block;
+width: 10px;
+min-height: 2px;
+border-left: 2px solid currentColor;
+border-right: 2px solid currentColor;
+background-color: currentColor;
+background-clip: content-box;
+box-sizing: border-box;
+-webkit-animation: dot 4s infinite step-start both;
+animation: dot 4s infinite step-start both;
+*zoom: expression(this.innerHTML = '...');
+}
+.dotting:before {
+content: '...';
+}
+.dotting::before { 
+content: '';
+}:root
+.dotting {
+margin-left: 2px;
+padding-left: 2px;
+padding-right: 2px;
+}
+@-webkit-keyframes dot {	
+25% { border-color: transparent; background-color: transparent; }
+50% { border-right-color: transparent; background-color: transparent; }
+75% { border-right-color: transparent; }
+}
+@keyframes dot {
+25% { border-color: transparent; background-color: transparent; }
+50% { border-right-color: transparent; background-color: transparent; }
+75% { border-right-color: transparent; }
+}
+</style>
+</head>
+<body>
+
+订单提交中<span class="dotting"></span>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<chart>
+    <data>
+        <indexAxis name="日期">
+            <labels>
+                {{timelist}}
+            </labels>
+        </indexAxis>
+        <valueAxis name="{{name}}" unit="{{unit}}"></valueAxis>
+        <dataSets>
+			{%for lt in listall%}
+			<set name="{{lt.label}}">
+			    <values>
+				{{lt.values}}
+			    </values>
+			</set>
+			{%endfor%}
+        </dataSets>
+    </data>
+</chart>

@@ -1,0 +1,17 @@
+setup.py
+
+我们从例子开始。假设你要分发一个叫foo的模块，文件名foo.py，那么setup.py内容如下：
+
+from distutils.core import setup
+setup(name='foo',
+      version='1.0',
+      py_modules=['foo'],
+      )   
+然后，运行python setup.py sdist为模块创建一个源码包
+
+
+对于Windows，可以执行python setup.py bdist_wininst生成一个exe文件
+
+
+添加mysql_config的路径
+将本路径(F:\jiaolj\163\code\public\py)添加到 /Python27/Lib/site-packages/的.path文件下面，如果没有随便新建一个.path文件

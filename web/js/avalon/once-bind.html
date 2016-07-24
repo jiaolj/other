@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Avalon by RubyLouvre</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="avalon.js"></script>
+    <script>
+        var vm = avalon.define({
+            $id: 'test',
+            value: "xxx",
+            text: "yyy"
+        })
+    </script>
+</head>
+ 
+<body>
+    <div ms-controller="test">
+        <input ms-attr-value="::value" />
+        <p>{{::text}}</p>
+    </div>
+</body>
+ 
+</html>

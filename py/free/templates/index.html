@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<style>
+	html,body,table{height:100%;margin:0}a{cursor:pointer}
+	body {background:#F5F5F5;text-align:center}
+	.flt{float:left} .frt{float:right} .cb{.clear:both}
+	table {
+		width:100%;
+		text-align:center
+	}
+	.input input{
+		border:none;
+		height:36px;
+		padding:8px 6px;
+		outline:none;
+		border-radius:5px;
+	}
+	.input input.ipt{
+		height:20px;
+	}
+	.msg {
+		text-align:center;display:none;width:96%;padding:0 2%;
+	}
+	.msg .tit {
+		line-height:50px;font-size:20px;
+		border-bottom:1px solid #ddd;
+	}
+	.msg .tit a {
+		display:inline-block;
+		width:33%;
+	}
+	.msg dl {
+		margin:12px auto;overflow-y:auto;
+	}
+	.msg dl dt{
+		line-height:26px;
+	}
+	.sub {
+		margin-top:20px;
+	}
+	.sub input.ipt {
+		width:70%;
+	}
+	.sub input.btn {
+		width:20%;
+	}
+
+</style>
+</head>
+<body>
+	<table>
+	<tr><td class="input"><input id="key" type="text" class="ipt" /> <input id="keyBtn" type="button" class="btn" value="确定"></td></tr>
+	</table>
+	<div class="msg">
+		<div class="tit"><a class="out">退出</a><a>消息列表</a><a class="clear">清空消息</a> </div>
+		<dl id="msgs">
+		</dl>
+		<div class="sub input"><input id="keysub" type="text" class="ipt" /> <input id="keysubBtn" class="btn" type="button" value="确定"></div>
+	</div>
+<script src="/static/js/wap.js"></script>
+<script src="/static/js/des.js"></script>
+<script>
+var MVC = (function(){
+	var _obj = {};
+	return {
+		dom : {
+			keyBtn : $('#keyBtn'),
+			key : $('#key')
+		},
+		ctrl : {
+			step : 0,
+			jia : function(str){
+				return strEnc(str,'google1','google2','google3');
+			},
+			jie : function(enResult){
+				return strDec(enResult,'google1','google2','google3');
+			},
+		},
+		query : function(dd){
+			$('#msgs').html(function(){
+				var htm = '';
+				for(var d in dd) {
+					if(dd[d].is_hide==0) htm += '<dt k="'+dd[d].id+'"><span class="flt">'+_obj.ctrl.jie(dd[d].word)+'</span><span class="frt">'+dd[d].date.replace('T',' ').replace('Z',' ')+'</span><br class="cb"/></dt>';
+				}
+				return htm;
+			}());
+		},
+		ajax : function(suc){
+			var val = _obj.dom.key.val();
+			if(val){
+				$.get('/check/?room='+val, function(dd){ 
+					if(dd.state=='1'){
+						_obj.query(dd.data);
+						suc && suc()
+					}
+				})
+			};
+		},
+		init : function(){
+			_obj = this;
+			_obj.dom.keyBtn.click(function(){
+				_obj.ajax(function(){
+					$('table').hide();
+					$('.msg').show();
+					_obj.ctrl.step = 1;
+				})
+			})
+			$('.clear').click(function(){
+				$.get('/clear/?room='+_obj.dom.key.val(), function(dd){ 
+					if(dd.state=='1'){
+						_obj.query(dd.data);
+					}
+				})
+			})
+			$('.out').click(function(){
+				$('table').show();
+				$('.msg').hide();
+				_obj.ctrl.step = 0;
+				$('#msgs').empty();
+				_obj.dom.key.val('');
+				$('#keysub').val('');
+			})
+			$('#keysubBtn').click(function(){
+				var word = $('#keysub').val();
+				if(word){
+					$.get('/add/?word='+_obj.ctrl.jia(word)+'&room='+_obj.dom.key.val(), function(dd){ 
+						if(dd.state=='1'){
+							_obj.ajax(dd.data);
+							$('#keysub').val('');
+						}
+					})
+				}
+			})
+			setInterval(function(){
+				if(_obj.ctrl.step==1){
+					_obj.ajax();
+				}
+			},5000)
+		}
+	}
+})();
+MVC.init();
+</script>
+</body>
+</html>

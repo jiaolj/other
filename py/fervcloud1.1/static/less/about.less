@@ -1,0 +1,83 @@
+@import 'pub.less';
+
+.allbox {
+	.pdtr(73rem);
+}
+.maintop {
+	.c(#fff);.psr;
+	img {
+		&.text {
+			.psa;.wr(730rem);.lr(595rem);
+		}
+		&.text1 {
+			.tr(175rem);
+		}
+		&.text2 {
+			.tr(292rem);
+		}
+		&.text3 {
+			.tr(409rem);
+		}
+	}
+}
+.join {
+	.tit{
+		.pdtr(148rem);.pdbr(37rem);
+	}
+	nav {
+		.wr(442rem);.mg(0 auto);.mgbr(87rem);
+		p {
+			.flt;.wr(200rem);.hr(66rem);.lhr(58rem);.bg(url(../img/about_btn.png));.csr;.tct;.psr;.bgs;
+			.fsr(18rem);.c(#666);
+			&:nth-child(1){
+				.mgrr(37rem);
+			}
+			&.active {
+				.bg(url(../img/about_btn_active.png));.c(#fffefe);.bgs;
+				&:hover {.csr(default)}
+			}
+		}
+	}
+	.abstr {
+		.mglr(259rem);.fsr(18rem);
+		dl {
+			.c(#666);.mgbr(104rem);
+			dt {
+				.psr;
+				p {
+					.lhr(31rem);
+					&.itrv {
+						.mgtr(30rem);
+					}
+				}
+				&:nth-child(1) {
+					.dsn;
+				}
+			}
+		}
+		.cend {
+			.c(#333);.mgbr(104rem);
+		}
+	}
+}
+.contact {
+	.bdt(#dcdcdc,4px);.mgbr(30rem);
+	.tit {
+		.pdtr(164rem);.pdbr(84rem);
+	}
+	dl {
+		.mglr(725rem);
+		dt {
+			.flt;.hr(208rem);
+			&.qrcode {
+				.wr(208rem);.mgrr(52rem);
+			}
+			&.text {
+				.fsr(18rem);.pdtr(7rem);
+				p {
+					.lhr(47rem);
+				}
+			}
+		}
+	}
+}

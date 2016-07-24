@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load mytags  %}
+{% block css %}<link rel="stylesheet" href="{%static 'css/index.css'%}" type="text/css" />{% endblock %}
+{% block js %}<script src="{%static 'js/index.js'%}"></script>{% endblock %}
+{% block content %}
+<div class="scroll">
+	<dl id="scroll">
+		<dt class="active" style="opacity: 1"><a href="" target="_blank"><img src="{%static 'img/scroll/12_1.png'%}"><p>试管婴儿，从云荷廷开始</p></a></dt>
+		<dt style="opacity: 0"><a href="" target="_blank"><img src="{%static 'img/scroll/25_1.png'%}"><p>专业美国、泰国试管医院直营机构，一站式全程无忧服务</p></a></dt>
+		<dt style="opacity: 0"><a href="" target="_blank"><img src="{%static 'img/scroll/9_1.png'%}"><p>美国线，泰国线，满足不同患者需求</p></a></dt>
+		<dt style="opacity: 0"><a href="" target="_blank"><img src="{%static 'img/scroll/13_1.png'%}"><p>专业美国试管婴儿，单周期低至2万美金</p></a></dt>
+		<dt style="opacity: 0"><a href="" target="_blank"><img src="{%static 'img/scroll/32_1.png'%}"><p>科学助孕，低至25天圆您生儿育女梦</p></a></dt>
+		<dt style="opacity: 0"><a href="" target="_blank"><img src="{%static 'img/scroll/24_1.png'%}"><p>第三代试管婴儿技术，合法基因筛查</p></a></dt>
+	</dl>
+	<div class="boll">
+		<dl id="boll">
+			<dt class="active"></dt>
+			<dt></dt>
+			<dt></dt>
+			<dt></dt>
+			<dt></dt>
+			<dt></dt>
+			<br class="cb"/>
+		</dl>
+	</div>
+</div>
+<div class="list half flt">
+	<div class="tit"><a>试管知识</a> <a class="more">更多</a></div>
+	<dl>
+		{% for t1 in knlg1 %}<dt><a href="{%url 'detail' 'knowledge' t1.id %}" target="_blank">{{t1.name}}</a><p class="frt">{{t1.pdate|formatShortTime}}</p></dt>{% endfor %}
+	</dl>
+</div>
+<div class="list half frt">
+	<div class="tit"><a>试管新闻</a> <a class="more">更多</a></div>
+	<dl>
+		{% for t1 in knlg2 %}<dt><a href="{%url 'detail' 'knowledge' t1.id %}" target="_blank">{{t1.name}}</a><p class="frt">{{t1.pdate|formatShortTime}}</p></dt>{% endfor %}
+	</dl>
+</div>
+<br class="cb"/>
+<div class="list">
+
+</div>
+<div class="list hpt">
+	<div class="tit"><a>专业试管婴儿医院</a> <a class="more">更多</a></div>
+	<dl>
+		{%for t in hptlist%}
+		<dt>
+			<a href="{% url 'detail' 'hospital' t.id %}" target="_blank"><img src="{{t.pic}}" /></a>
+			<div>
+				<a class="title" href="{% url 'detail' 'hospital' t.id %}" target="_blank">{{t.name}}</a>
+				<a class="text" href="{% url 'detail' 'hospital' t.id %}" target="_blank">{{t.abs|subString:"58"}}...</a>
+			</div>
+		</dt>
+		{%endfor%}
+		<br class="cb"/>
+	</dl>
+</div>
+<div class="list hpt dct">
+	<div class="tit"><a>专业试管婴儿医院</a> <a class="more">更多</a></div>
+	<dl>
+		{%for t in dctlist%}
+		<dt>
+			<a href="{% url 'detail' 'doctor' t.id %}" target="_blank"><img src="{{t.pic}}" /></a>
+			<div>
+				<a class="title" href="{% url 'detail' 'doctor' t.id %}" target="_blank">{{t.name}}</a>
+				<a class="text" href="{% url 'detail' 'doctor' t.id %}" target="_blank">{{t.abs|subString:"56"}}...</a>
+			</div>
+		</dt>
+		{%endfor%}
+		<br class="cb"/>
+	</dl>
+</div>
+{% endblock %}

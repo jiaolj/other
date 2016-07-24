@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load mytags  %}
+{% block css %}<link rel="stylesheet" href="{%static 'css/index.css'%}" type="text/css" />{% endblock %}
+{% block js %}<script src="{%static 'js/index.js'%}"></script>{% endblock %}
+{% block content %}
+<div class="box scroll">
+	<dl id="scroll">
+		<dt class="active" style="opacity: 1"><a href="" target="_blank"><img src="{%static 'img/scroll/12_1.png'%}"><p>试管婴儿，从云荷廷开始</p></a></dt>
+		<dt style="opacity: 0"><a href="" target="_blank"><img src="{%static 'img/scroll/25_1.png'%}"><p>专业美国、泰国试管医院直营机构，一站式全程无忧服务</p></a></dt>
+		<dt style="opacity: 0"><a href="" target="_blank"><img src="{%static 'img/scroll/9_1.png'%}"><p>美国线，泰国线，满足不同患者需求</p></a></dt>
+		<dt style="opacity: 0"><a href="" target="_blank"><img src="{%static 'img/scroll/13_1.png'%}"><p>专业美国试管婴儿，单周期低至2万美金</p></a></dt>
+		<dt style="opacity: 0"><a href="" target="_blank"><img src="{%static 'img/scroll/32_1.png'%}"><p>科学助孕，低至25天圆您生儿育女梦</p></a></dt>
+		<dt style="opacity: 0"><a href="" target="_blank"><img src="{%static 'img/scroll/24_1.png'%}"><p>第三代试管婴儿技术，合法基因筛查</p></a></dt>
+	</dl>
+	<div class="boll">
+		<dl id="boll">
+			<dt class="active"></dt>
+			<dt></dt>
+			<dt></dt>
+			<dt></dt>
+			<dt></dt>
+			<dt></dt>
+			<br class="cb"/>
+		</dl>
+	</div>
+</div>
+<div class="box">
+	<div class="tit">关于我们的服务项目</div>
+	<dl class="data pro">
+		<dt></dt>
+		<dt></dt>
+		<dt></dt>
+		<br class="cb"/>
+	</dl>
+</div>
+<div class="box">
+	<div class="tit">我们提供多种服务套餐</div>
+	<p>价格简介价格简介价格简介价格简介价格简介价格简介价格简介
+	价格简介价格简介价格简介价格简介价格简介价格简介价格简介价格简介
+	价格简介价格简介价格简介价格简介价格简介价格简介价格简介价格简介
+	价格简介价格简介价格简介价格简介价格简介价格简介价格简介价格简介
+	</p>
+	<dl class="data server">
+		<dt></dt>
+		<dt></dt>
+		<dt></dt>
+		<br class="cb"/>
+	</dl>
+	<div class="more"><span>了解更多服务套餐信息</span></div>
+</div>
+<div class="box">
+	<div class="tit">关于我们的合作医院</div>
+	<dl class="data hpt">
+		<dt><img src="{%static 'img/m.png'%}"></dt>
+		<dt><img src="{%static 'img/t.png'%}"></dt>
+		<dt><img src="{%static 'img/j.png'%}"></dt>
+		<br class="cb"/>
+	</dl>
+	<div class="more"><span>了解更多医院信息</span></div>
+</div>
+<div class="box trip">
+	<div class="tit">开始行程了，您准备好了吗</div>
+	<div class="chart" id="trip-chart">
+		<dl>
+			<dt>国内咨询<b>→</b></dt>
+			<dt>身体检查<b>→</b></dt>
+			<dt>视频会诊<b>→</b></dt>
+			<dt>赴外手续<b>→</b></dt>
+			<dt>开始周期<b>→</b></dt>
+			<dt>验孕回国</dt>
+			<br class="cb"/>
+		</dl>
+	</div>
+	<dl class="data trip">
+		<dt></dt>
+		<dt></dt>
+		<dt></dt>
+		<br class="cb"/>
+	</dl>
+	<div class="more"><span>了解更多准备程序信息</span></div>
+</div>
+{% endblock %}

@@ -1,0 +1,118 @@
+.cb {
+  clear: both;
+}
+.allbox {
+  padding-top: 73px;
+}
+.maintop {
+  color: #ffffff;
+  position: relative;
+}
+.maintop img.backbg {
+  position: absolute;
+}
+.maintop .text {
+  padding-top: 153px;
+  width: 730px;
+  height: 73px;
+  margin: 0 auto;
+  position: relative;
+}
+.maintop .text2 {
+  padding-top: 56px;
+  padding-bottom: 49px;
+  width: 730px;
+  height: 73px;
+  margin: 0 auto;
+  position: relative;
+}
+.maintop .text3 {
+  width: 696px;
+  height: 206px;
+  margin: 0 auto;
+}
+.maintop .text3 img {
+  position: relative;
+  display: none;
+}
+.join .tit {
+  padding-top: 148px;
+  padding-bottom: 37px;
+}
+.join nav {
+  width: 442px;
+  margin: 0 auto;
+  margin-bottom: 87px;
+}
+.join nav p {
+  float: left;
+  width: 200px;
+  height: 67px;
+  line-height: 58px;
+  background: url(../img/about_btn.png);
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  font-size: 18px;
+  color: #666666;
+}
+.join nav p:nth-child(1) {
+  margin-right: 37px;
+}
+.join nav p.active {
+  background: url(../img/about_btn_active.png);
+  color: #fffefe;
+}
+.join nav p.active:hover {
+  cursor: default;
+}
+.join .abstr {
+  margin-left: 259px;
+  font-size: 18px;
+}
+.join .abstr dl {
+  color: #666666;
+  margin-bottom: 104px;
+}
+.join .abstr dl dt {
+  position: relative;
+}
+.join .abstr dl dt p {
+  line-height: 31px;
+}
+.join .abstr dl dt p.itrv {
+  margin-top: 30px;
+}
+.join .abstr dl dt:nth-child(1) {
+  display: none;
+}
+.join .abstr .cend {
+  color: #333333;
+  margin-bottom: 104px;
+}
+.contact {
+  border-top: 4px solid #dcdcdc;
+  margin-bottom: 30px;
+}
+.contact .tit {
+  padding-top: 164px;
+  padding-bottom: 84px;
+}
+.contact dl {
+  margin-left: 725px;
+}
+.contact dl dt {
+  float: left;
+  height: 208px;
+}
+.contact dl dt.qrcode {
+  width: 208px;
+  margin-right: 52px;
+}
+.contact dl dt.text {
+  font-size: 18px;
+  padding-top: 7px;
+}
+.contact dl dt.text p {
+  line-height: 47px;
+}

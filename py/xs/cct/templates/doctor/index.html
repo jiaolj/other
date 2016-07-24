@@ -1,0 +1,44 @@
+{% extends 'content.html' %}
+{% block menu %}
+<div class="tit">试管专家</div>
+<dl>
+	<dt {%if not hid%}{%if not htp%}class="active"{%endif%}{%endif%}><a href="/doctor/">全部</a></dt>
+	<dt {%ifequal htp '1'%}class="active"{%endifequal%}><a href="/doctor/1/">美国试管医院</a></dt>
+	{% for t in hptlist %}<dt {%ifequal hid t.id%}class="active"{%endifequal%} style="text-indent:3.5em"><a href="/doctor/{{t.id}}-1.htm">{{t.name}}</a></dt>{%endfor%}
+	<dt {%ifequal htp '2'%}class="active"{%endifequal%}><a href="/doctor/2/">泰国试管医院</a></dt>
+	{% for t in hptlist2 %}<dt {%ifequal hid t.id%}class="active"{%endifequal%} style="text-indent:3.5em"><a href="/doctor/{{t.id}}-1.htm">{{t.name}}</a></dt>{%endfor%}
+</dl>
+{% endblock %}
+{% block cnt %}
+<style>
+.hlist>li{height:160px;border-bottom:1px dashed #ccc}
+.hlist>li>div{margin-bottom:10px}
+.hlist>li>.flt{float:left}
+.hlist>li>.flt img{margin-top:6px}
+.hlist>li>.frt{float:right}
+.hlist>li>.frt>.tit{line-height:38px}
+.hlist>li>.frt>.tit>a{color:#0068a9}
+.hlist>li>.frt>.cnt{font-size:12px;line-height:22px}
+.hlist>li>.frt>.cnt>.one{color:#999}
+.hlist>li>.frt>.cnt>.two{color:#0068a9}
+
+.hlist>li>.flt{width:150px;height:150px}
+.hlist>li>.frt{width:580px}
+</style>
+<h3>试管专家</h3>
+<ul class="hlist">
+	{% for lt in listall%}
+	<li>
+		<div class="flt"><a href="/detail/doctor-{{lt.id}}.html" target="_blank"><img src="{{lt.pic}}" /></a></div>
+		<div class="frt">
+			<div class="tit"><a href="/detail/doctor-{{lt.id}}.html" target="_blank">{{lt.name}}</a></div>
+			<div class="cnt">
+				<a class="one" href="/detail/doctor-{{lt.id}}.html" target="_blank">{{lt.abs|slice:"150"}}</a>
+				[ <a class="two" href="/detail/doctor-{{lt.id}}.html" target="_blank">详细</a> ]
+			</div>
+		</div>
+		<br class="cb"/>
+	</li>
+	{%endfor%}
+</ul>
+{% endblock %}

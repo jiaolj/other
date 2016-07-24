@@ -1,0 +1,102 @@
+html {
+  height: 100%;
+  min-width: 700px;
+}
+body {
+  height: 100%;
+  margin: 0 auto;
+  font-size: 12px;
+  background: #f2f2f2;
+  width: 100%;
+  position: relative;
+  font-family: STXihei, "Microsoft YaHei", "微软雅黑", "LiHei Pro", Verdana, Tahoma, "思源黑体 CN ExtraLight", "SourceHanSansCN ExtraLight", "Hiragino Sans GB", Arial, Helvetica, STHeiti, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #333333;
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+h1,
+h2,
+p,
+ul,
+dl {
+  margin: 0;
+}
+img {
+  border: none;
+}
+.cb {
+  clear: both;
+}
+.img {
+  overflow: hidden;
+}
+header {
+  position: fixed;
+  height: 73px;
+  background: #101317;
+  width: 100%;
+  z-index: 9;
+}
+header .logo {
+  height: 72px;
+  width: 320px;
+  margin-left: 12.97%;
+  float: left;
+  border-bottom: 1px solid #222529;
+}
+header .menu {
+  position: absolute;
+  right: 0%;
+  font-size: 19px;
+  height: 100%;
+  text-align: center;
+}
+header .menu .line {
+  position: absolute;
+  right: 116px;
+  top: 26px;
+  width: 1px;
+  height: 28px;
+  border-left: 1px solid #5e5e5e;
+}
+header .menu dt {
+  float: left;
+  line-height: 78px;
+  height: 66px;
+  position: relative;
+}
+header .menu dt a {
+  color: #ffffff;
+}
+header .menu dt a:hover {
+  border-bottom: 1px solid #ffffff;
+}
+header .menu dt a.jmp {
+  padding-bottom: 4px;
+}
+header .menu dt.active .jmp {
+  border-bottom: 1px solid #e73c3c;
+  color: #e73c3c;
+}
+header .menu dt .hid {
+  display: none;
+  position: absolute;
+  top: 58px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  line-height: 26px;
+  left: 2px;
+  width: 70px;
+  background: #272e38;
+  font-size: 16px;
+  text-align: left;
+  padding: 6px 16px;
+}
+header .menu dt .hid a {
+  padding-bottom: 4px;
+}

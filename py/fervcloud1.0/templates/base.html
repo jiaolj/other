@@ -1,0 +1,61 @@
+{% load staticfiles %}
+{%if not lg%}
+<script>
+var type=navigator.appName
+if (type=="Netscape"){
+	var lang = navigator.language
+}
+else{
+	var lang = navigator.userLanguage
+}
+//取得浏览器语言的前两个字母
+var lang = lang.substr(0,2)
+// 英语
+if (lang == "en"){
+	{%ifequal lg '1'%}window.location.href="?lg=2"{%endifequal%}
+}
+// 中文
+else if (lang == "zh"){
+	{%ifequal lg '2'%}window.location.href="?lg=1"{%endifequal%}
+}
+</script>
+{%endif%}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="/static/favicon.ico" />
+<title>{{seoTitle}}</title>
+<link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css" />
+{% block css %}{% endblock %}
+<!--[if IE]>
+<script>location.href='http://f.jiaolj.com/htm/ie/index.html?url='+location.href;</script>
+<![endif]-->
+</head>
+<body onbeforeunload="checkLeave()">
+<header>
+	<div class="logo"><a href="/"><img src="{%static 'img/tab_logo.png'%}"/></a></div>
+	<dl class="menu" id="topmenu">
+		<div class="line"></div>
+		<dt class="short{%ifequal index 1%} active{%endifequal%}"><a class="jmp" href="/">{%ifequal lg '1'%}产品{%endifequal%}{%ifequal lg '2'%}Product{%endifequal%}</a>
+			<!--<ul class="hid">
+				<li><a href="/">黑侠</a></li>
+				<li><a href="/xhx/">小黑侠</a></li>
+			</ul>-->
+		</dt>
+		<dt class="long"><a class="jmp" target="_blank" href="http://z.jd.com/project_details.action?projectId=45973">{%ifequal lg '1'%}京东众筹{%endifequal%}{%ifequal lg '2'%}Jingdong Raise{%endifequal%}</a></dt>
+		<dt class="long{%ifequal index 3%} active{%endifequal%}"><a class="jmp" href="/about/">{%ifequal lg '1'%}关于我们{%endifequal%}{%ifequal lg '2'%}About Us{%endifequal%}</a></dt>
+		<!--<dt class="short"><a class="jmp" style="color:#999">社区</a></dt>-->
+		<dt class="short language"><a class="jmp language" href="{%ifequal lg '1'%}?lg=2{%endifequal%}{%ifequal lg '2'%}?lg=1{%endifequal%}">中文 / En</a></dt>
+		<br class="cb"/>
+	</dl>
+	<br class="cb"/>
+</header>
+{% block content %}
+{% endblock %}
+<script src="{% static 'js/base.js' %}"></script>
+{% block js %}{% endblock %}
+</body>
+</html>

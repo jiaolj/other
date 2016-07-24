@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>WebSocket</title>
+</head>
+<body>
+<script src="../jquery.min.js"></script>
+<script src="../webskt.js"></script>
+<script>
+function getWebSocket(){
+	initWebSocket('ws://10.13.91.222:9999');
+}
+function getWebSocketRecv(data){
+	console.log(data);
+}
+function getWebSocketClose(){
+	//console.log('close');
+}
+function getWebSocketOpen(){
+	//console.log('open');
+}
+function send(){
+wbs.send('{"id":"1","uname":"abc"}');
+}
+</script>
+
+<button id='ToggleConnection1' type="button" onclick='getWebSocket();'>连接服务器</button><br /><br />
+<button id='ToggleConnection2' type="button" onclick='send();'>发送我的名字：beston</button><br /><br />
+<button id='ToggleConnection3' type="button" onclick='seeSocketState();'>查看状态</button><br /><br />
+<button id='ToggleConnection4' type="button" onclick='goSocketOut();'>断开服务器</button><br /><br />
+</body>
+
+</body>
+ 
+</html>

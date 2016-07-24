@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>浏览器升级</title>
+<link rel="shortcut icon" href="images/favicon.ico" />
+<link href="css/style.css?version=104" rel="stylesheet" />
+<link href="css/fuck-ie.css?version=104" rel="stylesheet" />
+<script type="text/javascript">
+var getRequest=function(){
+	var url = location.search; //获取url中"?"符后的字串
+	var theRequest = new Object();
+	if (url.indexOf("?") != -1) {
+		var str = url.substr(1);
+		strs = str.split("&");
+		for(var i = 0; i < strs.length; i ++) {
+			theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+		}
+	}
+	return theRequest;
+}
+
+if(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.match(/6./i)=="6."){ 
+	//alert("IE 6"); 
+} 
+else if(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.match(/7./i)=="7."){ 
+	//alert("IE 7"); 
+} 
+else if(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.match(/8./i)=="8."){ 
+	//alert("IE 8"); 
+} 
+else if(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.match(/9./i)=="9."){ 
+	//alert("IE 9"); 
+}
+else{
+	var url = getRequest().url;
+	location.href = url;
+}
+</script>
+</head>
+<body>
+<div class="wrapper">
+    <h1>浏览器升级</h1>
+    <div class="desc">
+        你正在使用的浏览器版本太古老，无法正常使用应用。<br/>
+        请升级到最新版本的IE，或者更换一款现代浏览器。
+    </div>
+    <div class="browsers">
+        <a class="link-firefox" href="http://firefox.com.cn/" target="_blank">安装Firefox</a>
+        <a class="link-chrome" href="http://rj.baidu.com/soft/detail/14744.html" target="_blank">安装Chrome</a>
+        <a class="link-ie9" href="http://windows.microsoft.com/zh-CN/internet-explorer/products/ie/home" target="_blank" >升级到最新版的Internet Explorer</a>
+    </div>
+    <div class="notice">
+    </div>
+    <div class="footer">
+        &hearts; 由 <a href="#">浏览器升级</a> 强力驱动
+    </div>
+</div>
+</body>
+</html>

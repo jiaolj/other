@@ -1,0 +1,92 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>号码查询工具_在线工具箱</title>
+<meta name="keywords" content="电话号码,电话号码查询,手机号码查询,号码查询,号码查询工具" />
+<meta name="description" content="一款提供给用户使用的号码查询工具" />
+<link rel="shortcut icon" href="/imgs/favicon1.ico" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/forceplastics.css" />
+<script src="/js/jquery/jquery-1.7.2.js"></script>
+<script>
+$(function(){
+	$("#queryphone").click(function(){
+		var phonenumb=$("#phonenumb").val();
+		var phonetype="{{telephone.name}}";
+		phonenumb=$.trim(phonenumb);
+		//alert(phonenumb)
+		if (phonenumb){
+			$.ajax({
+				type: "GET",
+				url: "/phonequery{{telephone.name}}.html",
+				data: "phonenumb1="+phonenumb,
+				success:function(data){
+					$("#queryresult").html(data)
+					var jsondata= eval('('+data+')');
+					var province=jsondata.province;
+					if (province){
+			   			if (phonetype=="mobile"){
+					   		var city=jsondata.city;
+					   		var ntype=jsondata.type;
+					   		var areacode=jsondata.areacode;
+					   		$("#queryresult").html('<center><table border=2 style="text-align:center"><tr><td style="width:100px">省份</td><td style="width:100px">'+province+'</td></tr><tr><td>城市: </td><td>'+city+'</td></tr><tr><td>号码类型: </td><td>'+ntype+'</td></tr><tr><td>区号: </td><td>'+areacode+'</td></tr></table></center>')
+						}else{
+					   		var city=jsondata.city;
+					   		var ntype=jsondata.type;
+					   		var zipcode=jsondata.zipcode;
+					   		$("#queryresult").html('<center><table border=2 style="text-align:center"><tr><td style="width:100px">省份</td><td style="width:100px">'+province+'</td></tr><tr><td>城市: </td><td>'+city+'</td></tr><tr><td>邮编: </td><td>'+zipcode+'</td></tr></table></center>')
+						}
+						}else{
+					   		$("#queryresult").html('<center>未找到相关信息,请检查号码是否正确</center>')
+						}
+				},
+				error:function(data){
+					alert("错误!青重试.");
+				}
+			});
+		}else{
+		alert('请填写一个号码')
+		}
+	})
+});
+</script>
+</head>
+<body>
+{%include 'head.html'%}
+
+  <div class="layout mod-spm">
+  	<div class="mod-ind">
+    	<div class="header">
+            <h1>
+            	<span><a href="" title=""><img src="/imgs/kongbai.jpg" width="1px" /></a></span>
+            	<a href="/">首页</a> > <a href="">电话号码查询</a>
+            </h1>
+        </div>
+        <!--end header-->
+    	<div class="header" style="padding:10px;text-align:center">
+            	<a href="/phone/mobile/" {{telephone.n1}}><span style="font-size:18px;">手机</span></a>
+            	<a href="/phone/tel/" {{telephone.n2}}><span style="font-size:18px">座机</span></a>
+            	<img src="/imgs/kongbai.jpg" width="90px" height="30px">
+            	<!--<img src="" width="80px" height="30px"/>-->
+        </div>
+        <!--end header-->
+        <div class="content" style="text-align:center;"><br />
+
+		<h1>{{telephone.text}}</h1>
+		<div style="height:10px">&nbsp;</div> 
+		<P><input type="text" name="number" id="phonenumb" style="width:500px;height:30px" value="{{telephone.numb}}"></P>
+		<div style="height:10px">&nbsp;</div> 
+		<P><input type="button" id="queryphone" value="查询" style="width:60px;height:30px"></P>
+
+		<P>&nbsp;</P>
+		<P>&nbsp;</P>
+		<div id="queryresult"></div>
+		
+<br /><br /><br /><br /><br />
+{%include 'button.html'%}
+  </div>
+  <!--end layout mod-spm-->
+</body>
+</html>

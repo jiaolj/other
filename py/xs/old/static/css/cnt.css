@@ -1,0 +1,19 @@
+#content{ margin:1% 2%; font-size:15px; color:#333}
+#content>p{ line-height:22px; text-indent:1.5em; margin-bottom:10px; }
+#content>p>b{ color:#0186d3}
+#lmenu{ margin:1% 1%; padding:1%; border-radius:6px; min-height:300px; border:1px solid #ccc; box-shadow: 0px 0px 6px #ccc; }
+#lmenu>.title{ line-height:30px; margin:6px; color:#0186d3; border-bottom:1px solid #e9e9e9; border-radius:8px; background-image: linear-gradient(to right, rgba(150, 193, 236, 0), rgba(150, 193, 236, 0.05), rgba(150, 193, 236, 0.15), rgba(150, 193, 236, 0.2)); }
+#lmenu>ul>li{ line-height:26px; position:relative; text-indent:44px; }
+#lmenu>ul>li>a{ color:#333; }
+#lmenu>ul>.active>a,#lmenu>ul>li>a:hover{ color:#0186d3; }
+#lmenu>ul>.active>a:before{ content:''; display:block; position:absolute; width:10px; height:10px; left:28px; top:8px; background:#0186d3; border-radius:50%; }
+h3{ line-height:70px; height:84px; border-bottom:1px solid #ccc; }
+.pagelist{float:right;margin-bottom:10px}
+.pagelist>li{ float:left; margin-left:10px; margin-right:10px; color:#999; }
+.pagelist>li>a{color:#666}
+.pagelist>.active>a{color:#333}
+#content table{ border:solid #333; border-width:1px 0px 0px 1px; margin-top:10px; }
+#content table td,#content table th{ border:solid #333; border-width:0px 1px 1px 0px; line-height:26px; }
+.background{
+background-image: linear-gradient(to top, rgba(150, 193, 236, 0.05), rgba(150, 193, 236, 0.05), rgba(150, 193, 236, 0.05), rgba(150, 193, 236, 0.05));
+}

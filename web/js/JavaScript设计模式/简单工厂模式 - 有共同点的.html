@@ -1,0 +1,27 @@
+<script>
+var log=function(d){console.log(d)}
+
+
+var enemy = function(name, point){
+	var o = new Object();
+	o.point = point;
+	o.move = function(){
+		log(this.opont)
+	}
+	if (name=='tank'){
+		o.shut = function(){
+			log(1)
+		}
+	}else if (name=='plabe') {
+		o.rota = function(){
+			log(2)
+		}
+	}
+	return o;
+}
+
+var tk = enemy('tank')
+tk.shut();
+
+//简单工厂模式，用户只需要知道找敌军工厂取出想要的种类即可，不需要再自己去找到对应种类的加工厂去取那个兵种。
+</script>

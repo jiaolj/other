@@ -1,0 +1,26 @@
+<script>
+
+var Factory = function(type, cnt){
+	if(!(this instanceof Factory)) return new Factory(type, cnt);
+	return new this[type](cnt);
+}
+Factory.prototype = {
+	Java : function(cnt){
+		//...
+	},
+	Php : function(cnt){
+		//...
+	}
+}
+
+var data = [
+{type:'Java','cnt':'Java哪家强'},
+{type:'Php','cnt':'Php哪家强'},
+]
+
+for (var i=data.length;i>=0;i--){
+	console.log(data[i]);
+}
+
+//简单工厂模式，用户只需要知道找敌军工厂取出想要的种类即可，不需要再自己去找到对应种类的加工厂去取那个兵种。
+</script>

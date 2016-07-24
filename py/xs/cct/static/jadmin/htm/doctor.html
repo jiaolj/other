@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link  type="text/css" href="../css/b.css" rel="stylesheet" />
+<style>
+body{min-width:1200px;}
+.mytb{margin:0 auto;border-collapse:collapse;font-size:14px;max-width:1600px}
+.mytb,.mytb td,.mytb th{border:1px solid #d5dde8}
+.mytb th{background:#edf6ff;font-size:15px;text-align:left;height:32px}
+.mytb tr td{height:60px}
+.cl1{color:#63c091}.cl2{color:#5692da}.cl3{color:#dc6b43}.cl9{color:#b6bac6}
+.mytb tr .name{width:10%;min-width:100px}
+.mytb tr .sce{width:15%;min-width:180px}
+.mytb tr .qua{width:15%;min-width:180px}
+#addh{margin-left:10px}
+#hiddiv{width:86%;left:40px;top:60px;background:#fff;padding:2%}
+#hiddiv ul{border-top:1px solid #d5dde8;border-left:1px solid #d5dde8;width:120px;background:#edf6ff}
+#hiddiv ul li{border-right:1px solid #d5dde8;line-height:40px;width:120px;}
+#tab2{border:solid #d5dde8; border-width:1px 0px 0px 1px;width:96%;}
+#tab2 tr td{line-height:40px;border:solid #d5dde8; border-width:0px 1px 1px 0px;}
+#tab2 tr .one{width:120px}
+#tab2 tr .one input{height:28px;width:180px;outline:none;}
+#tab2 tr .two{width:470px;text-align:left;text-indent:6px;}
+#tab2 tr .two input{height:20px;width:200px;outline:none}
+#tab2 tr .two select{height:28px;width:204px;outline:none}
+#tab2 tr .two textarea{width:90%;margin-top:8px;outline:none}
+#tab2 tr .two .short{height:80px}
+#tab2 tr .two .long{height:150px}
+#tab2 tr .two iframe{height:40px;width:500px;border:0;position:relative;top:8px;}
+#tab2 tr .two img{width:80px;height:60px;position:relative;top:8px;margin-right:10px;}
+#tab1 tr img{width:80px;height:60px;}
+.tclose{position:absolute;cursor:pointer;display:block;right:5px;top:5px;width:13px;height:13px;background:url(../img/tool.gif) -9999px -9999px no-repeat;background-position: 0 -80px}
+.pagelist{float:right;margin:5px 5%;}
+</style>
+</head>
+<body>
+<div class="psa dsn bd tct" id="hiddiv"><i class="tclose"></i>
+	<ul><li did="">添加医生</li></ul>
+	<table id="tab2" cellspacing="0" cellpadding="0">
+		<tr><td class="one">名称</td><td class="two"><input type="text" /></td></tr>
+		<tr><td class="one">照片</td><td class="two"><img id="litpic" src="" /><iframe src="/upload/"></iframe></td></tr>
+		<tr><td class="one">医院</td><td class="two"><select id="hname2"></td></tr>
+		<tr><td class="one">职务</td><td class="two"><input type="text" /></td></tr>
+		<tr><td class="one">特长</td><td class="two"><input type="text" /></td></tr>
+		<tr><td class="one">语言</td><td class="two"><input type="text" /></td></tr>
+		<tr><td class="one">任职资格</td><td class="two"><input type="text" /></td></tr>
+		<tr><td class="one">特殊临床经验</td><td class="two"><input type="text" /></td></tr>
+		<tr><td class="one">摘要</td><td class="two long"><textarea class="short"></textarea></td></tr>
+		<tr><td class="one">权重</td><td class="two"><input type="text" /></td></tr>
+		<tr><td class="one">详细内容</td><td class="two long"><textarea class="long"></textarea></td></tr>
+		<tr><td class="one"><input type="button" id="addbutton" value="提交" /></td><td class="two"></td></tr>
+	</table>
+</div>
+<div class="h5p fs0"></div>
+<div class="tcenter th30 fs16p">试管医院</div>
+<div class="pdl35p pdb20p h30p lh30p">
+	国家 <select id="htp"><option value="0">全部</option><option value="1">美国试管医院</option><option value="2">泰国试管医院</option></select>
+	医院 <select id="hname"><option value="0">全部</option></select>
+	<input id="addh" type="button" value="添加医生"/>
+</div>
+<table id="tab1" class="mytb" cellspacing="0" cellpadding="5"></table>
+<div class="pagelist"></div><div class="cb"></div>
+<script src="../js/b.js"></script>
+<script>
+var getsize=function(){
+var clw=parseInt(document.body.clientWidth);
+var widths=(clw*0.99)+'px';
+$('#tab1').css('width',widths);
+}
+getsize();
+$(window).resize(function(){getsize()});
+
+var vname=$('#tab2 tr td input:eq(0)');
+var vhid=$('#tab2 tr td select');
+var vpost=$('#tab2 tr td input:eq(1)');
+var vspec=$('#tab2 tr td input:eq(2)');
+var vlang=$('#tab2 tr td input:eq(3)');
+var vqua=$('#tab2 tr td input:eq(4)');
+var vsce=$('#tab2 tr td input:eq(5)');
+var vabs=$('#tab2 tr td textarea:eq(0)');
+var vrank=$('#tab2 tr td input:eq(6)');
+var vtext=$('#tab2 tr td textarea:eq(1)');
+var hpic=$('#litpic');
+var hostp=0;
+
+var hcty=$('#htp');
+var htpnm=$('#hname');
+var htpnm2=$('#hname2');
+var getHptHtml=function(o,htp){
+	$.ajax({url:'/gethospital/',type:'GET',data:{lg:'0',hostp:htp},dataType:'json'
+	}).done(function(data){
+		var htm='<option value="0">全部</option>';
+		var d=data.d;
+		for( var i in d) htm+='<option value="'+d[i].id+'">'+d[i].name+'</option>';
+		o.html(htm);
+	}).fail(function(jqXHR,textStatus){log(' request failed'+textStatus);});
+}
+hcty.change(function(){getHptHtml(htpnm,$(this).val())});
+getHptHtml(htpnm,'0');getHptHtml(htpnm2,'0');
+htpnm.change(function(){
+	hostp=$(this).val();
+	getlist();
+})
+
+var cntClick=function(){
+	$('#tab1 tr td a').click(function(){
+		var txt=$(this).text();
+		var li=$(this).parent().parent();
+		var did=li.attr('did');
+		switch(txt){
+			case '删除':
+				if(confirm("确认删除吗?")){
+					var arg={t:'del',did:did};
+					updatelist(arg,function(){alert('删除成功!')});
+				}
+				break;
+			case '修改':
+				$('#hiddiv ul li').attr('did',did);
+				$('#hiddiv ul li').text('修改医院属性');
+				$('#hiddiv').slideDown(300);
+				$.ajax({
+					url: '/getdctdetail/',
+					type: 'GET',
+					data:{did:did},
+					dataType: 'json'
+				}).done(function(d) {
+					vname.val(d.name).focus();
+					htpnm2.val(d.hid);
+					vpost.val(d.post);
+					vspec.val(d.spec);
+					vlang.val(d.lang);
+					vqua.val(d.qua);
+					vsce.val(d.sce);
+					vabs.val(d.abs);
+					vrank.val(d.rank);
+					vtext.val(d.text);
+					hpic.attr('src',d.pic);
+				}).fail(function(jqXHR,textStatus) {
+					log(' request failed'+textStatus);
+				});
+				break;
+		}
+	})
+}
+var epage=10;
+var npage=1;
+var getJPage=function(total){
+	//调用jPage的接口，支持各种jquery选择器
+	$('.pagelist').JPage({
+		allPage:(parseInt((total-1)/epage)+1),
+		numList:7,
+		page:npage,
+		isJump:true,//是否开启<跳转到第几页>的功能
+		getPageData:function(page){
+			npage=page;
+			getlist();
+		}
+	});
+}
+var getlist=function(){
+	$.ajax({
+		url: '/getdoctor/',
+		type: 'GET',
+		data:{hostp:hostp,f:(npage-1)*epage,l:epage},
+		dataType: 'json'
+	}).done(function(data){
+		var d=data.list;
+		var c=data.count;
+		if (c>epage) getJPage(c);
+		else $('.pagelist').empty();
+		var htm='<tr ><th class="cl1">ID</th><th class="name cl2">名称</th><th class="cl2">照片</th><th class="cl3">医院</th><th class="cl1">职务</th><th class="cl2">特长</th><th class="cl3">语言</th><th class="qua cl1">任职资格</th><th class="sce cl2">特殊临床经验</th><th class="cl1">权重</th><th class="cl9">操作</th></tr>';
+		for(var i in d) htm+='<tr did="'+d[i].id+'"><td>'+d[i].id+'</td><td class="name">'+subkwd(d[i].name,30)+'</td><td><img src="'+d[i].pic+'" /></td><td>'+d[i].hname+'</td><td>'+d[i].post+'</td><td>'+d[i].spec+'</td><td>'+d[i].lang+'</td><td class="qua">'+subkwd(d[i].qua,32)+'</td><td class="sce">'+subkwd(d[i].sce,20)+'</td><td>'+d[i].rank+'</td><td><a>修改</a> <a>删除</a></td></tr>';
+		$('#tab1').html(htm);
+		cntClick();
+	}).fail(function(jqXHR,textStatus){
+		log('request failed'+textStatus);
+	});
+}
+getlist();
+$('#hiddiv>.tclose').click(function(){$(this).parent().slideUp(300)});
+$('#addh').click(function(){
+	if($('#hiddiv').css('display')=='none'){
+		$('#hiddiv').slideDown(300);
+		$('#hiddiv ul li').attr('did','').text('添加医生');
+		vname.val('').focus();
+		vpost.val('');
+		vspec.val('');
+		vlang.val('');
+		vqua.val('');
+		vsce.val('');
+		vabs.val('');
+		vrank.val(0);
+		vtext.val('');
+		hpic.attr('src','');
+	}
+	else $('#hiddiv').slideUp(300);
+})
+
+var updatelist=function(arg,suc){
+	$.ajax({
+		url: '/updoctor/',
+		type: 'GET',
+		data:arg,
+		dataType: 'json'
+	}).done(function(data) {
+		if(data=='1'){
+			suc();
+			getlist();
+		}
+	}).fail(function(jqXHR,textStatus) {
+		log(' request failed'+textStatus);
+	});
+}
+$('#addbutton').click(function(){
+	var name=trim(vname.val());
+	if(!name){
+		alert('请填写医院名称！');
+		return;
+	}
+	var t='add';
+	var txt='添加成功！';
+	var did=$('#hiddiv ul li').attr('did');
+	var hid=vhid.val();
+	var post=trim(vpost.val());
+	var spec=trim(vspec.val());
+	var lang=trim(vlang.val());
+	var qua=trim(vqua.val());
+	var sce=trim(vsce.val());
+	var abs=trim(vabs.val());
+	var rank=trim(vrank.val());
+	var text=trim(vtext.val());
+	var pic=hpic.attr('src');
+	if(did.length>0){
+		t='up';
+		txt='修改成功！'
+	}
+	var arg={'t':t,name:name,hid:hid,pic:pic,post:post,spec:spec,lang:lang,qua:qua,sce:sce,abs:abs,text:text,rank:rank,did:did};
+	updatelist(arg,function(){alert(txt)});
+})
+</script>
+</body>
+</html>

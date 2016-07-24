@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<title>圆环进度条</title>
+<style>
+.circle {
+	top:50px;left:50px;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    border-radius: 50%;
+	transform: rotate(134deg);
+}
+
+.pie_left, .pie_right {
+    width: 330px; 
+    height: 330px;
+    position: absolute;
+    top: -10px;left: -10px;
+}
+.left, .right {
+    width:310px; 
+    height:310px;
+	border:10px solid #ccc;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.right {
+	transform: rotate(90deg);
+}
+.pie_right, .right {
+    clip:rect(0,auto,auto,165px);
+}
+.pie_left, .left {
+    clip:rect(0,165px,auto,0);
+}
+.mask {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    left: 10px;
+    top: 10px;
+    position: absolute;
+    text-align: center;
+    line-height: 260px;
+    transform: rotate(-134deg);
+}
+
+</style>
+</head>
+<body>
+<div class="circle">
+    <div class="pie_left"><div class="left"></div></div>
+    <div class="pie_right"><div class="right"></div></div>
+    <div class="mask"><span>0</span>%</div>
+</div>
+<script src="http://f.jiaolj.com/js/b2.js"></script>
+<script>
+
+    /*$('.circle').each(function(index, el) {
+        var num = $(this).find('span').text() * 3.6;
+        if (num<=180) {
+            $(this).find('.right').css('transform', "rotate(" + num + "deg)");
+        } else {
+            $(this).find('.right').css('transform', "rotate(180deg)");
+            $(this).find('.left').css('transform', "rotate(" + (num - 180) + "deg)");
+        };
+    });*/
+
+	var numb=360,
+		start = setInterval(function(){
+			numb--;
+			if (numb<90&&numb>0){
+				clearInterval(start);
+			}else if (numb<=180&&numb>0){
+				$('.pie_right .right').css('transform', "rotate(" + numb + "deg)");
+				$('.pie_left .left').css('transform', "rotate(0deg)");
+			}else if(numb<=360&&numb>0) {
+				$('.pie_right .right').css('transform', "rotate(180deg)");
+				$('.pie_left .left').css('transform', "rotate(" + (numb - 180) + "deg)");
+			}else{
+				clearInterval(start);
+				//numb=0;
+				//$('.pie_right .right').css('transform', "rotate(0deg)");
+				//$('.pie_left .left').css('transform', "rotate(0deg)");
+			}
+			$('.mask span').text(parseInt(numb/3.6));
+		},5)
+//$('.pie_right .right').css('transform', "rotate(" + 100 + "deg)");
+
+/*var ifors=0;
+function fors(n){
+	n++;
+	if n>10:return;
+	fors(n);
+}
+fors(ifors)*/
+</script>
+</body>
+</html>

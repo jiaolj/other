@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+{%include 'public/head.html'%}
+</head>
+<body>
+{%include 'public/top.html'%}
+<div class="content">
+
+<table>
+<tr><td>帐 号</td><td> <input type="text" id="uname" /> <span id="errorText" style="color:red"></span></td></tr>
+<tr><td>密 码</td><td> <input type="password" id="pwd" /> </td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td><button id="getLogin">登录</button></td></tr>
+</table>
+
+</div>
+{%include 'public/foot.html'%}
+<script>
+function getLogin(){
+	uname=$('#uname').val();
+	logUrl='/clientLogin/';
+	//logUrl='/login/';
+	pwd=$('#pwd').val();
+	$.ajax({
+		//async: false,
+		url:logUrl,
+		type: 'GET',
+		data:{'uname':uname,'pwd':pwd},
+		dataType:'html'
+	}).done(function(data) {
+		//console.log(data);
+		if (data=='1') location.href='/';
+		else $('#errorText').text(data);
+	}).fail(function(jqXHR, textStatus){
+		alert('request failed' + textStatus);
+	});
+}
+$('#getLogin').click(function(){
+	getLogin();
+})
+$('#pwd').keypress(function(event) {
+  if (event.which == 13)
+  {
+	getLogin();
+  }
+});
+getFocus('uname')
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+.cnt-menu {
+  float: left;
+  width: 200px;
+}
+.cnt-menu .tit {
+  line-height: 30px;
+  margin: 6px;
+  color: #0186d3;
+  border-radius: 3px;
+  background-image: linear-gradient(to right, rgba(150, 193, 236, 0.1), rgba(150, 193, 236, 0.2), rgba(150, 193, 236, 0.3), rgba(150, 193, 236, 0.4));
+  text-indent: 1em;
+}
+.cnt-menu dl dt {
+  text-indent: 44px;
+  position: relative;
+}
+.cnt-menu dl dt.active a {
+  color: #0186d3;
+  font-size: 1.1em;
+}
+.cnt-menu dl dt.active a:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  left: 28px;
+  top: 5px;
+  background: #0186d3;
+}
+.cnt-text {
+  float: right;
+  width: 780px;
+}
+.cnt-text h3 {
+  text-align: center;
+  line-height: 70px;
+}
+.cnt-text p {
+  line-height: 26px;
+  font-size: 1.2em;
+  text-indent: 1.5em;
+}
+.cnt-text p b {
+  color: #0186d3;
+}
+.cnt-text table {
+  border: solid #333333;
+  border-width: 1px 0px 0px 1px;
+}
+.cnt-text table td,
+.cnt-text table th {
+  border: solid #333333;
+  border-width: 0px 1px 1px 0px;
+}
+.pagelist {
+  float: right;
+  margin-bottom: 40px;
+}
+.pagelist > li {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #999;
+  line-height: 30px;
+}
+.pagelist > li > a {
+  color: #666666;
+}
+.pagelist > .active > a {
+  color: #333333;
+}

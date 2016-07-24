@@ -1,0 +1,29 @@
+{% extends 'content.html' %}
+{% load mytags  %}
+{% block menu %}
+<div class="tit">{{tpnm}}</div>
+<dl>
+	<dt {% ifequal index 1 %}class="active"{% endifequal %}><a href="/" target="_blank">首页</a></dt>
+	<dt {% ifequal index 2 %}class="active"{% endifequal %}><a href="/about/" target="_blank">关于我们</a></dt>
+	<dt {% ifequal index 3 %}class="active"{% endifequal %}><a href="/service/" target="_blank">服务介绍</a></dt>
+	<dt {% ifequal index 4 %}class="active"{% endifequal %}><a href="/hospital/" target="_blank">合作医院</a></dt>
+	<dt {% ifequal index 5 %}class="active"{% endifequal %}><a href="/doctor/" target="_blank">试管专家</a></dt>
+	<dt {% ifequal index 6 %}class="active"{% endifequal %}><a href="/knowledge/" target="_blank">试管资讯</a></dt>
+	<dt {% ifequal index 7 %}class="active"{% endifequal %}><a href="/contact/" target="_blank">联系我们</a></dt>
+</dl>
+{% endblock %}
+
+{% block cnt %}
+<style>
+.detail{text-indent:1.5em}
+.detail p,pre{line-height:22px}
+.detail img{width:40%;height:220px;margin:4%}
+</style>
+<h3 class="tct">{{m.0}}</h3>
+{%if ispre %}
+{%if m.2%}<center><img style="width:180px;height:200px" src="{{m.2}}"/></center>{%endif%}
+<pre>{{m.1}}</pre>
+{%else%}
+<div class="detail">{{m.1|rimg|safe}}</div>
+{%endif%}
+{% endblock %}

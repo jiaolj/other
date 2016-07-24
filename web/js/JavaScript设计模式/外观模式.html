@@ -1,0 +1,42 @@
+<body>
+	<div id="test"><p>文本</p></div>
+</body>
+<script>//外观模式简化元素的获取
+function log(d){console.log(d)}
+//兼容浏览器获取节点文本的方法
+function text(e)
+{
+	var t='';
+	//如果传入的是元素，则继续遍历其子元素
+	//否则假定它是一个数组
+	e=e.childNodes||e;
+	//遍历所有子节点
+	for(var j=0;j<e.length;j++){
+		//如果不是元素，追加其文本值
+		//否则，递归遍历所有元素的子节点
+		t+=e[j].nodeType!=1?e[j].nodeValue:text(e[j].childNodes);
+	}
+	//返回区配的文本
+	return t;
+}
+//快捷获取节点文本的方法
+function text2(obj) {
+	return obj.innerText || (obj.firstChild && obj.firstChild.nodeValue);
+	//非Mozilla浏览器：
+	//obj.innerText;
+	//其他的浏览器
+	//obj.firstChild.nodeValue;
+}
+
+
+function $(id){
+	return document.getElementById(id);
+}
+function $tag(tag, context){
+	context = context || document;
+	return context.getElementsByTagName(tag);
+}
+
+log($('test').innerHTML);
+log(text2($('test')));
+</script>

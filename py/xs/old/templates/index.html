@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% load mytags  %}
+{% block css %}<link rel="stylesheet" href="/static/css/index.css" type="text/css" />{% endblock %}
+{% block js %}<script src="/static/js/index.js"></script>{% endblock %}
+{% block content %}
+<div class="gradual psa w dsn"></div>
+<div id="scroll">
+	<div class="mg0a w1000p h psr">
+		<ul class="h psa">
+			<li class="active" style="opacity:1"><a href=""><img src="/static/img/scroll/9.jpg" /><i>试管婴儿，从云荷廷开始</i></a></li>
+			<li class="" style="opacity:0"><a href=""><img src="/static/img/scroll/25.jpg" /><i>专业美国、泰国试管医院直营机构，一站式全程无忧服务</i></a></li>
+			<li class="" style="opacity:0"><a href=""><img src="/static/img/scroll/12.jpg" /><i>美国线，泰国线，满足不同患者需求</i></a></li>
+			<li class="" style="opacity:0"><a href=""><img src="/static/img/scroll/13.png" /><i>专业美国试管婴儿，单周期低至2万美金</i></a></li>
+			<li class="" style="opacity:0"><a href=""><img src="/static/img/scroll/24.jpg" /><i>科学助孕，低至25天圆您生儿育女梦</i></a></li>
+			<li class="" style="opacity:0"><a href=""><img src="/static/img/scroll/32.jpg" /><i>第三代试管婴儿技术，合法基因筛查</i></a></li>
+			<i class="cb"></i>
+		</ul>
+		<div class="bkg psa h30p w b0"></div>
+		<div class="psa zi1 h30p w b0">
+			<ul class="mg0a ul h uh w10" id="scircle">
+				<li i="1" class="active"><i></i></li>
+				<li i="2"><i></i></li>
+				<li i="3"><i></i></li>
+				<li i="4"><i></i></li>
+				<li i="5"><i></i></li>
+				<li i="6"><i></i></li>
+				<i class="cb"></i>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="sucess" class="mgt10p">
+	<div class="w1000p mg0a h">
+		<div class="flt w49 h">
+			<div class="tit">试管知识</div>
+			<ul>
+				{% for t1 in knlg1 %}<li><a href="{%url 'detail' 'knowledge' t1.id %}" target="_blank">{{t1.name}}</a><i class="frt">{{t1.pdate|formatShortTime}}</i></li>{% endfor %}
+				<i class="cb"></i>
+			</ul>
+		</div>	
+		<div class="frt w49 h">
+			<div class="tit">试管新闻</div>
+			<ul>
+				{% for t1 in knlg2 %}<li><a href="{%url 'detail' 'knowledge' t1.id %}" target="_blank">{{t1.name}}</a><i class="frt">{{t1.pdate|formatShortTime}}</i></li>{% endfor %}
+				<i class="cb"></i>
+			</ul>
+		</div>
+		<i class="cb"></i>
+	</div>
+</div>
+<div class="advantage mgt10p">
+	<ul id="rollmenu1" class="psr ul cul w1000p mg0a rollmenu">
+		<li class="active">美国优势</li><li>泰国优势</li><br class="cb"/>
+	</ul>
+	<div class="w1000p mg0a h tct">
+		<ul class="h ul psr">
+			<li class="psr">
+				<div class="roll br50 psa"><div class="br50 psa"><span>美国<br />优势</span></div></div>
+				<div class="roll2 psa">高成功率</div>
+				<div class="roll2 psa">高端医疗</div>
+				<div class="roll2 psa">基因筛查</div>
+				<div class="roll2 psa">法律保障</div>
+				<div class="roll2 psa">政策优势</div>
+			</li>
+			<li class="psr">
+				<div class="roll br50 psa"><div class="br50 psa"><span>泰国<br />优势</span></div></div>
+				<div class="roll2 psa">高成功率</div>
+				<div class="roll2 psa">高性价比</div>
+				<div class="roll2 psa">基因筛查</div>
+				<div class="roll2 psa">手续简便</div>
+				<div class="roll2 psa">距离优势</div>
+			</li>
+			<br class="cb"/>
+		</ul>
+	</div>
+
+</div>
+
+<div class="process mgt10p">
+	<ul id="rollmenu2" class="psr ul cul w1000p mg0a rollmenu">
+		<li class="active">试管婴儿流程</li><li>美国试管项目</li><li>泰国试管项目</li><br class="cb"/>
+	</ul>
+	<div class="w1000p mg0a h">
+		<ul class="h ul psr">
+<style>
+.pcsimg{width:690px;font-size:20px;height:400px;margin:0 auto;}
+.pcsimg:before{content:'';display:block;position:absolute;width:90%;height:90%;border-radius:50%;border:0.5em solid #B5E8FA;top:0.5em;left:1em}
+.pcsimg>li{position:absolute;border: 2px solid rgba(1, 134, 211, 0.8);color: #0186d3;padding:0.3em 0.5em}
+.pcsimg>li:nth-child(1){left:2.8em;top:2.6em}
+.pcsimg>li:nth-child(2){left:14.4em;top:2.6em}
+.pcsimg>li:nth-child(3){left:26em;top:2.6em}
+.pcsimg>li:nth-child(4){left:26em;top:8.6em}
+.pcsimg>li:nth-child(5){left:26em;top:14.6em}
+.pcsimg>li:nth-child(6){left:14.4em;top:14.6em}
+.pcsimg>li:nth-child(7){left:2.8em;top:14.6em}
+.pcsimg>li:nth-child(8){left:2.8em;top:8.6em}
+.pcsimg>li:nth-child(9){left:14.4em;top:8.6em}
+.pcsimg>li>i{display:block;position:absolute;width:3.5em;height:0.4em;background:rgba(1, 134, 211, 0.5);left:6em;top:0.8em}
+.pcsimg>li>i:before{content:'';display: inline-block;border-left:1em solid rgba(1, 134, 211, 0.5);border-top: 0.5em solid transparent;border-bottom: 0.5em solid transparent;position:absolute;right:-1em;top:-0.3em}
+.pcsimg>li:nth-child(3)>i,.pcsimg>li:nth-child(4)>i{-webkit-transform:rotate(90deg);left:1.7em;top:3.4em;width:2em}
+.pcsimg>li:nth-child(5)>i{display:none}
+.pcsimg>li:nth-child(6)>i,.pcsimg>li:nth-child(7)>i{-webkit-transform:rotate(180deg);left:7em}
+.pcsimg>li:nth-child(9)>i{-webkit-transform:rotate(-90deg);left:-10.4em;top:4.2em;width:2em}
+</style>
+			<li>
+				<a href="/service/pcs/" target="_blank"><ul class="pcsimg psr">
+				<li>国内咨询<i></i></li><li>体检报告<i></i></li><li>建立档案<i></i></li><li>视频会诊<i></i></li><li>赴外手续<i></i></li><li>预约治疗<i></i></li><li>赴外就诊<i></i></li><li>验孕回国<i></i></li><li>孕期指导<i></i></li>
+				</ul></a>
+			</li>
+			<li style="overflow:auto;"><a href="/service/usa/" target="_blank">
+			
+<div class="mg0a">
+<h3 class="tct">美国试管婴儿行程表</h3>
+<table cellpadding="5" cellspacing="0">
+<tbody><tr><th>时间</th><th>行程安排</th></tr>
+<tr><td>月经第1天</td><td>飞美国（或月经前已到达）</td></tr>
+<tr><td>月经第2/3天</td><td>补充身体检查</td></tr>
+<tr><td>月经第12天</td><td>安排取卵，先生同天取精。</td></tr>
+<tr><td>月经第13-14天</td><td>受精初步报告</td></tr>
+<tr><td>月经第15-16天</td><td><p>①孕酮支持</p><p>②最终受精报告（胚胎质量、等级及性别）</p></td></tr>
+<tr><td>月经第17天</td><td><p>①ICSI/PGD/CCS技术</p><p>②ICSI/PGD/CCS报告</p><p>③胚胎移植</p></td></tr>
+<tr><td>月经第18-19天</td><td>移植后卧床静养</td></tr>
+<tr><td>月经第20-25天</td><td>等待验孕</td></tr>
+<tr><td>月经第26-35天</td><td>抽血验孕HCG</td></tr>
+</tbody></table>
+<p>整个行程时间：以上为行程的大致情况，因每位客人的情况不一样，日程表也有所不同，实际以个人时间和周期为准，约26-35天。</p>
+</div>
+			
+			</a></li>
+			<li style="overflow:auto;"><a href="/service/tha/" target="_blank">
+			
+<div class="mg0a">
+<h3 class="tct">泰国试管婴儿行程表</h3>
+<table cellpadding="5" cellspacing="0">
+<tbody><tr><th>时间</th><th>行程安排</th></tr>
+<tr><td>月经第1天</td><td>飞赴泰国</td></tr>
+<tr><td>月经第2天</td><td><p>①体检，体检报告约需半天</p><p>②专家评估并制定方案日程表</p></td></tr>
+<tr><td>月经第3-9天</td><td><p>①开始促排卵周期</p><p>②医生约见，期间B超监查卵泡发育情况③注射破卵针HCG</p></td></tr>
+<tr><td>月经第10-12天</td><td>安排取卵，先生同天取精。</td></tr>
+<tr><td>月经第13-16天</td><td><p>①ICSI技术及胚胎培育</p><p>②最终受精报告（胚胎质量、等级及性别）</p></td></tr>
+<tr><td>月经第15-16天</td><td><p>①胚胎移植</p><p>②移植后卧床静养1天，并补充黄体</p></td></tr>
+<tr><td>月经第24-28天（移植后第9天）</td><td>抽血验孕HCG</td></tr>
+</tbody></table>
+<p>整个行程时间：以上为行程的大致情况，因每位客人的情况不一样，日程表也有所不同，实际以个人时间和周期为准，约24-28天。</p>
+</div>
+			
+			</a></li>
+			<br class="cb"/>
+		</ul>
+	</div>
+</div>
+<div id="hospital" class="mgt10p">
+	<div class="mg0a w1000p">
+	
+		<div class="title"><i class="flt ti2">专业试管婴儿医院</i><i class="frt ti-2"><a href="" class="">更多</a></i><i class="cb"></i></div>
+		<ul id="hptr" class="one mgt10p ul">
+			{%for t in hptlist%}
+			<li>
+				<a href="{% url 'detail' 'hospital' t.id %}" target="_blank"><img src="{{t.pic}}" /></a>
+				<i>
+				<p class="one"><a href="{% url 'detail' 'hospital' t.id %}" target="_blank">{{t.name}}</a></p>
+				<a href="{% url 'detail' 'hospital' t.id %}" target="_blank"><p>{{t.abs|subString:"58"}}...</p></a>
+				</i>
+			</li>
+			{%endfor%}
+			<i class="cb"></i>
+		</ul>
+		
+		<div class="mgt10p title"><i class="flt ti2">专业试管婴儿医生</i><i class="frt ti-2"><a href="" class="">更多</a></i><i class="cb"></i></div>
+		<ul id="dtt" class="two mgt10p ul">
+			{%for t in dctlist%}
+			<li>
+				<a href="{% url 'detail' 'doctor' t.id %}" target="_blank"><img src="{{t.pic}}" /></a>
+				<i>
+				<p class="one"><a href="{% url 'detail' 'doctor' t.id %}" target="_blank">{{t.name}}</a></p>
+				<a href="{% url 'detail' 'doctor' t.id %}" target="_blank"><p>{{t.abs|subString:"56"}}...</p></a>
+				</i>
+			</li>
+			{%endfor%}
+			<i class="cb"></i>
+		</ul>
+	</div>
+</div>
+
+{% endblock %}

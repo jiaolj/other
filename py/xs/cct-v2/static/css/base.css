@@ -1,0 +1,175 @@
+html {
+  position: relative;
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  font-size: 12px;
+  background: #ffffff;
+  color: #333333;
+  font-family: "Microsoft YaHei", STXihei, "LiHei Pro", Verdana, Tahoma, "SourceHanSansCN ExtraLight", "Hiragino Sans GB", Arial, Helvetica, STHeiti, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #333333;
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+h1,
+h2,
+h3,
+p,
+ul,
+dl {
+  margin: 0;
+}
+img {
+  border: 0 solid #ffffff;
+  width: 100%;
+  height: 100%;
+}
+.cb {
+  clear: both;
+}
+header {
+  position: fixed;
+  width: 100%;
+  top: 0%;
+  background: #ffffff;
+  background-image: linear-gradient(to top, rgba(235, 76, 15, 0.005), rgba(235, 76, 15, 0.055), rgba(235, 76, 15, 0.105), rgba(235, 76, 15, 0.155));
+  z-index: 1;
+}
+header .mid {
+  width: 90%;
+  position: absolute;
+  left: 5%;
+  height: 100%;
+}
+header .mid .logo {
+  height: 117px;
+  width: 134px;
+  position: relative;
+  top: 0px;
+  left: 10px;
+}
+header .mid .title {
+  position: absolute;
+  top: 30px;
+  left: 140px;
+}
+header .mid .title a {
+  color: #3c3c3c;
+  font-size: 2em;
+  font-weight: 500;
+}
+header .mid .contact {
+  position: absolute;
+  right: 0%;
+  top: 26px;
+  font-size: 1.6em;
+  font-weight: 300;
+  color: #3c3c3c;
+}
+header .mid .contact b {
+  font-weight: 500;
+  font-size: 1.4em;
+}
+header .mid nav {
+  line-height: 46px;
+  float: right;
+  position: absolute;
+  top: 70px;
+  right: 0%;
+  border-left: 1px solid #d5d5d5;
+}
+header .mid nav dt {
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #333333;
+  font-size: 1.1em;
+  border-top: 1px solid #d5d5d5;
+  border-right: 1px solid #d5d5d5;
+  border-bottom: 1px solid #d5d5d5;
+}
+header .mid nav dt.active {
+  background: rgba(235, 76, 15, 0.7);
+  color: #ffffff;
+}
+header .mid nav dt:hover {
+  background: rgba(235, 76, 15, 0.9);
+  color: #ffffff;
+}
+.tools dt {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.tools dt.service {
+  position: fixed;
+  width: 180px;
+  top: 170px;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 0.2em;
+}
+.tools dt.service .tit {
+  line-height: 30px;
+  background: rgba(235, 76, 15, 0.7);
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+}
+.tools dt.service table {
+  padding: 10px 6px;
+  background: #f1f1f1;
+}
+.tools dt.service table td a {
+  display: inline-block;
+  position: relative;
+  left: 8px;
+  width: 77px;
+  height: 22px;
+}
+.tools dt.service.flt {
+  left: 0;
+}
+.tools dt.service.frt {
+  right: 0%;
+}
+footer {
+  width: 100%;
+  height: 20%;
+  text-align: center;
+  font-size: 14px;
+  background-image: linear-gradient(to bottom, rgba(235, 76, 15, 0.01), rgba(235, 76, 15, 0.06), rgba(235, 76, 15, 0.11), rgba(235, 76, 15, 0.16));
+}
+footer .mid {
+  margin: 0 auto;
+  width: 70%;
+  height: 100%;
+  position: relative;
+}
+footer .mid .qrcode {
+  position: absolute;
+  left: 0;
+  width: 15%;
+  height: 100%;
+}
+footer .mid .text {
+  position: absolute;
+  left: 20%;
+  width: 80%;
+  height: 100%;
+  text-align: left;
+}
+footer .mid .text p {
+  line-height: 1.3em;
+  margin-top: 0.6em;
+  text-indent: -1em;
+}

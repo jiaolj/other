@@ -1,0 +1,45 @@
+<table id="viewData">
+
+</table>
+<script>
+var log = function(){for(var arg in arguments) console && console.log(arguments[arg])},
+	getRe = function(d,f,t){ //提取{}里面内容
+		var val = d.split(f),
+			arr = [];
+		for(var i=0;i<val.length;i++){
+			var sp = val[i].split(t);
+			if(sp.length>1) arr.push(sp[0]);
+		}
+		return arr;
+	},
+	getFor = function(htm,lstall,r,baseUrl,listarg,f,t){
+		for(var lt1 in lstall[r]){
+			var s = baseUrl.replace(f + listarg[r] + t,lstall[r][lt1]);
+			if(lstall[r + 1]){
+				htm = getFor(htm,lstall,r+1,s,listarg,f,t);
+			}else htm += '<tr><td>' + s + '</td></tr>';
+		}
+		return htm;
+	}
+	getViewHtm = function(baseUrl,lstall,f,t){
+		document.getElementById('viewData').innerHTML = getFor('',lstall,0,baseUrl,getRe(baseUrl,f,t),f,t);
+	};
+	getViewHtm(
+		'http://www.tbt-sps.gov.cn/tbtTbcx/getList.action/{a}/{b}/{c}',
+		[
+			['a','n'],
+			[1,2,3],
+			['a','n'],
+		],'{','}'
+	);
+	/*
+	console.log()
+	结果
+		http://www.tbt-sps.gov.cn/tbtTbcx/getList.action/a/1
+		http://www.tbt-sps.gov.cn/tbtTbcx/getList.action/a/2
+		http://www.tbt-sps.gov.cn/tbtTbcx/getList.action/a/3
+		http://www.tbt-sps.gov.cn/tbtTbcx/getList.action/n/1
+		http://www.tbt-sps.gov.cn/tbtTbcx/getList.action/n/2
+		http://www.tbt-sps.gov.cn/tbtTbcx/getList.action/n/3
+	*/
+</script>

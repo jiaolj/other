@@ -1,0 +1,149 @@
+html {
+  position: relative;
+}
+body {
+  margin: 0 auto;
+  font-size: 12px;
+  background: #ffffff;
+  width: 1002px;
+  color: #333333;
+  margin-bottom: 58px;
+  font-family: "Microsoft YaHei", STXihei, "LiHei Pro", Verdana, Tahoma, "SourceHanSansCN ExtraLight", "Hiragino Sans GB", Arial, Helvetica, STHeiti, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #333333;
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+h1,
+h2,
+h3,
+p,
+ul,
+dl {
+  margin: 0;
+}
+img {
+  border: 0 solid #ffffff;
+  width: 100%;
+  height: 100%;
+}
+.cb {
+  clear: both;
+}
+header {
+  height: 110px;
+  position: relative;
+}
+header .logo {
+  height: 80px;
+  width: 80px;
+  position: relative;
+  top: 10px;
+  left: 30px;
+}
+header .title {
+  position: absolute;
+  top: 30px;
+  left: 120px;
+}
+header .title a {
+  color: #0186d3;
+  font-size: 2em;
+  font-weight: 500;
+}
+header .contact {
+  position: absolute;
+  right: 0%;
+  top: 56px;
+  font-size: 1.6em;
+  font-weight: 300;
+  color: #0186d3;
+}
+header .contact b {
+  font-weight: 500;
+  font-size: 1.4em;
+}
+nav {
+  line-height: 46px;
+  float: right;
+}
+nav dt {
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #ffffff;
+  font-size: 1.1em;
+}
+nav dt.active {
+  background: rgba(1, 134, 211, 0.7);
+}
+nav dt:hover {
+  background: rgba(1, 134, 211, 0.9);
+}
+.tools dt {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.tools dt.head {
+  left: 0;
+  height: 110px;
+  top: 0%;
+  background-image: linear-gradient(to top, rgba(150, 193, 236, 0.05), rgba(150, 193, 236, 0.1), rgba(150, 193, 236, 0.15), rgba(150, 193, 236, 0.2));
+}
+.tools dt.nav {
+  left: 0;
+  height: 46px;
+  top: 110px;
+  background-image: linear-gradient(to bottom, rgba(1, 134, 211, 0.5), rgba(1, 134, 211, 0.6), rgba(1, 134, 211, 0.7), rgba(1, 134, 211, 0.8));
+}
+.tools dt.service {
+  position: fixed;
+  width: 180px;
+  top: 170px;
+}
+.tools dt.service .tit {
+  line-height: 30px;
+  background: #0176ba;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+}
+.tools dt.service table {
+  padding: 10px 6px;
+  background: #f1f1f1;
+}
+.tools dt.service table td a {
+  display: inline-block;
+  position: relative;
+  left: 8px;
+  width: 77px;
+  height: 22px;
+}
+.tools dt.service.flt {
+  left: 0;
+}
+.tools dt.service.frt {
+  right: 0%;
+}
+footer {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 52px;
+  bottom: 0;
+  text-align: center;
+  font-size: 14px;
+  background: #b4d2f0;
+  border-top: 1px solid #cccccc;
+}
+footer p {
+  line-height: 15px;
+  margin-top: 7px;
+}

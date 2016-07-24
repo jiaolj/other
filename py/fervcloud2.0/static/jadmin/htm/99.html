@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="always" name="referrer">
+<meta name="theme-color" content="#2932e1">
+<title>source</title>
+<link  type="text/css" href="../css/b.css" rel="stylesheet" />
+<script src="../js/b.js"></script>
+<style>
+.mytb{margin:0 auto;border-collapse:collapse;font-size:12pt}
+.mytb,.mytb td,.mytb th{border:1px solid #d5dde8}
+.mytb th{background:#edf6ff;font-size:14pt}
+.mytb tr td{height:26px;line-height:26px;text-align:center;overflow:hidden;white-space:normal;}
+.mytb tr .one{color:#5692da}
+.mytb tr .two{color:#b6bac6}
+.mytb tr .three{color:#dc6b43}
+.mytb tr .four{color:#63c091}
+</style>
+</head>
+<body>
+<div class="h5p fs0"></div>
+<div class="tcenter th30 fs16p">查看</div>
+<div class="h5p fs0"></div>
+<table id="myData" class="mytb" cellspacing=0 cellpadding=8></table>
+</body>
+<script src="../js/d.js"></script>
+<script>
+var clw=parseInt(document.documentElement.clientWidth);
+$('.mytb').css('max-width',(clw*0.8)+'px');
+$(window).resize(function(e){
+clw=parseInt(document.documentElement.clientWidth);
+$('.mytb').css('max-width',(clw*0.8)+'px');
+});
+var arg = {
+	getSex : {1:'男',2:'女'},
+	getTp : {1:'普通车主',2:'汽车行业从业者 '},
+};
+var getdataHtml = function(dd){
+		var htm = '<tr class="one"><th class="one">唯一标识</th><th class="one">姓名</th><th class="two">年龄</th><th class="three">性别</th><th class="four">车主类型</th><th class="five">公司</th><th class="one">职位</th><th class="twp">建议</th><th class="three">审核状态</th></tr>';
+		for(var d in dd) htm += '<tr><td class="one">'+dd[d].id+'</td><td class="two">'+dd[d].name+'</td><td class="three">'+dd[d].age+'</td><td class="four">'+arg.getSex[dd[d].sex]+'</td><td class="one">'+arg.getTp[dd[d].tp]+'</td><td class="one">'+dd[d].company+'</td><td class="two">'+dd[d].job+'</td><td class="three">'+dd[d].advice+'</td><td class="fore">'+dd[d].ischeck+'</td></tr>';
+		$('#myData').html(htm);
+	},
+	getDataList = function(){
+		$.ajax({
+			url : '/get99/',
+			dataType : 'json'
+		}).done(function(data){
+			getdataHtml(data);
+		}).fail(function(jqXHR,textStatus){
+			log(' request failed'+jqXHR+','+textStatus);
+		})
+	};
+getDataList();
+</script>
+</html>

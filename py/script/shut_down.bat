@@ -1,0 +1,1 @@
+python F:\jiaolj\163\code\py\script\shut_down.py

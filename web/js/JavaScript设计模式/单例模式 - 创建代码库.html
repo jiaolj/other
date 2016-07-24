@@ -1,0 +1,24 @@
+<script>
+var A = {	//定义命名空间，就是更好的管理代码
+	Util : {
+		method1 : function(){},
+		method2 : function(){}
+	},
+	Tool : {
+		method1 : function(){console.log(1)},
+		method2 : function(){}
+	},
+	Ajax : {
+		get : function(){},
+		post : function(){}
+	},
+	others : {
+		method1 : function(){},
+		method2 : function(){}
+	}
+}
+
+//调用方法时
+A.Tool.method1();
+
+</script>

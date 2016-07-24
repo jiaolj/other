@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="avalon.js"></script>
+    <script src="../../files/js/b1.js"></script>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+    <script>
+        avalon.effect("toggle", {
+            enter: function(elem, done) {
+                $(elem).show(500, done)
+            },
+            leave: function(elem, done) {
+                $(elem).hide(500, done)
+            }
+ 
+        })
+        var vm = avalon.define({
+            $id: "test",
+            bool: true,
+            click: function() {
+                vm.bool = !vm.bool
+            }
+        })
+    </script>
+</head>
+ 
+<body ms-controller="test">
+    <div ms-effect="toggle" ms-visible="bool" class="box"></div>
+    <p>
+        <button ms-click="click" type="button">button</button>
+    </p>
+ 
+</body>
+ 
+</html>

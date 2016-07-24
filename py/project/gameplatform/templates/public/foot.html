@@ -1,0 +1,30 @@
+
+<script>
+$('.top>ul>li').click(function(){
+text=$(this).text();
+switch(text){
+case "首页":
+location.href='/';
+break;
+case "注册":
+location.href='/reg/';
+break;
+case "登录":
+location.href='/loginPage/';
+break;
+default:
+}
+})
+
+$(".accountData").hover(function(){
+	$('.top>ul>.accountData>ul').show();
+},function(){
+	$('.top>ul>.accountData>ul').hide();
+})
+
+$(".gameList").hover(function(){
+	$('.top>ul>.gameList>ul').show();
+},function(){
+	$('.top>ul>.gameList>ul').hide();
+})
+</script>

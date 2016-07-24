@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>完整demo</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script type="text/javascript" charset="utf-8" src="../../ueditor1_4_3/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../ueditor1_4_3/ueditor.all.min.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="../../ueditor1_4_3/lang/zh-cn/zh-cn.js"></script>
+    <style type="text/css">
+		h1{margin:5px}
+        .cnt{width:100%}
+		.vbn{visibility:hidden}
+		table tr{width:1188px}
+		textarea{width:100%;height:58px;padding:5px;text-indent:1em}
+    </style>
+</head>
+<body>
+<div class="cnt">
+	<table cellspacing="0" cellpadding="5">
+		<tr>
+			<td><input type="button" onClick="ok()" value="确定" /> </td><td><input type="button" onClick="back()" value="取消" /></td>
+			<td colspan="8"></td>
+		</tr>
+		<tr>
+			<td>标题</td>
+			<td><input type="text" id="titles" style="width:280px"/></td>
+			<td>日期</td>
+			<td><input type="text" id="pdates" onclick="WdatePicker()" style="width:182px" /></td>
+			<td>权重</td>
+			<td><input type="text" id="ranks" style="width:80px" value=""/></td>
+			<td class="hptdiv vbn">国家</td>
+			<td class="hptdiv vbn"><select id="ctryid"><option value="1">美国试管医院</option><option value="2">泰国试管医院</option></select></td>
+			<td class="hptdiv vbn">成立时间</td>
+			<td class="hptdiv vbn"><input type="text" id="ftime" style="width:80px" value=""/></td>
+		</tr>
+		<tr>
+			<td>摘要</td><td colspan="9"><textarea id="abstr"></textarea></td>
+		</tr>
+	</table>
+    <script id="editor" type="text/plain" style="width:1188px;height:500px;"></script>
+</div>
+<script>var ue = UE.getEditor('editor')</script>
+</body>
+<script src="../js/b.js"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript">
+var tit=$('#titles'),
+	pdt=$('#pdates'),
+	rnk=$('#ranks'),
+	urls=getRequest(),
+	artid=urls.id,
+	com=urls.com,
+	tbnm=com.split('.')[0],
+	cty=$('#ctryid'),
+	ftm=$('#ftime'),
+	abs=$('#abstr'),
+	oldpics='';
+setTimeout(function(){
+	if (tbnm=='hospital') $('.hptdiv').css('visibility','visible');
+	if(artid=='0'){
+		pdt.val(getStrTime());
+		rnk.val(0);
+	}else{
+		$.ajax({
+			url: '/getnewsdetail/',
+			type: 'GET',
+			data:{did:artid,tbnm:tbnm,rtm:getIntTime()},
+			dataType: 'json'
+		}).done(function(d) {
+			//log(d);
+			tit.val(d[1]).focus();
+			if(d[2]) pdt.val(d[2].substr(0,10));
+			abs.val(d[3]);
+			rnk.val(d[4]);
+			if (tbnm=='hospital'){
+				cty.val(d[7]);
+				ftm.val(d[8]);
+			}
+			oldpics = findImgList(d[5]);
+			ue.setContent(d[5]);
+		}).fail(function(jqXHR,textStatus) {
+			log(' request failed'+textStatus);
+		});
+	}
+},100)
+//ue.execCommand('insertHtml', value)
+//ue.getContent();
+var back=function(){location.href=com}
+var findSrc=function(t){var arr=t.split(' ');for(var n in arr) if(arr[n].indexOf('src')!=-1) return arr[n].split('"')[1]} //匹配src
+var findImgList=function(text){var pics = text.match(/<img.*?src="(.*?)"\/>/ig),lst=[];for(var p in pics) lst.push(findSrc(pics[p]));return lst} //匹配图片地址
+var ok=function(){
+	var t;
+	var title=trim(tit.val());
+	if(!title){
+		alert('请填写标题！');
+		return;
+	}
+	if(artid=='0') t = 'add';
+	else t='up';
+	var text = ue.getContent(),
+		pics = findImgList(text),
+		pic = '';
+	if (pics.length > 0){
+		pic=pics[0];
+		var picstr=pics.join(',');
+		$.ajax({
+			async:false,url: '/saveImg/',type: 'GET',dataType: 'html',data:{pics:picstr,picdef:str(arrDef(oldpics,pics))}
+		}).done(function(data){
+			if(data!='1'){alert('图片保存失败!');return}
+			pic=pic.replace('cache','upload');
+			oldpics=picstr.replaceAll('cache','upload').split(',');
+			text=text.replaceAll('cache','upload');
+		}).fail(function(jqXHR,textStatus){
+			log(' request failed'+textStatus)
+		});
+	}
+	else{
+		$.ajax({
+			async:false,url: '/saveImg/',type: 'GET',dataType: 'html',data:{picdef:str([oldpics,[]])}
+		}).done(function(data){
+			pic='';
+		}).fail(function(jqXHR,textStatus){
+			log(' request failed'+textStatus)
+		});
+	}
+	var pdate=pdt.val();
+	if(pdate.length<1) pdate=getStrTime();
+	var arg={name:title,pdate:pdate,rank:rnk.val(),abs:abs.val(),text:text,pic:pic}
+	if (tbnm=='hospital'){arg.cid=cty.val();arg.ftime=ftm.val()}
+	log(arg);
+	$.ajax({
+		url: '/upnews/',type: 'POST',dataType: 'html',data:{arg:str(arg),t:t,tbnm:tbnm,did:artid}	
+	}).done(function(data){
+		if(data=='1') back();else log(data);
+	}).fail(function(jqXHR,textStatus) {
+		log(' request failed'+textStatus)
+	});
+}
+
+</script>
+</html>

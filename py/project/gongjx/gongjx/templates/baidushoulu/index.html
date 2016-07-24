@@ -1,0 +1,167 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>百度收录查询_360收录查询_搜狗收录查询_搜搜收录查询_收录批量查询工具_在线工具箱</title>
+<meta name="keywords" content="百度收录查询,360收录查询,搜狗收录查询,搜搜收录查询,收录查询,收录批量查询,收录批量查询工具" />
+<meta name="description" content="一款提供给用户使用的收录批量查询工具" />
+<link rel="shortcut icon" href="/imgs/favicon1.ico" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/forceplastics.css" />
+<script src="/js/jquery/jquery-1.7.2.js"></script>
+<script>
+$(function(){
+	$("#bodyhtml").click(function(){
+		var baidusl=$("#baidusl").val();
+		baidusl=$.trim(baidusl);
+		if (baidusl.length>5){
+			//alert(baidusl)				
+			arrlist=baidusl.split('http://')
+			//alert(arrlist)
+			
+			arrlist2=new Array()
+			//urlhtml=''
+			$.each(arrlist, function(i,val){
+				if (i>0){
+					valurl2=$.trim(val);
+					//alert(valurl2)
+					//urlhtml+=valurl2+'<br />'
+					arrlist2.push(valurl2+'<br />')
+				}
+			}); 
+			//alert(urlhtml)
+			
+			//$("#fenxi").html(urlhtml);
+			
+			var lenarray=arrlist2.length;
+			//alert(lenarray)
+			
+			$("#tijiao").html('<font color="blue">分析中</font> &nbsp;<img src="/imgs/jindutiao.gif">');
+			
+			var num=0
+			var numall=0
+			$.each(arrlist2, function(i,val){
+				valurl=val;
+				//var fenxi=$("#fenxi").html();
+				//alert(fenxi)
+				//fenxi=fenxi.replace(valurl,'<img src="123/imgs/loading.gif">');
+				//alert(fenxi);
+				//$("#fenxi").html(fenxi);
+					
+				//alert(numall)
+				$.ajax({
+				   type: "GET",
+				   url: "/shouluquery{{shouludir.name}}.html",
+				   data: "baidus="+valurl+"&queryurl={{shouludir.queryurl}}",
+				   success:function(data){
+				   		//alert(data)
+						numall+=1				
+						$("#pro2").html('总数是:'+numall)
+				   		//$("#isok"+auto_id).html(data)
+				   		//alert(data);
+				   		if (data=='1'){
+				   			num+=1
+							$("#pro1").html('收录数是:'+num)
+				   			//var fenxi=$("#fenxi").html();
+							//fenxi=fenxi.replace('<img src="123/imgs/loading.gif">',' 已收录');
+							//$("#fenxi").html(fenxi);
+				   		}
+						if (lenarray==numall){
+							$("#tijiao").html('<font color="blue">分析完</font>');
+							//alert(lenarray)
+							//alert(numall)
+							var lvall=num*100/numall
+							$("#pro3").html('收录率是'+lvall+'%');
+							$("#num").val('0')
+							$("#numall").val('0')
+						}
+				   		
+				   },
+				   error:function(data){
+						//alert("错误!青重试.");
+						$('#tijiao').html('<font color="red">分析错误</font>');
+				   }
+				});
+					
+			});   
+			
+		}
+		else{
+		alert('哥们儿,不能为空!')
+		}
+		
+	})
+});
+function sfunc(){
+var skwd=$("#skwd").val();
+window.open('{{shouludir.url}}'+skwd)
+}
+</script>
+</head>
+<body>
+{%include 'head.html'%}
+
+  <div class="layout mod-spm">
+  	<div class="mod-ind">
+    	<div class="header">
+            <h1>
+            	<span><a href="" title=""><img src="/imgs/kongbai.jpg" width="1px" /></a></span>
+            	<a href="/">首页</a> > <a href="">批量收录查询</a>
+            </h1>
+        </div>
+        <!--end header-->
+    	<div class="header" style="padding:10px;">
+            	<a href="/shoulu/baidu/" {{shouludir.n1}}>百度收录查询</a>
+            	<a href="/shoulu/360/" {{shouludir.n2}}>360收录查询</a>
+            	<a href="/shoulu/sougou/" {{shouludir.n3}}>搜狗收录查询</a>
+            	<a href="/shoulu/soso/" {{shouludir.n4}}>搜搜收录查询</a>
+            	<img src="/imgs/kongbai.jpg" width="90px" height="30px">
+            	<img src="{{shouludir.imgurl}}" width="80px" height="30px"/><img src="/imgs/kongbai.jpg" width="150px" height="30px">
+            	<input type="text" id="skwd" style="width:200px;height:18px">
+        		<img src="{{shouludir.imgurl}}" width="80px" height="18px" onClick="sfunc()"/>
+        </div>
+        <!--end header-->
+        <div class="content" style="text-align:center;"><br />
+
+请把网址列表粘贴进去
+
+
+
+
+<div id="fenxi"><textarea id="baidusl" cols="102" rows="12">
+http://www.eastmoney.com
+http://www.weibo.com/
+http://www.sohu.com
+http://www.163.com
+http://www.qq.com
+http://www.hao123.com
+</textarea></div><br />
+<input type="button" value="提交" id="bodyhtml" style="width:60px;height:30px;"><br /><br />
+
+<div style="float:left;width:150px">&nbsp;</div>
+<div id="tijiao" style="float:left"></div>
+<div style="float:left;width:30px">&nbsp;</div>
+<div id="pro1" style="float:left"></div>
+<div style="float:left;width:30px">&nbsp;</div>
+<div id="pro2" style="float:left"></div>
+<div style="float:left;width:30px">&nbsp;</div>
+<div id="pro3" style="float:left"></div>
+
+<br />
+<br /><br /><br /><br />
+<input type="hidden" id="bd1">
+<input type="hidden" id="bd2">
+<input type="hidden" id="num" value="0">
+<input type="hidden" id="numall" value="0">
+
+
+
+
+
+
+{%include 'button.html'%}
+  </div>
+  <!--end layout mod-spm-->
+</body>
+</html>

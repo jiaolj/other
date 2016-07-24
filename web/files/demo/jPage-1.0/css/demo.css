@@ -1,0 +1,11 @@
+body,p,ul,h1{margin:0}
+input,textarea,select{font-size:100%;font-family:inherit}
+ul{list-style-type:none;padding-left:0}
+body{font-family:"Microsoft YaHei";color:#333;font-size:14px}
+a{text-decoration:none;color:#555;}
+a:hover{text-decoration:underline;color:#4A4AFF}
+h1{font-size:32px;line-height:80px}
+h1 span{color:#ccc;font-size:16px}
+.cnt{width:90%;margin:0 auto}
+.content{padding-left:10px}
+.content ul li{height:30px;line-height:30px;font-size:15px}

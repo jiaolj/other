@@ -1,0 +1,206 @@
+html{height:100%}
+body{
+height:100%;
+background:#fff;color:#333;font-size:14px;font-family:"Microsoft YaHei";overflow:auto;position:relative;min-height:720px;
+}
+.cover{
+position:absolute;
+width:100%;
+height:100%;
+z-index:7;
+background:#fff;
+}
+
+.main{
+position:absolute;
+text-align:center;
+top:10px;
+bottom:10px;
+width:100%;
+}
+.main>.mid{
+height:100%;
+width:98%;
+margin-left:1%;
+position:absolute;
+}
+.main>.mid>.up{
+position:absolute;
+width:100%;
+height:70%;
+}
+.main>.mid>.up>.flt{
+position:absolute;
+width:50%;
+height:100%;
+}
+.main>.mid>.up>.flt>ul{
+position:absolute;
+width:100%;
+height:100%;
+}
+.main>.mid>.up>.flt>ul>li{
+width:50%;
+height:50%;
+float:left;
+}
+.main>.mid>.up>.flt>ul>li>div{
+width:100%;
+height:100%;
+}
+.main>.mid>.up>.flt>ul>li>b{
+width:1px;
+height:1px;
+display:block;
+}
+.main>.mid>.up>.flt>ul>li>b>svg{
+position:relative;
+z-index:9;
+}
+.main>.mid>.up>.frt{
+position:absolute;
+width:50%;
+left:50%;
+height:100%;
+}
+.main>.mid>.up>.frt>svg{
+position:absolute;
+left:0;
+width:100%;
+height:100%;
+z-index:9;
+}
+.main>.mid>.up>.frt>div>.zz>div{
+background:#ccc;
+}
+.main>.mid>.up>.frt>.chart{
+position:absolute;
+width:100%;
+height:100%;
+}
+.main>.mid>.mid{
+position:absolute;
+top:68%;
+width:100%;
+height:50px;
+z-index:10;
+float:left;
+}
+.main>.mid>.mid>div{
+height:100%;
+}
+.main>.mid>.mid>.line{
+width:100%;
+height:1px;
+position:relative;
+background:#ccc;
+top:22px;
+z-index:1;
+font-size:12px;
+}
+.main>.mid>.mid>.flt{
+width:25%;
+position:relative;
+z-index:2;
+}
+.main>.mid>.mid>.flt>.up{
+text-align:right;
+padding-right:10px;
+}
+.main>.mid>.mid>.flt>.down{
+text-align:right;
+padding-right:10px;
+}
+.main>.mid>.mid>.mid,.main>.mid>.mid>.mid>.mid{
+	float:left;line-height:33px;
+}
+.main>.mid>.mid>.frt{
+width:25%;
+position:relative;
+z-index:2;
+}
+.main>.mid>.mid>.frt>.up{
+text-align:left;
+padding-left:8px;
+}
+.main>.mid>.mid>.frt>.down{
+text-align:left;
+padding-left:8px;
+}
+.main>.mid>.mid>.mid{
+width:50%;
+position:relative;
+z-index:2;
+}
+.main>.mid>.mid>.mid>.mid{
+border:1px solid #ccc;
+width:97%;
+height:66%;
+margin-top:0.2%;
+background:#f4f4f4;
+}
+.main>.mid>.mid>.mid>.flt,.main>.mid>.mid>.mid>.frt{
+float:left;
+width:1%;
+height:70%;
+margin-top:0.2%;
+background:#ccc;
+}
+.main>.mid>.down{
+position:absolute;
+top:75%;
+width:100%;
+height:25%;
+}
+.main>.mid>.down>ul{
+width:100%;
+height:100%;
+}
+.main>.mid>.down>ul>li{
+float:left;
+width:24%;
+height:100%;
+margin-left:0.5%;
+margin-right:0.5%;
+}
+.main>.mid>.down>ul>li>.tit{
+width:100%;
+height:14%;
+margin-bottom:1%;
+}
+.main>.mid>.down>ul>li>.data{
+width:100%;
+height:85%;
+overflow:hidden;
+}
+.main>.mid>.down>ul>li>.data>ul{
+width:100%;
+height:100%;
+position:relative;
+top:0;
+}
+.main>.mid>.down>ul>li>.data>ul>li{
+height:10%;
+}
+
+/*水滴样式*/
+.drip{width:16px;height:19px;display:block; position:relative;}
+.drip>b:nth-child(1){height:0px; width:0px;  display:block; position:absolute; top:0px; border-radius:16px;box-shadow: #000 0px 0px 9px;}
+.drip>b:nth-child(2){height:0px; width:0px; display:block; position:absolute; bottom:0px; left:2px; border:5px transparent solid; border-width:8px 5px 0px 5px; }
+/*画线动画*/
+.lineani {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  -webkit-animation: dash 3s linear forwards;
+  animation: dash 3s linear forwards; /*forwards停在最终动画,infinite循环*/
+}
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

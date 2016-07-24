@@ -1,0 +1,23 @@
+<script>
+var log=function(d){console.log(d)}
+Function.prototype.addMethod=function(name, fn){
+	this.prototype[name]=fn;
+	return this;
+}
+var tank=function(life,point){
+	if (!(this instanceof tank)) return new tank(life,point);//把new关键词包装到安全模式中
+	this.life=life;
+	this.point=point;
+}
+tank.addMethod('move', function(){
+	log(this.life);
+	return this;
+}).addMethod('shut', function(){
+	log(this.point);
+	return this;
+})
+
+var tk = tank(5,[10,50]);
+tk.move().shut();
+
+</script>

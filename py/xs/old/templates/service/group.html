@@ -1,0 +1,24 @@
+{% extends 'about/index.html' %}
+{% block menu %}
+<div class="title ti1">服务介绍</div>
+<ul>
+	<li class="active"><a href="/service/group-1/">服务群体</a></li>
+		<li style="text-indent:4em;"><a href="/service/group-1/">1）孕育疾病人士</a></li>
+		<li style="text-indent:4em;"><a href="/service/group-2/">2）大龄生育人士</a></li>
+		<li style="text-indent:4em;"><a href="/service/group-3/">3）优生优育选择</a></li>
+		<li style="text-indent:4em;"><a href="/service/group-4/">4）男女胎数选择</a></li>
+		<li style="text-indent:4em;"><a href="/service/group-5/">5）同性组建家庭</a></li>
+		<li style="text-indent:4em;"><a href="/service/group-6/">6）第三方助孕育</a></li>
+		
+	<li style="text-indent:2.7em"><a href="/service/usa/">服务项目</a></li>
+		<li style="text-indent:4em;"><a href="/service/usa/">赴美试管医疗</a></li>
+		<li style="text-indent:4em;"><a href="/service/tha/">赴泰试管医疗</a></li>
+	<li><a href="/service/pcs/">服务流程</a></li>
+</ul>
+{% endblock %}
+{% block cnt %}
+<h3 class="tct">服务群体</h3>
+
+{{sgp|safe}}
+
+{% endblock %}

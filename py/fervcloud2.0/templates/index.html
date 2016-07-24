@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" type="text/css" />
+{% endblock %}
+{% block js %}<script src="{% static 'js/index.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="main">
+	<dl class="mainMenu" id="mainMenu">
+		<dt stay="0" class="active"></dt>
+		<dt stay="0"></dt>
+		<dt stay="0"></dt>
+		<dt stay="0"></dt>
+		<dt stay="0"></dt>
+		<dt stay="0"></dt>
+	</dl>
+	<ul class="movebox">
+		<li class="box p1">
+			<div class="boll">
+				<dl id="boll">
+					<dt class="active"><p stay="0"></p></dt>
+					<dt><p stay="0"></p></dt>
+					<dt><p stay="0"></p></dt>
+					<br class="cb"/>
+				</dl>
+			</div>
+			<div class="imgscroll">
+				<ul>
+					<li><img src="{%static 'img/pro/p1/1.png'%}" /></li>
+					<li><img src="{%static 'img/pro/p1/2.png'%}" /></li>
+					<li><img src="{%static 'img/pro/p1/3.png'%}" /><a class="jump3" href="/xhx/" target="_blank"></a></li>
+					<br class="cb"/>
+				</ul>
+			</div>
+		</li>
+		<li class="box p2">
+			<audio id="myaudio" src="{% static 'mp3/GoodLife.mp3' %}" controls="controls" loop="false" hidden="true"  ></audio>
+			<div class="backg">
+				<img class="p2b1" src="{%static 'img/pro/p2/bg.png'%}" />
+				<img class="p2b1-1" src="{%static 'img/pro/p2/bg2.png'%}" />
+				<!--<img class="cover-img" src="{%static 'img/pro/p2/yinyue/cover.png'%}" />-->
+				<div class="outbox">
+					<div class="mainback"><img src="{%static 'img/pro/p2/p2_hud.png'%}" /></div>
+					<dl id="move-p2">
+						<dt class="box1">
+							<div class="video">
+								<video src="{%static 'video/11.9~6.mp4'%}" type="video/mp4" autoplay="autoplay" loop="loop">
+								your browser does not support the video tag
+								</video>
+							</div>
+						</dt>
+						<dt class="box2">
+							<div class="screen">
+								<div class="slide">
+									<div class="d1"></div>
+									<div class="d2"></div>
+									<div class="d3"></div>
+									<div id="slide-1" class="d4">
+										<div class="bar"></div>
+										<b><img src="{%static 'img/pro/p2/daohang/bar.png'%}" /><span>2.2公里</span></b>
+									</div>
+									<div class="btnlogo">
+										<img src="{%static 'img/pro/p2/daohang/nav.png'%}" />
+									</div>
+								</div>
+								<div class="title">
+									<span class="p2-d p2-d-1">
+										<div class="up">500米直行</div>
+										<div class="down">500米移动测速照相</div>
+									</span>
+									<span class="p2-d p2-d-2">
+										<div class="up">500米右转</div>
+										<div class="down">500米移动测速照相</div>
+									</span>
+									<span class="p2-d p2-d-3">
+										<div class="up">&nbsp;靠右行驶</div>
+										<div class="down">500米移动测速照相</div>
+									</span>
+								</div>
+								<div class="arrow">
+									<img class="p2-d p2-d-1" src="{%static 'img/pro/p2/daohang/default_navi_action.png'%}" />
+									<img class="p2-d p2-d-2" src="{%static 'img/pro/p2/daohang/default_navi_action_2.png'%}" />
+									<img class="p2-d p2-d-3" src="{%static 'img/pro/p2/daohang/default_navi_action_4.png'%}" />
+								</div>
+								<div class="camero p2twinkle-1">
+									<img src="{%static 'img/pro/p2/daohang/p2_camera_ic.png'%}" />
+								</div>
+								<div class="monitor p2twinkle-2">
+									<img src="{%static 'img/pro/p2/daohang/p2_monitor_ic.png'%}" />
+								</div>
+								<div class="traffic p2twinkle-3">
+									<img src="{%static 'img/pro/p2/daohang/p2_traffic_ic.png'%}" />
+								</div>
+								<div class="box3-text1">
+									<img src="{%static 'img/pro/p2/daohang/place.png'%}" />学林街
+								</div>
+							</div>
+						</dt>
+						<dt class="box3">
+							<div class="screen">
+								<img class="box3-1" src="{%static 'img/pro/p2/xingneng/1.png'%}" />
+								<div class="box3-2">
+									<div class="pie_left1"></div>
+									<div class="pie_left1_amt">
+										<div class="pie_left"><div class="left"></div></div>
+									</div>
+									<div class="pie_left2"></div>
+									<div class="pie_left2_amt">
+										<div class="pie_left"><div class="left"></div></div>
+									</div>
+									<div class="pie_left3"></div>
+									<div class="pie_left3-1 pie_left3s"><b>D</b>
+										<div class="pie_left"><div class="left"></div></div>
+									</div>
+									<div class="pie_left3-2 pie_left3s"><b>P</b>
+										<div class="pie_left"><div class="left"></div></div>
+									</div>
+									<div class="pie_left3-3 pie_left3s">
+										<div class="pie_left"><div class="left"></div></div>
+									</div>
+								</div>
+								<div class="c2-p2">
+									<div class="d-1"></div>
+								</div>
+								<div class="box3-text">
+									<div class="text1"><b class="word">180</b><b class="tit">KM/H</b></div>
+									<div class="text2">P</div>
+									<div class="text3 btn1"><b class="tit">ATALL：</b><b class="word">3257KM</b></div>
+									<div class="text3 btn2"><b class="tit">TODAY：</b><b class="word">112KM</b></div>
+									<div class="text3 btn3"><b class="tit">TEMP：</b><b class="word">50℃</b></div>
+									<div class="text4"><b class="word"></b><b class="date"></b><b class="week"></b></div>
+								</div>
+							</div>
+						</dt>
+						<dt class="box4">
+							<div class="screen">
+								<img class="box4-1" src="{%static 'img/pro/p2/lukuang/p3_road.png'%}" />
+								<img class="box4-2" src="{%static 'img/pro/p2/lukuang/p3_recle.png'%}" />
+								<img class="box4-3" src="{%static 'img/pro/p2/lukuang/p3_recle1.png'%}" />
+								<img class="box4-4" src="{%static 'img/pro/p2/lukuang/p3_recle2.png'%}" />
+							</div>
+						</dt>
+						<dt class="box5">
+							<div class="screen">
+								<div class="text1 box-5">Good Life</div>
+								<div class="text2 box-5">onerepublic</div>
+								<div class="open" id="music">
+									<div class="stat1"></div>
+									<div class="stat2"></div>
+								</div>
+								<div class="time" id="box5-time"><span id="musicadd">00:01</span><b>04:13</b></div>
+								<div class="cdimg">
+									<div class="bg1"></div>
+									<div class="cover"></div><div class="cover-conn"></div>
+									<div class="cover2"></div><div class="cover2-conn"></div>
+									<img class="rotate" src="{%static 'img/pro/p2/yinyue/cd.jpg'%}" />
+								</div>
+							</div>
+						</dt>
+						<dt class="box6">
+							<div class="screen">
+								<img class="photo" src="{%static 'img/pro/p2/call/5.png'%}" />
+								<img class="phonenumb" src="{%static 'img/pro/p2/call/phonenumb.png'%}" />
+								<div class="asrstate answer"><a></a><img src="{%static 'img/pro/p2/call/answer.png'%}" /></div>
+								<div class="hangup"><a></a><img src="{%static 'img/pro/p2/call/hangup.png'%}" /></div>
+								<div class="timer"><b class="num">0:00</b><b class="unit">（计时器）</b></div>
+								<img class="asrstate hand" src="{%static 'img/pro/p2/call/hand.png'%}" />
+								<img class="asrstate drleft drleft-1" src="{%static 'img/pro/p2/call/1.1.png'%}" />
+								<img class="asrstate drleft drleft-2" src="{%static 'img/pro/p2/call/1.1.png'%}" />
+								<img class="asrstate drleft drleft-3" src="{%static 'img/pro/p2/call/1.1.png'%}" />
+								<img class="asrstate drleft drleft-4 active" src="{%static 'img/pro/p2/call/1.png'%}" />
+								<img class="asrstate dright dright-1 active" src="{%static 'img/pro/p2/call/2.png'%}" />
+								<img class="asrstate dright dright-2" src="{%static 'img/pro/p2/call/2.1.png'%}" />
+								<img class="asrstate dright dright-3" src="{%static 'img/pro/p2/call/2.1.png'%}" />
+								<img class="asrstate dright dright-4" src="{%static 'img/pro/p2/call/2.1.png'%}" />
+							</div>
+						</dt>
+						<br class="cb"/>
+					</dl>
+				</div>
+			</div>
+			<nav id="show">
+				<p class="active" stay="0">展示</p>
+				<p stay="0">导航</p>
+				<p stay="0">性能模式</p>
+				<p class="dsn" stay="0">路况</p>
+				<p stay="0">音乐</p>
+				<p stay="0">电话</p>
+				<br class="cb"/>
+			</nav>
+		</li>
+		<li class="box p3">
+			<div class="data">
+				<img src="{%static 'img/pro/p3/1.png'%}" />
+				<div class="txt">
+					<img  id="txt-3" src="{%static 'img/pro/p3/2.png'%}" />
+				</div>
+			</div>
+		</li>
+		<li class="box p4">
+			<div class="data">
+				<img src="{%static 'img/pro/p4/1.png'%}" />
+				<img class="text" src="{%static 'img/pro/p4/3.png'%}" />
+				<div class="txt">
+					<img id="txt-4" src="{%static 'img/pro/p4/2.png'%}" />
+				</div>
+			</div>
+		</li>
+		<li class="box p5">
+			<div class="data">
+				<img src="{%static 'img/pro/p5/1.png'%}" />
+				<div class="txt">
+					<img id="txt-5" src="{%static 'img/pro/p5/2.png'%}" />
+				</div>
+			</div>
+		</li>
+		<li class="box p6">
+			<div class="data">
+				<img src="{%static 'img/pro/p6/bg.png'%}" />
+				<img class="word" src="{%static 'img/pro/p6/word.png'%}" />
+				<div class="form">
+					<a class="close"><img src="{%static 'img/pro/p6/close.png'%}"/></a>
+					<dl class="flt">
+						<dt>姓名：<input class="text" id="f-name" type="text" maxlength="14" /></dt>
+						<dt>年龄：<input class="text" id="f-age" type="text" maxlength="14" /></dt>
+						<dt class="sex" id="f-sex">性别：男 <b class="active" d="1"></b> 女 <b d="2"></b></dt>
+						<dt class="who" id="f-tp">您是：普通车主 &nbsp;<b class="active" d="1"></b> <br /> 
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							汽车行业从业者 &nbsp;<b d="2"></b>
+						</dt>
+						<dt id="f-company">公司：<input class="text" type="text" maxlength="14" /></dt>
+						<dt id="f-job">职位：<input class="text" type="text" maxlength="14" /></dt>
+					</dl>
+					<dl class="frt" id="f-advice">
+						<dt class="tit">愿在哪方面提供建议指导和资源 ：</dt>
+						<dt><input class="text" type="text" maxlength="20" /></dt>
+						<dt><input class="text" type="text" maxlength="20" /></dt>
+						<dt><input class="text" type="text" maxlength="20" /></dt>
+						<dt><input class="text" type="text" maxlength="20" /></dt>
+						<dt><input class="text" type="text" maxlength="20" /></dt>
+					</dl>
+					<br class="cb"/>
+					<a class="submit">提交</a>
+				</div>
+				<div class="txt">
+					<div class="bg"></div>
+					<dl id="txt-6">
+						<dt class="tit">如果您是：</dt>
+						<dt class="end">普通车主，想成为我们的早期用户，且愿意对HUD产品的软件、硬件、功能、体验设计提出建议和反馈；</dt>
+						
+						<dt class="tit">又或者您是：</dt>
+						<dt>汽车零配件经销商、汽车电子研发、生产、销售，汽车论坛等行业从业者；</dt>
+						<dt>并且您愿意和我们一起见证产品的面世。</dt>
+						<dt class="end">那么欢迎您加入我们的“99大神”计划，在HUD产品的设计、开发、生产、营销、销售、商务合作等方面为我们提供建议、指导和资源。</dt>
+						
+						<dt class="tit">您负有义务和责任，同时也能够享受丰厚的回报。</dt>
+						<dt>您的义务：及时回复，对设计、开发、生产过程中出现的问题、需要建议的地方，提出自己的建议和看法，提供力所能及的相关资源。</dt>
+						<dt class="end">您的回报：炽云科技以后每一代、每一种产品，您都能终身免费的得到最早一批量产产品。在产品鸣谢的部分，您的名字会展示出来。</dt>
+						<dt>该计划共有99人，报名请点击“<a class="showform">99大神</a>”，我们会联系您。</dt>
+					</dl>
+				</div>
+				<div style="position:absolute;bottom:5px;width:100%;text-align:center;color:#666;line-height:30px;">
+					备案/许可证编号为：浙ICP备15042458号
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+{% endblock %}

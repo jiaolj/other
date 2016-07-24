@@ -1,0 +1,102 @@
+@import url("http://f.jiaolj.com/css/base.css");
+@font-face{font-family:yjsz;src:url('../font/yjsz.TTF')}
+body{min-height:700px;background:#1B1B2B}
+#title,#timeDiv{color:#96C1EC}
+#title{letter-spacing:0.02em;font-weight:900;font-family:'SimSun'}
+#menu>li{color:#ccc;font-size:16px}
+#menu>.active{box-sizing:border-box;color:#FE8C10;text-shadow: 0px 0px 10px #C1C0C5;font-size:19px}
+#setting{width:120px}
+#setting>.backg{width:100px;height:60px;background-image: linear-gradient(to top, rgba(150, 193, 236, 0), rgba(150, 193, 236, 0.05), rgba(150, 193, 236, 0.1), rgba(150, 193, 236, 0.15)); border-radius:5px;padding:10px 10px 30px 10px}
+#setting>.backg>ul{margin-bottom:8px}
+#setting>.backg>ul>li{line-height:20px;font-size:12px;box-sizing:border-box}
+#setting>.backg>ul>.one{border:2px solid #96C1EC;border-radius:10px 0 0 10px}
+#setting>.backg>ul>.two{border-right:2px solid #96C1EC;border-top:2px solid #96C1EC;border-bottom:2px solid #96C1EC;border-radius:0 10px 10px 0}
+#setting>.backg>ul>.active{background:#96C1EC;color:#000}
+#setting>.backg>.switch{width:50px;height:20px;border-radius:10px;border:2px solid #96C1EC;z-index:1}
+#setting>.backg>.switch>.one{width:20px;height:20px;border-radius:50%;background:#96C1EC;left:30px}
+#setting>.backg>.switch>.two{top:-20px;left:-10px}
+#setting>a{padding-left:16px;display:block;height:24px}
+#setting>a>img{width:24px;top:-2px}
+#setting>a>span{top:-10px}
+.c96c1ec{color:#96C1EC}
+.wf1{left:2.65%;font-size:18px}
+.wf2{left:28.65%;font-size:18px}
+.wf3{left:54.65%;font-size:18px}
+.chartmove2{left:4.4%}
+.chartmove3{left:30.4%}
+.chartmove4{left:56.4%}
+.dborder2{width:23.5%}
+.dborder3{width:23.5%}
+.dborder4{left:54%;width:43.4%}
+#chart1,#chart2,#chart3,#chart4,#chart5{z-index:1}
+.opacitys{background-image: linear-gradient(to bottom, rgba(150, 193, 236, 0), rgba(150, 193, 236, 0.05), rgba(150, 193, 236, 0.1), rgba(150, 193, 236, 0.15)); border-radius:20px}
+.opacitys1{-moz-opacity:0.05;-khtml-opacity: 0.05;opacity: 0.05;background-color:#f00;border-radius:10px}
+.chartborder{border:2px dashed #96C1EC;border-radius:20px;-moz-opacity:0.5;-khtml-opacity: 0.5;opacity: 0.5;top:-3%}
+.chartmove2,.chartmove3,.chartmove4{border-radius:20px}
+.lineto{
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  -webkit-animation: dashlineto 2.98s 1 linear; /*1换成infinite无限循环*/
+  -webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes dashlineto {
+  from {
+    stroke-dashoffset: 1600;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.lineto2{
+  stroke-dasharray: 2600;
+  stroke-dashoffset: 2600;
+  -webkit-animation: dashlineto2 2.98s 1 linear;
+  -webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes dashlineto2 {
+  from {
+    stroke-dashoffset: 2600;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+#news{min-width:220px}
+#news>ul>li{height:68px}
+#news>ul>li>.one{color:#ccc;border-bottom:1px solid #ccc;line-height:28px;height:28px;width:100%;text-overflow:ellipsis;white-space:nowrap;overflow : hidden}
+#news>ul>li>.two>.flt{color:#f90;width:110px;line-height:18px}
+#news>ul>li>.two>.frt{color:#96C1EC;width:110px;line-height:18px}
+#news>ul>li>.two>.frt>img{position:relative;top:4px}
+/*
+#news>ul>li>.two>.psa{
+border-radius:50%;
+width:12px;height:12px;
+background:#96C1EC;
+top:46px;
+}
+#news>ul>li>.two>.psa:before{
+content:'';
+border-radius:50%;
+width:6px;height:6px;
+background:#1B1B2B;
+position:absolute;
+top:3px;
+left:3px;
+}
+#news>ul>li>.two>.psa:after{
+content:'';
+border-top: 5px solid #96C1EC;
+border-left: 4px solid transparent;
+border-right: 4px solid transparent;
+position:absolute;
+top:10px;
+left:2px;
+}
+*/
+#timeline{left:39.5%}
+#timeline>.fyjsz{font-family:'yjsz';font-size:28px;color:#FE8C10;top:-42px}
+#timeline>li{border:1px solid #96C1EC;border-radius:50%;width:10px;height:10px}
+#timeline>.choice2{border:1px solid #96C1EC;background:#FE8C10;border-radius:50%;width:10px;height:10px;left:5%}
+#timeline>li>b:before{content:'| |';color:#eee;position:relative;top:-6px}
+#timeline>li>.active{display:inline-block;border-left: 8px solid #eee;border-top: 6px solid transparent;border-bottom: 6px solid transparent;position:relative;top:-4px}
+#timeline>li>.active:before{content:''}

@@ -1,0 +1,203 @@
+html,body {
+	font-family: 'Circular';
+	margin:0;
+	padding:0; 
+	height:100%; /* needed for container min-height */
+	background: url(/static/img/bg_tile_0.png) ;
+	font-family:arial,sans-serif;
+	font-size:small;
+	color:#666;
+}
+a{
+text-decoration:none;
+}
+table{
+display: table;
+border-collapse: separate;
+border-spacing: 2px;
+border-color: gray;
+font-size:13px;
+}
+table a{
+text-decoration:underline;
+}
+.cb{
+clear:both;
+}
+.topdiv{
+margin:0 auto;
+width:950px;
+height:127px;
+background:url(/static/img/logo.png) left top no-repeat;
+/*border:1px solid #ccc;*/
+}
+.top-top{
+width:100%;
+height:28px;
+}
+.top-top-right{
+width:106px;
+float:right;
+letter-spacing:-2px;
+}
+.top-middle{
+width:100%;
+height:32px;
+}
+.top-middle-left{
+width:480px;
+height:100%;
+float:left;
+margin-left:150px;
+color:rgb(16, 186, 193);
+font-family: "CircularBold","Circular";
+font-size: 24px;
+}
+.top-middle-left a{
+color:rgb(16, 186, 193);
+}
+.top-middle-right{
+width:320px;
+height:100%;
+float:left;
+}
+.top-bottom{
+width:950px;
+height:60px;
+line-height:90px;
+margin-left:100px;
+}
+.top-bottom a{
+font-size: 16px;
+color: #666;
+}
+.middiv{
+width:100%;
+height:493px;
+margin-bottom:100px;
+}
+.mid-mid{
+margin:0 auto;
+width:982px;
+height:100%;
+}
+.mid-mid-content{
+width:982px;
+height:475px;
+/*border:1px solid #ccc;*/
+padding-left:20px;
+overflow:hidden;
+position:relative;
+left:0;
+top:-70px;
+}
+.float-div{
+width:2946px;
+height:475px;
+position:relative;
+left:0;
+top:0;
+z-index:1;
+/*overflow:hidden;*/
+}
+.mid-cnt{
+width:982px;
+height:100%;
+float:left;
+/*border:1px solid #ccc;*/
+}
+.content-div{
+width:300px;
+height:145px;
+float:left;
+/*border:1px solid #ccc;*/
+margin:5px;
+cursor: url("/static/img/cursors/grab.png") 8 8,-moz-grab;
+}
+.mid-mid-button{
+width:100%;
+height:18px;
+position:relative;
+left:0;
+top:-70px;
+}
+.mid-botton{
+margin:0 auto;
+width:60px;
+height:100%;
+}
+.mid-mid-button a{
+display:block;
+width:18px;
+height:18px;
+background:url('/static/img/controls-sprite.png/') 0px -164px no-repeat;
+float:left;
+}
+.mid-botton>.current{
+background:url('/static/img/controls-sprite.png/') 0px -182px no-repeat;
+}
+.current-left{
+display:block;
+width:32px;
+height:32px;
+background:url('/static/img/controls-sprite.png/') 0px 0px no-repeat;
+/*background:url('/static/img/controls-sprite.png/') -30px 0px no-repeat;*/
+position:relative;
+left:-5px;
+top:205px;
+cursor:pointer;
+z-index:12;
+}
+.current-right{
+display:block;
+width:32px;
+height:32px;
+/*background:url('/static/img/controls-sprite.png/') -135px 0px no-repeat;*/
+background:url('/static/img/controls-sprite.png/') -165px 0px no-repeat;
+position:relative;
+left:940px;
+top:172px;
+cursor:pointer;
+z-index:12;
+}
+.img-uncheck{display:block;width:18px;height:18px;background:url('/static/img/controls-sprite.png/') 0px -164px no-repeat;}
+.img-check{display:block;width:18px;height:18px;background:url('/static/img/controls-sprite.png/') 0px -182px no-repeat;}
+.bottomdiv{
+width:100%;
+min-height:79px;
+position:fixed;
+bottom:0;
+z-index:9;
+}
+.btn-top{
+width:100%;
+height:50px;
+line-height:60px;
+background: url(/static/img/bgFooter.png) bottom repeat-x;
+text-align: center;
+}
+.btn-btn{
+width:100%;
+height:25px;
+font: bold 0.7em sans-serif;
+background-color: #DDD;
+margin: 0px;
+padding: 2px;
+cursor: pointer;
+line-height: 25px;
+background: url(/static/img/bg_tile_1.png);
+text-align: center;
+}
+.btn-btn-hide{
+width:100%;
+height:0px;
+background-image: url(/static/img/bg_sitemap.png);
+}
+.hide-top{
+width:100%;
+height:64px;
+}
+.hide-btn{
+width:100%;
+height:104px;
+}

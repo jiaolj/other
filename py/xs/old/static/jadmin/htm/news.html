@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link  type="text/css" href="../css/b.css" rel="stylesheet" />
+<style>
+body{min-width:1200px;}
+.mytb{margin:0 auto;border-collapse:collapse;font-size:14px;max-width:1600px}
+.mytb,.mytb td,.mytb th{border:1px solid #d5dde8}
+.mytb th{background:#edf6ff;font-size:15px;text-align:left;height:32px}
+.mytb tr td{height:60px}
+.cl1{color:#63c091}.cl2{color:#5692da}.cl3{color:#dc6b43}.cl9{color:#b6bac6}
+.mytb tr .name{width:10%;min-width:100px}
+.mytb tr .abs{width:15%;min-width:180px}
+#addh{margin-left:10px}
+#hiddiv{width:86%;left:40px;top:60px;background:#fff;padding:2%}
+#hiddiv ul{border-top:1px solid #d5dde8;border-left:1px solid #d5dde8;width:120px;background:#edf6ff}
+#hiddiv ul li{border-right:1px solid #d5dde8;line-height:40px;width:120px;}
+#tab2{border:solid #d5dde8; border-width:1px 0px 0px 1px;width:96%;}
+#tab2 tr td{line-height:40px;border:solid #d5dde8; border-width:0px 1px 1px 0px;}
+#tab2 tr .one{width:120px}
+#tab2 tr .one input{height:28px;width:180px;outline:none;}
+#tab2 tr .two{width:470px;text-align:left;text-indent:6px;}
+#tab2 tr .two input{height:20px;width:200px;outline:none}
+#tab2 tr .two select{height:28px;width:204px;outline:none}
+#tab2 tr .two textarea{width:90%;margin-top:8px;outline:none}
+#tab2 tr .two .short{height:80px}
+#tab2 tr .two .long{height:150px}
+#tab2 tr .two iframe{height:40px;width:500px;border:0;position:relative;top:8px;}
+#tab2 tr .two img{width:80px;height:60px;position:relative;top:8px;margin-right:10px;}
+#tab1 tr img{width:80px;height:60px;}
+.tclose{position:absolute;cursor:pointer;display:block;right:5px;top:5px;width:13px;height:13px;background:url(../img/tool.gif) -9999px -9999px no-repeat;background-position: 0 -80px}
+</style>
+</head>
+<body>
+<div class="h5p fs0"></div>
+<div class="tcenter th30 fs16p">试管新闻</div>
+<div class="pdl35p h30p lh30p">
+	<input id="addh" type="button" value="添加新闻"/>
+</div>
+<div class="h5p fs0"></div>
+<table id="tab1" class="mytb" cellspacing="0" cellpadding="5"></table>
+<div class="pagelist"></div>
+<script src="../js/b.js"></script>
+<script src="/static/js/My97DatePicker/WdatePicker.js"></script> 
+<script>
+var getsize=function(){
+var clw=parseInt(document.body.clientWidth);
+var widths=(clw*0.98)+'px';
+$('#tab1').css('width',widths);
+}
+getsize();
+$(window).resize(function(){getsize()});
+
+var tbnm='news';
+var cntClick=function(){
+	$('#tab1 tr td a').click(function(){
+		var txt=$(this).text();
+		var li=$(this).parent().parent();
+		var did=li.attr('did');
+		switch(txt){
+			case '删除':
+				if(confirm("确认删除吗?")){
+					var arg={t:'del',did:did,tbnm:tbnm};
+					updatelist(arg,function(){alert('删除成功!')});
+				}
+				break;
+			case '修改':
+				location.href='edit.html?id='+did+'&com='+tbnm+'.html';
+				break;
+		}
+	})
+}
+var epage=10;
+var npage=1;
+var getJPage=function(total){
+	//调用jPage的接口，支持各种jquery选择器
+	$('.pagelist').JPage({
+		allPage:(parseInt((total-1)/epage)+1),
+		numList:7,
+		page:npage,
+		isJump:true,//是否开启<跳转到第几页>的功能
+		getPageData:function(page){
+			npage=page;
+			getlist();
+		}
+	});
+}
+var getlist=function(){
+	$.ajax({
+		url: '/getnews/',
+		type: 'GET',
+		data:{tbnm:tbnm,f:(npage-1)*epage,l:epage},
+		dataType: 'json'
+	}).done(function(data){
+		var d=data.list;
+		var c=data.count;
+		if (c>epage) getJPage(c);
+		else $('.pagelist').empty();
+		var htm='<tr ><th class="cl1">ID</th><th class="name cl2">标题</th><th class="cl3">图片</th><th class="cl1">发布时间</th><th class="cl2">权重</th><th class="cl3">摘要</th><th class="cl9">操作</th></tr>';
+		for(var i in d) htm+='<tr did="'+d[i].id+'"><td>'+d[i].id+'</td><td class="name">'+subkwd(d[i].name,30)+'</td><td><img src="'+d[i].pic+'" /></td><td>'+d[i].pdate.substr(0,10)+'</td><td>'+d[i].rank+'</td><td class="abs">'+subkwd(d[i].abs,36)+'</td><td><a>修改</a> <a>删除</a></td></tr>';
+		$('#tab1').html(htm);
+		cntClick();
+	}).fail(function(jqXHR,textStatus){
+		log('request failed'+textStatus);
+	});
+}
+getlist();
+$('#hiddiv>.tclose').click(function(){$(this).parent().slideUp(300)});
+$('#addh').click(function(){
+	location.href='edit.html?id=0&com='+tbnm+'.html';
+})
+
+var updatelist=function(arg,suc){
+	$.ajax({
+		url: '/upnews/',
+		type: 'GET',
+		data:arg,
+		dataType: 'json'
+	}).done(function(data) {
+		if(data=='1'){
+			suc();
+			getlist();
+		}
+	}).fail(function(jqXHR,textStatus) {
+		log(' request failed'+textStatus);
+	});
+}
+</script>
+</body>
+</html>

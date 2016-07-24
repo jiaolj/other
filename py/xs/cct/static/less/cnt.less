@@ -1,0 +1,40 @@
+@import 'pub.less';
+.cnt-menu {
+	.flt;.w(200px);
+	.tit {
+		.lh(30px);
+		.mg(6px);
+		.c(@mcor);
+		.br(3px);
+		.bgimg(right,150,193,236,0.1,0.1);
+		.ti;
+	}
+	dl {
+		dt {
+			.ti(44px);.psr;
+			&.active {
+				a {
+					.c(@mcor);.fs(1.1em);
+					&:before {
+						content: '';.dsib;.psa;.bol(10px);.l(28px);.t(5px);.bg(@mcor);
+					}
+				}
+			}
+		}
+	}
+}
+.cnt-text {
+	.frt;.w(780px);
+	h3 {
+		.tct;.lh(70px);
+	}
+	p {
+		.lh(26px);.fs(1.2em);.ti(1.5em);
+		b {.c(@mcor)}
+	}
+	.tbw;
+}
+.pagelist{float:right;margin-bottom:40px}
+.pagelist>li{ float:left; margin-left:10px; margin-right:10px; color:#999;line-height:30px}
+.pagelist>li>a{color:#666}
+.pagelist>.active>a{color:#333}

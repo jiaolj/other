@@ -1,0 +1,29 @@
+<script>
+var log=function(d){console.log(d)}
+var tank=function(){
+	this.life=5;
+	this.point=[10,50];
+}
+/*tank.prototype.move=function(){
+	log(this.life);
+	return this;
+}
+tank.prototype.shut=function(){
+	log(this.point);
+	return this;
+}*/
+tank.prototype = {
+	move : function(){
+		log(this.life);
+		return this;
+	},
+	shut : function(){
+		log(this.point);
+		return this;
+	}
+}
+
+var tk=new tank();
+tk.move().shut();
+
+</script>

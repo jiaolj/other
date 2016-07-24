@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block css %}
+<link rel="stylesheet" href="/static/css/cnt.css" type="text/css" />
+{% endblock %}
+{% block js %}
+<script src="/static/js/cnt.js"></script>
+{% endblock %}
+{% block content %}
+<div class="cnt-menu">
+{% block menu %}
+{% endblock %}
+</div>
+<div class="cnt-text">
+{% block cnt %}
+{% endblock %}
+</div>
+<br class="cb"/>
+{%if pobj.page_count > 1%}
+<ul class="pagelist">
+	{%ifequal page 1%}<li>首页</li><li>上一页</li>{%else%}<li><a href="/{{tbnm}}/1.htm">首页</a></li><li><a href="/{{tbnm}}/{{pobj.prvpage}}.htm">上一页</a></li>{%endifequal%}
+	{%for pg in pobj.page_range%}<li{%if pg.nowpage%} class="active"{%endif%}><a href="/{{tbnm}}/{{pg.number}}.htm">{{pg.number}}</a></li>{%endfor%}
+	{%ifequal page pobj.page_count%}<li>下一页</li><li>尾页</li>{%else%}<li><a href="/{{tbnm}}/{{pobj.nextpage}}.htm">下一页</a></li><li><a href="/{{tbnm}}/{{pobj.page_count}}.htm">尾页</a></li>{%endifequal%}
+	<br class="cb"/>
+<ul>
+{%endif%}
+<br class="cb"/>
+{% endblock %}

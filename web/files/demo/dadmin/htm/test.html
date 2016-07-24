@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="always" name="referrer">
+<meta name="theme-color" content="#2932e1">
+<title>source</title>
+<link  type="text/css" href="../css/b.css" rel="stylesheet" />
+<style>
+body{width:92%;max-width:1200px;min-width:800px;margin:0 auto}
+.mytb{width: 100%;margin:0 auto;border-collapse:collapse;font-size:12pt}
+.mytb,.mytb td,.mytb th{border:1px solid #d5dde8}
+.mytb th{background:#edf6ff;font-size:14pt}
+.mytb tr td{height:26px;line-height:26px;text-align:center;overflow:hidden;white-space:normal;}
+.mytb tr .one{color:#5692da}
+.mytb tr .two{color:#b6bac6}
+.mytb tr .three{color:#dc6b43}
+.mytb tr .four{color:#63c091}
+.mytb tr .five{}
+</style>
+</head>
+<body>
+<div class="tcenter lh30p fs16p">布局</div>
+<div class="h20p"></div>
+<table class="mytb" cellspacing=0 cellpadding=5></table>
+<div class="pagelist pdt20p pdl20p"></div>
+<!--[if IE]> <script src="http://f.jiaolj.com/js/b1.js"></script> <![endif]-->
+<!--[if !IE]><!--><script src="http://f.jiaolj.com/js/b2.js"></script><!--<![endif]-->
+<script src="http://f.jiaolj.com/demo/jPage/js/jquery.jPage.min.js"></script>
+<script>
+(function(){
+	var MVP = MVP || {};
+	MVP.model = (function(){
+		var _resize = function(){
+				_clw = parseInt(document.documentElement.clientWidth);
+				$('.mytb').css('max-width',(_clw*0.8)+'px');
+			};
+		return {
+			bind : function(){
+				$(window).resize(function(e){
+					_resize();
+				});
+				return this;
+			},
+			getHtml : function(dd){
+				var htm = '<tr class="one"><th class="one">类别</th><th class="two">时间</th><th class="three">地域</th><th class="four">报表类型</th><th class="five">收藏</th></tr>',
+					epage = MVP.contrl.getEpage(),
+					page = MVP.contrl.getPage();
+				for(var i=0;i<epage;i++) htm+='<tr><td class="one">报表名称报表名称报表名称报表名称报表名称报表名称'+(i+1+(page-1)*epage)+'</td><td class="two">时间</td><td class="three">地域</td><td class="four">报表类型</td><td class="five">收藏</td></tr>';
+				$('.mytb').html(htm);
+			},
+			getResize : function(){
+				_resize();
+				MVP.view.query();
+				return this;
+			},
+		}
+	})();
+	MVP.contrl = (function(){
+		var _npage = 1;
+		return {
+			getEpage : function(){
+				return parseInt((document.body.clientHeight-130)/37);
+			},
+			setPage : function(d){
+				_npage = d;
+				return this;
+			},
+			getPage : function(){
+				return _npage;
+			},
+			getJPage : function(allPage){
+				//调用jPage的接口，支持各种jquery选择器
+				$('.pagelist').JPage({
+					allPage:allPage,
+					numList:7,
+					page:1,
+					isJump:true,//是否开启<跳转到第几页>的功能
+					getPageData:function(page){
+						MVP.contrl.setPage(page);
+						MVP.model.getHtml();
+					}
+				});
+			}
+		}
+	})();
+	MVP.view = (function(){
+		return {
+			ajax : function(){
+				var epage = MVP.contrl.getEpage(),
+					count = 99,
+					allPage=parseInt((count-1)/epage)+1;
+					if (count>epage) MVP.contrl.getJPage(allPage);
+				MVP.model.getHtml();
+			}, 
+			query : function(){
+				this.ajax();
+			}
+		}
+	})();
+	MVP.init = function(){
+		this.model.getResize().bind();
+	}
+	window.MVP = MVP;
+})();
+MVP.init();
+</script>
+</body>
+</html>

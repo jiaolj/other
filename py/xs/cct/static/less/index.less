@@ -1,0 +1,79 @@
+@import 'pub.less';
+
+.scroll {
+	.h(390px);.mgt(6px);.psr;
+	dl{
+		.h;.psr;
+		dt {
+			.h;.psa;.bs;
+			img {
+				.t;
+			}
+			p {
+				.psa;.r(3%);.t(2%);.br(2px);.fs(1.6em);
+			}
+		}
+	}
+	.boll {
+		.psa;.b;.h(30px);.bg(rgba(105,105,105,0.3));.w;
+		dl {
+			.mg(0 auto);.w(120px);
+			dt {
+				.bol(10px);.mgt(10px);.mgr(6px);.flt;.psr;.bg;
+				&.active {
+					.bg(@mcor);
+				}
+			}
+		}
+	}
+}
+.list {
+	.mgt(8px);.mgb(2px);
+	.tit {
+		.lh(32px);.fs(1.1em);.bdb(#e9e9e9);
+		a {
+			.c(darken(@mcor,10%));
+			&.more {
+				.frt;
+			}
+		}
+	}
+	&.half {
+		.w(49%);
+		&.flt {
+			.flt;
+		}
+		&.frt {
+			.frt;
+		}
+	}
+	dl {
+		dt {
+			.lh(26px);.c(#666);
+			p {
+				.frt;
+			}
+		}
+	}
+	&.hpt {
+		dl {
+			dt {
+				.mg(1%);.w(14.6%);.flt;.lh(20px);
+				img {
+					.w(146px);.h(100px);
+				}
+				.title {
+					.c(darken(@mcor,10%));.dsb;
+				}
+				.text {
+					.c(#999);
+				}
+			}
+		}
+		&.dct {
+			img {
+				.h(144px);
+			}
+		}
+	}
+}

@@ -1,0 +1,1 @@
+python E:\code\my\py\project\gameplatform\manage.py runserver 10.13.91.222:888

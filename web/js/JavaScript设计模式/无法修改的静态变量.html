@@ -1,0 +1,18 @@
+<script>
+var Conf = function(){	//定义命名空间，就是更好的管理代码
+	//私有变量
+	var conf = {
+		COUNT : 5
+	}
+	
+	return {
+		get : function(name){
+			return conf[name] ? conf[name] : null
+		}
+	}
+}() //这个括号放入作用就是：创建完这个函数立即执行一遍
+
+var s = Conf.get('COUNT');
+console.log(s);
+
+</script>

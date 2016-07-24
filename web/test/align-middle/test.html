@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> 多行文字实现垂直居中 </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+body { font-size:12px;font-family:tahoma;}
+#wrap {
+display:table;
+text-align:center;  /*不加这个仅仅是垂直居中*/
+width:760px;
+height:400px;
+_position:relative;
+border:1px solid #ccc;
+overflow:hidden;
+}
+#subwrap {
+vertical-align:middle;
+display:table-cell;
+_position:absolute;
+_top:50%;
+}
+#content { 
+_position:relative;
+_top:-50%;
+}
+
+.table{
+width:760px;
+height:400px;
+border:1px solid #ccc;
+text-align:center; /*不加这个仅仅是垂直居中*/
+}
+
+</style>
+</head>
+<body>
+<div id="wrap">
+	<div id="subwrap">
+		<div id="content">
+			居中
+		</div>
+	</div>
+</div>
+
+<table class="table">
+	<tr><td>居中</td></tr>
+</table>
+
+</body>
+</html>

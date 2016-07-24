@@ -1,0 +1,34 @@
+<script>
+var log=function(d){console.log(d)}
+var tank=function(){
+	this.life=5;
+}
+tank.prototype.shut=function(){
+	log(this.life);
+	return this;
+}
+
+var plane=function(){
+	this.point=[10,50];
+}
+plane.prototype.fly=function(){
+	log(this.point);
+	return this;
+}
+
+var enemy = function(name){
+	switch(name){
+		case 'tank':
+			return new tank();
+			break;
+		case 'plane':
+			return new plane();
+			break;
+	}
+}
+
+var tk = enemy('tank')
+tk.shut();
+
+//简单工厂模式，用户只需要知道找敌军工厂取出想要的种类即可，不需要再自己去找到对应种类的加工厂去取那个兵种。
+</script>

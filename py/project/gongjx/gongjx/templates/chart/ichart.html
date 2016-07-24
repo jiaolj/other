@@ -1,0 +1,64 @@
+<script src="/js/jquery/jquery-1.4.3.js"></script>
+<script src="/chart/flash.js"></script>
+<script>
+{%ifequal tp "1"%}
+jQuery(function($){
+    $('#chartflash').flash({ 
+       swf        : '/chart/beechart-line.swf',
+       width      : {{width}},
+       height     : {{height}}, 
+       flashvars  : {
+			w:{{width2}},
+			h:{{height2}},
+			dataUrl : '/ichart/ichartxml.html?listall={{listall}}',
+			cssUrl : '/css/flash/chart.css'
+		}
+    });
+});
+{%endifequal%}
+{%ifequal tp "2"%}
+jQuery(function($){
+    $('#chartflash').flash({ 
+       swf        : '/chart/beechart-line.swf',
+       width      : {{width}},
+       height     : {{height}}, 
+       flashvars  : {
+			w:{{width2}},
+			h:{{height2}},
+			dataUrl : '/ichart/ichartxml.html?listall={{listall}}',
+			cssUrl : '/css/flash/chart1.css'
+		}
+    });
+});
+{%endifequal%}
+{%ifequal tp "3"%}
+jQuery(function($){
+    $('#chartflash').flash({ 
+       swf        : '/chart/beechart-bar.swf',
+       width      : {{width}},
+       height     : {{height}}, 
+       flashvars  : {
+			w:{{width2}},
+			h:{{height2}},
+			dataUrl : '/ichart/ichartxml.html?listall={{listall}}',
+		}
+    });
+});
+{%endifequal%}
+{%ifequal tp "4"%}
+jQuery(function($){
+    $('#chartflash').flash({ 
+       swf        : '/chart/beechart-pie.swf',
+       width      : {{width}},
+       height     : {{height}}, 
+       flashvars  : {
+			w:{{width2}},
+			h:{{height2}},
+			dataUrl : '/ichart/ichartxml.html?listall={{listall}}',
+		}
+    });
+});
+{%endifequal%}
+
+</script>
+<div style="width:{{width}}px;height:{{height}}px;text-align:center"><span style="font-weight:bold">{{name}}</span><div id="chartflash"></div></div>

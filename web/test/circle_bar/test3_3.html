@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<title>圆环进度条</title>
+<style>
+.circle {
+	top:300px;left:500px;
+    position: absolute;
+}
+
+.pie_left1 {
+    width: 360px; 
+    height: 360px;
+	border:10px solid #cbcbcb;
+    border-radius: 50%;
+    position: absolute;
+	clip:rect(0,180px,180px,0);
+	transform: rotate(45deg);
+}
+.pie_left2 {
+    width: 360px; 
+    height: 360px;
+	border:10px solid #cbcbcb;
+    border-radius: 50%;
+    position: absolute;
+	clip:rect(0,180px,180px,0);
+	transform: rotate(-40deg);
+}
+.pie_left3 {
+    width: 360px; 
+    height: 360px;
+	border:10px solid #cbcbcb;
+    border-radius: 50%;
+    position: absolute;
+	clip:rect(0,180px,180px,0);
+	transform: rotate(130deg);
+}
+.pie_left3-1 {
+    width: 360px;
+    height: 360px;
+	top:26px;
+	left:14px;
+    border-radius: 50%;
+    position: absolute;
+	transform: rotate(74deg);
+}
+.pie_left3-1 .pie_left {
+    width: 330px; 
+    height: 330px;
+    position: absolute;
+    top: -10px;left: -10px;
+}
+.pie_left3-1 .left {
+    width:310px; 
+    height:310px;
+	border:10px solid #cbcbcb;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.pie_left3-1 .left {
+	transform: rotate(147deg);
+}
+.pie_left3-1 .pie_left,.pie_left3-1 .left {
+    clip:rect(0,165px,auto,0);
+}
+
+.pie_left3-3 {
+    width: 360px;
+    height: 360px;
+	top:24px;
+	left:-1px;
+    border-radius: 50%;
+    position: absolute;
+	transform: rotate(130deg);
+}
+.pie_left3-3 .pie_left {
+    width: 330px; 
+    height: 330px;
+    position: absolute;
+    top: -10px;left: -10px;
+}
+.pie_left3-3 .left {
+    width:310px; 
+    height:310px;
+	border:10px solid #cbcbcb;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.pie_left3-3 .left {
+	transform: rotate(147deg);
+}
+.pie_left3-3 .pie_left,.pie_left3-3 .left {
+    clip:rect(0,165px,auto,0);
+}
+
+.pie_left3-2 {
+    width: 360px;
+    height: 360px;
+	top:30px;
+	left:7px;
+    border-radius: 50%;
+    position: absolute;
+	transform: rotate(101deg);
+}
+.pie_left3-2 .pie_left {
+    width: 330px; 
+    height: 330px;
+    position: absolute;
+    top: -10px;left: -10px;
+}
+.pie_left3-2 .left {
+    width:310px; 
+    height:310px;
+	border:10px solid #ff0000;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.pie_left3-2 .left {
+	transform: rotate(147deg);
+}
+.pie_left3-2 .pie_left,.pie_left3-2 .left {
+    clip:rect(0,165px,auto,0);
+}
+</style>
+</head>
+<body>
+<div class="circle">
+    <div class="pie_left1"></div>
+	<div class="pie_left2"></div>
+	<div class="pie_left3"></div>
+	<div class="pie_left3-1">
+		<div class="pie_left"><div class="left"></div></div>
+	</div>
+	<div class="pie_left3-2">
+		<div class="pie_left"><div class="left"></div></div>
+	</div>
+	<div class="pie_left3-3">
+		<div class="pie_left"><div class="left"></div></div>
+	</div>
+</div>
+<script src="http://f.jiaolj.com/js/b2.js"></script>
+<script>
+/*
+var numb=360,
+	start = setInterval(function(){
+		numb--;
+		if (numb<90&&numb>0){
+			clearInterval(start);
+		}else if (numb<=180&&numb>0){
+			$('.pie_right .right').css('transform', "rotate(" + numb + "deg)");
+			$('.pie_left .left').css('transform', "rotate(0deg)");
+		}else if(numb<=360&&numb>0) {
+			$('.pie_right .right').css('transform', "rotate(180deg)");
+			$('.pie_left .left').css('transform', "rotate(" + (numb - 180) + "deg)");
+		}else{
+			clearInterval(start);
+			//numb=0;
+			//$('.pie_right .right').css('transform', "rotate(0deg)");
+			//$('.pie_left .left').css('transform', "rotate(0deg)");
+		}
+		$('.mask span').text(parseInt(numb/3.6));
+	},5)
+*/
+</script>
+</body>
+</html>

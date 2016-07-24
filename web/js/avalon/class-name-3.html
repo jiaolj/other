@@ -1,0 +1,61 @@
+<!--
+新风格的格式为ms-class=”class:expr”。其中ms-class也可以带第三个参数 （因为属性名不能重要，因此需要加一点“杂质”骗过浏览器），但它只能是数值，根据它们的大小决定执行顺序 （也见第三节的扫描机制部分），如ms-class-1=”aaa”,ms-class-2=”bbb”。 新风格的属性值由冒号拆分两部分，第一部分是类名，类名中可以使用插值表达式（如ms-class=”width{{w}}: isOk”）， 第二部分是可选，不写（不写时冒号也不用写了）就默认是添加操作， 写时就根据其计算结果决定是添加还是移除（如 者ms-class=”red:1+1”）。简言之，新风格的属性值 分为类名部分与表达式部分
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ms-class</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="avalon.js"></script>
+    <style>
+        .ms-class div {
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }
+         
+        .active {
+            background: black;
+            color: white;
+        }
+         
+        .bgRed {
+            background: palegoldenrod;
+        }
+         
+        .hover {
+            background: red;
+            color: white;
+        }
+    </style>
+    <script type="text/javascript">
+        var model = avalon.define({
+            $id: "test",
+            w: 500,
+            h: 200,
+            bottom: true,
+            num: "00",
+            className: "点我",
+            changeClassName: function() {
+                model.num = (100 * Math.random()).toFixed(0);
+                model.className = this.className
+            }
+        })
+    </script>
+</head>
+<body ms-controller="test" class="ms-class">
+    <div ms-active="active">测试:active</div>
+    <div ms-hover="hover">测试:hover</div>
+    <div ms-class="bgRed width{{w}} height{{h}}" ms-css-width="h">
+        类名通过插值表达式生成
+        <br/> {{w}} * {{h}}
+        <br/>
+        <input data-duplex-event="change" ms-duplex="h">
+    </div>
+    <p>
+        <button type="button" ms-class="test{{num}}" ms-click="changeClassName">click me </button>
+    </p>
+</body>
+ 
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Monitor</title>
+<meta charset="utf-8">
+<style>
+ul{
+list-style:none;
+}
+.open-tree{
+width:13px;
+height:13px;
+background:url('/static/monitor/img/blank.gif');
+position:relative;
+top:2px;
+left:-5px;
+cursor:pointer;
+}
+.close-tree{
+width:13px;
+height:13px;
+background:url('/static/monitor/img/blank.gif');
+position:relative;
+top:2px;
+left:-5px;
+cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div  id="treelist"></div>
+
+<script src="jquery.min.js"></script>
+<script>
+var treeId='treelist';
+listData=[{"submenu": [{"submenu": [], "id": 4, "isopen": false, "name": "\u95ee\u9898\u9152"}, {"submenu": [], "id": 5, "isopen": false, "name": "\u95ee\u9898\u7cae"}, {"submenu": [], "id": 6, "isopen": false, "name": "\u8f6c\u57fa\u56e0\u5927\u7c73"}, {"submenu": [], "id": 7, "isopen": false, "name": "\u5047\u52a3\u8461\u8404\u9152"}, {"submenu": [], "id": 8, "isopen": false, "name": "\u5047\u9e21\u86cb"}, {"submenu": [], "id": 9, "isopen": false, "name": "\u519c\u836f\u8d85\u6807"}, {"submenu": [], "id": 10, "isopen": false, "name": "\u5730\u6c9f\u6cb9"}, {"submenu": [], "id": 11, "isopen": false, "name": "\u5a74\u513f\u95ee\u9898\u98df\u54c1"}, {"submenu": [], "id": 12, "isopen": false, "name": "\u6bd2\u679c\u852c"}, {"submenu": [], "id": 13, "isopen": false, "name": "\u6bd2\u8c46\u82bd"}, {"submenu": [], "id": 14, "isopen": false, "name": "\u6bd2\u8fa3\u6912"}, {"submenu": [], "id": 15, "isopen": false, "name": "\u6dfb\u52a0\u5242\u8fc7\u91cf"}, {"submenu": [], "id": 16, "isopen": false, "name": "\u95ee\u9898\u6cb9\u76d0\u526f\u98df"}, {"submenu": [], "id": 17, "isopen": false, "name": "\u95ee\u9898\u725b\u5976"}, {"submenu": [], "id": 18, "isopen": false, "name": "\u95ee\u9898\u8089\u54c1"}, {"submenu": [], "id": 19, "isopen": false, "name": "\u95ee\u9898\u86cb"}, {"submenu": [], "id": 20, "isopen": false, "name": "\u95ee\u9898\u98df\u54c1"}, {"submenu": [], "id": 21, "isopen": false, "name": "\u9ec4\u91d1\u5927\u7c73"}], "id": 1, "isopen": true, "name": "\u98df\u54c1\u5b89\u5168\u4e8b\u4ef6"}, {"submenu": [{"submenu": [], "id": 22, "isopen": false, "name": "\u57c3\u535a\u62c9"}, {"submenu": [], "id": 23, "isopen": false, "name": "\u6d41\u884c\u6027\u611f\u5192"}, {"submenu": [], "id": 24, "isopen": false, "name": "\u75e2\u75be"}, {"submenu": [], "id": 25, "isopen": false, "name": "\u809d\u708e"}, {"submenu": [], "id": 26, "isopen": false, "name": "\u80ba\u7ed3\u6838"}, {"submenu": [], "id": 27, "isopen": false, "name": "\u827e\u6ecb\u75c5"}, {"submenu": [], "id": 28, "isopen": false, "name": "\u6885\u6bd2"}, {"submenu": [], "id": 29, "isopen": false, "name": "\u624b\u8db3\u53e3\u75c5"}], "id": 2, "isopen": true, "name": "\u4f20\u67d3\u75c5\u75ab\u60c5"}, {"submenu": [{"submenu": [], "id": 30, "isopen": false, "name": "\u4eba\u79bd\u6d41\u611f"}, {"submenu": [], "id": 31, "isopen": false, "name": "\u75c5\u6b7b\u9e21"}], "id": 3, "isopen": true, "name": "\u52a8\u7269\u75ab\u60c5"}]
+function getTreeHtml(jsonData,parent){
+	for (i in jsonData){
+		id=jsonData[i]['id'];
+		name=jsonData[i]['name'];
+		isopen=jsonData[i]['isopen'];
+		submenu=jsonData[i]['submenu'];
+		console.log(submenu.length);
+		if (submenu.length>0){
+			li=$('<li></li>');
+			if (isopen) $(li).append('<div class="open-tree"></div>');
+			$(li).append(name).append('<ul></ul>').appendTo(parent);
+			getTreeHtml(submenu,$(li).children().eq(1));
+		}else{
+			$('<li></li>').append(name).appendTo(parent);
+		}
+	}
+}
+var showlist=$('<ul></ul>')
+getTreeHtml(listData,showlist);
+$('#'+treeId).append(showlist);
+</script>
+</body>
+</html>

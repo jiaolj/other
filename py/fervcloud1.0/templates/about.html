@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/about.css' %}" type="text/css" />{% endblock %}
+{% block js %}
+<script>
+(function(){
+	var MVC = MVC || {};
+	MVC.model = (function(){
+		var ci = 1,
+			_dftw = Base.get('width'),
+			_dfth = Base.get('height'),
+			_resize = function(){
+				getFrame(function(){
+					$('.allbox').css({'padding-top':(72*cwt/_dftw)+'px'});
+					var textw = 730*cwt/_dftw,
+						texth = textw/10,
+						textt1 = 166*cwt/_dftw,
+						textt2 = 60+193*cwt/_dftw,
+						textl1 = (cwt-textw)/2,
+						textt3 = 100+258*cwt/_dftw,
+						move1w = 300+430*cwt/_dftw,
+						textl3 = (cwt-move1w)/2,
+						move1l = (cwt-move1w)/2
+						move1h = 230*move1w/730
+					;
+					$('.maintop img.text1').css({top:textt1+'px',left:textl1+'px',width:textw+'px',height:texth+'px'});
+					$('.maintop img.text2').css({top:textt2+'px',left:textl1+'px',width:textw+'px',height:texth+'px'});
+					$('.maintop img.text3').css({top:textt3+'px',left:textl3+'px',width:move1w+'px',height:move1h+'px'});
+					$('.abstr').css({'margin-left':(319*cwt/_dftw-60)+'px'});
+					$('.autoimg').each(function(i,t){
+						var o = $(t),
+							ht = parseInt(o.attr('h'));
+						o.css('height',(ht*cwt/_dftw)+'px');
+					})
+				});
+			};
+		jq_domUpToDown($('#move-1'));
+		$('.join>nav>p').hover(function(){
+			var i = $(this).index('.join>nav>p');
+			if(ci == i) return ;
+			else {
+				ci = i;
+				$('.join>.abstr>dl>dt').hide();
+				$('.join>.abstr>dl>dt:eq('+i+')').show().css({top:'-10%',opacity:0}).animate({top:'0',opacity:1},2000);
+				$(this).parent().find('.active').removeClass('active');
+				$(this).addClass('active');
+			}
+		})
+		$(window).resize(function(){
+			cwt = document.body.clientWidth;
+			cht = document.body.clientHeight;
+			_resize();
+		});
+		_resize();
+	})()
+	window.MVC = MVC;
+})()
+</script>
+{% endblock %}
+{% block content %}
+<div class="allbox">
+	<div class="maintop autoimg" h="887">
+		<img class="backbg" src="{%static 'img/about/bg.png'%}" />
+		<img class="text1" src="{%static 'img/about_2.png'%}" />
+		<img class="text2" src="{%static 'img/about_3.png'%}" />
+		<img class="text3" src="{%static 'img/about_4.png'%}" />
+	</div>
+	<div class="team autoimg" h="459">
+		<img src="{%static 'img/about_5.png'%}" />
+	</div>
+	<div class="picture autoimg" h="781">
+		<img src="{%static 'img/about_us.png'%}" />
+	</div>
+	<div class="join">
+		<div class="tit autoimg" h="283"><img src="{%static 'img/about_7.png'%}" /></div>
+		<nav>
+			<p>Android工程师</p>
+			<p class="active">Java服务端工程师</p>
+			<br class="cb"/>
+		</nav>
+		<div class="abstr">
+			<dl>
+				<dt>
+	<p class="itrv">岗位职责：</p>
+	<p>1、Android应用程序开发及调试</p>
+	<p>2、针对需求独立完成软件的架构设计和功能开发</p>
+	<p>3、各种品牌手机机型适配</p>
+	<p>4、改善软件的易用性，提升用户使用体验</p>
+
+	<p class="itrv">岗位要求：</p>
+	<p>1、熟悉安卓手机开发的各种模式和知识</p>
+	<p>2、精通安卓各种布局和控件的使用</p>
+	<p>3、熟悉应用程序与后台网络通信的方式，熟悉XMPP协议，长链接、Socket、Json</p>
+	<p>4、熟悉基于地图的功能开发</p>
+	<p>5、从事安卓或java开发工作经验1-3年。</p>
+	<p>6、熟练使用版本管理工具SVN、git等</p>
+	<p>7、工作积极主动、敬业负责，有很好的沟通能力和团队合作精神，能够承受较大的工作压力</p>
+				</dt>
+				<dt>
+	<p>岗位描述:</p>
+	<p>1. 理解业务，识别需求，参与架构、系统、分析设计等多领域项目的相关技术的实践、应用和研发；</p>
+	<p>2. 开发和维护统一的软件开发架构，发现和解决存在的技术问题，保证系统的性能和稳定性</p>
+	<p>3. 文档撰写、code reivew和单元测试，确保项目的进度和质量，指导和培训新工程师。</p>
+
+	<p class="itrv">岗位要求:</p>
+	<p>1. 计算机软件或相关专业本科及以上学历，3年以上工作经验，至少1年的web应用开发经验</p>
+	<p>2. 技能要求：Java语言及J2EE体系结构， linux/Html/UML/JavaScript/Velocity，数据库Oracle和Mysql，单元测试技术和TDD；</p>
+	<p>3. 具备系统调优、性能调优等技能，对疑难技术问题具备较强的排查能力；</p>
+	<p>4. 对Spring、SpringMVC、iBatis等开源框架熟悉；</p>
+	<p>5. 对技术有激情，喜欢钻研，能快速接受和掌握新技术，有较强的独立、主动的学习能力，良好的沟通表达能力和团队协作能力。</p>
+
+	<p class="itrv">加分项：</p>
+	<p>1. 具备大型电子商务网站或金融行业核心系统开发、设计工作经验者优先</p>
+	<p>2. 分布式计算或海量数据应用经验者优先，有用户行为挖掘经验者优先；有大型网站构建经验者、内部协作平台构建者经验优先；</p>
+	<p>3. 能主动协助客户端工程师排查问题，有主人翁意识的优先。</p>
+	<p>4. 有github 开源代码的优先。</p>
+	<p>5. 211，981 大学 计算机专业毕业，动手能力强，有毕业设计的优先考虑（这类人才工作年限不限）。</p>
+				</dt>
+			</dl>
+			<div class="cend">
+				简历投递邮箱：hr@fervcloud.com
+			</div>
+		</div>
+	</div>
+	<div class="contact">
+		<img src="{%static 'img/about_11.png'%}" />
+	</div>
+</div>
+{% endblock %}

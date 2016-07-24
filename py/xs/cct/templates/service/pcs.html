@@ -1,0 +1,48 @@
+{% extends 'service/group.html' %}
+{% block cnt %}
+<h3 class="tct">服务流程</h3>
+<style>
+.process{width:100%;font-size:20px;height:20em;position:relative}
+.process:before{content:'';display:block;position:absolute;width:90%;height:90%;border-radius:50%;border:0.5em solid #B5E8FA;top:0.5em;left:1em}
+.process>li{position:absolute;border: 2px solid rgba(1, 134, 211, 0.8);color: #0186d3;padding:0.3em 0.5em}
+.process>li:nth-child(1){left:2.8em;top:2.6em}
+.process>li:nth-child(2){left:14.4em;top:2.6em}
+.process>li:nth-child(3){left:26em;top:2.6em}
+.process>li:nth-child(4){left:26em;top:8.6em}
+.process>li:nth-child(5){left:26em;top:14.6em}
+.process>li:nth-child(6){left:14.4em;top:14.6em}
+.process>li:nth-child(7){left:2.8em;top:14.6em}
+.process>li:nth-child(8){left:2.8em;top:8.6em}
+.process>li:nth-child(9){left:14.4em;top:8.6em}
+.process>li>i{display:block;position:absolute;width:3.5em;height:0.4em;background:rgba(1, 134, 211, 0.5);left:6em;top:0.8em}
+.process>li>i:before{content:'';display: inline-block;border-left:1em solid rgba(1, 134, 211, 0.5);border-top: 0.5em solid transparent;border-bottom: 0.5em solid transparent;position:absolute;right:-1em;top:-0.3em}
+.process>li:nth-child(3)>i,.process>li:nth-child(4)>i{-webkit-transform:rotate(90deg);left:1.7em;top:3.4em;width:2em}
+.process>li:nth-child(5)>i{display:none}
+.process>li:nth-child(6)>i,.process>li:nth-child(7)>i{-webkit-transform:rotate(180deg);left:7em}
+.process>li:nth-child(9)>i{-webkit-transform:rotate(-90deg);left:-10.4em;top:4.2em;width:2em}
+</style>
+<ul class="process"><li>国内咨询<i></i></li><li>体检报告<i></i></li><li>建立档案<i></i></li><li>视频会诊<i></i></li><li>赴外手续<i></i></li><li>预约治疗<i></i></li><li>赴外就诊<i></i></li><li>验孕回国<i></i></li><li>孕期指导<i></i></li></ul>
+<h4>国内体检项目：</h4>
+<h4 class="tct">准父母检查项目</h4>
+<table style="top:-16px;position:relative" cellpadding="5" cellspacing="0">
+<tr><th>女士检查项目</th><th>备注</th><th>男士检查项目</th><th>备注</th></tr>
+<tr><td>全细胞计数</td><td></td><td>全细胞计数</td><td></td></tr>
+<tr><td>血型检查（ABO/Rh)</td><td></td><td>血型检查（ABO/Rh)</td><td></td></tr>
+<tr><td>艾滋病毒（Anti HIV）</td><td></td><td>艾滋病毒（Anti HIV）</td><td></td></tr>
+<tr><td>梅毒</td><td></td><td>梅毒</td><td></td></tr>
+<tr><td>乙肝抗原（HBsAg ）</td><td></td><td>乙肝抗原（HBsAg ）</td><td></td></tr>
+<tr><td>丙肝（Anti HCV）</td><td></td><td>丙肝（Anti HCV）</td><td></td></tr>
+<tr><td>风疹（Rubella IgG）	</td><td></td><td>风诊（Rubella IgG））</td><td></td></tr>
+<tr><td>支原体、衣原体	　</td><td></td><td>支原体、衣原体	</td><td></td></tr>
+<tr><td>尿常规（Urine Routine Test）</td><td></td><td>尿常规（Urine Routine Test）</td><td></td></tr>
+<tr><td>染色体及遗传疾病筛查</td><td>如果无家族遗传病史可不做</td><td>染色体及遗传疾病筛查</td><td>如果无家族遗传病史可不做</td></tr>
+<tr><td>白带常规</td><td>检查是否有霉菌、念珠菌、滴虫</td><td><strong>精液分析</strong></td><td>取精检查需禁欲 3-7 天后进行</td></tr>
+<tr><td><strong>性激素六项</strong></td><td>月经第2-3天</td><td></td><td></td></tr>
+<tr><td><strong>阴道B超基础卵泡监测</strong></td><td>月经第2-3天</td><td></td><td></td></tr>
+<tr><td><strong>阴道B超盆腔检查</strong></td><td>月经第12天（检查盆腔，代孕可不做）</td><td></td><td></td></tr>　	　
+<tr><td><strong>AMH（抗苗勒管激素）</strong></td><td>检查卵巢功能</td><td></td><td></td></tr>
+</table>		
+<p>*检查建议空腹,加粗字体非常重要的，一定要检查。</p>
+<p>*请客户在前往美国/泰国前完成上述检查项目，我们将会把检查结果发送给美国/泰国医院的生殖科专家进行评估。</p>
+
+{% endblock %}

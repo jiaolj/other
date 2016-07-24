@@ -1,0 +1,1101 @@
+img {
+  width: 100%;
+  height: 100%;
+}
+.p2twinkle {
+  -webkit-animation: twinkling 1s infinite ease-in-out;
+  animation: twinkling 1s infinite ease-in-out;
+}
+@-webkit-keyframes twinkling {
+  0% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes twinkling {
+  0% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.cdimg img.rotate {
+  -webkit-animation: twinkling2 10s infinite linear;
+  animation: twinkling2 10s infinite linear;
+}
+@-webkit-keyframes twinkling2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes twinkling2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.main {
+  position: absolute;
+}
+.main .mainMenu {
+  position: fixed;
+  top: 32%;
+  z-index: 100;
+  right: 20px;
+}
+.main .mainMenu dt {
+  padding: 12px 1px;
+  cursor: pointer;
+}
+.main .mainMenu dt:before {
+  content: '';
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid #cccccc;
+  background: #101317;
+}
+.main .mainMenu dt.active:before {
+  background: #ffffff;
+  border: 1px solid #101317;
+}
+.main .movebox {
+  position: relative;
+}
+.main .movebox .box {
+  position: relative;
+}
+.main .movebox .box.p1 {
+  position: relative;
+  z-index: 1;
+}
+.main .movebox .box.p1 .boll {
+  position: absolute;
+  width: 100%;
+  bottom: 35px;
+  z-index: 1;
+}
+.main .movebox .box.p1 .boll dl {
+  width: 120px;
+  margin: 0 auto;
+}
+.main .movebox .box.p1 .boll dl dt {
+  float: left;
+  width: 33%;
+  height: 30px;
+}
+.main .movebox .box.p1 .boll dl dt p {
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  width: 12px;
+  height: 12px;
+}
+.main .movebox .box.p1 .boll dl dt.active p {
+  background: #e73c3c;
+  border: none;
+}
+.main .movebox .box.p1 .imgscroll {
+  height: 100%;
+  overflow: hidden;
+}
+.main .movebox .box.p1 .imgscroll ul {
+  position: relative;
+  height: 100%;
+}
+.main .movebox .box.p1 .imgscroll ul li {
+  height: 100%;
+  float: left;
+  position: relative;
+}
+.main .movebox .box.p1 .imgscroll ul li .jump3 {
+  position: absolute;
+  top: 495px;
+  left: 724px;
+  width: 158px;
+  height: 85px;
+  display: inline-block;
+}
+.main .movebox .box.p2 {
+  color: #ffffff;
+}
+.main .movebox .box.p2 nav {
+  padding-top: 140px;
+  position: relative;
+  z-index: 6;
+  font-size: 23px;
+}
+.main .movebox .box.p2 nav p {
+  float: left;
+  padding: 0 26px 0 26px;
+  margin: 0 20px 0 20px;
+  cursor: pointer;
+}
+.main .movebox .box.p2 nav p.active {
+  background: #e73c3c;
+  border-radius: 3px;
+}
+.main .movebox .box.p2 nav p.dsn {
+  display: none;
+}
+.main .movebox .box.p2 .backg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.main .movebox .box.p2 .backg .p2b1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+}
+.main .movebox .box.p2 .backg .p2b1-1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+.main .movebox .box.p2 .backg img.cover-img {
+  position: absolute;
+  width: 925px;
+  height: 902px;
+  top: 50px;
+  right: 0%;
+  z-index: 6;
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  overflow: hidden;
+}
+.main .movebox .box.p2 .backg .outbox .mainback {
+  position: absolute;
+  width: 1416px;
+  height: 636px;
+  display: none;
+  bottom: 0;
+}
+.main .movebox .box.p2 .backg .outbox dl {
+  position: absolute;
+  height: 100%;
+  top: 0%;
+}
+.main .movebox .box.p2 .backg .outbox dl dt {
+  height: 100%;
+  float: left;
+  position: relative;
+}
+.main .movebox .box.p2 .backg .outbox dl dt .screen {
+  width: 738px;
+  height: 362px;
+  left: 340px;
+  top: 102px;
+  position: absolute;
+}
+.main .movebox .box.p2 .backg .outbox dl dt .screen div {
+  position: absolute;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box1 .video {
+  position: relative;
+  margin: 0 auto;
+  top: 68px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box1 .video video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide {
+  left: 80px;
+  top: 56px;
+  width: 16px;
+  height: 230px;
+  background: #ffe467;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .d1 {
+  width: 100%;
+  height: 30%;
+  background: #2799fd;
+  top: 0%;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .d2 {
+  width: 100%;
+  height: 12%;
+  background: #ff4b4b;
+  top: 30%;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .d3 {
+  width: 100%;
+  height: 56%;
+  background: #ffe467;
+  bottom: 0;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .d4 {
+  width: 100%;
+  z-index: 9;
+  padding-left: 20px;
+  padding-right: 100px;
+  padding-top: 20px;
+  left: -20px;
+  bottom: 0;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .d4 b {
+  display: inline-block;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  top: -32px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .d4 b img {
+  position: relative;
+  left: -9px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .d4 b span {
+  white-space: nowrap;
+  font-size: 17px;
+  position: relative;
+  left: 32px;
+  top: -30px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .d4 .bar {
+  width: 16px;
+  height: 100%;
+  background: #d3d3d3;
+  bottom: 0;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .btnlogo {
+  bottom: -33px;
+  width: 33px;
+  height: 28px;
+  left: -8px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .title {
+  left: 300px;
+  top: 30px;
+  text-align: center;
+  font-size: 17px;
+  white-space: nowrap;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .title span {
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .title span.p2-d-1 {
+  display: block;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .title span .up {
+  font-size: 1.9em;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .title span .down {
+  top: 2.4em;
+  color: #00d1ff;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .arrow {
+  left: 292px;
+  top: 132px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .arrow img {
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .arrow img.p2-d-1 {
+  width: 167px;
+  height: 134px;
+  display: block;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .arrow img.p2-d-2 {
+  width: 167px;
+  height: 134px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .arrow img.p2-d-3 {
+  width: 167px;
+  height: 134px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .camero {
+  right: 46px;
+  top: 68px;
+  width: 52px;
+  height: 52px;
+  z-index: 9;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .monitor {
+  right: 46px;
+  top: 138px;
+  width: 52px;
+  height: 52px;
+  z-index: 9;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .traffic {
+  right: 46px;
+  bottom: 102px;
+  width: 52px;
+  height: 52px;
+  z-index: 9;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .box2-text1 {
+  left: 334px;
+  bottom: 50px;
+  width: 100px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .box2-text1 img {
+  position: relative;
+  top: 0.25em;
+  left: -0.2em;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-1 {
+  position: absolute;
+  left: 180px;
+  top: -20px;
+  width: 391px;
+  height: 391px;
+  z-index: 1;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left_amt1 {
+  transform: rotate(-59deg);
+  -ms-transform: rotate(-59deg);
+  /* IE 9 */
+  -moz-transform: rotate(-59deg);
+  /* Firefox */
+  -webkit-transform: rotate(-59deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(-59deg);
+  /* Opera */
+  top: 0%;
+  left: 0;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left_amt1 .lefts {
+  border: 8px solid rgba(203, 203, 203, 0.5);
+  transform: rotate(110deg);
+  -ms-transform: rotate(110deg);
+  /* IE 9 */
+  -moz-transform: rotate(110deg);
+  /* Firefox */
+  -webkit-transform: rotate(110deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(110deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left_amt6 {
+  transform: rotate(-137deg);
+  -ms-transform: rotate(-137deg);
+  /* IE 9 */
+  -moz-transform: rotate(-137deg);
+  /* Firefox */
+  -webkit-transform: rotate(-137deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(-137deg);
+  /* Opera */
+  top: 0%;
+  left: 0;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left_amt6 .lefts {
+  border: 8px solid #009ced;
+  transform: rotate(188deg);
+  -ms-transform: rotate(188deg);
+  /* IE 9 */
+  -moz-transform: rotate(188deg);
+  /* Firefox */
+  -webkit-transform: rotate(188deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(188deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left_amt2 {
+  transform: rotate(47deg);
+  -ms-transform: rotate(47deg);
+  /* IE 9 */
+  -moz-transform: rotate(47deg);
+  /* Firefox */
+  -webkit-transform: rotate(47deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(47deg);
+  /* Opera */
+  top: 0%;
+  left: 0;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left_amt2 .lefts {
+  border: 8px solid rgba(203, 203, 203, 0.5);
+  transform: rotate(86deg);
+  -ms-transform: rotate(86deg);
+  /* IE 9 */
+  -moz-transform: rotate(86deg);
+  /* Firefox */
+  -webkit-transform: rotate(86deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(86deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left_amt7 {
+  transform: rotate(-27deg);
+  -ms-transform: rotate(-27deg);
+  /* IE 9 */
+  -moz-transform: rotate(-27deg);
+  /* Firefox */
+  -webkit-transform: rotate(-27deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(-27deg);
+  /* Opera */
+  top: 0%;
+  left: 0;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left_amt7 .lefts {
+  border: 8px solid #009ced;
+  transform: rotate(170deg);
+  -ms-transform: rotate(170deg);
+  /* IE 9 */
+  -moz-transform: rotate(170deg);
+  /* Firefox */
+  -webkit-transform: rotate(170deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(170deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left_amt3 {
+  transform: rotate(70deg);
+  -ms-transform: rotate(70deg);
+  /* IE 9 */
+  -moz-transform: rotate(70deg);
+  /* Firefox */
+  -webkit-transform: rotate(70deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(70deg);
+  /* Opera */
+  top: 0%;
+  left: 0;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left_amt3 .lefts {
+  border: 8px solid rgba(203, 203, 203, 0.5);
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left_amt4 {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -moz-transform: rotate(90deg);
+  /* Firefox */
+  -webkit-transform: rotate(90deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(90deg);
+  /* Opera */
+  top: 0%;
+  left: 0;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left_amt4 .lefts {
+  border: 8px solid rgba(203, 203, 203, 0.5);
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left_amt5 {
+  transform: rotate(110deg);
+  -ms-transform: rotate(110deg);
+  /* IE 9 */
+  -moz-transform: rotate(110deg);
+  /* Firefox */
+  -webkit-transform: rotate(110deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(110deg);
+  /* Opera */
+  top: 0%;
+  left: 0;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left_amt5 .lefts {
+  border: 8px solid rgba(203, 203, 203, 0.5);
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left_amt8 {
+  transform: rotate(130deg);
+  -ms-transform: rotate(130deg);
+  /* IE 9 */
+  -moz-transform: rotate(130deg);
+  /* Firefox */
+  -webkit-transform: rotate(130deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(130deg);
+  /* Opera */
+  top: 0%;
+  left: 0;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left_amt8 .lefts {
+  border: 8px solid #c60000;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_lefts {
+  top: -8px;
+  left: -8px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_lefts,
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .lefts {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 ul.box3-circle {
+  position: absolute;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 ul.box3-circle li {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 ul.box3-circle li div {
+  height: 100%;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 ul.box3-circle li div p {
+  position: absolute;
+  height: 100%;
+  right: 0%;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text1 {
+  position: absolute;
+  text-align: center;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text1 > b.word {
+  font-size: 5.5em;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text1 > b.tit {
+  position: relative;
+  top: -1em;
+  font-size: 1.6em;
+  color: rgba(255, 255, 255, 0.5);
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text2 {
+  position: absolute;
+  left: 368px;
+  top: 257px;
+  font-size: 3em;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text3 {
+  position: absolute;
+  top: 296px;
+  width: 300px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text3 b.tit {
+  color: rgba(255, 255, 255, 0.5);
+  margin-right: 4px;
+  font-size: 11px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text3 b.word {
+  font-size: 17px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text3.btn1 {
+  left: 100px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text3.btn2 {
+  left: 320px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text3.btn3 {
+  left: 580px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text4 {
+  position: absolute;
+  left: 570px;
+  top: -3px;
+  width: 250px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text4 .word {
+  font-size: 3.4em;
+  position: relative;
+  left: -0.1em;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text4 .date {
+  font-size: 1.2em;
+  position: absolute;
+  top: 0.5em;
+  color: rgba(255, 255, 255, 0.5);
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text4 .week {
+  font-size: 1.2em;
+  position: absolute;
+  top: 1.8em;
+  color: rgba(255, 255, 255, 0.5);
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box4 .box4-1 {
+  width: 430px;
+  height: 347px;
+  position: absolute;
+  left: 48px;
+  top: 24px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box4 .box4-2 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 80px;
+  top: 84px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box4 .box4-3 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 80px;
+  top: 84px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box4 .box4-4 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 80px;
+  top: 84px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .text1 {
+  left: 23px;
+  top: 122px;
+  font-size: 52px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .text2 {
+  left: 60px;
+  top: 192px;
+  font-size: 24px;
+  color: #929496;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .open {
+  left: 353px;
+  top: 126px;
+  width: 40px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .open .stat1 {
+  display: none;
+  border-left: 40px solid #ffffff;
+  border-top: 36px solid transparent;
+  border-bottom: 36px solid transparent;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .open .stat2 {
+  width: 10px;
+  height: 70px;
+  background: #ffffff;
+  position: relative;
+  left: 0px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .open .stat2:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 22px;
+  background: #ffffff;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .time {
+  left: 293px;
+  top: 250px;
+  border-radius: 30px;
+  background: #0b0d0f;
+  font-size: 30px;
+  width: 160px;
+  text-align: center;
+  overflow: hidden;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .time b {
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg,
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg2 {
+  position: absolute;
+  right: -330px;
+  top: -72px;
+  z-index: 5;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg .rotate,
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg2 .rotate {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg .cover,
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg2 .cover {
+  width: 100%;
+  height: 280px;
+  position: absolute;
+  background: #0d1114;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -moz-transform: rotate(45deg);
+  /* Firefox */
+  -webkit-transform: rotate(45deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(45deg);
+  /* Opera */
+  top: -130px;
+  left: 150px;
+  z-index: 2;
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg .cover-conn,
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg2 .cover-conn {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: 117px;
+  left: 50px;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -moz-transform: rotate(45deg);
+  /* Firefox */
+  -webkit-transform: rotate(45deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(45deg);
+  /* Opera */
+  background: linear-gradient(#0d1114, rgba(13, 17, 20, 0));
+  z-index: 3;
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg .cover2,
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg2 .cover2 {
+  width: 100%;
+  height: 280px;
+  position: absolute;
+  background: #0d1114;
+  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  /* IE 9 */
+  -moz-transform: rotate(-45deg);
+  /* Firefox */
+  -webkit-transform: rotate(-45deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(-45deg);
+  /* Opera */
+  top: 310px;
+  left: 150px;
+  z-index: 2;
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg .cover2-conn,
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg2 .cover2-conn {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: 293px;
+  left: 50px;
+  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  /* IE 9 */
+  -moz-transform: rotate(-45deg);
+  /* Firefox */
+  -webkit-transform: rotate(-45deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(-45deg);
+  /* Opera */
+  background: linear-gradient(rgba(13, 17, 20, 0), #0d1114);
+  z-index: 3;
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg .bg1,
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg2 .bg1 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  top: 170px;
+  left: 170px;
+  z-index: 1;
+  background: #0d1114;
+  border: 10px solid #eeeeee;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen img {
+  position: absolute;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .photo {
+  left: 253px;
+  width: 206.4px;
+  height: 168px;
+  top: 25px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .phonenumb {
+  left: 18px;
+  top: 25px;
+  width: 185.6px;
+  height: 44.8px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .answer {
+  left: 506px;
+  bottom: 36px;
+  width: 89.6px;
+  height: 90.4px;
+  cursor: pointer;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .answer a {
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  width: 78.4px;
+  height: 78.4px;
+  border-radius: 50%;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .hangup {
+  left: 130px;
+  bottom: 36px;
+  width: 89.6px;
+  height: 90.4px;
+  cursor: pointer;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .hangup a {
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  width: 78.4px;
+  height: 78.4px;
+  border-radius: 50%;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .timer {
+  left: 326px;
+  top: 190px;
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .timer .num {
+  font-size: 1.8em;
+  position: relative;
+  left: 6px;
+  top: 2px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .timer .unit {
+  font-size: 1.8em;
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .hand {
+  left: 340px;
+  bottom: 48px;
+  width: 40.8px;
+  height: 56.8px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .drleft {
+  left: 242px;
+  bottom: 68px;
+  width: 15.2px;
+  height: 16px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .drleft.drleft-2 {
+  left: 264px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .drleft.drleft-3 {
+  left: 286px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .drleft.drleft-4 {
+  left: 308px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .dright {
+  left: 406px;
+  bottom: 68px;
+  width: 15.2px;
+  height: 16px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .dright.dright-2 {
+  left: 428px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .dright.dright-3 {
+  left: 450px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .dright.dright-4 {
+  left: 472px;
+}
+.main .movebox .box.p3 .data {
+  width: 100%;
+  height: 100%;
+}
+.main .movebox .box.p3 .data .txt {
+  width: 405px;
+  height: 94px;
+  position: absolute;
+  top: 435px;
+  left: 40%;
+}
+.main .movebox .box.p3 .data .txt img {
+  position: relative;
+  display: none;
+}
+.main .movebox .box.p4 .data {
+  width: 100%;
+  height: 100%;
+}
+.main .movebox .box.p4 .data img.text {
+  position: absolute;
+  left: 46.25%;
+}
+.main .movebox .box.p4 .data .txt {
+  position: absolute;
+  left: 9.375%;
+}
+.main .movebox .box.p4 .data .txt img {
+  position: relative;
+  display: none;
+}
+.main .movebox .box.p5 .data {
+  width: 100%;
+  height: 100%;
+}
+.main .movebox .box.p5 .data .txt {
+  position: absolute;
+  right: 20.3125%;
+}
+.main .movebox .box.p5 .data .txt img {
+  position: relative;
+  display: none;
+}
+.main .movebox .box.p6 .data {
+  width: 100%;
+  height: 100%;
+}
+.main .movebox .box.p6 .data img.word {
+  position: absolute;
+  width: 588px;
+  height: 85px;
+  top: 187px;
+  left: 264px;
+}
+.main .movebox .box.p6 .data .txt {
+  position: absolute;
+  top: 338px;
+  left: 13.021%;
+  font-size: 16px;
+  color: #333333;
+}
+.main .movebox .box.p6 .data .txt dl {
+  position: relative;
+  padding: 16px;
+  padding-bottom: 20px;
+}
+.main .movebox .box.p6 .data .txt dl dt {
+  line-height: 28px;
+}
+.main .movebox .box.p6 .data .txt dl dt.tit {
+  font-size: 18px;
+}
+.main .movebox .box.p6 .data .txt dl dt.end {
+  margin-bottom: 20px;
+}
+.main .movebox .box.p6 .data .txt .bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  background: #ffffff;
+}
+.main .movebox .box.p6 .data .showform {
+  border-bottom: 2px solid #f34c4b;
+}
+.main .movebox .box.p6 .data .form {
+  display: none;
+  position: absolute;
+  top: 226px;
+  left: 32.8215%;
+  z-index: 1;
+  border: 1px solid #e9e9e9;
+  box-shadow: 0px 2px 12px #cccccc;
+  background: #ffffff;
+  font-size: 18px;
+  color: #777777;
+  padding: 42px;
+}
+.main .movebox .box.p6 .data .form .close {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 38px;
+  height: 38px;
+}
+.main .movebox .box.p6 .data .form dl.flt {
+  width: 280px;
+  float: left;
+}
+.main .movebox .box.p6 .data .form dl.flt input.text {
+  width: 190px;
+}
+.main .movebox .box.p6 .data .form dl.flt dt.sex b {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #888888;
+  border-radius: 50%;
+  position: relative;
+  top: 2px;
+  cursor: pointer;
+}
+.main .movebox .box.p6 .data .form dl.flt dt.sex b.active:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e73c3c;
+  top: 2px;
+  left: 2px;
+}
+.main .movebox .box.p6 .data .form dl.flt dt.who b {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #888888;
+  border-radius: 2px;
+  position: relative;
+  top: 2px;
+  cursor: pointer;
+}
+.main .movebox .box.p6 .data .form dl.flt dt.who b.active:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 6px;
+  height: 12px;
+  border-bottom: 2px solid #e73c3c;
+  border-right: 2px solid #e73c3c;
+  top: -6px;
+  left: 4px;
+  transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  /* IE 9 */
+  -moz-transform: rotate(30deg);
+  /* Firefox */
+  -webkit-transform: rotate(30deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(30deg);
+  /* Opera */
+}
+.main .movebox .box.p6 .data .form dl.frt {
+  width: 286px;
+  float: right;
+}
+.main .movebox .box.p6 .data .form dl.frt input.text {
+  width: 270px;
+}
+.main .movebox .box.p6 .data .form dl.frt dt {
+  text-align: right;
+}
+.main .movebox .box.p6 .data .form dl.frt dt.tit {
+  position: relative;
+  left: 12px;
+}
+.main .movebox .box.p6 .data .form dl dt {
+  line-height: 40px;
+}
+.main .movebox .box.p6 .data .form input {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #cccccc;
+  text-indent: 5px;
+}
+.main .movebox .box.p6 .data .form .submit {
+  position: absolute;
+  right: 42px;
+  bottom: 5%;
+  width: 78px;
+  line-height: 34px;
+  border-radius: 4px;
+  display: block;
+  background: #e73c3c;
+  color: #ffffff;
+  text-align: center;
+}

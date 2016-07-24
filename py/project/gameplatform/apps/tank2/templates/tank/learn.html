@@ -1,0 +1,25 @@
+<!DOCTYPE>
+<html>
+<head>
+{%include 'public/head.html'%}
+<link rel="stylesheet" href="/static/tank/css/tank.css"/>
+</head>
+<body>
+{%include 'public/top.html'%}
+<div class="content">
+	<!--<div class="tank" id="mytank1"><div class="gan up"></div><div class="head">3</div></div>-->
+</div>
+<div class="countdown">3</div>
+<div class="text">
+	<div class="left">Move: up down left right <br />Shut: Enter</div>
+	<div class="message"><span id="uname1">{{uname1}}</span> <span>VS</span> <span id="uname2">{%if uname2%}{{uname2}}{%endif%}</span> <a></a></div>
+	<div class="right">Time <span id="ntime">00:00:00</span></div>
+</div>
+
+<input type="hidden" id="myTankTask" value="0">
+<input type="hidden" id="uname" value="{{uname}}">
+{%include 'public/foot.html'%}
+<!--<script src="/static/tank/js/webskt.js"></script>-->
+<script src="/static/tank/js/tank.js"></script>
+</body>
+</html>

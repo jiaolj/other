@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block css %}
+<link rel="stylesheet" href="/static/css/cnt.css" type="text/css" />
+{% endblock %}
+{% block js %}
+<script src="/static/js/cnt.js"></script>
+{% endblock %}
+{% block content %}
+<div class="background">
+	<div class="mg0a w1000p h psr ohd">
+		<div class="w22 mgl2 flt" id="lmenu">
+			{% block menu %}
+			<div class="title ti1">关于我们</div>
+			<ul>
+				<li class="active"><a href="/about/">公司简介</a></li>
+			</ul>
+			{% endblock %}
+		</div>
+		<div class="w69 frt" id="content">
+{% block cnt %}
+<h3 class="tct">关于我们</h3>
+<p>
+泰魅丽国际医疗是国内专业运作<b>美国、泰国多家顶级医疗机构</b>的试管婴儿中国直营咨询中心，提供世界最前沿的辅助生殖医疗技术，旨在为国内外<b>生殖孕育疾病人员、大龄人员及特殊要求的客人</b>提供最高端，最优质，最贴心的生殖医疗服务。
+</p><p>
+我们的<b>服务团队</b>由专业医学人员、专业医疗翻译、资深执业律师等人员构成，医学专家将根据您个人的需求私人定制灵活经济的治疗方案，我们提供高效、优质和温馨的全流程协调服务，包括前期咨询、专家会诊、法律咨询、海外陪同、医学翻译、旅行安排等，让您跨越语言障碍、在无忧愉快的氛围中轻松实现家庭梦想。
+</p><p>
+我们的<b>办公地址</b>位于集行政办公、商业、旅游、居住等功能于一体的杭州新城规划核心区——钱江新城，东临钱塘江，环境优美，交通便利。
+</p><p>
+<b>我们坚持</b>以人为本、注重医疗关怀，我们坚持诚信、追求卓越，争做您最专业、最值得信赖的医疗咨询解决方案专家。
+</p><p>
+我们的<b>服务流程</b>：
+</p><p>
+国内咨询 ——> 建立档案 ——> 初期诊断 ——> 赴美（泰）手续 ——> 预约就诊 ——> 安排赴美（泰 ）
+</p>
+{% endblock %}
+		</div>
+		<i class="cb"></i>
+		{%if pobj.page_count > 1%}
+		<ul class="pagelist">
+			{%ifequal page 1%}<li>首页</li><li>上一页</li>{%else%}<li><a href="/{{tbnm}}/1.htm">首页</a></li><li><a href="/{{tbnm}}/{{pobj.prvpage}}.htm">上一页</a></li>{%endifequal%}
+			{%for pg in pobj.page_range%}<li{%if pg.nowpage%} class="active"{%endif%}><a href="/{{tbnm}}/{{pg.number}}.htm">{{pg.number}}</a></li>{%endfor%}
+			{%ifequal page pobj.page_count%}<li>下一页</li><li>尾页</li>{%else%}<li><a href="/{{tbnm}}/{{pobj.nextpage}}.htm">下一页</a></li><li><a href="/{{tbnm}}/{{pobj.page_count}}.htm">尾页</a></li>{%endifequal%}
+			<div class="cb"></div>
+		<ul>
+		{%endif%}
+		<div class="cb"></div>
+	</div>
+</div>
+{% endblock %}

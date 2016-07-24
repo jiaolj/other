@@ -1,0 +1,31 @@
+body,p,ul,ol,h1,h2,h3,h4{margin:0}
+html,body{height:100%}
+body{font-size:14px;font-family:'Microsoft YaHei';background:#fff}
+input,textarea,select{font-size:100%;font-family:inherit}
+ul,ol{list-style-type:none;padding-left:0}
+i{font-style:normal;display:block}
+.b0{bottom:0}.b2{bottom:2%}
+.bd0{border:0}.bdccc{border:1px solid #ccc}
+.bg80{background:#808080}.bgfff{background:#fff}
+.cb{clear:both}.cpt,a{cursor:pointer}.cul>li{cursor:pointer}
+.c80{#808080}.ceee{color:#eee}.cfff{color:#fff}.cccc{color:#ccc}
+.dpi{display:inline}.dsn{display:none}
+.h106{height:106%}.h{height:100%}.h40{height:40%}.h50{height:50%}.h65{height:65%}.h68{height:68%}.h70{height:70%}.h80{height:80%}.h85{height:85%}.h86{height:86%}.h88{height:88%}.h92{height:92%}.h33{height:33%}.h32{height:32%}.h31{height:31%}.h30{height:30%}.h28{height:28%}.h20{height:20%}.h10{height:10%}.h5{height:5%}.h2{height:2%}
+.h30p{height:30px}.h40p{height:40px}.h50p{height:50px}.h250p{height:250px}.h300p{height:300px}.h400p{height:400px}
+.flt{float:left}.frt{float:right}
+.l0{left:0}.l1{left:1%}.l2{left:2%}.l3{left:3%}.l4{left:4%}.l5{left:5%}.l10{left:10%}.l15{left:15%}.l20{left:20%}.l22{left:22%}.l26{left:26%}.l25{left:25%}.l27{left:27%}.l28{left:28%}.l29{left:29%}.l30{left:30%}.l39{left:39%}.l40{left:40%}.l41{left:41%}.l42{left:42%}.l60{left:60%}.l32{left:32%}.l50{left:50%}.l53{left:53%}.l55{left:55%}.l62{left:62%}
+.lh25p,.ulh25p>li{line-height:25px}.lh30p,.ulh30p>li{line-height:30px}.lh35p,.ulh35p>li{line-height:35px}.lh40p{line-height:40px}.lh60p{line-height:60px}.lh70p{line-height:70px}
+.mg0a{margin:0 auto}
+.mgl10{margin-left:10%}.mgl35{margin-left:35%}.mgl60{margin-left:60%}
+.ohd{overflow:hidden}
+.psa{position:absolute}.psr{position:relative}
+.pdlr3p{padding-left:3px;padding-right:3px}
+.pdt240p{padding-top:240px}.pdt150p{padding-top:150px}
+.r0{right:0}.r2{right:2%}.r3{right:3%}.r5{right:5%}.r6{right:6%}.r7{right:7%}.r23{right:23%}
+.tct{text-align:center}.tlt{text-align:left}.trt{text-align:right}
+.ti2,.uti2>li{text-indent:2em}.ti3{text-indent:3em}
+.t0{top:0}.t-40{top:-40%}.t-4{top:-4%}.t2{top:2%}.t4{top:4%}.t7{top:7%}.t9{top:9%}.t10{top:10%}.t11{top:11%}.t13{top:13%}.t14{top:14%}.t15{top:15%}.t17{top:17%}.t19{top:19%}.t20{top:20%}.t25{top:25%}.t30{top:30%}.t31{top:31%}.t32{top:32%}.t34{top:34%}.t38{top:38%}.t59{top:59%}.t60{top:60%}.t62{top:62%}.t64{top:64%}.t68{top:68%}.t70{top:70%}.t80{top:80%}
+.t25p{top:25px}.t250p{top:250px}
+.ul>li,.ui>i{float:left}
+.w{width:100%}.w12,.uw12>li{width:12%}.w13,.uw13>li{width:13%}.w15{width:15%}.w16{width:16%}.w17{width:17%}.w18{width:18%}.w20{width:20%}.w22{width:22%}.w23{width:23%}.w24{width:24%}.w25,.uw25>li{width:25%}.w27{width:27%}.w28{width:28%}.w30{width:30%}.w33{width:33%}.w36{width:36%}.w40{width:40%}.w42{width:42%}.w43{width:43%}.w44{width:44%}.w45{width:45%}.w46{width:46%}.w48{width:48%}.w49{width:49%}.w50{width:50%}.w60{width:60%}.w70{width:70%}.w73{width:73%}.w80{width:80%}.w82{width:82%}.w90{width:90%}
+.w10p{width:10px}.w500p{width:500px}

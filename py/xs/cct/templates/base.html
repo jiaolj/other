@@ -1,0 +1,64 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{seoTitle}}</title>
+<link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css" />
+{% block css %}{% endblock %}
+</head>
+<body>
+<header>
+	<div class="logo">
+		<a href="/"><img src="{%static 'img/tml_logo.png'%}" /></a>
+	</div>
+	<div class="title">
+		<a href="/">云荷廷健康管理</a>
+	</div>
+	<div class="contact">
+		服务热线: <b>0571-86166923</b>
+	</div>
+</header>
+<nav>
+	<dl>
+		<a href="/"><dt{%ifequal index 1%} class="active"{%endifequal%}>首页</dt></a>
+		<a href="/about/"><dt{%ifequal index 2%} class="active"{%endifequal%}>关于我们</dt></a>
+		<a href="/service/group-1/"><dt{%ifequal index 3%} class="active"{%endifequal%}>服务介绍</dt></a>
+		<a href="/hospital/"><dt{%ifequal index 4%} class="active"{%endifequal%}>合作医院</dt></a>
+		<a href="/doctor/"><dt{%ifequal index 5%} class="active"{%endifequal%}>试管专家</dt></a>
+		<a href="/knowledge/"><dt{%ifequal index 6%} class="active"{%endifequal%}>试管资讯</dt></a>
+		<a href="/contact/"><dt{%ifequal index 7%} class="active"{%endifequal%}>联系我们</dt></a>
+		<br class="cb"/>
+	</dl>
+</nav>
+<br class="cb"/>
+<dl class="tools">
+	<dt class="head"></dt>
+	<dt class="nav"></dt>
+	<dt class="service flt">
+		<div class="tit">客服中心</div>
+		<table width="180" cellpadding="0" cellspacing="0">
+			<tbody><tr><td align="center">吴小姐 ：</td><td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=15489087&amp;site=qq&amp;menu=yes"><img src="/static/img/qq1.png"></a></td></tr>
+			<tr><td align="center">焦先生 ：</td><td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=841232468&amp;site=qq&amp;menu=yes"><img src="/static/img/qq1.png"></a></td></tr>
+		</tbody></table>
+	</dt>
+	<dt class="service frt">
+		<div class="tit">客服中心</div>
+		<table width="180" cellpadding="0" cellspacing="0">
+			<tbody><tr><td align="center">吴小姐 ：</td><td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=15489087&amp;site=qq&amp;menu=yes"><img src="/static/img/qq1.png"></a></td></tr>
+			<tr><td align="center">焦先生 ：</td><td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=841232468&amp;site=qq&amp;menu=yes"><img src="/static/img/qq1.png"></a></td></tr>
+		</tbody></table>
+	</dt>
+	<dt class="tools"></dt>
+</dl>
+{% block content %}{% endblock %}
+<footer>
+	<p>公司地址：钱江新城迪凯国际中心14楼1402  &nbsp;服务热线：0571-86166923  </p>
+	<p>联系电话：86-0571-86166923    传真：86166923    电子邮箱：hzxisong@163.com &nbsp;&nbsp;&nbsp;<a href="http://www.miibeian.gov.cn/" target="_blank" style="color:#203e7c">许可证编号：粤ICP备12345678号</a></p>
+</footer>
+<script src="{% static 'js/base.js' %}"></script>
+{% block js %}{% endblock %}
+</body>
+</html>

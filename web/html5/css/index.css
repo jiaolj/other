@@ -1,0 +1,28 @@
+.main{
+width:800px;
+height:800px;
+text-align:center;
+margin:30px 300px;
+}
+.cb{clear:both}
+#tishi{
+width:100%;height:30px;text-align:left;padding-left:10px;
+}
+#ponits{
+width:100%;height:30px;text-align:left;padding:10px;
+}
+#myCanvas{
+border:1px solid #c3c3c3;
+float:left;
+}
+.tools{
+width:100px;
+height:500px;
+float:left;
+}
+.tools ul{
+list-style:none
+}
+.tools ul li{
+line-height:22px;
+}

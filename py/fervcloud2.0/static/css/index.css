@@ -1,0 +1,1232 @@
+.p2twinkle {
+  -webkit-animation: twinkling 1s infinite ease-in-out;
+  animation: twinkling 1s infinite ease-in-out;
+}
+@-webkit-keyframes twinkling {
+  0% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes twinkling {
+  0% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.cdimg img.rotate {
+  -webkit-animation: twinkling2 10s infinite linear;
+  animation: twinkling2 10s infinite linear;
+}
+@-webkit-keyframes twinkling2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes twinkling2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.main {
+  position: absolute;
+  overflow: hidden;
+}
+.main .mainMenu {
+  position: fixed;
+  top: 32%;
+  z-index: 100;
+  right: 20px;
+}
+.main .mainMenu dt {
+  padding: 12px 1px;
+  cursor: pointer;
+}
+.main .mainMenu dt:before {
+  content: '';
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid #cccccc;
+  background: #101317;
+}
+.main .mainMenu dt.active:before {
+  background: #ffffff;
+  border: 1px solid #101317;
+}
+.main .movebox {
+  position: relative;
+}
+.main .movebox .box {
+  position: relative;
+}
+.main .movebox .box.p1 {
+  position: relative;
+  z-index: 1;
+}
+.main .movebox .box.p1 .boll {
+  position: absolute;
+  width: 100%;
+  bottom: 35px;
+  z-index: 1;
+}
+.main .movebox .box.p1 .boll dl {
+  width: 120px;
+  margin: 0 auto;
+}
+.main .movebox .box.p1 .boll dl dt {
+  float: left;
+  width: 33%;
+  height: 30px;
+}
+.main .movebox .box.p1 .boll dl dt p {
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  width: 12px;
+  height: 12px;
+}
+.main .movebox .box.p1 .boll dl dt.active p {
+  background: #e73c3c;
+  border: none;
+}
+.main .movebox .box.p1 .imgscroll {
+  height: 100%;
+  overflow: hidden;
+}
+.main .movebox .box.p1 .imgscroll ul {
+  position: relative;
+  height: 100%;
+}
+.main .movebox .box.p1 .imgscroll ul li {
+  height: 100%;
+  float: left;
+  position: relative;
+}
+.main .movebox .box.p1 .imgscroll ul li .jump3 {
+  position: absolute;
+  top: 495px;
+  left: 724px;
+  width: 158px;
+  height: 85px;
+  display: inline-block;
+}
+.main .movebox .box.p2 {
+  color: #ffffff;
+}
+.main .movebox .box.p2 nav {
+  margin: 0 auto;
+  padding-top: 140px;
+  position: relative;
+  z-index: 6;
+  padding-left: 30px;
+  font-size: 23px;
+  width: 754px;
+}
+.main .movebox .box.p2 nav p {
+  float: left;
+  padding-left: 26px;
+  padding-right: 26px;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.main .movebox .box.p2 nav p.active {
+  background: #e73c3c;
+  border-radius: 3px;
+}
+.main .movebox .box.p2 nav p.dsn {
+  display: none;
+}
+.main .movebox .box.p2 .backg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.main .movebox .box.p2 .backg .p2b1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+}
+.main .movebox .box.p2 .backg .p2b1-1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+.main .movebox .box.p2 .backg img.cover-img {
+  position: absolute;
+  width: 925px;
+  height: 902px;
+  top: 50px;
+  right: 0%;
+  z-index: 2;
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox {
+  position: absolute;
+  height: 736px;
+  bottom: 0;
+  overflow: hidden;
+}
+.main .movebox .box.p2 .backg .outbox .mainback {
+  position: absolute;
+  height: 636px;
+  z-index: 1;
+  display: none;
+  overflow: hidden;
+  top: 102px;
+}
+.main .movebox .box.p2 .backg .outbox .mainback img {
+  width: 1416px;
+  position: relative;
+}
+.main .movebox .box.p2 .backg .outbox dl {
+  position: absolute;
+  height: 100%;
+  top: 0%;
+}
+.main .movebox .box.p2 .backg .outbox dl dt {
+  height: 100%;
+  float: left;
+  position: relative;
+}
+.main .movebox .box.p2 .backg .outbox dl dt .screen {
+  left: 340px;
+  top: 102px;
+  width: 738px;
+  height: 362px;
+  position: absolute;
+  z-index: 1;
+}
+.main .movebox .box.p2 .backg .outbox dl dt .screen div {
+  position: absolute;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box1 .video {
+  position: relative;
+  margin: 0 auto;
+  top: 68px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box1 .video video {
+  position: relative;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide {
+  left: 80px;
+  top: 56px;
+  width: 16px;
+  height: 230px;
+  background: #d3d3d3;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .d1 {
+  width: 100%;
+  height: 70px;
+  background: #2799fd;
+  top: 0%;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .d2 {
+  width: 100%;
+  height: 20px;
+  background: #ff4b4b;
+  top: 70px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .d3 {
+  width: 100%;
+  height: 130px;
+  background: #ffe467;
+  top: 90px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .d4 {
+  width: 100%;
+  height: 123.2px;
+  top: 86.8px;
+  z-index: 9;
+  padding-left: 20px;
+  padding-right: 100px;
+  padding-top: 20px;
+  left: -20px;
+  overflow: hidden;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .d4 b {
+  display: inline-block;
+  position: relative;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .d4 b img {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  left: -9px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .d4 b span {
+  white-space: nowrap;
+  font-size: 17px;
+  position: relative;
+  left: 32px;
+  top: -30px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .d4 .bar {
+  width: 16px;
+  height: 100%;
+  background: #d3d3d3;
+  top: 40px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .slide .btnlogo {
+  bottom: -33px;
+  width: 33px;
+  height: 28px;
+  left: -8px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .title {
+  width: 200px;
+  text-align: center;
+  left: 300px;
+  top: 30px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .title span {
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .title span.p2-d-1 {
+  display: block;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .title span .up {
+  font-size: 32px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .title span .down {
+  top: 40px;
+  font-size: 17px;
+  color: #00d1ff;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .arrow {
+  left: 292px;
+  top: 132px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .arrow img {
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .arrow img.p2-d-1 {
+  width: 167px;
+  height: 134px;
+  display: block;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .arrow img.p2-d-2 {
+  width: 167px;
+  height: 134px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .arrow img.p2-d-3 {
+  width: 167px;
+  height: 134px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .camero {
+  right: 46px;
+  top: 68px;
+  width: 52px;
+  height: 52px;
+  z-index: 9;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .monitor {
+  right: 46px;
+  top: 138px;
+  width: 52px;
+  height: 52px;
+  z-index: 9;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .traffic {
+  right: 46px;
+  bottom: 102px;
+  width: 52px;
+  height: 52px;
+  z-index: 9;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .box3-text1 {
+  left: 334px;
+  bottom: 52px;
+  width: 100px;
+  font-size: 1.8em;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box2 .screen .box3-text1 img {
+  width: 17px;
+  height: 24px;
+  position: relative;
+  top: 7px;
+  left: -6px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-1 {
+  position: absolute;
+  left: 180px;
+  top: -20px;
+  width: 391px;
+  height: 391px;
+  z-index: 1;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 {
+  position: absolute;
+  width: 306px;
+  height: 306px;
+  left: 214px;
+  top: 14px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left1 {
+  width: 306px;
+  height: 306px;
+  border-radius: 50%;
+  border: 8px solid rgba(203, 203, 203, 0.5);
+  position: absolute;
+  clip: rect(0, 177px, 153px, 0);
+  transform: rotate(39deg);
+  -ms-transform: rotate(39deg);
+  /* IE 9 */
+  -moz-transform: rotate(39deg);
+  /* Firefox */
+  -webkit-transform: rotate(39deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(39deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left1_amt {
+  width: 322px;
+  height: 322px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  left: -1px;
+  transform: rotate(13deg);
+  -ms-transform: rotate(13deg);
+  /* IE 9 */
+  -moz-transform: rotate(13deg);
+  /* Firefox */
+  -webkit-transform: rotate(13deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(13deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left1_amt .pie_left {
+  width: 306px;
+  height: 306px;
+  position: absolute;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left1_amt .left {
+  width: 306px;
+  height: 306px;
+  border-radius: 50%;
+  position: absolute;
+  border: 8px solid #c60000;
+  transform: rotate(119deg);
+  -ms-transform: rotate(119deg);
+  /* IE 9 */
+  -moz-transform: rotate(119deg);
+  /* Firefox */
+  -webkit-transform: rotate(119deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(119deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left1_amt .pie_left,
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left1_amt .left {
+  clip: rect(0, 160px, auto, 0);
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left2 {
+  width: 306px;
+  height: 306px;
+  border-radius: 50%;
+  position: absolute;
+  border: 8px solid rgba(203, 203, 203, 0.5);
+  clip: rect(0, 153px, 153px, 0);
+  transform: rotate(-47deg);
+  -ms-transform: rotate(-47deg);
+  /* IE 9 */
+  -moz-transform: rotate(-47deg);
+  /* Firefox */
+  -webkit-transform: rotate(-47deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(-47deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left2_amt {
+  width: 322px;
+  height: 322px;
+  border-radius: 50%;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  transform: rotate(-134deg);
+  -ms-transform: rotate(-134deg);
+  /* IE 9 */
+  -moz-transform: rotate(-134deg);
+  /* Firefox */
+  -webkit-transform: rotate(-134deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(-134deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left2_amt .pie_left {
+  width: 306px;
+  height: 306px;
+  position: absolute;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left2_amt .left {
+  width: 306px;
+  height: 306px;
+  border-radius: 50%;
+  position: absolute;
+  border: 8px solid #009ced;
+  transform: rotate(179deg);
+  -ms-transform: rotate(179deg);
+  /* IE 9 */
+  -moz-transform: rotate(179deg);
+  /* Firefox */
+  -webkit-transform: rotate(179deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(179deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left2_amt .pie_left,
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left2_amt .left {
+  clip: rect(0, 160px, auto, 0);
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left3 {
+  width: 306px;
+  height: 306px;
+  border-radius: 50%;
+  position: absolute;
+  clip: rect(0, 153px, 153px, 0);
+  transform: rotate(137deg);
+  -ms-transform: rotate(137deg);
+  /* IE 9 */
+  -moz-transform: rotate(137deg);
+  /* Firefox */
+  -webkit-transform: rotate(137deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(137deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left3s {
+  width: 306px;
+  height: 306px;
+  border-radius: 50%;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left3s .pie_left {
+  width: 306px;
+  height: 306px;
+  position: absolute;
+  top: -8px;
+  left: -8px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left3s .left {
+  width: 306px;
+  height: 306px;
+  border-radius: 50%;
+  position: absolute;
+  transform: rotate(150deg);
+  -ms-transform: rotate(150deg);
+  /* IE 9 */
+  -moz-transform: rotate(150deg);
+  /* Firefox */
+  -webkit-transform: rotate(150deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(150deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left3s .pie_left,
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left3s .left {
+  clip: rect(0, 160px, auto, 0);
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left3s.pie_left3-1 {
+  transform: rotate(76deg);
+  -ms-transform: rotate(76deg);
+  /* IE 9 */
+  -moz-transform: rotate(76deg);
+  /* Firefox */
+  -webkit-transform: rotate(76deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(76deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left3s.pie_left3-1 .left {
+  border: 8px solid rgba(203, 203, 203, 0.5);
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left3s.pie_left3-1 b {
+  top: -180px;
+  left: -30px;
+  position: relative;
+  display: block;
+  font-size: 1.6em;
+  transform: rotate(-88deg);
+  -ms-transform: rotate(-88deg);
+  /* IE 9 */
+  -moz-transform: rotate(-88deg);
+  /* Firefox */
+  -webkit-transform: rotate(-88deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(-88deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left3s.pie_left3-2 {
+  transform: rotate(105deg);
+  -ms-transform: rotate(105deg);
+  /* IE 9 */
+  -moz-transform: rotate(105deg);
+  /* Firefox */
+  -webkit-transform: rotate(105deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(105deg);
+  /* Opera */
+  z-index: 2;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left3s.pie_left3-2 .left {
+  border: 8px solid #ff0000;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left3s.pie_left3-2 b {
+  top: -176px;
+  left: -60px;
+  position: relative;
+  display: block;
+  font-size: 1.6em;
+  transform: rotate(-100deg);
+  -ms-transform: rotate(-100deg);
+  /* IE 9 */
+  -moz-transform: rotate(-100deg);
+  /* Firefox */
+  -webkit-transform: rotate(-100deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(-100deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left3s.pie_left3-3 {
+  transform: rotate(134deg);
+  -ms-transform: rotate(134deg);
+  /* IE 9 */
+  -moz-transform: rotate(134deg);
+  /* Firefox */
+  -webkit-transform: rotate(134deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(134deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-2 .pie_left3s.pie_left3-3 .left {
+  border: 8px solid rgba(203, 203, 203, 0.5);
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .c2-p2 {
+  position: absolute;
+  width: 296px;
+  height: 30px;
+  top: 160px;
+  left: 226px;
+  transform: rotate(-39deg);
+  -ms-transform: rotate(-39deg);
+  /* IE 9 */
+  -moz-transform: rotate(-39deg);
+  /* Firefox */
+  -webkit-transform: rotate(-39deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(-39deg);
+  /* Opera */
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .c2-p2 .d-1 {
+  width: 66px;
+  height: 30px;
+  left: 0px;
+  position: absolute;
+  border-radius: 2px;
+  background-image: linear-gradient(to top, rgba(144, 235, 244, 0.1), rgba(144, 235, 244, 0.4), rgba(144, 235, 244, 0.7), #90ebf4);
+  overflow: hidden;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .c2-p2 .d-1:before {
+  content: '';
+  position: absolute;
+  width: 169px;
+  height: 169px;
+  border-radius: 50%;
+  top: -70px;
+  left: 63px;
+  border: 1px solid #e9e9e9;
+  z-index: 2;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text1 {
+  position: absolute;
+  left: 308px;
+  top: 116px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text1 b.word {
+  font-size: 6.6em;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text1 b.tit {
+  position: relative;
+  left: -84px;
+  top: 20px;
+  font-size: 1.4em;
+  color: rgba(255, 255, 255, 0.5);
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text2 {
+  position: absolute;
+  left: 368px;
+  top: 257px;
+  font-size: 3em;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text3 {
+  position: absolute;
+  top: 296px;
+  width: 300px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text3 b.tit {
+  color: rgba(255, 255, 255, 0.5);
+  margin-right: 4px;
+  font-size: 11px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text3 b.word {
+  font-size: 17px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text3.btn1 {
+  left: 100px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text3.btn2 {
+  left: 320px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text3.btn3 {
+  left: 580px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text4 {
+  position: absolute;
+  left: 570px;
+  top: -3px;
+  width: 250px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text4 .word {
+  font-size: 3.4em;
+  position: relative;
+  left: -14px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text4 .date {
+  font-size: 1.2em;
+  position: relative;
+  top: -20px;
+  left: -10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box3 .box3-text .text4 .week {
+  font-size: 1.2em;
+  position: relative;
+  left: -66px;
+  top: -1px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box4 .box4-1 {
+  width: 430px;
+  height: 347px;
+  position: absolute;
+  left: 48px;
+  top: 24px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box4 .box4-2 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 80px;
+  top: 84px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box4 .box4-3 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 80px;
+  top: 84px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box4 .box4-4 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 80px;
+  top: 84px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .text1 {
+  left: 23px;
+  top: 122px;
+  font-size: 52px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .text2 {
+  left: 60px;
+  top: 192px;
+  font-size: 24px;
+  color: #929496;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .open {
+  left: 353px;
+  top: 126px;
+  width: 40px;
+  height: 70px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .open .stat1 {
+  display: none;
+  border-left: 40px solid #ffffff;
+  border-top: 36px solid transparent;
+  border-bottom: 36px solid transparent;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .open .stat2 {
+  width: 10px;
+  height: 70px;
+  background: #ffffff;
+  position: relative;
+  left: 0px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .open .stat2:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 70px;
+  top: 0%;
+  left: 22px;
+  background: #ffffff;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .time {
+  left: 293px;
+  top: 250px;
+  border-radius: 30px;
+  background: #0b0d0f;
+  font-size: 30px;
+  width: 160px;
+  text-align: center;
+  overflow: hidden;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .time b {
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg,
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg2 {
+  position: absolute;
+  right: -330px;
+  top: -72px;
+  width: 512px;
+  height: 512px;
+  border-radius: 50%;
+  z-index: 5;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg .rotate,
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg2 .rotate {
+  width: 512px;
+  height: 512px;
+  border-radius: 50%;
+  background-image: linear-gradient(to left, #000000, #ffffff);
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg .rotate img,
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg2 .rotate img {
+  width: 512px;
+  height: 512px;
+  border-radius: 50%;
+  background-image: linear-gradient(to left, #000000, #ffffff);
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg .cover,
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg2 .cover {
+  width: 100%;
+  height: 280px;
+  position: absolute;
+  background: #0d1114;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -moz-transform: rotate(45deg);
+  /* Firefox */
+  -webkit-transform: rotate(45deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(45deg);
+  /* Opera */
+  top: -130px;
+  left: 150px;
+  z-index: 2;
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg .cover-conn,
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg2 .cover-conn {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: 117px;
+  left: 50px;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -moz-transform: rotate(45deg);
+  /* Firefox */
+  -webkit-transform: rotate(45deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(45deg);
+  /* Opera */
+  background: linear-gradient(#0d1114, rgba(13, 17, 20, 0));
+  z-index: 3;
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg .cover2,
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg2 .cover2 {
+  width: 100%;
+  height: 280px;
+  position: absolute;
+  background: #0d1114;
+  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  /* IE 9 */
+  -moz-transform: rotate(-45deg);
+  /* Firefox */
+  -webkit-transform: rotate(-45deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(-45deg);
+  /* Opera */
+  top: 310px;
+  left: 150px;
+  z-index: 2;
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg .cover2-conn,
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg2 .cover2-conn {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: 293px;
+  left: 50px;
+  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  /* IE 9 */
+  -moz-transform: rotate(-45deg);
+  /* Firefox */
+  -webkit-transform: rotate(-45deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(-45deg);
+  /* Opera */
+  background: linear-gradient(rgba(13, 17, 20, 0), #0d1114);
+  z-index: 3;
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg .bg1,
+.main .movebox .box.p2 .backg .outbox dl dt.box5 .screen .cdimg2 .bg1 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  top: 170px;
+  left: 170px;
+  z-index: 1;
+  background: #0d1114;
+  border: 10px solid #eeeeee;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen img {
+  position: absolute;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .photo {
+  left: 253px;
+  width: 206.4px;
+  height: 168px;
+  top: 25px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .phonenumb {
+  left: 18px;
+  top: 25px;
+  width: 185.6px;
+  height: 44.8px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .answer {
+  left: 506px;
+  bottom: 36px;
+  width: 89.6px;
+  height: 90.4px;
+  cursor: pointer;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .answer a {
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  width: 78.4px;
+  height: 78.4px;
+  border-radius: 50%;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .hangup {
+  left: 130px;
+  bottom: 36px;
+  width: 89.6px;
+  height: 90.4px;
+  cursor: pointer;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .hangup a {
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  width: 78.4px;
+  height: 78.4px;
+  border-radius: 50%;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .timer {
+  left: 326px;
+  top: 190px;
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .timer .num {
+  font-size: 1.8em;
+  position: relative;
+  left: 6px;
+  top: 2px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .timer .unit {
+  font-size: 1.8em;
+  display: none;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .hand {
+  left: 340px;
+  bottom: 48px;
+  width: 40.8px;
+  height: 56.8px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .drleft {
+  left: 242px;
+  bottom: 68px;
+  width: 15.2px;
+  height: 16px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .drleft.drleft-2 {
+  left: 264px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .drleft.drleft-3 {
+  left: 286px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .drleft.drleft-4 {
+  left: 308px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .dright {
+  left: 406px;
+  bottom: 68px;
+  width: 15.2px;
+  height: 16px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .dright.dright-2 {
+  left: 428px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .dright.dright-3 {
+  left: 450px;
+}
+.main .movebox .box.p2 .backg .outbox dl dt.box6 .screen .dright.dright-4 {
+  left: 472px;
+}
+.main .movebox .box.p3 .data {
+  width: 100%;
+  height: 100%;
+}
+.main .movebox .box.p3 .data .txt {
+  width: 405px;
+  height: 94px;
+  position: absolute;
+  top: 435px;
+  left: 40%;
+}
+.main .movebox .box.p3 .data .txt img {
+  position: relative;
+  display: none;
+}
+.main .movebox .box.p4 .data {
+  width: 100%;
+  height: 100%;
+}
+.main .movebox .box.p4 .data img.text {
+  width: 217px;
+  height: 369px;
+  position: absolute;
+  top: 304px;
+  left: 888px;
+}
+.main .movebox .box.p4 .data .txt {
+  width: 548px;
+  height: 109px;
+  position: absolute;
+  top: 335px;
+  left: 180px;
+}
+.main .movebox .box.p4 .data .txt img {
+  position: relative;
+  display: none;
+}
+.main .movebox .box.p5 .data {
+  width: 100%;
+  height: 100%;
+}
+.main .movebox .box.p5 .data .txt {
+  width: 358px;
+  height: 190px;
+  position: absolute;
+  top: 400px;
+  right: 390px;
+}
+.main .movebox .box.p5 .data .txt img {
+  position: relative;
+  display: none;
+}
+.main .movebox .box.p6 .data {
+  width: 100%;
+  height: 100%;
+}
+.main .movebox .box.p6 .data img.word {
+  position: absolute;
+  width: 588px;
+  height: 85px;
+  top: 187px;
+  left: 264px;
+}
+.main .movebox .box.p6 .data .txt {
+  position: absolute;
+  top: 338px;
+  left: 250px;
+  font-size: 16px;
+  color: #333333;
+}
+.main .movebox .box.p6 .data .txt dl {
+  position: relative;
+  padding: 16px;
+  padding-bottom: 20px;
+}
+.main .movebox .box.p6 .data .txt dl dt {
+  line-height: 28px;
+}
+.main .movebox .box.p6 .data .txt dl dt.tit {
+  font-size: 18px;
+}
+.main .movebox .box.p6 .data .txt dl dt.end {
+  margin-bottom: 20px;
+}
+.main .movebox .box.p6 .data .txt .bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  background: #ffffff;
+}
+.main .movebox .box.p6 .data .showform {
+  border-bottom: 2px solid #f34c4b;
+}
+.main .movebox .box.p6 .data .form {
+  display: none;
+  position: absolute;
+  top: 226px;
+  left: 630px;
+  height: 360px;
+  z-index: 1;
+  border: 1px solid #e9e9e9;
+  box-shadow: 0px 2px 12px #cccccc;
+  background: #ffffff;
+  font-size: 18px;
+  color: #777777;
+  padding: 42px;
+}
+.main .movebox .box.p6 .data .form .close {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 38px;
+  height: 38px;
+}
+.main .movebox .box.p6 .data .form dl.flt {
+  width: 280px;
+  float: left;
+}
+.main .movebox .box.p6 .data .form dl.flt input.text {
+  width: 190px;
+}
+.main .movebox .box.p6 .data .form dl.flt dt.sex b {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #888888;
+  border-radius: 50%;
+  position: relative;
+  top: 2px;
+  cursor: pointer;
+}
+.main .movebox .box.p6 .data .form dl.flt dt.sex b.active:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e73c3c;
+  top: 2px;
+  left: 2px;
+}
+.main .movebox .box.p6 .data .form dl.flt dt.who b {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #888888;
+  border-radius: 2px;
+  position: relative;
+  top: 2px;
+  cursor: pointer;
+}
+.main .movebox .box.p6 .data .form dl.flt dt.who b.active:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 6px;
+  height: 12px;
+  border-bottom: 2px solid #e73c3c;
+  border-right: 2px solid #e73c3c;
+  top: -6px;
+  left: 4px;
+  transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  /* IE 9 */
+  -moz-transform: rotate(30deg);
+  /* Firefox */
+  -webkit-transform: rotate(30deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(30deg);
+  /* Opera */
+}
+.main .movebox .box.p6 .data .form dl.frt {
+  width: 286px;
+  float: right;
+}
+.main .movebox .box.p6 .data .form dl.frt input.text {
+  width: 270px;
+}
+.main .movebox .box.p6 .data .form dl.frt dt {
+  text-align: right;
+}
+.main .movebox .box.p6 .data .form dl.frt dt.tit {
+  position: relative;
+  left: 12px;
+}
+.main .movebox .box.p6 .data .form dl dt {
+  line-height: 40px;
+}
+.main .movebox .box.p6 .data .form input {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #cccccc;
+  text-indent: 5px;
+}
+.main .movebox .box.p6 .data .form .submit {
+  position: absolute;
+  right: 42px;
+  bottom: 50px;
+  width: 78px;
+  line-height: 34px;
+  border-radius: 4px;
+  display: block;
+  background: #e73c3c;
+  color: #ffffff;
+  text-align: center;
+}

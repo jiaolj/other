@@ -1,0 +1,60 @@
+<!DOCTYPE>
+<html>
+<head>
+<script src="jquery.min.js"></script>
+<style>
+.main{
+width:100%;
+position:fixed;
+bottom:20px;
+top:20px;
+}
+.main>.content{
+margin:0 auto;
+width:500;
+height:500;
+}
+svg{
+border:1px solid #ccc;
+width:500;
+height:500;
+}
+</style>
+</head>
+<body>
+
+
+<div class="main">
+	<div class="content">
+		<svg id="svg1" version="1.1"xmlns="http://www.w3.org/2000/svg" onmousemove="getpoint(event,1)">
+		<path d="" style="fill:#D94600;stroke:#D94600;stroke-width:1;"/>
+		</svg>
+	</div>
+</div>
+
+<div id="ponit1"></div>
+<script>
+//鼠标在画板移动获得点的坐标
+function getpoint(e,num){
+	myc=document.getElementById('svg'+num);
+	leftpx=myc.offsetLeft;
+	toppx=myc.offsetTop;
+	x=e.clientX-leftpx;
+	y=e.clientY-toppx;
+	text=x+','+y
+	$('#ponit'+num).text('坐标:'+text);
+}
+function path1(){
+ptx=50
+ptY=80
+//起点
+pathValue='M'+ptx+' '+ptY+' '
+
+$('#svg1>path:eq(0)').attr('d',pathValue);
+}
+
+path1();
+
+</script>
+</body>
+</html>

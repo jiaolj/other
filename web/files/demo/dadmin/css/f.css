@@ -1,0 +1,27 @@
+#content li{
+width:70px;
+padding:8px;
+}
+#content li:hover,#content .active{
+border:2px solid #A7C0DC;
+background:#4682B4;
+padding:6px;
+}
+#content li .logo{
+height:60px;
+}
+#content li .tit{
+line-height:20px;
+}
+#menu ul li{
+text-align:center;
+width:40px;
+line-height:20px;
+border:1px solid #5692da;
+cursor:pointer;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+border-radius:3px;
+behavior:url(js/pie.htc);
+position:relative;
+}

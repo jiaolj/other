@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+{%include 'public/head.html'%}
+<style>
+ol>li{
+height:24px;
+line-height:24px;
+}
+ol>li>a{
+cursor:pointer;
+}
+ol>li>a:hover{
+color:#4A4AFF;
+}
+ol>li>span{
+color:red;
+}
+</style>
+</head>
+<body>
+{%include 'public/top.html'%}
+<div class="content">
+
+选择游戏模式
+
+<ol>
+
+<li><a>单人模式</a></li>
+
+<li><a>双人模式</a></li>
+
+<li><a>对战模式</a> 服务器状态: <span>查询中...</span></li>
+
+</ol>
+
+
+</div>
+{%include 'public/foot.html'%}
+<script src="/static/tank/js/webskt.js"></script>
+<script>
+$('ol>li>a').click(function(){
+	text=$(this).text();
+	switch(text){
+	case "单人模式":
+	location.href='/static/html/tank/tank.html';
+	break;
+	case "双人模式":
+	location.href='double/';
+	break;
+	case "对战模式":
+	//if ($('ol>li>span').text()!='关闭') location.href='learn/';
+	location.href='learn/';
+	break;
+	default:
+	}
+})
+
+
+function getWebSocket(){
+	initWebSocket('ws://10.13.91.222:9999');
+}
+function getWebSocketOpen(){
+	$('ol>li>span').text('开启');
+}
+function getWebSocketClose(){
+	$('ol>li>span').text('关闭');
+}
+function isServerOpen(){
+	var text=$('ol>li>span').text();
+	if (text=='关闭'||text=='查询中...') reFresh();
+}
+
+getWebSocket();
+isServerOpenTask=setInterval('isServerOpen();',2000);
+
+</script>
+</body>
+</html>

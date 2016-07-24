@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<title>圆环进度条</title>
+<link rel="stylesheet" href="../base.css" type="text/css" />
+<style>
+
+.out{
+margin:50px;
+border:1px solid #ccc;
+border-radius:50%;
+width:100px;
+height:100px;
+position:relative;
+}
+.out .fill{
+width:100px;
+height:100px;
+position:absolute;
+background:#ccc;
+border-radius:50%;
+/*transform: rotate(30deg);*/
+clip:rect(0,auto,auto,10px);
+}
+.out .in{
+box-sizing:border-box;
+border:1px solid #ccc;
+border-radius:50%;
+width:80px;
+height:80px;
+position:absolute;
+background:#fff;
+left:10px;
+top:10px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="out">
+	<div class="fill">
+	</div>
+	<div class="in">
+	</div>
+</div>
+
+</body>
+</html>

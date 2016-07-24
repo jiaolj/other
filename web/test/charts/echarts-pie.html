@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<style>
+*{margin:0px;padding:0px;font-weight:normal;font-style:normal;}
+body{background:#fff;color:#333;font-size:14px;font-family:"微软雅黑"}
+ul{list-style:none;}
+img{border-style:none;width:100%;height:100%;}
+input{font-family:"Microsoft YaHei";}
+a{text-decoration:none;color:#555;cursor:pointer}
+a:hover{text-decoration:underline}
+input:focus {outline:none;}
+.flt{float:left}
+.frt{float:right}
+.cpt{cursor:pointer;}
+.cb{clear:both;}
+.close{position:absolute;right:1%;top:1%;cursor:pointer;}
+.mgl{margin-left:4%;}
+.mgr{margin-right:4%;}
+.tlt{text-align:left;}
+.dsn{display:none;}
+.bs{-webkit-box-shadow: 2px 2px 10px #ccc;}
+.zoom{zoom:1}
+.tct{text-align:center;}
+#page_cover{position:fixed;display:none;z-index:99;width:100%; height:100%;filter:Alpha(Opacity=0);-moz-opacity:0;opacity:0.1;background:black;}
+
+
+
+.main{
+width:100%;
+position:absolute;
+top:0;
+bottom:0;
+}
+.main>.menu{
+margin:2%;
+width:98%;
+height:5%;
+}
+.main>.chart{
+position:absolute;
+width:500px;
+height:500px;
+left:4%;
+top:2%;
+border:1px solid #ccc;
+display:none;
+}
+#altdiv{
+width:480px;
+height:500px;
+}
+</style>
+
+
+</head>
+<body>
+<div class="main">
+	<div class="menu"><a id="alt">点击</a></div>
+	
+	<div class="chart">
+		<div class="close">X</div>
+		<div id="altdiv"></div>
+	</div>
+</div>
+</body>
+<script src="http://f.jiaolj.com/js/b1.js"></script>
+<script src="http://f.jiaolj.com/js/dist/echarts.js"></script>
+<script>
+$('.close').click(function(){$(this).parent().slideUp('50');});
+require.config({paths: {echarts: 'http://f.jiaolj.com/js/dist'}});
+var getPieChart=function(cid,data){
+	var o;
+	require(
+		['echarts','echarts/chart/pie',],
+		function (ec) {
+			o = ec.init(document.getElementById(cid));
+			var option = {
+				tooltip : {
+					trigger: 'item',
+					formatter: "{a} <br/>{b} : {c} ({d}%)"
+				},
+				animation:false,
+				series : [
+					{
+						name:'访问来源',
+						type:'pie',
+						radius : ['60%','80%'],
+						center: ['50%', '50%'],
+						data:data,
+						itemStyle:{
+							normal: {
+								borderColor:'#fff',
+								borderWidth:'1.5'
+							}
+						}
+					}
+				]
+			}
+			o.setOption(option,true);
+		}
+	)
+	return o;
+}
+
+
+$('#alt').click(function(){
+	$('.main>.chart').slideDown('50');
+	var listData=[
+                {value:335, name:'直接访问'},
+                {value:310, name:'邮件营销'},
+                {value:234, name:'联盟广告'},
+                {value:135, name:'视频广告'},
+                {value:1548, name:'搜索引擎'}
+			];
+	var o=getPieChart('altdiv',listData);
+})
+</script>
+</html>

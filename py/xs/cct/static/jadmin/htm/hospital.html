@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<link  type="text/css" href="../css/b.css" rel="stylesheet" />
+<style>
+body{min-width:1200px;}
+.mytb{margin:0 auto;border-collapse:collapse;font-size:14px;max-width:1600px}
+.mytb,.mytb td,.mytb th{border:1px solid #d5dde8}
+.mytb th{background:#edf6ff;font-size:15px;text-align:left;height:32px}
+.mytb tr{height:60px}
+.cl1{color:#63c091}.cl2{color:#5692da}.cl3{color:#dc6b43}.cl9{color:#b6bac6}
+.mytb tr .abs{width:27%;min-width:370px;}
+#addh{margin-left:10px}
+#hiddiv{width:86%;left:40px;top:60px;background:#fff;padding:2%}
+#hiddiv ul{border-left:1px solid #d5dde8;}
+#hiddiv ul li{border-right:1px solid #d5dde8;border-top:1px solid #d5dde8;line-height:40px;width:120px;}
+#hiddiv ul .active{background:#edf6ff}
+#tab2,#tab3{border:solid #d5dde8;border-width:1px 0px 0px 1px;width:96%;}
+#tab2 tr td,#tab3 tr td{line-height:40px;border:solid #d5dde8; border-width:0px 1px 1px 0px;}
+#tab2 tr .one{width:120px}
+#tab2 tr .one input{height:28px;width:180px;outline:none;}
+#tab2 tr .two{width:470px;text-align:left;text-indent:6px;}
+#tab2 tr .two input{height:20px;width:200px;outline:none}
+#tab2 tr .two select{height:28px;width:204px;outline:none}
+#tab2 tr .two textarea{width:90%;margin-top:8px;outline:none}
+#tab2 tr .two .short{height:80px}
+#tab2 tr .two .long{height:150px}
+#tab2 tr .two iframe{height:40px;width:500px;border:0;position:relative;top:8px;}
+#tab2 tr .two img{width:80px;height:60px;position:relative;top:8px;margin-right:10px;}
+#tab1 tr img{width:80px;height:60px}
+.tclose{position:absolute;cursor:pointer;display:block;right:5px;top:5px;width:13px;height:13px;background:url(../img/tool.gif) -9999px -9999px no-repeat;background-position: 0 -80px}
+</style>
+</head>
+<body>
+<div class="psa dsn bd tct" id="hiddiv"><i class="tclose"></i>
+	<ul class="ul cul"><li class="update active" did="" i="1">添加医院</li><li class="doc dsn" i="2">医生管理</li><div class="cb"></div></ul>
+	<table id="tab2" cellspacing="0" cellpadding="0">
+		<tr><td class="one">名称</td><td class="two"><input type="text" /></td></tr>
+		<tr><td class="one">标志</td><td class="two"><img id="litpic" src="" /><iframe src="/upload/"></iframe></td></tr>
+		<tr><td class="one">国家</td><td class="two"><select><option value="1">美国试管医院</option><option value="2">泰国试管医院</option></select></td></tr>
+		<tr><td class="one">成立时间</td><td class="two"><input type="text" /></td></tr>
+		<tr><td class="one">摘要</td><td class="two long"><textarea class="short"></textarea></td></tr>
+		<tr><td class="one">权重</td><td class="two"><input type="text" /></td></tr>
+		<tr><td class="one">详细内容</td><td class="two long"><textarea class="long"></textarea></td></tr>
+		<tr><td class="one"><input type="button" id="addbutton" value="提交" /></td><td class="two"></td></tr>
+	</table>
+	<table id="tab3" class="dsn" cellspacing="0" cellpadding="0">
+		<tr><td>名称</td><td>所属医院</td></tr>
+	</table>
+	
+</div>
+<div class="h5p fs0"></div>
+<div class="tcenter th30 fs16p">试管医院</div>
+	<div class="pdl35p pdb20p h30p lh30p">
+		国家 <select id="htp"><option value="0">全部</option><option value="1">美国试管医院</option><option value="2">泰国试管医院</option></select>
+		<input id="addh" type="button" value="添加医院"/>
+	</div>
+<table id="tab1" class="mytb" cellspacing="0" cellpadding="5"></table>
+<script src="../js/b.js"></script>
+<script>
+var getsize=function(){
+var clw=parseInt(document.body.clientWidth);
+var widths=(clw*0.94)+'px';
+$('#tab1').css('width',widths);
+}
+getsize();
+$(window).resize(function(){getsize()});
+var tb1=$('#tab1');
+var tb2=$('#tab2');
+var tb3=$('#tab3');
+var hdata1=$('#tab2 tr td input:eq(0)');
+var hdata2=$('#tab2 tr td select');
+var hdata3=$('#tab2 tr td input:eq(1)');
+var hdata4=$('#tab2 tr td textarea:eq(0)');
+var hdata5=$('#tab2 tr td input:eq(2)');
+var hdata6=$('#tab2 tr td textarea:eq(1)');
+var hpic=$('#litpic');
+
+var hostp=0;
+$('#htp').change(function(){
+	hostp=$(this).val();
+	getlist();
+})
+$('#hiddiv>ul>li').click(function(){
+	$(this).parent().find('.active').removeClass('active');
+	$(this).addClass('active');
+	var i=$(this).attr('i');
+	if(i==1){
+		tb2.show();
+		tb3.hide();
+	}else{
+		tb2.hide();
+		tb3.show();
+	}
+
+})
+var tbnm='hospital';
+var cntClick=function(){
+	$('#tab1 tr td a').click(function(){
+		var txt=$(this).text();
+		var li=$(this).parent().parent();
+		var did=li.attr('did');
+		switch(txt){
+			case '删除':
+				if(confirm("确认删除吗?")){
+					var arg={t:'del',did:did};
+					updatelist(arg,function(){alert('删除成功!')});
+				}
+				break;
+			case '修改':
+				location.href='edit.html?id='+did+'&com='+tbnm+'.html';
+				/*
+				$('#hiddiv>ul>.update').attr('did',did).text('修改医院属性');
+				$('#hiddiv').slideDown(300);
+				$.ajax({
+					url: '/gethptdetail/',
+					type: 'POST',
+					data:{did:did},
+					dataType: 'json'
+				}).done(function(data) {
+					hdata1.val(data.name);
+					hdata2.val(data.cid);
+					hdata3.val(data.ftime);
+					hdata4.val(data.abs);
+					hdata5.val(data.rank);
+					hdata6.val(data.text);
+					hpic.attr('src',data.pic);
+				}).fail(function(jqXHR,textStatus) {
+					log(' request failed'+textStatus);
+				});*/
+				break;
+		}
+	})
+}
+var getlist=function(){
+	$.ajax({
+		url: '/gethospital/',
+		type: 'GET',
+		data:{hostp:hostp},
+		dataType: 'json'
+	}).done(function(data){
+		var d=data.d;
+		var c=data.c;
+		var htm='<tr ><th class="cl1">ID</th><th class="cl2">名称</th><th class="cl2">标志</th><th class="cl3">国家</th><th class="cl1">成立时间</th><th class="abs cl2">摘要</th><th class="cl3">权重</th><th class="cl9">操作</th></tr>';
+		for(var i in d) htm+='<tr did="'+d[i].id+'"><td>'+d[i].id+'</td><td>'+d[i].name+'</td><td><img src="'+d[i].pic+'" /></td><td>'+d[i].cname+'</td><td>'+d[i].ftime+'</td><td class="abs">'+subkwd(d[i].abs,78)+'</td><td>'+d[i].rank+'</td><td><a>修改</a> <a>删除</a></td></tr>';
+		$('#tab1').html(htm);
+		cntClick();
+	}).fail(function(jqXHR,textStatus) {
+		log(' request failed'+textStatus);
+	});
+}
+getlist();
+$('#hiddiv>.tclose').click(function(){$(this).parent().slideUp(300)});
+$('#addh').click(function(){
+	location.href='edit.html?id=0&com='+tbnm+'.html';
+	/*if($('#hiddiv').css('display')=='none'){
+		$('#hiddiv').slideDown(300);
+		$('#hiddiv>ul>.update').attr('did','').text('添加医院');
+		$('#hiddiv>ul>.doc').hide();
+		hdata1.val('').focus();
+		hdata2.val(1);
+		hdata3.val('');
+		hdata4.val('');
+		hdata5.val(0);
+		hdata6.val('');
+		hpic.attr('src','');
+	}
+	else $('#hiddiv').slideUp(300);*/
+})
+
+var updatelist=function(arg,suc){
+	$.ajax({
+		url: '/uphospital/',
+		type: 'POST',
+		data:arg,
+		dataType: 'json'
+	}).done(function(data) {
+		if(data=='1'){
+			suc();
+			getlist();
+		}
+	}).fail(function(jqXHR,textStatus) {
+		log(' request failed'+textStatus);
+	});
+}
+$('#addbutton').click(function(){
+	var name=trim(hdata1.val());
+	if(!name){
+		alert('请填写医院名称！');
+		return;
+	}
+	var t='add';
+	var txt='添加成功！';
+	var did=$('#hiddiv>ul>.update').attr('did');
+	var cid=hdata2.val();
+	var ftime=trim(hdata3.val());
+	var abs=trim(hdata4.val());
+	var rank=trim(hdata5.val());
+	var text=trim(hdata6.val());
+	var pic=hpic.attr('src');
+	if(did.length>0){
+		t='up';
+		txt='修改成功！'
+	}
+	var arg={'t':t,name:name,cid:cid,abs:abs,ftime:ftime,rank:rank,text:text,pic:pic,did:did};
+	updatelist(arg,function(){alert(txt)});
+})
+</script>
+</body>
+</html>

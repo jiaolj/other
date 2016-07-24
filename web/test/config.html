@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<style>
+html{height:100%}
+body{background:#f5f5f5;height:100%;}
+.psa{position:absolute}
+.box{
+font-size:90px;
+width:1em;height:1em;
+left:2em;
+top:2em;
+}
+.box>.cter{
+width:0.44em;
+height:0.44em;
+border:0.06em solid #999;
+box-sizing:border-box;
+border-radius:50%;
+top:0.28em;
+left:0.28em;
+}
+.box>.gear{
+display:block;
+position:absolute;
+width:0.18em;height:0.18em;
+border:solid #999;
+border-width: 0.055em 0.05em 0 0.05em;
+box-sizing:border-box;
+}
+.box>.gear:nth-child(1){left:0.42em}
+.box>.gear:nth-child(2){left:0.11em;top:0.11em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
+.box>.gear:nth-child(3){left:0.72em;top:0.13em;-webkit-transform:rotate(45deg);transform:rotate(45deg)}
+.box>.gear:nth-child(4){left:-0.03em;top:0.42em;-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}
+.box>.gear:nth-child(5){left:0.84em;top:0.42em;-webkit-transform:rotate(90deg);transform:rotate(90deg)}
+.box>.gear:nth-child(6){left:0.09em;top:0.72em;-webkit-transform:rotate(-135deg);transform:rotate(-135deg)}
+.box>.gear:nth-child(7){left:0.71em;top:0.72em;-webkit-transform:rotate(135deg);transform:rotate(135deg)}
+.box>.gear:nth-child(8){left:0.4em;top:0.84em;-webkit-transform:rotate(180deg);transform:rotate(180deg)}
+.box>.gear:before{content:'';position:absolute;width:0.17em;height:0.17em;left:0.11em;top:0em;-webkit-transform:rotate(25deg);transform:rotate(25deg);border-bottom:0.05em solid #999;box-sizing:border-box;}
+</style>
+</head>
+<body>
+<div class="box psa"><i class="gear"></i><i class="gear"></i><i class="gear"></i><i class="gear"></i><i class="gear"></i><i class="gear"></i><i class="gear"></i><i class="gear"></i><i class="cter psa"></i></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<script>
+var log = function(d){console.log(d)};
+(function(window){
+	var MVP = MVP || {};
+	MVP.model = function(){
+		var M = {};
+		M.data = {1:new Date()};
+		return {
+			getData : function(m){
+				return M.data[m];
+			}
+		}
+	}();
+	MVP.view = function(){
+		return function(m){
+			log(m);
+		}
+	}();
+	MVP.presenter = function(){
+		return function(m){
+			log(m);
+		}
+	}();
+	MVP.init = function(){
+		return function(m){
+			log(m);
+		}
+	}();
+	window.MVP = MVP;
+})(window)
+log(MVP.model.getData(1));
+</script>

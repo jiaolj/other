@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+{%include 'public/head.html'%}
+</head>
+<body>
+{%include 'public/top.html'%}
+<div class="content">
+<object>
+<svg width="500" height="300" id="svg1" onmousemove="getpoint(event,1)">
+	<!-- Box around the image -->
+	<rect x="1" y="1" width="498" height="298" fill="none" stroke="#ccc" stroke-width="1"></rect>
+<!--正转-->
+<!--<g transform="translate(250,150)">
+    <rect x="-110" y="-110" width="220" height="220" rx="120" ry="120" style="fill:#fff;stroke:#ccc;stroke-width:2;stroke-dasharray:10,5;">
+      <animateTransform attributeName="transform" type="rotate" from="36000" to="0" begin="0" dur="600s" />
+    </rect>
+</g>-->
+<!--反转-->
+<!--<g transform="translate(250,150)">
+    <rect x="-100" y="-100" width="200" height="200" rx="100" ry="100" style="fill:#fff;stroke:#ccc;stroke-width:2;stroke-dasharray:10,5;">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="36000" begin="0" dur="600s" />
+    </rect>
+</g>-->
+
+	<!-- Group of elements to animate -->
+	<path d="M170 150 A 80 80, 0, 1, 0, 170 149" style="fill:#f5f5f5;display:none;"/>
+	
+	<!--<circle cx="250" cy="150" r="29" style="fill:#fff;stroke:#ccc;stroke-width:2;stroke-dasharray:6,4;"></circle>-->
+
+<!--中心球体-->
+	<g transform="translate(250,150)">
+		<rect x="-30" y="-30" width="60" height="60" rx="29" ry="100" style="fill:#fff;stroke:#ccc;stroke-width:2;stroke-dasharray:6,3;">
+			<animateTransform attributeName="transform" type="rotate" from="0" to="120" begin="0" dur="1s" restart="always" repeatCount="indefinite"/>
+		</rect>
+	</g>
+
+	<!--跳动<g stroke-width="5" stroke="#ccc">
+		<circle cx="0" cy="-12" r="10" style="fill:#fff;stroke:#ccc;stroke-width:1;stroke-dasharray:3,3;"></circle>
+		<animateTransform attributeName="transform" type="rotate" from="0" to="360000"begin="0" dur="1000s" />
+		<animateMotion path="M170 150 A 80 80, 0, 1, 0, 170 149" dur="8s" repeatCount="indefinite" rotate="auto"></animateMotion>
+	</g>-->
+
+	<g transform="translate(-30,-15)">
+		<rect x="-10" y="-10" width="20" height="20" rx="50" ry="100" style="fill:#fff;stroke:#ccc;stroke-width:2;stroke-dasharray:3,3;">
+		  <animateTransform attributeName="transform" type="rotate" from="0" to="400" begin="0" dur="1s" restart="always" repeatCount="indefinite"/>
+		</rect>
+		<rect x="-24" y="-24" width="12" height="12" rx="50" ry="100" style="fill:#fff;stroke:#ccc;stroke-width:1;stroke-dasharray:2,2;">
+			<animateTransform attributeName="transform" type="rotate" from="0" to="720" begin="0" dur="5s" restart="always" repeatCount="indefinite"/>
+		</rect>
+		<animateMotion path="M170 150 A 80 80, 0, 1, 0, 170 149" dur="20s" repeatCount="indefinite" rotate="auto"></animateMotion>
+	</g>
+
+</svg>
+</object>
+<div id="ponit1"></div>
+</div>
+{%include 'public/foot.html'%}
+<script src="/static/js/home.js"></script>
+<script>
+</script>
+</body>
+</html>

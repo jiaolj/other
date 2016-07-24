@@ -1,0 +1,35 @@
+@import 'model.less';
+
+.color(@r,@g,@b){
+	dt {
+		.h(60px);
+		&:nth-child(1) {
+			.bg(rgba(@r, @g, @b, 1));
+		}
+		&:nth-child(2) {
+			.bg(rgba(@r, @g, @b, 0.75));
+		}
+		&:nth-child(3) {
+			.bg(rgba(@r, @g, @b, 0.5));
+		}
+		&:nth-child(4) {
+			.bg(rgba(@r, @g, @b, 0.25));
+		}
+		&:nth-child(5) {
+			.bg(rgba(@r, @g, @b, 0));
+		}
+	}
+}
+
+dl.orange {
+	.color(254, 140, 16);
+}
+dl.yellow {
+	.color(254, 252, 20);
+}
+dl.blue {
+	.color(0, 255, 251);
+}
+dl.green {
+	.color(2, 255, 17);
+}

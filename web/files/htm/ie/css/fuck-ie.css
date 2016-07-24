@@ -1,0 +1,87 @@
+
+body {
+    background: url(../images/fuckie-bg.png) repeat-x 0 60px;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.wrapper h1 {
+    width: 160px;
+    height: 105px;
+    background: url(../images/logo.png) no-repeat 0 0;
+    text-indent: -9999px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.desc {
+    padding-top: 60px;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    font-size: 20px;
+}
+
+.browsers {
+    width: 680px;
+    height: 280px;
+    margin: 70px auto;
+    position: relative;
+}
+
+.browsers .link-firefox {
+    display: block;
+    width: 180px;
+    padding: 168px 0 0 0;
+    background: url(../images/firefox.png) no-repeat 0 0;
+    line-height: 30px;
+    text-align: center;
+    color: #555555;
+    font-size: 14px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+}
+
+.browsers .link-chrome {
+    display: block;
+    width: 240px;
+    padding: 239px 0 0 0;
+    background: url(../images/chrome.png) no-repeat 0 0;
+    line-height: 30px;
+    text-align: center;
+    color: #555555;
+    font-size: 18px;
+    position: absolute;
+    top: 15px;
+    left: 220px;
+}
+
+.browsers .link-ie9 {
+    display: block;
+    width: 185px;
+    padding: 176px 0 0 0;
+    background: url(../images/ie.png) no-repeat 0 0;
+    line-height: 30px;
+    text-align: center;
+    color: #555555;
+    font-size: 14px;
+    position: absolute;
+    top: 20px;
+    left: 490px;
+}
+
+.notice {
+    text-align: center;
+    color: #999999;
+}
+
+.footer {
+    margin: 80px 0 30px;
+    text-align: center;
+    color: #aaaaaa;
+}

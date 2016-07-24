@@ -1,0 +1,40 @@
+{% extends 'about/index.html' %}
+{% block menu %}
+<div class="title ti1">试管医院</div>
+<ul>
+	<li {%if not cid%}class="active"{%endif%}><a href="/hospital/">全部</a></li>
+	<li {%ifequal cid '1'%}class="active"{%endifequal%}><a href="/hospital/1/">美国</a></li>
+	<li {%ifequal cid '2'%}class="active"{%endifequal%}><a href="/hospital/2/">泰国</a></li>
+</ul>
+{% endblock %}
+
+{% block cnt %}
+<style>
+.hlist>li{height:160px;border-bottom:1px dashed #ccc}
+.hlist>li>div{margin-bottom:10px}
+.hlist>li>.frt>.tit{line-height:38px}
+.hlist>li>.frt>.tit>a{color:#0068a9}
+.hlist>li>.frt>.cnt{font-size:12px;line-height:22px}
+.hlist>li>.frt>.cnt>.one{color:#999}
+.hlist>li>.frt>.cnt>.two{color:#0068a9}
+
+.hlist>li>.flt{width:200px;height:150px}
+.hlist>li>.frt{width:476px}
+</style>
+<h3>美国试管婴儿医院</h3>
+<ul class="hlist">
+	{% for lt in listall%}
+	<li>
+		<div class="flt"><a href="/detail/hospital-{{lt.id}}.html" target="_blank"><img src="{{lt.pic}}" /></a></div>
+		<div class="frt">
+			<i class="tit"><a href="/detail/hospital-{{lt.id}}.html" target="_blank">{{lt.name}}</a></i>
+			<i class="cnt">
+				<a class="one" href="/detail/hospital-{{lt.id}}.html" target="_blank">{{lt.abs|slice:"150"}}</a>
+				[ <a class="two" href="/detail/hospital-{{lt.id}}.html" target="_blank">详细</a> ]
+			</i>
+		</div>
+		<i class="cb"></i>
+	</li>
+	{%endfor%}
+</ul>
+{% endblock %}

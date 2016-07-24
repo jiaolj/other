@@ -1,0 +1,175 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>走势图生成工具_在线工具箱</title>
+<meta name="keywords" content="走势图,走势图生成,走势图生成工具" />
+<meta name="description" content="一款提供给用户使用的走势图生成工具" />
+<link rel="shortcut icon" href="/imgs/favicon1.ico" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/forceplastics.css" />
+<script src="/js/jquery/jquery-1.4.3.js"></script>
+<script src="/chart/flash.js"></script>
+<style type="text/css">
+.w80px{width:80px;text-align:center}
+</style>
+<script>
+jQuery(function($){
+    $('#chartflash').flash({ 
+       swf        : '/chart/beechart-line.swf',
+       width      : 600,
+       height     : 260, 
+       flashvars  : {
+			w:500,
+			h:200,
+			dataUrl : '/chart/chartxml.html',
+			cssUrl : '/css/flash/chart.css'
+		}
+    });
+});
+function chartdata(){
+	var name=$('#name').val()
+	$('#name2').html(name+'走势图')
+	var kind=$('#kind').val()
+	var kind2=$('#kind2').val()
+	var unit=$('#unit').val()
+	var datelist1=$('#datelist1').val()
+	var datelist2=$('#datelist2').val()
+	var datelist3=$('#datelist3').val()
+	var datelist4=$('#datelist4').val()
+	var datelist5=$('#datelist5').val()
+	var datalist1=$('#datalist1').val()
+	var datalist2=$('#datalist2').val()
+	var datalist3=$('#datalist3').val()
+	var datalist4=$('#datalist4').val()
+	var datalist5=$('#datalist5').val()
+	var datalist21=$('#datalist21').val()
+	var datalist22=$('#datalist22').val()
+	var datalist23=$('#datalist23').val()
+	var datalist24=$('#datalist24').val()
+	var datalist25=$('#datalist25').val()
+	
+	var datall=name+','+kind+','+kind2+','+unit+','+datelist1+','+datelist2+','+datelist3+','+datelist4+','+datelist5+','+datalist1+','+datalist2+','+datalist3+','+datalist4+','+datalist5+','+datalist21+','+datalist22+','+datalist23+','+datalist24+','+datalist25
+	//alert(datall)
+	
+	var selecttype=$('input[name="charttype"]:checked').val();
+	if (selecttype==1){
+		jQuery(function($){
+		    $('#chartflash').flash({ 
+		       swf        : '/chart/beechart-line.swf',
+		       width      : 600,
+		       height     : 260, 
+		       flashvars  : {
+					w:500,
+					h:200,
+					dataUrl : '/chart/chartxml.html?datall='+datall,
+					cssUrl : '/css/flash/chart.css'
+				}
+		    });
+		});
+	}else if(selecttype==2){
+		jQuery(function($){
+		    $('#chartflash').flash({ 
+		       swf        : '/chart/beechart-line.swf',
+		       width      : 600,
+		       height     : 260, 
+		       flashvars  : {
+					w:500,
+					h:200,
+					dataUrl : '/chart/chartxml.html?datall='+datall,
+					cssUrl : '/css/flash/chart1.css'
+				}
+		    });
+		});
+	}else if(selecttype==3){
+		jQuery(function($){
+		    $('#chartflash').flash({ 
+		       swf        : '/chart/beechart-bar.swf',
+		       width      : 600,
+		       height     : 260, 
+		       flashvars  : {
+					w:500,
+					h:200,
+					dataUrl : '/chart/chartxml.html?datall='+datall
+				}
+		    });
+		});
+	}else if(selecttype==4){
+		jQuery(function($){
+		    $('#chartflash').flash({ 
+		       swf        : '/chart/beechart-pie.swf',
+		       width      : 600,
+		       height     : 260, 
+		       flashvars  : {
+					w:500,
+					h:200,
+					dataUrl : '/chart/chartxml.html?datall='+datall
+				}
+		    });
+		});
+	}
+}
+</script>
+</head>
+<body>
+{%include 'head.html'%}
+
+  <div class="layout mod-spm">
+  	<div class="mod-ind">
+    	<div class="header">
+            <h1>
+            	<span><a href="" title=""><img src="/imgs/kongbai.jpg" width="1px" /></a></span>
+            	<a href="/">首页</a> > <a href="">走势图生成工具</a>
+            </h1>
+        </div>
+        <!--end header-->
+    	<div class="header" style="height:40px;line-height:40px;">
+            	<a href="/chart/example/" {{chartdata.n1}}>示例</a>
+            	<a href="/chart/interface/" {{chartdata.n2}}>调用接口</a>
+            	<img src="/imgs/kongbai.jpg" width="400px" height="30px">
+            	<span style="font-size:18px;font-weight:bold">{{chartdata.text}}</span>
+        </div>
+        <!--end header-->
+
+<br />
+
+<table>
+<tr>
+<td>
+
+<table style="text-align:center">
+<tr><td><span style="color:red;font-weight:bold">请修改以下参数<span></td><td></td><tr>
+<tr><td>&nbsp;</td><td></td><tr>
+<tr><td><div style="border:2px solid gray">走势图类型</div></td><td colspan="2">&nbsp;&nbsp;
+<input type="radio" name="charttype" checked="checked" value="1" onchange="chartdata()">曲线图
+<input type="radio" name="charttype" value="2" onchange="chartdata()">直线图
+<input type="radio" name="charttype" value="3" onchange="chartdata()">柱状图
+<input type="radio" name="charttype" value="4" onchange="chartdata()">圆饼图
+</td><tr>
+<tr><td>&nbsp;</td><td></td><tr>
+<tr><td><div style="border:2px solid gray">名称</div></td><td><input class="w80px" id="name" type="text" value="水果销售量"></td><tr>
+<tr><td><div style="border:2px solid gray">单位</div></td><td><input class="w80px" id="unit" type="text" value="个"></td><tr>
+<tr><td>&nbsp;</td><td></td><tr>
+<tr><td><div style="border:2px solid gray">日期\种类</div></td><td><input class="w80px" id="kind" type="text" value="苹果"></td><td><input class="w80px" id="kind2" type="text" value="梨子"></td></tr>
+<tr><td><input class="w80px" id="datelist1" type="text" value="11-05"></td><td><input id="datalist1" type="text" value="100" class="w80px"></td><td><input id="datalist21" type="text" value="300" class="w80px"></td></tr>
+<tr><td><input class="w80px" id="datelist2" type="text" value="11-06"></td><td><input id="datalist2" type="text" value="200" class="w80px"></td><td><input id="datalist22" type="text" value="400" class="w80px"></td></tr>
+<tr><td><input class="w80px" id="datelist3" type="text" value="11-07"></td><td><input id="datalist3" type="text" value="300" class="w80px"></td><td><input id="datalist23" type="text" value="500" class="w80px"></td></tr>
+<tr><td><input class="w80px" id="datelist4" type="text" value="11-08"></td><td><input id="datalist4" type="text" value="200" class="w80px"></td><td><input id="datalist24" type="text" value="400" class="w80px"></td></tr>
+<tr><td><input class="w80px" id="datelist5" type="text" value="11-09"></td><td><input id="datalist5" type="text" value="100" class="w80px"></td><td><input id="datalist25" type="text" value="500" class="w80px"></td></tr>
+<tr><td>&nbsp;</td><td></td><tr>
+<tr><td><input type="button" class="w80px" value="提交" onClick="chartdata()"></td><td></td><tr>
+</table>
+
+</td>
+<td><div id="name2" style="text-align:center;font-weight:bold">水果销售量走势图</div><div id="chartflash"></div></td>
+</tr>
+</table>
+
+
+<br /><br /><br /><br /><br />
+{%include 'button.html'%}
+  </div>
+  <!--end layout mod-spm-->
+</body>
+</html>

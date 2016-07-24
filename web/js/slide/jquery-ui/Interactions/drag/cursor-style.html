@@ -1,0 +1,37 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jqeruy UI 拖拽练习--光标样式</title>
+<!--导入jquery插件-->
+<script type="text/javascript" src="http://f.jiaolj.com/js/b1.js"></script>
+<!--导入jqueryUI插件-->
+<script type="text/javascript" src="http://f.jiaolj.com/js/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="http://f.jiaolj.com/css/jquery-ui.css"/>
+
+<!--自写脚本-->
+<script type="text/javascript" language="javascript">
+   //在页面加载完之后加载jquery
+   $().ready(function(e) {
+      //拖拽函数
+      $('#draggable_cursor_center').draggable({ cursor:"move",cursorAt:{top:56,left:56}});
+      $('#draggable_cursor_leftup').draggable({cursor:"corsshair",cursorAt:{top:-5,left:-5}});
+      
+      $('#draggable_cursor_bottom').draggable({cursorAt:{bottom:0}});
+});
+</script>
+<!--自写脚本-->
+<style type="text/css">
+  #draggable_cursor_center,#draggable_cursor_leftup,#draggable_cursor_bottom { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 0 10px 10px 0; }
+</style>
+</head>
+
+<body>
+<div id="draggable_cursor_center" class="ui-widget-content">
+<p>光标位置一直在中心</p>
+</div>
+<div id="draggable_cursor_leftup" class="ui-widget-content">
+<p>光标在 left -5 和 top -5的左上角</p>
+</div>
+<div id="draggable_cursor_bottom" class="ui-widget-content">
+<p>光标位置限制在下方</p>
+</div>
+</body>

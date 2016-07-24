@@ -1,0 +1,45 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jqeruy UI 拖拽练习--拖拽排序</title>
+<!--导入jquery插件-->
+<script type="text/javascript" src="http://f.jiaolj.com/js/b1.js"></script>
+<!--导入jqueryUI插件-->
+<script type="text/javascript" src="http://f.jiaolj.com/js/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="http://f.jiaolj.com/css/jquery-ui.css"/>
+
+<!--自写脚本-->
+<script type="text/javascript" language="javascript">
+   //在页面加载完之后加载jquery
+   $().ready(function(e) {
+       //
+       $("#sortable").sortable({ revert:true});
+      //拖拽函数
+      $('#draggable').draggable({
+            connectToSortable:"#sortable",
+            helper:"clone",
+            revert:"invalid"
+          });
+       $("ul,li").disableSelection();
+});
+</script>
+<!--自写脚本-->
+<style type="text/css">
+  ul { list-style-type: none; margin: 0; padding: 0; margin-bottom: 10px; }
+  li { margin: 5px; padding: 5px; width: 150px; }
+</style>
+</head>
+
+<body>
+
+<ul>
+<li id="draggable" class="ui-state-highlight">拖拽我下来</li>
+</ul>
+<ul id="sortable">
+<li class="ui-state-default">Item 1</li>
+<li class="ui-state-default">Item 2</li>
+<li class="ui-state-default">Item 3</li>
+<li class="ui-state-default">Item 4</li>
+<li class="ui-state-default">Item 5</li>
+</ul>
+
+</body>

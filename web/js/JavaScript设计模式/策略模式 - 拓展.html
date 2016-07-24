@@ -1,0 +1,33 @@
+<script>//策略模式用于一对一的多条件处理
+var log=function(d){console.log(d)}
+
+var InputStrategy = function(){
+	var strategy = {
+		notNull : function(value){//是否为空
+			return /\s+/.test(value) ? '请输入内容' : '';
+		},
+		number : function(value){//是否是一个数字
+			return /^[0-9]+(\.[0-9]+)?$/.test(value) ? '' : '请输入数字';
+		},
+		phone : function(value){//是否是本地电话
+			return /^\d{3}\-\d{8}$|^\d{4}\-\d{7}$/.test(value) ? '' : '请输入正确的号码格式，如：010-12345678 或 0418-12345678';
+		}
+	}
+	return {
+		check : function(type, value){ //验证接口
+			value = value.replace(/^\s+|\s+$/g,'');//去除收尾空白符
+			return strategy[type] ? strategy[type](value) : '没有该类型的检测方法';
+		},
+		addStrategy : function(type, fn){ //添加策略
+			strategy[type] = fn;
+		}
+	}
+}();
+
+InputStrategy.addStrategy('nickname',function(value){
+	return /^[a-zA-Z]\w{3,7}$/.test(value) ? '' : '请输入 4-8 位昵称， 如：YYQH';
+})
+
+
+
+</script>

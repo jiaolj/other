@@ -1,0 +1,30 @@
+<!--
+我们再比较一下ms-class新风格与ms-attr-class的区别吧。ms-class新风格不会试图将类名部分转换为变量， 只有当出现才只会将里面的东西作为表达式求值。而ms-attr-class总是会尝试将整个属性值变成一个变量， 如ms-attr-class="aaa"相当于ms-attr-class="{{aaa}}"，ms-attr-class="{{aaa}}222"相当于ms-attr-class="aaa+'222'"。 
+-->
+<!DOCTYPE html>
+<html>
+ 
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ms-class与ms-attr-class</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="avalon.js"></script>
+    <script>
+        avalon.define({
+            $id: "list",
+            aaa: "list-group-item-info"
+        })
+    </script>
+</head>
+ 
+<body ms-controller="test">
+    <ul class="list-group" ms-controller="list">
+        <li class="list-group-item" ms-class="list-group-item-success">ms-class不带表达式</li>
+        <li class="list-group-item" ms-class="{{aaa}}">ms-class带表达式</li>
+        <li class="list-group-item" ms-attr-class="list-group-item-success">ms-attr-class不带表达式</li>
+        <li class="list-group-item" ms-attr-class="{{aaa}}">ms-attr-class带表达式</li>
+    </ul>
+ 
+</body>
+ 
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<style>
+#chartDiv{
+width:480px;
+height:500px;
+}
+</style>
+</head>
+<body>
+<div id="chartDiv"></div>
+</body>
+<script src="http://f.jiaolj.com/js/b1.js"></script>
+<script src="http://f.jiaolj.com/js/dist/echarts-all.js"></script>
+<script>
+var cache = {
+		point : {}
+	},
+	options = {
+		tree : {
+			title : {
+				text: '树图',
+				subtext: '虚构数据'
+			},
+			calculable : false,
+			series : [
+				{
+					name:'树图',
+					type:'tree',
+					orient: 'horizontal',
+					rootLocation: {x: 20,y: 'center'},
+					nodePadding: 1,
+					itemStyle: {
+						normal: {
+							label: {
+								show: false,
+								formatter: "{b}"
+							},
+							lineStyle: {
+								color: '#48b',
+								shadowBlur: 3,
+								shadowOffsetX: 3,
+								shadowOffsetY: 5,
+								type: 'curve'
+							}
+						},
+						emphasis: {
+							label: {
+								show: true
+							}
+						}
+					},
+					data: []
+				}
+			]
+		},
+	},
+	chart = echarts.init(document.getElementById('chartDiv')),
+	getChart = function(){
+		var rdata = [
+			{
+				name: '根节点',
+				value: 6,
+				children: [
+					{
+						name: '节点1',
+						value: 4,
+						children: [
+							{
+								name: '叶子节点1',
+								value: 4
+							},
+							{
+								name: '叶子节点2',
+								value: 4
+							},
+							{
+								name: '叶子节点3',
+								value: 2
+							},
+							 {
+								name: '叶子节点4',
+								value: 2
+							},
+							{
+								name: '叶子节点5',
+								value: 2
+							},
+							{
+								name: '叶子节点6',
+								value: 4
+							}
+						]
+					},
+					{
+						name: '节点2',
+						value: 4,
+						children: [{
+							name: '叶子节点7',
+							value: 4
+						},
+						{
+							name: '叶子节点8',
+							value: 4
+						}]
+					},
+					{
+						name: '节点3',
+						value: 1,
+						children: [
+							{
+								name: '叶子节点9',
+								value: 4
+							},
+							{
+								name: '叶子节点10',
+								value: 4
+							},
+							{
+								name: '叶子节点11',
+								value: 2
+							},
+							 {
+								name: '叶子节点12',
+								value: 2
+							}
+						]
+					}
+				]
+			}
+		];
+		options.tree.series[0].data = rdata;
+		chart.setOption(options.tree);
+	}
+	chart.on('hover',function(e){
+		cache.point = e;
+	});
+	$('#chartDiv').click(function(e){
+		log(cache.point);
+	})
+;
+getChart();
+</script>
+</html>

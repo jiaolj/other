@@ -1,0 +1,29 @@
+<script>//策略模式用于一对一的多条件处理
+var log=function(d){console.log(d)}
+var PriceStrategy = function(){
+	var strategy = {
+		//返30
+		return30 : function(price){
+			return +price + parseInt(price / 100) * 30; //+price转为数字类型
+		},
+		return50 : function(price){
+			return +price + parseInt(price / 100) * 50;
+		},
+		//9折
+		percent90 : function(price){
+			return price * 100 * 90 /10000; //JavaScript在处理小数乘除法有bug，故运算前转化为整数
+		},
+		percent80 : function(price){
+			return price * 100 * 90 /10000; //JavaScript在处理小数乘除法有bug，故运算前转化为整数
+		},
+		percent50 : function(price){
+			return price * 100 * 90 /10000; //JavaScript在处理小数乘除法有bug，故运算前转化为整数
+		}
+	}
+	return function(algorithm, price){
+		return strategy[algorithm] && strategy[algorithm](price) //如果算法存在，则调用算法，否则返回false
+	}
+}();
+var price = PriceStrategy('return50', '314.67');
+log(price);
+</script>

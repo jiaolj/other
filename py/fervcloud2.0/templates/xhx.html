@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/xhx.css' %}" type="text/css" />{% endblock %}
+{% block js %}
+<script>
+(function(){
+	var MVC = MVC || {};
+	MVC.model = (function(){
+		var _dftw = Base.get('width'),
+			_dfth = Base.get('height'),
+			_resize = function(){
+				getFrame(function(){
+					$('.autoimg').each(function(i,t){
+						var o = $(t),
+							ht = parseInt(o.attr('h'));
+						o.css('height',(ht*cwt/_dftw)+'px');
+					})
+				});
+			};
+			$(window).resize(function(){
+				cwt = document.body.clientWidth;
+				cht = document.body.clientHeight;
+				_resize();
+			});
+			_resize();
+	})()
+	window.MVC = MVC;
+})()
+</script>
+{% endblock %}
+{% block content %}
+<img class="img1 autoimg" h="1497" src="{%static 'img/xhx/1.png'%}" />
+<img class="img2 autoimg" h="1084px" src="{%static 'img/xhx/2.png'%}" />
+<img class="img3 autoimg" h="2895px" src="{%static 'img/xhx/3.png'%}" />
+<img class="img4 autoimg" h="1912px" src="{%static 'img/xhx/4.png'%}" />
+<img class="img5 autoimg" h="1971px" src="{%static 'img/xhx/5.png'%}" />
+<img class="img6 autoimg" h="1599px" src="{%static 'img/xhx/6.png'%}" />
+<div style="position:relative;bottom:5px;width:100%;text-align:center;color:#666;line-height:30px;">
+	备案/许可证编号为：浙ICP备15042458号
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+<div class="top">
+	<ul>
+	<li>首页</li>
+	{%if uname%}
+	<li class="accountData">{{uname}} <ul><li><a href="/logout/">退出</a></li></ul></li>
+	<li class="gameList">选择游戏 <ul><li><a href="/tank/">坦克大战</a></li></ul></li>
+	{%else%}
+	<li>注册</li>
+	<li>登录</li>
+	{%endif%}
+	</ul>
+</div>

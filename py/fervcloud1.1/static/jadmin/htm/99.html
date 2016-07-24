@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="always" name="referrer">
+<meta name="theme-color" content="#2932e1">
+<title>source</title>
+<link  type="text/css" href="../css/b.css" rel="stylesheet" />
+<script src="../js/b.js"></script>
+<style>
+.mytb{margin:0 auto;border-collapse:collapse;font-size:12pt}
+.mytb,.mytb td,.mytb th{border:1px solid #d5dde8}
+.mytb th{background:#edf6ff;font-size:14pt}
+.mytb tr td{height:26px;line-height:26px;text-align:center;overflow:hidden;white-space:normal;}
+.mytb tr .one{color:#5692da}
+.mytb tr .two{color:#dc6b43}
+.mytb tr .three{color:#63c091}
+.mytb tr .none{color:#b6bac6}
+</style>
+</head>
+<body>
+<div class="h5p fs0"></div>
+<div class="tcenter th30 fs16p">查看</div>
+<div class="h5p fs0"></div>
+<table id="myData" class="mytb" cellspacing=0 cellpadding=8></table>
+</body>
+<script>
+var clw=parseInt(document.documentElement.clientWidth);
+$('.mytb').css('max-width',(clw*0.8)+'px');
+$(window).resize(function(e){
+clw=parseInt(document.documentElement.clientWidth);
+$('.mytb').css('max-width',(clw*0.8)+'px');
+});
+var arg = {
+	getSex : {1:'男',2:'女'},
+	getTp : {1:'普通车主',2:'汽车行业从业者 '},
+	check : {0:'未审核',1:'已审核'}
+};
+var getdataHtml = function(dd){
+		var htm = '<tr class="one"><th class="one">唯一标识</th><th class="two">姓名</th><th class="three">年龄</th><th class="one">性别</th><th class="two">手机</th><th class="three">邮箱</th><th class="one">车主类型</th><th class="two">公司</th><th class="three">职位</th><th class="one">建议</th><th class="two">审核状态</th></tr>';
+		for(var d in dd) htm += '<tr><td>'+dd[d].id+'</td><td>'+dd[d].name+'</td><td>'+(dd[d].age || '')+'</td><td>'+arg.getSex[dd[d].sex]+'</td><td>'+(dd[d].mobile || '')+'</td><td>'+(dd[d].email || '')+'</td><td>'+arg.getTp[dd[d].tp]+'</td><td>'+dd[d].company+'</td><td>'+dd[d].job+'</td><td>'+dd[d].advice+'</td><td>'+arg.check[dd[d].ischeck]+'</td></tr>';
+		$('#myData').html(htm);
+	},
+	getDataList = function(){
+		$.ajax({
+			url : '/get99/',
+			dataType : 'json'
+		}).done(function(data){
+			getdataHtml(data);
+		}).fail(function(jqXHR,textStatus){
+			log(' request failed'+jqXHR+','+textStatus);
+		})
+	};
+getDataList();
+</script>
+</html>

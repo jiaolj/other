@@ -1,0 +1,85 @@
+@import 'pub.less';
+
+@headh:110px;
+@navh:46px;
+@footh:52px;
+
+html{.psr}
+body{
+.mg(0 auto);.fs;.bg(#fff);.w(1002px);.c(#333);.mgb(@footh+6);
+font-family:"Microsoft YaHei",STXihei,"LiHei Pro",Verdana,Tahoma,"SourceHanSansCN ExtraLight","Hiragino Sans GB",Arial,Helvetica,STHeiti,sans-serif;
+}
+a{.tdn;.c(#333);.csr}ul{list-style:none;.pdl}h1,h2,h3,p,ul,dl{.mg}img{.bd(#fff,0);.w;.h}.cb{.cb}
+header {
+	.h(110px);.psr;
+	.logo {
+		.h(80px);.w(80px);.psr;.t(10px);.l(30px);
+	}
+	.title {
+		.psa;.t(30px);.l(120px);
+		a {
+			.c(@mcor);
+			.fs(2em);
+			.fw(500);
+		}
+	}
+	.contact {
+		.psa;.r;.t(56px);.fs(1.6em);.fw(300);.c(@mcor);
+		b {
+			.fw(500);.fs(1.4em);
+		}
+	}
+}
+
+nav {
+	.lh(@navh);.frt;
+	dt {
+		.flt;.pdl(20px);.pdr(20px);.c(#fff);.fs(1.1em);
+		&.active{
+			.bg(rgba(1,134,211,0.7));
+		}
+		&:hover {
+			.bg(rgba(1,134,211,0.9));
+		}
+	}
+}
+.tools {
+	dt {
+		.psa;.w;.zi(-1);
+		&.head {
+			.l;.h(@headh);.t;.bgimg(top,150,193,236,0.05,0.05);
+		}
+		&.nav {
+			.l;.h(@navh);.t(@headh);.bgimg(bottom,1,134,211);
+		}
+		&.service {
+			.psf;.w(180px);.t(170px);
+			.tit {
+				.lh(30px);.bg(darken(@mcor,5%));.c(#fff);.tct;.fw(600);.fs(16px);
+			}
+			table {
+				.pd(10px 6px);.bg(#f1f1f1);
+				td {
+					a {
+						.dsib;.psr;
+						.l(8px);
+						.w(77px);
+						.h(22px);
+					}
+				}
+			}
+			&.flt {
+				.l;
+			}
+			&.frt {
+				.r;
+			}
+		}
+	}
+}
+footer {
+	.psa;.w;.l;.h(@footh);.b;.tct;.fs(14px);.bg(#B4D2F0);.bdt(#ccc);
+	p {
+		.lh(15px);.mgt(7px);
+	}
+}

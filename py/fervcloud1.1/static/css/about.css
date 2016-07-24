@@ -1,0 +1,104 @@
+.allbox {
+  padding-top: 0.73rem;
+}
+.maintop {
+  color: #ffffff;
+  position: relative;
+}
+.maintop img.text {
+  position: absolute;
+  width: 7.3rem;
+  left: 5.95rem;
+}
+.maintop img.text1 {
+  top: 1.75rem;
+}
+.maintop img.text2 {
+  top: 2.92rem;
+}
+.maintop img.text3 {
+  top: 4.09rem;
+}
+.join .tit {
+  padding-top: 1.48rem;
+  padding-bottom: 0.37rem;
+}
+.join nav {
+  width: 4.42rem;
+  margin: 0 auto;
+  margin-bottom: 0.87rem;
+}
+.join nav p {
+  float: left;
+  width: 2rem;
+  height: 0.66rem;
+  line-height: 0.58rem;
+  background: url(../img/about_btn.png);
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  background-size: 100%;
+  font-size: 0.18rem;
+  color: #666666;
+}
+.join nav p:nth-child(1) {
+  margin-right: 0.37rem;
+}
+.join nav p.active {
+  background: url(../img/about_btn_active.png);
+  color: #fffefe;
+  background-size: 100%;
+}
+.join nav p.active:hover {
+  cursor: default;
+}
+.join .abstr {
+  margin-left: 2.59rem;
+  font-size: 0.18rem;
+}
+.join .abstr dl {
+  color: #666666;
+  margin-bottom: 1.04rem;
+}
+.join .abstr dl dt {
+  position: relative;
+}
+.join .abstr dl dt p {
+  line-height: 0.31rem;
+}
+.join .abstr dl dt p.itrv {
+  margin-top: 0.3rem;
+}
+.join .abstr dl dt:nth-child(1) {
+  display: none;
+}
+.join .abstr .cend {
+  color: #333333;
+  margin-bottom: 1.04rem;
+}
+.contact {
+  border-top: 4px solid #dcdcdc;
+  margin-bottom: 0.3rem;
+}
+.contact .tit {
+  padding-top: 1.64rem;
+  padding-bottom: 0.84rem;
+}
+.contact dl {
+  margin-left: 7.25rem;
+}
+.contact dl dt {
+  float: left;
+  height: 2.08rem;
+}
+.contact dl dt.qrcode {
+  width: 2.08rem;
+  margin-right: 0.52rem;
+}
+.contact dl dt.text {
+  font-size: 0.18rem;
+  padding-top: 0.07rem;
+}
+.contact dl dt.text p {
+  line-height: 0.47rem;
+}

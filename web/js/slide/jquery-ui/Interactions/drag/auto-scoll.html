@@ -1,0 +1,45 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jqeruy UI 拖拽练习--滚动条自动滚动</title>
+<!--导入jquery插件-->
+<script type="text/javascript" src="http://f.jiaolj.com/js/b1.js"></script>
+<!--导入jqueryUI插件-->
+<script type="text/javascript" src="http://f.jiaolj.com/js/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="http://f.jiaolj.com/css/jquery-ui.css"/>
+
+<!--自写脚本-->
+<script type="text/javascript" language="javascript">
+   //在页面加载完之后加载jquery
+   $().ready(function(e) {
+      //拖拽函数,这样配置只是控制了垂直滚动条（这个可以通过设置scroll为false测试知道)
+      $('#draggable').draggable({ scroll:true});
+      $('#draggable1').draggable({scroll:true,scrollSensitivity:100});
+      $('#draggable2').draggable({scroll:true,scrollSpeed:100});
+});
+</script>
+<!--自写脚本-->
+<style type="text/css">
+  #draggable,#draggable1,#draggable2
+  {
+      width:200px;
+      height:200px;
+      float:left;
+      margin:5px;
+  }
+</style>
+</head>
+
+<body>
+<div id="draggable" class="ui-widget-content">
+ <p>Scroll属性设置为true,其他默认</p>
+</div>
+<div id="draggable1" class="ui-widget-content">
+ <p>Scroll属性设置为true,scrollSensitivity属性设置为100,其他默认</p>
+</div>
+<div id="draggable2" class="ui-widget-content">
+ <p>Scroll属性设置为true,scrollSpeed属性设置为100,其他默认</p>
+</div>
+<div style="height: 5000px; width: 1px;"></div>
+</body>
+
+效果是滚动条自动跟随

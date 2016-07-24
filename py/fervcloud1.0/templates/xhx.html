@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/xhx.css' %}" type="text/css" />{% endblock %}
+{% block js %}
+<script>
+getFrame();
+$('.img>img').each(function(k,i){
+	$(i).parent().css('height',($(i)[0].clientHeight)+'px');
+})
+</script>
+{% endblock %}
+{% block content %}
+<div class="img"><img class="w" src="/static/img/xhx/{{enDir}}/1.png" /></div>
+<div class="img"><img class="w" src="/static/img/xhx/{{enDir}}/2.png" /></div>
+<div class="img"><img class="w" src="/static/img/xhx/{{enDir}}/3.png" /></div>
+<div class="img"><img class="w" src="/static/img/xhx/{{enDir}}/4.png" /></div>
+<div class="img"><img class="w" src="/static/img/xhx/{{enDir}}/5.png" /></div>
+<div class="img"><img class="w" src="/static/img/xhx/{{enDir}}/6.png" /></div>
+<div class="img"><img class="w" src="/static/img/xhx/{{enDir}}/7.png" /></div>
+<div style="position:relative;bottom:5px;width:100%;text-align:center;color:#666;line-height:30px;">
+	备案/许可证编号为：浙ICP备15042458号
+</div>
+{% endblock %}

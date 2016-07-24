@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<style>
+html {
+	height:100%;
+}
+body {
+	margin:0;
+	border:1px solid #eee;
+	height:100%;
+	position:relative;
+	background:#F3F8FC;
+}
+.chart{
+	width:100%;
+	height:100%;
+	left:0;
+	width:50%;
+	position:absolute;
+}
+.text {
+	right:0;
+	width:50%;
+	height:100%;
+	border-left:1px solid #eee;
+	position:absolute;
+	overflow:auto;
+}
+.text nav p,.operation {
+	line-height:30px;
+}
+.text nav p {
+	float:left;
+	cursor:pointer;
+	margin:0 10px;
+}
+.text nav p.active {
+	color:#01c;
+}
+.text .operation{
+	float:right;
+}
+.text table {
+	margin:10px 20px;
+	position:absolute;
+	left:10px;
+	top:40px;
+	border-right:1px solid #eee;
+	border-bottom:1px solid #eee;
+}
+.text table td {
+	border-left:1px solid #eee;
+	border-top:1px solid #eee;
+}
+
+circle {
+	cursor:pointer;
+}
+</style>
+<script language="javascript"> 
+function autoLength(which) {
+    var maxchar=100; 
+	iCount = which.value.replace(/[^\u0000-\u00ff]/g,"aa").length; 
+    if(iCount<=maxchar) which.size=iCount+2;
+    else alert("请不要超过"+maxchar); 
+} 
+</script>
+</head>
+<body>
+<div class="chart" id="chartDiv">
+	<svg width="100%" height="100%">
+	</svg>
+</div>
+<div class="text">
+	<nav>
+		<p class="active">基本属性</p>
+		<p>节点配置</p>
+	</nav>
+	<div class="operation">
+		<input type="button" id="save" value="保存" />
+		<input type="button" id="cancel" value="取消" />
+	</div>
+	<br style="clear:both" />
+	<div class="content">
+		<table cellpadding="5" cellspacing="0" id="text">
+		</table>
+		<table cellpadding="5" cellspacing="0" id="text2" style="display:none">
+		</table>
+	</div>
+</div>
+</body>
+<script src="../../files/js/b1.js"></script>
+<script>
+var getSvg = (function(){
+	var _ddList = {"status":{"id":1,"_list":[{"id":1,"name":"active"},{"id":3,"name":"deleted"},{"id":2,"name":"inactive"}],"name":"active"},"remark":"抽取tbt-sps的通报号、通报标题、通报成员、上报部门、通报时间。","group":{"id":1,"_list":[{"id":1,"name":"疾控"}],"name":"疾控"},"name":"tbt-sps","content":"{\"dyStartUrl\": {\"params\": {\"p\": {\"type\": \"emun\", \"value\": [\"2\", \"3\"]}}, \"urlTemplate\": \"http://www.tbt-sps.gov.cn/tbtTbcx/getList.action{p}\"}, \"requestPageType\": {\"requestType\": \"Request\", \"contentType\": \"HTML\", \"method\": \"get\", \"renderJs\": true}, \"schedulerType\": \"interval\", \"selectors\": [{\"currentUrl\": \"\", \"multiple\": true, \"requestPageTypes\": {}, \"parentSelectors\": [\"_root\", \"next_page\"], \"selector\": \"table.right_nr_xx tr\", \"delay\": \"\", \"typename\": \"\\u7ec4\\u5408\\u578b(Element)\", \"type\": \"SelectorElement\", \"id\": \"items\"}, {\"regex\": \"\", \"currentUrl\": \"http://www.tbt-sps.gov.cn/tbtTbcx/getList.action\", \"multiple\": false, \"requestPageTypes\": {}, \"parentSelectors\": [\"items\"], \"selector\": \"td:nth-of-type(1) a\", \"delay\": \"\", \"typename\": \"\\u6587\\u672c\\u578b(Text)\", \"type\": \"SelectorText\", \"id\": \"number\"}, {\"currentUrl\": \"http://www.tbt-sps.gov.cn/tbtTbcx/getList.action\", \"multiple\": false, \"requestPageTypes\": {}, \"parentSelectors\": [\"items\"], \"selector\": \"td:nth-of-type(2) a\", \"delay\": \"\", \"typename\": \"\\u94fe\\u63a5\\u578b(Link)\", \"type\": \"SelectorLink\", \"id\": \"title\"}, {\"regex\": \"\", \"currentUrl\": \"http://www.tbt-sps.gov.cn/tbtTbcx/getTbcxContent.action?mid=21869&TBType=4\", \"multiple\": false, \"requestPageTypes\": {}, \"parentSelectors\": [\"title\"], \"selector\": \"tr:nth-of-type(3) > td:nth-of-type(3)\", \"delay\": \"\", \"typename\": \"\\u6e90\\u7801\\u578b(Html)\", \"type\": \"SelectorHTML\", \"id\": \"content\"}, {\"regex\": \"\", \"currentUrl\": \"http://www.tbt-sps.gov.cn/tbtTbcx/getList.action\", \"multiple\": false, \"requestPageTypes\": {}, \"parentSelectors\": [\"items\"], \"selector\": \"td:nth-of-type(3)\", \"delay\": \"\", \"typename\": \"\\u6587\\u672c\\u578b(Text)\", \"type\": \"SelectorText\", \"id\": \"member\"}, {\"regex\": \"\", \"currentUrl\": \"http://www.tbt-sps.gov.cn/tbtTbcx/getList.action\", \"multiple\": false, \"requestPageTypes\": {}, \"parentSelectors\": [\"items\"], \"selector\": \"td:nth-of-type(4)\", \"delay\": \"\", \"typename\": \"\\u6587\\u672c\\u578b(Text)\", \"type\": \"SelectorText\", \"id\": \"department\"}, {\"regex\": \"\", \"currentUrl\": \"http://www.tbt-sps.gov.cn/tbtTbcx/getList.action\", \"multiple\": false, \"processors\": [{\"name\": \"ProcessorDatetime\", \"context\": [\"%Y-%m-%d\"]}], \"requestPageTypes\": {}, \"parentSelectors\": [\"items\"], \"selector\": \"td:nth-of-type(5)\", \"delay\": \"\", \"typename\": \"\\u6587\\u672c\\u578b(Text)\", \"type\": \"SelectorText\", \"id\": \"pubdate\"}, {\"currentUrl\": \"\", \"multiple\": false, \"parentSelectors\": [\"_root\", \"next_page\"], \"selector\": \"li.nextpage a\", \"delay\": \"\", \"typename\": \"\\u94fe\\u63a5\\u578b(Link)\", \"requestPageType\": {\"requestType\": \"Request\", \"contentType\": \"HTML\", \"method\": \"get\", \"renderJs\": \"true\"}, \"type\": \"SelectorClick\", \"id\": \"next_page\"}], \"scheduler\": {\"every\": 1, \"period\": \"hours\"}, \"_id\": \"tbt-sps\", \"startUrl\": \"http://www.tbt-sps.gov.cn/tbtTbcx/getList.action\"}","ower":{"id":3,"_list":[{"id":1,"name":"root"},{"id":2,"name":"wtlu"},{"id":3,"name":"test"},{"id":4,"name":"test2"}],"name":"test"},"id":100}
+	var _chartData = json(_ddList.content),
+		_chartList = _chartData.selectors;
+	log(_chartData);
+	var _svgDom = $('#chartDiv>svg'),
+		_cDiv = $('#chartDiv')[0],
+		_textDom = $('#text'),
+		_textDom2 = $('#text2'),
+		_w = _cDiv.clientWidth,
+		_h = _cDiv.clientHeight,
+		_r = 6,
+		_bw = 60,
+		_ew = 100,
+		_getH = function(n,a){
+			return parseInt(_h*0.8*n/(a+1)+_h*0.1);
+		},
+		_getH2 = function(f,l,n,a){
+			var he = _h/l,
+				al = (f-1)*he,
+				h = al + parseInt(he*n/(a+1));
+			return h;
+		},
+		_cache = {
+			1 : [
+				{
+					t : 'SelectorElement',
+					c : '_root',
+					p : '0',
+					d : '_root',
+					lev : 1,
+					sort : 0,
+					son : 0,
+					show : 1,
+					x : _bw,
+					y : _getH(1,1)
+				}
+			]
+			
+		},
+		_getOpts = function(lsts){
+			var htm = '',
+				lst = lsts._list;
+			for(var s in lst) htm += '<option value="'+lst[s].id+'">'+lst[s].name+'</option>';
+			return '<select>'+htm+'</select>';
+		},
+		_getCnt = function(k,d){
+			if(k=='content') d=str(d);
+			else if(typeof(d)=='object') d = _getOpts(d);
+			else if(typeof(d)=='number') ;
+			else{
+				d = "<input onkeyup='autoLength(this)' k='"+k+"' onClick='autoLength(this)' type='text' value='"+d+"'/>"
+			}
+			return d;
+		},
+		_getCnt2 = function(k,d){
+			if(typeof(d)=='object') d = str(d);
+			else if(typeof(d)=='number') ;
+			else{
+				d = "<input onkeyup='autoLength(this)' k='"+k+"' onClick='autoLength(this)' type='text' value='"+d+"'/>"
+			}
+			return d;
+		},
+		_getCnt3 = function(k,d){
+			if(typeof(d)=='object') d = str(d);
+			if(k=='id') {
+				_textDom2.attr('d',d);
+				return d;
+			}
+			else return "<input onkeyup='autoLength(this)' k='"+k+"' onClick='autoLength(this)' type='text' value='"+d+"'/>";
+		},
+		_getText = function(){
+			_textDom.html(function(){
+				var htm = '';
+				for(var dd in _ddList) {
+					if(dd!='content') htm += '<tr><td>'+dd+'</td><td>'+_getCnt(dd,_ddList[dd])+'</td></tr>';
+				}
+				return htm;
+			})
+		},
+		_getText2 = function(data){
+			_textDom2.html(function(){
+				var htm = '';
+				for(var dd in data) htm += '<tr><td>'+dd+'</td><td>'+_getCnt2(dd,data[dd])+'</td></tr>';
+				return htm;
+			})
+		},
+		_getText3 = function(data){
+			_textDom2.html(function(){
+				var htm = '';
+				for(var dd in data) htm += '<tr><td>'+dd+'</td><td>'+_getCnt3(dd,data[dd])+'</td></tr>';
+				return htm;
+			}).find('input').focusout(function(){
+				var id = _textDom2.attr('d'),
+					k = $(this).attr('k'),
+					val = $(this).val()
+				;
+				if(k=='parentSelectors' || k=='requestPageTypes') val = json(val);
+				for(var c in _chartList){
+					if(_chartList[c].id==id) _chartList[c][k] = val;
+				}
+				_chartData.selectors = _chartList;
+				_ddList.content = str(_chartData);
+			});
+		},
+		_forChartHtm = function(d){
+			var htm = d[0],
+				lineHtm = d[1],
+				textHtm = d[2],
+				prt = d[3],
+				dd
+			;
+			for(var c in prt){
+				htm += prt[c].htm;
+				lineHtm += prt[c].lineHtm;
+				textHtm += prt[c].textHtm;
+				if(str(prt[c].son)!='{}'){
+					 dd = _forChartHtm([htm,lineHtm,textHtm,prt[c].son]);
+					 htm += dd[0];
+					 lineHtm += dd[1];
+					 textHtm += dd[2];
+				}
+			}
+			return [htm,lineHtm,textHtm];
+		},
+		_getChartHtm = function(){
+			var d = _forChartHtm(['','','',_cache]);
+			_svgDom.html(d[1]+d[2]+d[0]).find('text').each(function(k,t){
+				$(t).attr('x',$(t).attr('x')-$(t)[0].clientWidth-_r*1.2);
+			});
+		},
+		_lsthas = function(lst,d,p){
+			for(var s in lst){
+				if(d==lst[s].d && p==lst[s].p) return 1;
+			}
+			return 0;
+		},
+		_sortBy = function (filed, rev, primer) {
+			rev = (rev) ? -1 : 1;
+			return function (a, b) {
+				a = a[filed];
+				b = b[filed];
+				if (typeof (primer) != 'undefined') {
+					a = primer(a);
+					b = primer(b);
+				}
+				if (a < b) { return rev * -1; }
+				if (a > b) { return rev * 1; }
+				return 1;
+			}
+		},
+		_getChart2 = function(j){
+			var htm = '',
+				lineHtm = '',
+				textHtm = '',
+				slev = j.lev+1,
+				lst = []
+			;
+			if(slev>1) {
+				if(!_cache[slev]) _cache[slev] = [];
+				for(var cs in _chartList){
+					if (_chartList[cs].parentSelectors.indexOf(j.s)!=-1) lst.push(_chartList[cs]);
+				}
+				for(var t1 in lst){
+					if(_lsthas(_cache[slev],lst[t1].id,j.s)==0){
+						_cache[slev].push({
+							t : lst[t1].type,
+							c : lst[t1].id,
+							p : j.s,
+							sort : j.sort*10 + _cache[slev].length + 1,
+							d : lst[t1].id,
+							x : j.x+_ew,
+							px : j.x,
+							py : j.y,
+							lev : slev
+						})
+					}
+				}
+				_cache[slev].sort(_sortBy('sort', false, parseInt));
+			};
+			for(var ce in _cache){
+				for(var ce1 in _cache[ce]){
+					var d = _cache[ce][ce1];
+					d.y = _getH((parseInt(ce1)+1),_cache[ce].length);
+					htm += '<circle t="'+d.t+'" class="'+d.c+'" sort="'+d.sort+'" p="'+d.p+'" d="'+d.d+'" lev="'+d.lev+'" cx="'+d.x+'" cy="'+d.y+'" r="'+_r+'" stroke="#4682B4" fill="#B0C4DE"/>';
+					if(d.p=='0')lineHtm += '';
+					else lineHtm += '<line class="'+d.c+'" x1="'+d.px+'" y1="'+d.py+'" x2="'+d.x+'" y2="'+d.y+'" style="stroke:#ccc"/>';
+					textHtm += '<text x="'+d.x+'" y="'+(d.y+3)+'" fill="">'+d.d+'</text>';
+				}
+			}
+			_svgDom.html(htm + lineHtm + textHtm).find('text').each(function(k,t){$(t).attr('x',$(t).attr('x')-$(t)[0].clientWidth-_r*1.2)});
+		}
+	;
+	$('#chartDiv').click(function(e){
+		var tar = e.target,
+			obj = $(tar)
+		;
+		_textDom.hide();
+		_textDom2.show();
+		$('.text nav p:eq(0)').removeClass('active');
+		$('.text nav p:eq(1)').addClass('active');
+		if(tar.nodeName=='circle'){
+			var lev = parseInt(obj.attr('lev')),
+				d = obj.attr('d')
+			;
+			_getChart2({
+				s : d,
+				sort : parseInt(obj.attr('sort')),
+				lev : lev,
+				x : parseInt(obj.attr('cx')),
+				y : parseInt(obj.attr('cy'))
+			})
+			if(lev==1){
+				_getText2(_chartData);
+			}else {
+				for(var cs in _chartList){
+					if (_chartList[cs].id==d){
+						_getText3(_chartList[cs]);
+						return;
+					}
+				}
+			}
+			$('.text nav p:eq(0)').removeClass('active');
+			$('.text nav p:eq(1)').addClass('active');
+			_textDom.hide();
+			_textDom2.show();
+		}
+	});
+	$('.text nav p').click(function(){
+		var txt = $(this).text();
+		$(this).parent().find('.active').removeClass('active');
+		$(this).addClass('active');
+		switch(txt){
+			case '基本属性':
+				_textDom.show();
+				_textDom2.hide();
+				_getText();
+				break;
+			case '节点配置':
+				_getText2(_chartData);
+				_textDom.hide();
+				_textDom2.show();
+				break;
+		}
+	});
+	$('#save').click(function(){
+		log(_ddList);
+	});
+	_getChart2({
+		lev : 0
+	});
+	_getText();
+})();
+</script>
+</html>

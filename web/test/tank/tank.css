@@ -1,0 +1,115 @@
+html,body{height:100%}
+body{font:14px arial;text-align:;background:#fff}
+html,body,p,ul,li{margin:0;padding:0;list-style:none}
+.cpt{
+cursor:pointer;
+}
+.content{
+width:520px;
+height:520px;
+border:1px solid #ccc;
+position:relative;
+margin:0 auto;
+margin-top:50px;
+overflow:hidden;
+text-align:center;
+}
+.countdown{
+text-align:center;
+font-size:30px;
+font-weight:bold;
+width:520px;
+position:absolute;
+left:35%;
+top:350px;
+}
+.text{
+width:520px;
+position:relative;
+margin:0 auto;
+margin-top:20px;
+}
+.text>.left{
+float:left;
+}
+.text>.mid{
+float:left;
+width:150px;
+text-align:center;
+}
+.text>.mid>div{
+width:55px;
+border:1px solid #ccc;
+margin:0 auto;
+padding:3px;
+border-radius:6px;
+}
+.text>.right{
+float:right;
+margin-right:20px;
+}
+.tank{
+width:50px;
+height:50px;
+line-height:50px;
+border:1px solid #ccc;
+border-radius:6px;
+margin:1px;
+position:absolute;
+z-index:1;
+}
+.tank>.gan{
+border:1px solid #ccc;
+position:absolute;
+z-index:3;
+background:#fff;
+}
+.tank>.head{
+width:20px;
+height:20px;
+line-height:20px;
+border:1px solid #ccc;
+position:absolute;
+top:12px;
+left:15px;
+}
+.tank>.up{
+width:10px;
+height:25px;
+top:-13px;
+left:20px;
+}
+.tank>.right{
+width:25px;
+height:10px;
+top:17px;
+left:35px;
+}
+.tank>.down{
+width:10px;
+height:25px;
+top:30px;
+left:20px;
+}
+.tank>.left{
+width:25px;
+height:10px;
+top:17px;
+left:-10px;
+}
+.bullet{
+width:4px;
+height:4px;
+background:#5692da;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+position:absolute;
+}
+.otank{
+background:#f5f5f5;
+}
+#mytank1{
+top:460px;
+left:460px;
+}

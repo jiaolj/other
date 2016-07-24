@@ -1,0 +1,92 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{seoTitle}}</title>
+<link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css" />
+{% block css %}{% endblock %}
+</head>
+<body class="psr">
+<div class="topbg psa w"></div>
+<div id="top" class="ls0-2">
+	<ul class="mg0a w1000p h110p psr">
+		<img src="{% static 'img/i3.jpg' %}" style="position:absolute;top:10px;right:410px;width:220px;height:106px;z-index:-1;display: none;"/>
+		<a href="/"><li class="w110p h flt" style="margin-left:20px"><img src="{% static 'img/tml_logo.png' %}" style="width:80px;height:80px;position:relative;top:10px;left:20px;z-index:-1" /></li></a>
+		<li class="flt fw5">
+			<i style="line-height:100px;font-size:1.6em"><a href="/" style="color:#0186d3">云荷廷健康管理</a></i>
+		</li>
+		<li class="frt fw3" style="font-size:1.2em">
+			<i class="h70p" style="line-height:150px">服务热线: <span class="fs1-3">0571-86166923</span></i>
+			<i class="h40p"></i>
+		</li>
+		<i class="cb"></i>
+	</ul>
+</div>
+<div id="menu" class="psr zi1">
+	<div class="mg0a w1000p h">
+		<ul class="frt ul tct fs1-15">
+			<li {% ifequal index 1 %}class="active"{% endifequal %}>
+				<a href="/">首页</a>
+			</li>
+			<li {% ifequal index 2 %}class="active"{% endifequal %}>
+				<a href="/about/">关于我们</a>
+			</li>
+			<li {% ifequal index 3 %}class="active"{% endifequal %}>
+				<a href="/service/group-1/">服务介绍</a>
+				<ul class="psa dsn w">
+					<li><a href="/service/group-1/">服务群体</a></li>
+					<li>
+						<a href="/service/usa/">服务项目</a>
+						<ul class="psa dsn"><li><a href="/service/usa/">赴美试管医疗</a></li><li><a href="/service/tha/">赴泰试管医疗</a></li></ul>
+					</li>
+					<li><a href="/service/pcs/">服务流程</a></li>
+				</ul>
+			</li>
+			<li {% ifequal index 4 %}class="active"{% endifequal %}>
+				<a href="/hospital/">合作医院</a>
+				<ul class="psa dsn w"><li><a href="/hospital/1/">美国试管医院</a></li><li><a href="/hospital/2/">泰国试管医院</a></li></ul>
+			</li>
+			<li {% ifequal index 5 %}class="active"{% endifequal %}>
+				<a href="/doctor/">试管专家</a>
+				<ul class="psa dsn w"><li><a href="/doctor/1/">美国试管专家</a></li><li><a href="/doctor/2/">泰国试管专家</a></li></ul>
+			</li>
+			<li {% ifequal index 6 %}class="active"{% endifequal %}>
+				<a href="/knowledge/">试管资讯</a>
+				<ul class="psa dsn w"><li><a href="/knowledge/">试管知识</a></li><li><a href="/news/">试管新闻</a></li><li><a href="/cost/">试管费用</a></li></ul>
+			</li>
+			<li {% ifequal index 7 %}class="active"{% endifequal %}><a href="/contact/">联系我们</a></li>
+			<i class="cb"></i>
+		</ul>
+	</div>
+</div>
+
+{% block content %}{% endblock %}
+
+
+<div id="foot" class="foot">
+	<div class="tct">
+		<p>公司地址：钱江新城迪凯国际中心14楼1402  &nbsp;服务热线：0571-86166923  </p>
+		<p>联系电话：86-0571-86166923    传真：86166923    电子邮箱：hzxisong@163.com &nbsp;&nbsp;&nbsp;<a href="http://www.miibeian.gov.cn/" target="_blank" style="color:#203e7c">许可证编号：粤ICP备12345678号</a></p>
+	</div>
+</div>
+<div id="service1" class="service psf" style="border-radius:2px 0 0 1px;overflow:hidden;">
+	<div class="title cfff fw tct">客服中心</div>
+	<table width="180" cellpadding="0" cellspacing="0">
+		<tr><td align="center">吴小姐 :</td><td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=15489087&amp;site=qq&amp;menu=yes"><img src="{% static 'img/qq1.png' %}" /></a></td></tr>
+		<tr><td align="center">焦先生 :</td><td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=841232468&amp;site=qq&amp;menu=yes"><img src="{% static 'img/qq1.png' %}" /></a></td></tr>
+	</table>
+</div>
+<div id="service2" class="service psf" style="border-radius:0 2px 1px 0;overflow:hidden;">
+	<div class="title cfff fw tct">客服中心</div>
+	<table width="180" cellpadding="0" cellspacing="0">
+		<tr><td align="center">吴小姐 :</td><td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=15489087&amp;site=qq&amp;menu=yes"><img src="{% static 'img/qq1.png' %}" /></a></td></tr>
+		<tr><td align="center">焦先生 :</td><td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=841232468&amp;site=qq&amp;menu=yes"><img src="{% static 'img/qq1.png' %}" /></a></td></tr>
+	</table>
+</div>
+<script src="{% static 'js/base.js' %}"></script>
+{% block js %}{% endblock %}
+</body>
+</html>

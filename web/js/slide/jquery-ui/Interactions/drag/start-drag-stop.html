@@ -1,0 +1,73 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jqeruy UI 拖拽练习-事件</title>
+<!--导入jquery插件-->
+<script type="text/javascript" src="http://f.jiaolj.com/js/b1.js"></script>
+<!--导入jqueryUI插件-->
+<script type="text/javascript" src="http://f.jiaolj.com/js/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="http://f.jiaolj.com/css/jquery-ui.css"/>
+
+<!--自写脚本-->
+<script type="text/javascript" language="javascript">
+   //在页面加载完之后加载jquery
+   $().ready(function(e) {
+       //定义变量
+       var $start_counter=$('#event-start'),
+           $drag_counter=$('#event-drag'),
+           $stop_counter=$('#event-stop'),
+           counts=[0,0,0];
+           
+       $("#draggable").draggable({
+           start:function(){
+                 //启动开始，总数+1
+                 counts[0]++;
+                 //修改状态
+                 updateCounterStatus($start_counter,counts[0]);
+               } ,
+           drag:function(){
+                //拖拽，总数+1
+                counts[1]++;
+                 //修改状态
+                updateCounterStatus($drag_counter,counts[1]);
+               },
+           stop:function(){
+                 //结束开始，总数+1
+                 counts[2]++;
+                  //修改状态
+                 updateCounterStatus($stop_counter,counts[2]);
+               }
+        });
+        
+        //修改状态
+        function updateCounterStatus($event_counter,new_count)
+        {
+            //判断是否存在该样式
+            if(!$event_counter.hasClass("ui-state-hover"))
+            {
+                $event_counter.addClass("ui-state-hover")
+                   .siblings().removeClass("ui-state-hover");
+            }
+            //修改数据
+            $("span.count",$event_counter).text(new_count);
+        }
+     });
+</script>
+<!--自写脚本-->
+<style type="text/css">
+   #draggable { width: 16em; padding: 0 1em; }
+   #draggable ul li { margin: 1em 0; padding: 0.5em 0; } * html #draggable ul li { height: 1%; }
+   #draggable ul li span.ui-icon { float: left; }
+   #draggable ul li span.count { font-weight: bold; }
+</style>
+</head>
+
+<body>
+<div id="draggable" class="ui-widget ui-widget-content">
+<p>拖拽我来触发事件链</p>
+<ul class="ui-helper-reset">
+<li id="event-start" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-play"></span>"开始" 调用 <span class="count">0</span>x</li>
+<li id="event-drag" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-arrow-4"></span>"拖拽"  调用 <span class="count">0</span>x</li>
+<li id="event-stop" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-stop"></span>"结束"  调用 <span class="count">0</span>x</li>
+</ul>
+</div>
+</body>

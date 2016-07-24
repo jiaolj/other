@@ -1,0 +1,43 @@
+<script>
+var log=function(d){console.log(d)}
+//抽象工厂
+var absFactory = function(subType, superType){
+	if (typeof absFactory[superType]=='function'){
+		function F(){};
+		F.prototype = new absFactory[superType]();
+		subType.constructor = subType;
+		subType.prototype = new F();
+	}else throw new Error('为创建该抽象类');
+}
+//抽象类
+absFactory.car = function(){
+	this.type = 'car';
+}
+absFactory.car.prototype = {
+	getPrice : function(){
+		return new Error('该抽象方法不能调用');
+	},
+	getSpeed : function(){
+		return new Error('该抽象方法不能调用');
+	}
+}
+//实现类
+var BMW = function(price, speed){
+	this.price = price;
+	this.speed = speed;
+}
+absFactory(BMW,'car');
+BMW.prototype.getPrice = function(){
+	return this.price;
+}
+BMW.prototype.getSpeed = function(){
+	return this.speed;
+}
+//创建子类对象
+var bmcar = new BMW('500000','1000');
+log(bmcar.price);
+log(bmcar.type);
+
+
+//抽象工厂模式，通过抽象工厂制定抽象类的结构，如果子类没有实现该抽象类的方法，则子类在调用函数时就会寻找到父类，从而抛出自定义的异常。
+</script>

@@ -1,0 +1,9 @@
+.cbar {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border-top: 60px solid #90ebf4;
+  border-right: 60px solid rgba(144, 235, 244, 0.7);
+  border-bottom: 60px solid rgba(144, 235, 244, 0.4);
+  border-left: 60px solid rgba(144, 235, 244, 0.1);
+}

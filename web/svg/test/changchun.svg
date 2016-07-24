@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg id="svg1" height="200" width="300" version="1.1" xmlns="http://www.w3.org/2000/svg" onmousemove="getpoint(event,1)">
+<path d="M50 80 L100 80 C100 80 110 80 115 70 L115 70 L125 26 C125 26 119 26 113 32 L113 32 L106 62 C106 62 106 66 96 70 L96 70 L62 70 C62 70 56 70 50 80 Z" style="fill:#D94600;stroke:#D94600;stroke-width:1;"></path>
+<path d="M50 94 L92 94 C92 94 107 94 107 104 L107 104 L97 148 C97 148 91 148 85 142 L85 142 L92 112 C92 112 94 108 88 104 L88 104 L62 104 C62 104 56 104 50 94 Z" style="fill:#004B97;stroke:#004B97;stroke-width:1;"></path>
+<path d="M196 80 L146 80 C146 80 136 80 131 70 L131 70 L141 26 C141 26 147 26 153 32 L153 32 L146 62 C146 62 146 66 156 70 L156 70 L190 70 C190 70 196 70 202 80 Z" style="fill:#004B97;stroke:#004B97;stroke-width:1;"></path>
+<path d="M125 96 L115 148 C115 148 125 148 125 143 L125 143 L133 103 C133 103 133 97 127 97 Z" style="fill:#ccc;stroke:#ccc;stroke-width:1;"></path>
+<path d="M140 96 L155 148 L165 148 L205 96 C205 96 190 96 190 101 L190 101 L163 134 L152 101 C152 101 152 96 140 96 L140 96 Z" style="fill:#ccc;stroke:#ccc;stroke-width:1;"></path>
+<path d="M209 96 L224 126 L219 146 C219 146 234 146 234 141 L234 141 L239 126 L269 96 C269 96 254 96 254 99 L254 99 L234 117 L223 101 C223 101 221 97 217 97 L217 97 Z" style="fill:#ccc;stroke:#ccc;stroke-width:1;"></path>
+</svg>
+

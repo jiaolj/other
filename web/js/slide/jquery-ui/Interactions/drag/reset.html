@@ -1,0 +1,35 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jqeruy UI 拖拽练习--恢复到原来位置</title>
+<!--导入jquery插件-->
+<script type="text/javascript" src="http://f.jiaolj.com/js/b1.js"></script>
+<!--导入jqueryUI插件-->
+<script type="text/javascript" src="http://f.jiaolj.com/js/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="http://f.jiaolj.com/css/jquery-ui.css"/>
+
+<!--自写脚本-->
+<script type="text/javascript" language="javascript">
+   //在页面加载完之后加载jquery
+   $().ready(function(e) {
+       //通过P元素拖动
+       $("#draggable").draggable({revert:true});
+       // 禁用样式为ui-widget-header的P元素的拖拽
+       $("#draggable2").draggable({revert:true,helper:"clone"});
+       //
+       
+     });
+</script>
+<!--自写脚本-->
+<style type="text/css">
+   #draggable, #draggable2 { width: 150px; height: 100px; padding: 0.5em; float: left; margin: 0 10px 10px 0; }
+</style>
+</head>
+
+<body>
+<div id="draggable" class="ui-widget-content">
+<p>恢复到原来位置</p>
+</div>
+<div id="draggable2" class="ui-widget-content">
+<p>Revert the helper</p>
+</div>
+</body>

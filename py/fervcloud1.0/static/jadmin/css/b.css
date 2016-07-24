@@ -1,0 +1,131 @@
+body,p,ul,ol{margin:0}
+input,textarea,select{font-size:100%;font-family:inherit}
+ul,ol{list-style-type:none;padding-left:0}
+html,body{height:100%}
+body{font:14px arial;background:#fff;position:relative}
+img{border:0;width:100%;height:100%}
+a{color:#000;cursor:pointer;text-decoration:none}
+a:hover{color:#00c}
+span{font:14px "宋体"}
+input{*position:relative}
+i{font-style:normal}
+ul li i{display:block;text-align:center;overflow:hidden}
+
+.bd{border:1px solid #d5dde8}
+.cb{clear:both}
+.cpt{cursor:pointer}
+.flt{float:left}
+.frt{float:right}
+.dsn{display:none}
+.h{height:100%}.h94{height:94%}
+.h5p{height:5px}.h20p{height:20px}.h30p{height:30px}.h40p{height:40px}
+.l0{left:0}.l1{left:1%}
+.l150p{left:150px}
+.psa{position:absolute}.psr{position:relative}.psf{position:fixed}
+.tcenter,.tct{text-align:center}
+.ohd{overflow:hidden}.ova{overflow:auto}
+.t0{top:0}.t1{top:1%}
+.t-10p{top:-10px}.t30p{top:30px}
+.w{width:100%}.w5{width:5%}.w10{width:10%}.w15{width:15%}.w20{width:20%}.w25{width:25%}.w30{width:30%}.w35{width:35%}.w40{width:40%}.w49{width:49%}.w50{width:50%}.w96{width:96%}
+.w150px{width:150px}
+.zi1{z-index:1}
+
+
+
+.bgwht{background:#fff}
+.bgblk{background:#000}.bgblk1{background:#56585d}.bgblk2{background:#2f3034}
+.bggry{background:#ccc}.bggry1{background:#e8e9ee}.bggry2{background:#f5f5f5}
+.bgblue1{background:#1B3160}.bgblue2{background:#A7C0DC}.bgblue8{background:#1b3160}
+
+.cfff{color:#fff}.c000{color:#000}
+.white1{color:#e0e0e0}
+.black1{color:#999}
+.gray{color:#ccc}
+.blue1{color:#5692da}
+.red1{color:#dc6b43}
+.green1{color:#63c091}
+.gray1{color:#b6bac6}
+
+.close{position:absolute;right:1%;top:1%;cursor:pointer}
+
+
+.pd1{padding:1%}
+.pdl2{padding-left:2%}.pdl20p{padding-left:20px}.pdl35p{padding-left:35px}
+.pdr2{padding-right:2%}.pdr20p{padding-right:20px}
+.pdt10p{padding-top:10px}.pdt20p{padding-top:20px}.pdt30p{padding-top:30px}
+.pdb20p{padding-bottom:20px}.pdb30p{padding-bottom:30px}
+
+.r0{right:0}
+
+.b0{bottom:0}.b-1{bottom:-1px}
+
+.u20 li,.lh20p{line-height:20px}.u25 li,.lh25p{line-height:25px}.u30 li,.lh30p{line-height:30px}.lh40p{line-height:40px}
+.uce0 li a{color:#e0e0e0}
+.ut1 li,.ti1{text-indent:1em}.ut2 li,.ti2{text-indent:2em}
+.ul li{float:left}
+.cul li{cursor:pointer}
+
+.ti-1{text-indent:-1em}
+.fs0{font-size:0}.fs9p{font-size:9pt}.fs11p{font-size:11pt}.fs16p{font-size:16pt}
+
+.zi-1{z-index:-1}
+
+/*按钮*/
+.g_a{display:inline-block; border-width:1px 0; border-color:#bbbbbb; border-style:solid; vertical-align:middle;}
+.g_b{float:left; background:#e3e3e3; border-width:0 1px; border-color:#bbbbbb; border-style:solid; margin:0 -1px; position:relative;}
+.g_c{display:block; line-height:0.6em; background:#f9f9f9; border-bottom:2px solid #eeeeee;}
+.g_d{display:block; padding:0.1em 0.6em; margin-top:-0.6em; cursor:pointer;}
+/*提交中...*/
+.dotting {
+display: inline-block;
+width: 10px;
+min-height: 2px;
+border-left: 2px solid currentColor;
+border-right: 2px solid currentColor;
+background-color: currentColor;
+background-clip: content-box;
+box-sizing: border-box;
+-webkit-animation: dot 4s infinite step-start both;
+animation: dot 4s infinite step-start both;
+}
+.dotting:before {
+content: '...';
+}
+.dotting::before { 
+content: '';
+}:root
+.dotting {
+margin-left: 2px;
+padding-left: 2px;
+padding-right: 2px;
+}
+@-webkit-keyframes dot {	
+25% { border-color: transparent; background-color: transparent; }
+50% { border-right-color: transparent; background-color: transparent; }
+75% { border-right-color: transparent; }
+}
+@keyframes dot {
+25% { border-color: transparent; background-color: transparent; }
+50% { border-right-color: transparent; background-color: transparent; }
+75% { border-right-color: transparent; }
+}
+/*分页*/
+.pagelist ul{height:32px}
+.pagelist ul li{float:left;border: 1px solid #dedede;line-height:32px;height:32px;padding-left:5px;padding-right:5px;cursor:pointer}
+.pagelist ul li:hover{background:#dedede}
+.pagelist ul .active{background:#dedede}
+.pagelist ul .active:hover{cursor:default}
+.pagelist ul .pgjump input{text-align:center;width:80px;*top:2px}
+/*表格*/
+table.myul{width:96%;margin-left:2%;border-top:1px solid #d5dde8;border-right:1px solid #d5dde8;font-size:11pt}
+table.myul tr.th{background:#edf6ff;font-weight:bold;font-size:13pt}
+table.myul td{border-bottom:1px solid #d5dde8}
+table.myul tr td{border-left:1px solid #d5dde8}
+table.myul li input{width:90%}
+
+table.adddiv {
+	position:absolute;
+	background:#fff;
+	border:1px solid #d5dde8;
+	border-radius:3px;
+}

@@ -1,0 +1,32 @@
+<!--
+ms-class是avalon用得最多的几个绑定之一， 也正因为如此其功能一直在扩充中。根据时期的不同，分为旧风格与新风格两种。
+
+旧风格是指ms-class-xxx=”expr”，ms-class-aaa-bbb=”expr”。 正如这里 所讲，一个绑定属性大体分成三部分，第一部分是ms，第二部分是class，第三部分是第二个-之后的所有字符串， 它们被称之为param。上面的xxx与aaa-bbb都是我们要处理里的类名。等号后面的expr是一个表达式， 根据它们的真假值决定是添加或移除。
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>旧风格</title>
+    <meta name="viewport" content="width=device-width">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="avalon.js"></script>
+    <script>
+        var vm = avalon.define({
+            $id: "ms-class",
+            toggle: true,
+            click: function(e) {
+                vm.toggle = !vm.toggle
+            }
+        })
+    </script>
+</head>
+ 
+<body>
+    <div class="well" ms-controller="ms-class">
+        <!--新风格只需要 ms-class="{{toggle? 'btn-success':'btn-danger'}}" -->
+        <button type="button" class="btn" ms-click="click" ms-class-btn-success="toggle" ms-class-btn-danger="!toggle">点我</button>
+    </div>
+</body>
+ 
+</html>

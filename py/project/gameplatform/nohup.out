@@ -1,0 +1,620 @@
+[23/Jan/2015 05:15:33] "GET / HTTP/1.1" 200 1759
+[23/Jan/2015 05:15:33] "GET /favicon.ico HTTP/1.1" 404 1939
+Error: That port is already in use.
+[23/Jan/2015 05:16:04] "GET / HTTP/1.1" 200 1759
+[23/Jan/2015 05:21:42] "GET / HTTP/1.1" 200 1759
+[23/Jan/2015 05:21:43] "GET / HTTP/1.1" 200 1759
+[23/Jan/2015 05:21:43] "GET / HTTP/1.1" 200 1759
+[23/Jan/2015 05:21:43] "GET / HTTP/1.1" 200 1759
+[23/Jan/2015 05:21:45] "GET / HTTP/1.1" 200 1759
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 05:15:18
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 05:22:42] "GET / HTTP/1.1" 200 1759
+[23/Jan/2015 05:22:42] "GET / HTTP/1.1" 200 1759
+[23/Jan/2015 05:22:43] "GET / HTTP/1.1" 200 1759
+[23/Jan/2015 05:22:44] "GET / HTTP/1.1" 200 1759
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 05:22:38
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 05:23:49] "GET / HTTP/1.1" 500 80571
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 05:23:48
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+Traceback (most recent call last):
+  File "manage.py", line 10, in <module>
+    execute_from_command_line(sys.argv)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/core/management/__init__.py", line 385, in execute_from_command_line
+    utility.execute()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/core/management/__init__.py", line 354, in execute
+    django.setup()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/__init__.py", line 21, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/apps/registry.py", line 85, in populate
+    app_config = AppConfig.create(entry)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/apps/config.py", line 116, in create
+    mod = import_module(mod_path)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named apps
+[23/Jan/2015 05:26:46] "GET / HTTP/1.1" 500 179538
+[23/Jan/2015 05:28:20] "GET / HTTP/1.1" 200 313
+[23/Jan/2015 05:28:20] "GET /static/css/foundation.min.css HTTP/1.1" 200 122784
+[23/Jan/2015 05:28:20] "GET /static/img/favicon.ico HTTP/1.1" 200 5686
+[23/Jan/2015 05:28:21] "GET / HTTP/1.1" 200 313
+[23/Jan/2015 05:28:21] "GET /static/css/foundation.min.css HTTP/1.1" 304 0
+[23/Jan/2015 05:28:22] "GET / HTTP/1.1" 200 313
+[23/Jan/2015 05:28:22] "GET /static/css/foundation.min.css HTTP/1.1" 304 0
+[23/Jan/2015 05:30:30] "GET / HTTP/1.1" 200 313
+[23/Jan/2015 05:30:30] "GET /static/css/foundation.min.css HTTP/1.1" 304 0
+[23/Jan/2015 05:30:31] "GET / HTTP/1.1" 200 313
+[23/Jan/2015 05:30:31] "GET /static/css/foundation.min.css HTTP/1.1" 304 0
+[23/Jan/2015 05:30:34] "GET / HTTP/1.1" 200 460
+[23/Jan/2015 05:30:34] "GET /static/css/foundation.min.css HTTP/1.1" 304 0
+[23/Jan/2015 05:30:48] "GET / HTTP/1.1" 200 430
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 05:26:44
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+Traceback (most recent call last):
+  File "manage.py", line 10, in <module>
+    execute_from_command_line(sys.argv)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/core/management/__init__.py", line 385, in execute_from_command_line
+    utility.execute()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/core/management/__init__.py", line 354, in execute
+    django.setup()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/__init__.py", line 21, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/apps/registry.py", line 85, in populate
+    app_config = AppConfig.create(entry)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/apps/config.py", line 116, in create
+    mod = import_module(mod_path)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named apps
+Traceback (most recent call last):
+  File "manage.py", line 10, in <module>
+    execute_from_command_line(sys.argv)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/core/management/__init__.py", line 385, in execute_from_command_line
+    utility.execute()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/core/management/__init__.py", line 354, in execute
+    django.setup()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/__init__.py", line 21, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/apps/registry.py", line 85, in populate
+    app_config = AppConfig.create(entry)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/apps/config.py", line 123, in create
+    import_module(entry)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named monitor
+Traceback (most recent call last):
+  File "manage.py", line 10, in <module>
+    execute_from_command_line(sys.argv)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/core/management/__init__.py", line 385, in execute_from_command_line
+    utility.execute()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/core/management/__init__.py", line 354, in execute
+    django.setup()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/__init__.py", line 21, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/apps/registry.py", line 85, in populate
+    app_config = AppConfig.create(entry)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/apps/config.py", line 123, in create
+    import_module(entry)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named monitor
+[23/Jan/2015 05:38:53] "GET / HTTP/1.1" 500 80604
+[23/Jan/2015 05:40:16] "GET / HTTP/1.1" 200 430
+[23/Jan/2015 05:42:49] "GET / HTTP/1.1" 200 430
+[23/Jan/2015 05:43:08] "GET / HTTP/1.1" 200 537
+[23/Jan/2015 05:43:08] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 200 84245
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 05:38:50
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 05:45:28] "GET / HTTP/1.1" 200 537
+[23/Jan/2015 05:45:28] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:45:36] "GET / HTTP/1.1" 200 804
+[23/Jan/2015 05:45:36] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:46:10] "GET / HTTP/1.1" 200 805
+[23/Jan/2015 05:46:10] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:46:11] "GET /search/searchall/?keywd= HTTP/1.1" 200 89
+[23/Jan/2015 05:46:53] "GET / HTTP/1.1" 200 875
+[23/Jan/2015 05:46:53] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:47:08] "GET / HTTP/1.1" 200 879
+[23/Jan/2015 05:47:08] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:47:34] "GET / HTTP/1.1" 200 883
+[23/Jan/2015 05:47:34] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:47:55] "GET / HTTP/1.1" 200 883
+[23/Jan/2015 05:47:55] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:48:07] "GET / HTTP/1.1" 200 883
+[23/Jan/2015 05:48:07] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:48:25] "GET / HTTP/1.1" 200 835
+[23/Jan/2015 05:48:25] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:48:35] "GET / HTTP/1.1" 200 835
+[23/Jan/2015 05:48:35] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:48:50] "GET / HTTP/1.1" 200 834
+[23/Jan/2015 05:48:50] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:48:53] "GET /search/searchall/?keywd=9 HTTP/1.1" 200 89
+[23/Jan/2015 05:48:56] "GET /search/searchall/?keywd=9 HTTP/1.1" 200 89
+[23/Jan/2015 05:49:09] "GET / HTTP/1.1" 200 834
+[23/Jan/2015 05:49:09] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:49:09] "GET / HTTP/1.1" 200 834
+[23/Jan/2015 05:49:09] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:49:14] "GET /search/searchall/?keywd=8 HTTP/1.1" 200 89
+[23/Jan/2015 05:53:53] "GET / HTTP/1.1" 200 1039
+[23/Jan/2015 05:53:53] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:54:00] "GET / HTTP/1.1" 200 1039
+[23/Jan/2015 05:54:00] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:54:01] "GET / HTTP/1.1" 200 1039
+[23/Jan/2015 05:54:01] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:54:01] "GET / HTTP/1.1" 200 1039
+[23/Jan/2015 05:54:01] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:54:34] "GET / HTTP/1.1" 200 1056
+[23/Jan/2015 05:54:34] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:55:10] "GET / HTTP/1.1" 200 1061
+[23/Jan/2015 05:55:10] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:55:36] "GET / HTTP/1.1" 200 1070
+[23/Jan/2015 05:55:36] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:55:39] "GET / HTTP/1.1" 200 1070
+[23/Jan/2015 05:55:39] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:55:41] "GET / HTTP/1.1" 200 1070
+[23/Jan/2015 05:55:41] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:55:44] "GET /search/searchall/?keywd=3 HTTP/1.1" 200 89
+[23/Jan/2015 05:56:04] "GET / HTTP/1.1" 200 1074
+[23/Jan/2015 05:56:04] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:56:06] "GET /search/searchall/?keywd=3 HTTP/1.1" 200 89
+[23/Jan/2015 05:56:29] "GET / HTTP/1.1" 200 1037
+[23/Jan/2015 05:56:29] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:56:29] "GET /search/searchall/?keywd= HTTP/1.1" 200 89
+[23/Jan/2015 05:56:44] "GET / HTTP/1.1" 200 1048
+[23/Jan/2015 05:56:44] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:56:45] "GET /search/searchall/?keywd= HTTP/1.1" 200 89
+[23/Jan/2015 05:57:35] "GET / HTTP/1.1" 200 1145
+[23/Jan/2015 05:57:35] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:57:36] "GET /search/searchall/?keywd= HTTP/1.1" 200 89
+[23/Jan/2015 05:57:45] "GET / HTTP/1.1" 200 1145
+[23/Jan/2015 05:57:45] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:57:46] "GET /search/searchall/?keywd= HTTP/1.1" 200 89
+[23/Jan/2015 05:57:55] "GET / HTTP/1.1" 200 983
+[23/Jan/2015 05:57:55] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:57:56] "GET /search/searchall/?keywd= HTTP/1.1" 200 89
+[23/Jan/2015 05:58:05] "GET / HTTP/1.1" 200 939
+[23/Jan/2015 05:58:05] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 05:58:06] "GET /search/searchall/?keywd= HTTP/1.1" 200 89
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 05:45:26
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 06:04:53] "GET / HTTP/1.1" 200 939
+[23/Jan/2015 06:04:53] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:04:54] "GET /search/searchall/?keywd= HTTP/1.1" 200 89
+[23/Jan/2015 06:05:18] "GET / HTTP/1.1" 200 955
+[23/Jan/2015 06:05:18] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:05:19] "GET /search/searchall/?keywd= HTTP/1.1" 200 89
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 06:04:49
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 06:05:53] "GET / HTTP/1.1" 200 955
+[23/Jan/2015 06:05:53] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:05:53] "GET / HTTP/1.1" 200 955
+[23/Jan/2015 06:05:53] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:05:54] "GET /search/searchall/?keywd= HTTP/1.1" 200 89
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 06:05:45
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 06:06:18] "GET / HTTP/1.1" 200 955
+[23/Jan/2015 06:06:18] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:06:19] "GET /search/searchall/?keywd= HTTP/1.1" 500 11531
+[23/Jan/2015 06:06:32] "GET /search/searchall/?keywd= HTTP/1.1" 500 90369
+[23/Jan/2015 06:06:53] "GET /search/searchall/?keywd= HTTP/1.1" 500 93546
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 06:06:16
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 06:07:22] "GET /search/searchall/?keywd= HTTP/1.1" 200 18606
+[23/Jan/2015 06:07:33] "GET / HTTP/1.1" 200 955
+[23/Jan/2015 06:07:33] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:07:34] "GET /search/searchall/?keywd= HTTP/1.1" 200 18606
+[23/Jan/2015 06:08:03] "GET / HTTP/1.1" 200 964
+[23/Jan/2015 06:08:03] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:08:04] "GET /search/searchall/?keywd= HTTP/1.1" 200 18606
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 06:07:21
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 06:08:41] "GET / HTTP/1.1" 200 964
+[23/Jan/2015 06:08:41] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:08:42] "GET /search/searchall/?keywd= HTTP/1.1" 200 18606
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 06:08:40
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 06:08:51] "GET / HTTP/1.1" 200 964
+[23/Jan/2015 06:08:51] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:08:51] "GET /search/searchall/?keywd= HTTP/1.1" 200 36858
+[23/Jan/2015 06:09:36] "GET / HTTP/1.1" 200 997
+[23/Jan/2015 06:09:36] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:09:37] "GET /search/searchall/?keywd= HTTP/1.1" 200 36858
+[23/Jan/2015 06:10:52] "GET / HTTP/1.1" 200 1088
+[23/Jan/2015 06:10:52] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:10:53] "GET /search/searchall/?keywd= HTTP/1.1" 200 36858
+[23/Jan/2015 06:11:13] "GET / HTTP/1.1" 200 1100
+[23/Jan/2015 06:11:13] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:11:14] "GET /search/searchall/?keywd= HTTP/1.1" 200 36858
+[23/Jan/2015 06:11:22] "GET / HTTP/1.1" 200 1101
+[23/Jan/2015 06:11:22] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:11:23] "GET /search/searchall/?keywd= HTTP/1.1" 200 36858
+[23/Jan/2015 06:11:30] "GET / HTTP/1.1" 200 1101
+[23/Jan/2015 06:11:30] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:11:30] "GET /search/searchall/?keywd= HTTP/1.1" 200 36858
+[23/Jan/2015 06:11:49] "GET / HTTP/1.1" 200 1119
+[23/Jan/2015 06:11:49] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:11:50] "GET /search/searchall/?keywd= HTTP/1.1" 200 36858
+[23/Jan/2015 06:12:04] "GET / HTTP/1.1" 200 1101
+[23/Jan/2015 06:12:04] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:12:05] "GET /search/searchall/?keywd= HTTP/1.1" 200 36858
+[23/Jan/2015 06:12:20] "GET / HTTP/1.1" 200 1118
+[23/Jan/2015 06:12:20] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:12:20] "GET /search/searchall/?keywd= HTTP/1.1" 200 36858
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 06:08:49
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 06:13:15] "GET / HTTP/1.1" 200 1118
+[23/Jan/2015 06:13:15] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:13:16] "GET /search/searchall/?keywd= HTTP/1.1" 200 36252
+[23/Jan/2015 06:13:27] "GET /search/searchall/?keywd=%E5%BA%9F%E6%B0%B4 HTTP/1.1" 200 37202
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 06:13:14
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 06:14:02] "GET / HTTP/1.1" 200 1118
+[23/Jan/2015 06:14:02] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:14:03] "GET /search/searchall/?keywd= HTTP/1.1" 200 36252
+[23/Jan/2015 06:14:10] "GET /search/searchall/?keywd=%E5%BA%9F%E6%B0%B4 HTTP/1.1" 200 34061
+[23/Jan/2015 06:17:36] "GET /search/searchall/?keywd=%E6%8D%AE%E4%B8%AD%E5%9B%BD%E4%B9%8B%E5%A3%B0%E3%80%8A%E6%96%B0%E9%97%BB%E6%99%9A%E9%AB%98%E5%B3%B0%E3%80%8B%E6%8A%A5%E9%81%93 HTTP/1.1" 200 27
+[23/Jan/2015 06:17:42] "GET /search/searchall/?keywd=%E6%8D%AE%E4%B8%AD%E5%9B%BD%E4%B9%8B%E5%A3%B0%E3%80%8A%E6%96%B0%E9%97%BB%E6%99%9A%E9%AB%98%E5%B3%B0%E3%80%8B%E6%8A%A5%E9%81%93 HTTP/1.1" 200 27
+[23/Jan/2015 06:17:45] "GET /search/searchall/?keywd=%E6%8D%AE%E4%B8%AD%E5%9B%BD%E4%B9%8B%E5%A3%B0%E3%80%8A%E6%96%B0%E9%97%BB%E6%99%9A%E9%AB%98%E5%B3%B0%E3%80%8B%E6%8A%A5%E9%81%93 HTTP/1.1" 200 27
+[23/Jan/2015 06:17:49] "GET /search/searchall/?keywd= HTTP/1.1" 200 36252
+[23/Jan/2015 06:17:54] "GET /search/searchall/?keywd=%E6%9B%9D%E5%8D%83%E4%BA%A9%E9%BB%84%E6%B2%B3%E6%B9%BF%E5%9C%B0%E8%A2%AB%E5%BB%BA%E5%88%AB%E5%A2%85%E6%88%90%E7%89%87%E6%A5%BC%E7%9B%98%E6%8B%94%E5%9C%B0%E8%80%8C%E8%B5%B7 HTTP/1.1" 200 27
+[23/Jan/2015 06:17:58] "GET /search/searchall/?keywd= HTTP/1.1" 200 36252
+[23/Jan/2015 06:18:06] "GET /search/searchall/?keywd=%E6%9B%9D%E5%8D%83%E4%BA%A9%E9%BB%84%E6%B2%B3%E6%B9%BF%E5%9C%B0%E8%A2%AB%E5%BB%BA%E5%88%AB%E5%A2%85 HTTP/1.1" 200 37466
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 06:14:02
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 06:18:27] "GET / HTTP/1.1" 200 1118
+[23/Jan/2015 06:18:28] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:18:28] "GET /search/searchall/?keywd= HTTP/1.1" 200 36252
+[23/Jan/2015 06:18:34] "GET /search/searchall/?keywd=%E9%83%91%E5%B7%9E%E5%B8%82%E4%B8%AD%E7%89%9F%E5%8E%BF%E8%80%81%E5%9B%BD%E8%90%A5%E6%B8%94%E5%9C%BA%E5%86%85 HTTP/1.1" 200 37466
+[23/Jan/2015 06:18:47] "GET /search/searchall/?keywd= HTTP/1.1" 200 36252
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 06:18:27
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 06:20:19] "GET / HTTP/1.1" 200 1138
+[23/Jan/2015 06:20:19] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:20:20] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 06:21:03] "GET / HTTP/1.1" 200 1166
+[23/Jan/2015 06:21:03] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:21:05] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 06:21:49] "GET / HTTP/1.1" 200 1188
+[23/Jan/2015 06:21:49] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:21:51] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 06:22:26] "GET / HTTP/1.1" 200 1235
+[23/Jan/2015 06:22:26] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:22:27] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 06:23:25] "GET / HTTP/1.1" 200 1236
+[23/Jan/2015 06:23:25] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:23:26] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 06:23:37] "GET /search/searchall/?keywd=%E4%B9%B3%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86%E5%BE%85%E6%94%B9%E8%BF%9B HTTP/1.1" 200 36704
+[23/Jan/2015 06:26:38] "GET / HTTP/1.1" 200 1323
+[23/Jan/2015 06:26:38] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:26:39] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 06:27:56] "GET / HTTP/1.1" 200 1395
+[23/Jan/2015 06:27:56] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:27:58] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 06:28:23] "GET / HTTP/1.1" 200 1409
+[23/Jan/2015 06:28:23] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:28:25] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 06:28:39] "GET /search/searchall/?keywd=%E5%86%9C%E6%AE%8B%E6%A3%80%E6%B5%8B%E6%9C%89%E4%BF%9D%E9%9A%9C+%E4%B9%B3%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86%E5%BE%85%E6%94%B9%E8%BF%9B HTTP/1.1" 200 36704
+[23/Jan/2015 06:32:48] "GET / HTTP/1.1" 200 1409
+[23/Jan/2015 06:32:48] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:33:15] "GET / HTTP/1.1" 200 1492
+[23/Jan/2015 06:33:15] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:33:29] "GET / HTTP/1.1" 200 1511
+[23/Jan/2015 06:33:29] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:33:32] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 06:33:56] "GET / HTTP/1.1" 200 1528
+[23/Jan/2015 06:33:56] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:33:57] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 06:34:11] "GET / HTTP/1.1" 200 1546
+[23/Jan/2015 06:34:11] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:34:27] "GET / HTTP/1.1" 200 1559
+[23/Jan/2015 06:34:27] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:34:28] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 06:34:39] "GET / HTTP/1.1" 200 1559
+[23/Jan/2015 06:34:39] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:34:40] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 06:34:54] "GET / HTTP/1.1" 200 1577
+[23/Jan/2015 06:34:54] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:34:58] "GET / HTTP/1.1" 200 1577
+[23/Jan/2015 06:34:58] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:34:59] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 06:35:10] "GET / HTTP/1.1" 200 1585
+[23/Jan/2015 06:35:10] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:35:11] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 06:35:24] "GET / HTTP/1.1" 200 1585
+[23/Jan/2015 06:35:24] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:35:24] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 06:35:30] "GET /search/searchall/?keywd=%E6%9C%AC%E6%8A%A5%E5%8D%97%E5%AE%81%E8%AE%AF+%EF%BC%88%E8%AE%B0%E8%80%85%E4%BC%8D%E9%B8%BD%E7%8E%B2%EF%BC%892011%E5%B9%B412%E6%9C%8831%E6%97%A5%EF%BC%8C%E5%8D%97%E5%AE%81%E5%B8%82%E9%9D%92%E7%A7%80%E5%8C%BA%E9%A3%9F%E5%AE%89%E5%8A%9E%E8%81%94%E5%90%88%E5%9F%8E%E5%8C%BA%E5%86%9C%E6%9E%97 HTTP/1.1" 200 36704
+[23/Jan/2015 06:36:57] "GET / HTTP/1.1" 200 1585
+[23/Jan/2015 06:36:57] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:36:58] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 06:20:14
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+Traceback (most recent call last):
+  File "manage.py", line 10, in <module>
+    execute_from_command_line(sys.argv)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/core/management/__init__.py", line 385, in execute_from_command_line
+    utility.execute()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/core/management/__init__.py", line 354, in execute
+    django.setup()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/__init__.py", line 21, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/apps/registry.py", line 85, in populate
+    app_config = AppConfig.create(entry)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.7.3-py2.7.egg/django/apps/config.py", line 123, in create
+    import_module(entry)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named html5
+[23/Jan/2015 06:44:12] "GET / HTTP/1.1" 200 1585
+[23/Jan/2015 06:44:13] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:44:18] "GET /html5/ HTTP/1.1" 500 175637
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 06:44:09
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 06:45:19] "GET /html5/ HTTP/1.1" 500 81963
+[23/Jan/2015 06:45:21] "GET /html5/ HTTP/1.1" 500 81643
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 06:45:17
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 06:45:32] "GET /html5/ HTTP/1.1" 500 83121
+[23/Jan/2015 06:45:33] "GET /html5/ HTTP/1.1" 500 82801
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 06:45:31
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 06:46:31] "GET /html5/ HTTP/1.1" 500 176006
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+January 23, 2015 - 06:46:29
+Django version 1.7.3, using settings 'searchserver.settings'
+Starting development server at http://192.168.204.128:8007/
+Quit the server with CONTROL-C.
+[23/Jan/2015 06:49:24] "GET /html5/ HTTP/1.1" 200 0
+[23/Jan/2015 06:50:49] "GET /html5/ HTTP/1.1" 200 0
+[23/Jan/2015 06:50:52] "GET /html5/huitu/ HTTP/1.1" 200 0
+[23/Jan/2015 06:50:57] "GET /html5/huitu/ HTTP/1.1" 200 0
+[23/Jan/2015 06:51:08] "GET /html5/huitu/ HTTP/1.1" 200 1487
+[23/Jan/2015 06:51:08] "GET /html5/huitu/index.css HTTP/1.1" 404 2430
+[23/Jan/2015 06:51:08] "GET /html5/huitu/tiaose/tiaose.css HTTP/1.1" 404 2454
+[23/Jan/2015 06:51:08] "GET /html5/huitu/jquery.min.js HTTP/1.1" 404 2442
+[23/Jan/2015 06:51:08] "GET /html5/huitu/huitu.js HTTP/1.1" 404 2427
+[23/Jan/2015 06:51:08] "GET /html5/huitu/tiaose/tiaose.js HTTP/1.1" 404 2451
+[23/Jan/2015 06:51:57] "GET /html5/huitu/ HTTP/1.1" 200 1490
+[23/Jan/2015 06:51:58] "GET /html5/huitu/js/jquery.min.js HTTP/1.1" 404 2451
+[23/Jan/2015 06:52:11] "GET /html5/huitu/ HTTP/1.1" 200 1491
+[23/Jan/2015 06:52:12] "GET /js/jquery.min.js HTTP/1.1" 404 2177
+[23/Jan/2015 06:52:14] "GET /js/jquery.min.js HTTP/1.1" 404 2177
+[23/Jan/2015 06:52:27] "GET /html5/huitu/ HTTP/1.1" 200 1498
+[23/Jan/2015 06:52:28] "GET /static/js/jquery.min.js HTTP/1.1" 200 93435
+[23/Jan/2015 06:53:35] "GET /html5/huitu/ HTTP/1.1" 200 1499
+[23/Jan/2015 06:53:35] "GET /static/tiaose.js HTTP/1.1" 404 1637
+[23/Jan/2015 06:53:54] "GET /html5/huitu/ HTTP/1.1" 200 1505
+[23/Jan/2015 06:53:55] "GET /static/html5/tiaose.js HTTP/1.1" 404 1655
+[23/Jan/2015 06:53:57] "GET /static/html5/tiaose.js HTTP/1.1" 404 1655
+[23/Jan/2015 06:54:03] "GET /html5/static/tiaose.js HTTP/1.1" 404 2433
+[23/Jan/2015 06:54:09] "GET /static/html5/static/tiaose.js HTTP/1.1" 404 1676
+[23/Jan/2015 06:54:13] "GET /static/html5/tiaose.js HTTP/1.1" 404 1655
+[23/Jan/2015 06:54:47] "GET /html5/huitu/ HTTP/1.1" 200 1508
+[23/Jan/2015 06:54:48] "GET /static/html5/js/tiaose.js HTTP/1.1" 404 1664
+[23/Jan/2015 06:55:03] "GET /html5/huitu/ HTTP/1.1" 200 1508
+[23/Jan/2015 06:55:04] "GET /static/html5/js/tiaose.js HTTP/1.1" 404 1664
+[23/Jan/2015 06:55:05] "GET /static/html5/js/tiaose.js HTTP/1.1" 404 1664
+[23/Jan/2015 06:56:50] "GET /html5/huitu/ HTTP/1.1" 200 1561
+[23/Jan/2015 06:56:51] "GET /static/html5/css/index.css HTTP/1.1" 404 1667
+[23/Jan/2015 06:56:53] "GET /static/html5/css/index.css HTTP/1.1" 404 1667
+[23/Jan/2015 06:56:55] "GET /static/html5/tiaose/tiaose.css HTTP/1.1" 404 1679
+[23/Jan/2015 06:56:57] "GET /static/html5/tiaose/tiaose.js HTTP/1.1" 404 1676
+[23/Jan/2015 06:57:01] "GET /static/html5/js/huitu.js HTTP/1.1" 404 1661
+[23/Jan/2015 06:57:03] "GET /html5/huitu/ HTTP/1.1" 200 1561
+[23/Jan/2015 06:57:06] "GET /html5/huitu/ HTTP/1.1" 200 1561
+[23/Jan/2015 06:57:06] "GET /static/html5/tiaose/tiaose.css HTTP/1.1" 404 1679
+[23/Jan/2015 06:57:06] "GET /static/html5/css/index.css HTTP/1.1" 404 1667
+[23/Jan/2015 06:57:06] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:57:06] "GET /static/html5/js/huitu.js HTTP/1.1" 404 1661
+[23/Jan/2015 06:57:06] "GET /static/html5/tiaose/tiaose.js HTTP/1.1" 404 1676
+[23/Jan/2015 06:57:19] "GET /html5/huitu/ HTTP/1.1" 200 1561
+[23/Jan/2015 06:58:16] "GET /html5/huitu/ HTTP/1.1" 200 1561
+[23/Jan/2015 06:58:17] "GET /html5/huitu/ HTTP/1.1" 200 1561
+[23/Jan/2015 06:58:17] "GET /html5/huitu/ HTTP/1.1" 200 1561
+[23/Jan/2015 06:58:18] "GET /static/html5/css/index.css HTTP/1.1" 200 411
+[23/Jan/2015 06:58:21] "GET /html5/huitu/ HTTP/1.1" 200 1561
+[23/Jan/2015 06:58:21] "GET /static/html5/tiaose/tiaose.css HTTP/1.1" 200 1067
+[23/Jan/2015 06:58:21] "GET /static/html5/css/index.css HTTP/1.1" 304 0
+[23/Jan/2015 06:58:22] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:58:22] "GET /static/html5/js/huitu.js HTTP/1.1" 200 5326
+[23/Jan/2015 06:58:22] "GET /static/html5/tiaose/tiaose.js HTTP/1.1" 200 4239
+[23/Jan/2015 06:58:26] "GET /html5/huitu/ HTTP/1.1" 200 1561
+[23/Jan/2015 06:58:26] "GET /static/html5/css/index.css HTTP/1.1" 304 0
+[23/Jan/2015 06:58:26] "GET /static/html5/tiaose/tiaose.css HTTP/1.1" 304 0
+[23/Jan/2015 06:58:26] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:58:26] "GET /static/html5/tiaose/tiaose.js HTTP/1.1" 304 0
+[23/Jan/2015 06:58:26] "GET /static/html5/js/huitu.js HTTP/1.1" 304 0
+[23/Jan/2015 06:58:46] "GET /html5/huitu/ HTTP/1.1" 200 1561
+[23/Jan/2015 06:58:46] "GET /static/html5/tiaose/tiaose.css HTTP/1.1" 304 0
+[23/Jan/2015 06:58:46] "GET /static/html5/css/index.css HTTP/1.1" 304 0
+[23/Jan/2015 06:58:46] "GET /static/html5/tiaose/tiaose.js HTTP/1.1" 304 0
+[23/Jan/2015 06:58:46] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:58:46] "GET /static/html5/js/huitu.js HTTP/1.1" 304 0
+[23/Jan/2015 06:58:51] "GET /html5/huitu/ HTTP/1.1" 200 1561
+[23/Jan/2015 06:58:51] "GET /static/html5/css/index.css HTTP/1.1" 304 0
+[23/Jan/2015 06:58:51] "GET /static/html5/tiaose/tiaose.js HTTP/1.1" 304 0
+[23/Jan/2015 06:58:51] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[23/Jan/2015 06:58:51] "GET /static/html5/tiaose/tiaose.css HTTP/1.1" 304 0
+[23/Jan/2015 06:58:51] "GET /static/html5/js/huitu.js HTTP/1.1" 304 0
+[23/Jan/2015 06:59:51] "GET / HTTP/1.1" 200 1585
+[23/Jan/2015 06:59:53] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 07:36:36] "GET / HTTP/1.1" 200 1585
+[23/Jan/2015 07:36:38] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[23/Jan/2015 07:41:11] "GET /search/searchall/?keywd= HTTP/1.1" 200 36492
+[05/Mar/2015 01:59:56] "GET / HTTP/1.1" 200 1585
+[05/Mar/2015 01:59:56] "GET /static/js/jquery-2.1.1.min.js HTTP/1.1" 200 84245
+[05/Mar/2015 01:59:56] "GET /static/img/favicon.ico HTTP/1.1" 200 5686
+[05/Mar/2015 02:00:06] "GET /search/searchall/?keywd=abc HTTP/1.1" 200 27
+[05/Mar/2015 02:00:39] "GET /html5/ HTTP/1.1" 200 0
+[05/Mar/2015 02:00:39] "GET /favicon.ico HTTP/1.1" 404 2162
+[05/Mar/2015 02:00:45] "GET /html5/ HTTP/1.1" 200 0
+[05/Mar/2015 02:01:49] "GET /html5/huitu/ HTTP/1.1" 200 1561
+[05/Mar/2015 02:01:50] "GET /static/html5/css/index.css HTTP/1.1" 200 411
+[05/Mar/2015 02:01:50] "GET /static/js/jquery.min.js HTTP/1.1" 200 93435
+[05/Mar/2015 02:01:50] "GET /static/html5/js/huitu.js HTTP/1.1" 200 5326
+[05/Mar/2015 02:01:50] "GET /static/html5/tiaose/tiaose.css HTTP/1.1" 200 1067
+[05/Mar/2015 02:01:50] "GET /static/html5/tiaose/tiaose.js HTTP/1.1" 200 4239
+[05/Mar/2015 02:02:35] "GET /html5/huitu/ HTTP/1.1" 200 1561
+[05/Mar/2015 02:02:35] "GET /static/html5/tiaose/tiaose.js HTTP/1.1" 304 0
+[05/Mar/2015 02:02:35] "GET /static/html5/css/index.css HTTP/1.1" 304 0
+[05/Mar/2015 02:02:35] "GET /static/html5/tiaose/tiaose.css HTTP/1.1" 304 0
+[05/Mar/2015 02:02:35] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[05/Mar/2015 02:02:35] "GET /static/html5/js/huitu.js HTTP/1.1" 304 0

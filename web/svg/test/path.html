@@ -1,0 +1,326 @@
+<!DOCTYPE>
+<html>
+<head>
+<script src="jquery.min.js"></script>
+<style>
+/*svg{
+border:1px solid #ccc;
+}*/
+</style>
+</head>
+<body>
+
+
+
+<svg id="svg1" height="200" width="300" version="1.1"xmlns="http://www.w3.org/2000/svg" onmousemove="getpoint(event,1)">
+<path d="" style="fill:#D94600;stroke:#D94600;stroke-width:1;"/>
+<path d="" style="fill:#004B97;stroke:#004B97;stroke-width:1;"/>
+<path d="" style="fill:#004B97;stroke:#004B97;stroke-width:1;"/>
+<path d="" style="fill:#ccc;stroke:#ccc;stroke-width:1;"/>
+<path d="" style="fill:#ccc;stroke:#ccc;stroke-width:1;"/>
+<path d="" style="fill:#ccc;stroke:#ccc;stroke-width:1;"/>
+</svg>
+<div id="ponit1"></div>
+<script>
+//鼠标在画板移动获得点的坐标
+function getpoint(e,num){
+	myc=document.getElementById('svg'+num);
+	leftpx=myc.offsetLeft;
+	toppx=myc.offsetTop;
+	x=e.clientX-leftpx;
+	y=e.clientY-toppx;
+	text=x+','+y
+	//$('#ponit'+num).text('坐标:'+text);
+}
+function path1(){
+ptx=50
+ptY=80
+//起点
+pathValue='M'+ptx+' '+ptY+' '
+//第一条直线
+ptx+=50
+pathValue+='L'+ptx+' '+ptY+' '
+//第一条曲线
+pathValue+='C'+ptx+' '+ptY+' '
+ptx+=10
+pathValue+=ptx+' '+ptY+' '
+ptx+=5
+ptY-=10
+pathValue+=ptx+' '+ptY+' '
+pathValue+='L'+ptx+' '+ptY+' '
+//第二条直线
+ptx+=10
+ptY-=44
+pathValue+='L'+ptx+' '+ptY+' '
+//第二条曲线
+pathValue+='C'+ptx+' '+ptY+' '
+ptx-=6
+pathValue+=ptx+' '+ptY+' '
+ptx-=6
+ptY+=6
+pathValue+=ptx+' '+ptY+' '
+pathValue+='L'+ptx+' '+ptY+' '
+//第三条直线
+ptx-=7
+ptY+=30
+pathValue+='L'+ptx+' '+ptY+' '
+//第三条曲线
+pathValue+='C'+ptx+' '+ptY+' '
+ptY+=4
+pathValue+=ptx+' '+ptY+' '
+ptx-=10
+ptY+=4
+pathValue+=ptx+' '+ptY+' '
+pathValue+='L'+ptx+' '+ptY+' '
+//第四条直线
+ptx-=34
+pathValue+='L'+ptx+' '+ptY+' '
+//第四条曲线
+pathValue+='C'+ptx+' '+ptY+' '
+ptx-=6
+pathValue+=ptx+' '+ptY+' '
+ptx-=6
+ptY+=10
+pathValue+=ptx+' '+ptY+' '
+pathValue+='Z'
+//$('#svg1').append('<path d="'+pathValue+'" style="fill:#D94600;stroke:#D94600;stroke-width:1;"/>');
+$('#svg1>path:eq(0)').attr('d',pathValue);
+}
+function path2(){
+ptx=50
+ptY=94
+pathValue='M'+ptx+' '+ptY+' '
+ptx+=42
+pathValue+='L'+ptx+' '+ptY+' '
+pathValue+='C'+ptx+' '+ptY+' '
+ptx+=15
+pathValue+=ptx+' '+ptY+' '
+ptY+=10
+pathValue+=ptx+' '+ptY+' '
+pathValue+='L'+ptx+' '+ptY+' '
+ptx-=10
+ptY+=44
+pathValue+='L'+ptx+' '+ptY+' '
+pathValue+='C'+ptx+' '+ptY+' '
+ptx-=6
+pathValue+=ptx+' '+ptY+' '
+ptx-=6
+ptY-=6
+pathValue+=ptx+' '+ptY+' '
+pathValue+='L'+ptx+' '+ptY+' '
+ptx+=7
+ptY-=30
+pathValue+='L'+ptx+' '+ptY+' '
+pathValue+='C'+ptx+' '+ptY+' '
+ptx+=2
+ptY-=4
+pathValue+=ptx+' '+ptY+' '
+ptx-=6
+ptY-=4
+pathValue+=ptx+' '+ptY+' '
+pathValue+='L'+ptx+' '+ptY+' '
+ptx-=26
+pathValue+='L'+ptx+' '+ptY+' '
+pathValue+='C'+ptx+' '+ptY+' '
+ptx-=6
+pathValue+=ptx+' '+ptY+' '
+ptx-=6
+ptY-=10
+pathValue+=ptx+' '+ptY+' '
+pathValue+='Z'
+//$('#svg1').append('<path d="'+pathValue+'" style="fill:#004B97;stroke:#004B97;stroke-width:1;"/>');
+$('#svg1>path:eq(1)').attr('d',pathValue);
+}
+function path3(){
+ptx=196
+ptY=80
+//起点
+pathValue='M'+ptx+' '+ptY+' '
+//第一条直线
+ptx-=50
+pathValue+='L'+ptx+' '+ptY+' '
+//第一条曲线
+pathValue+='C'+ptx+' '+ptY+' '
+ptx-=10
+pathValue+=ptx+' '+ptY+' '
+ptx-=5
+ptY-=10
+pathValue+=ptx+' '+ptY+' '
+pathValue+='L'+ptx+' '+ptY+' '
+//第二条直线
+ptx+=10
+ptY-=44
+pathValue+='L'+ptx+' '+ptY+' '
+//第二条曲线
+pathValue+='C'+ptx+' '+ptY+' '
+ptx+=6
+pathValue+=ptx+' '+ptY+' '
+ptx+=6
+ptY+=6
+pathValue+=ptx+' '+ptY+' '
+pathValue+='L'+ptx+' '+ptY+' '
+//第三条直线
+ptx-=7
+ptY+=30
+pathValue+='L'+ptx+' '+ptY+' '
+//第三条曲线
+pathValue+='C'+ptx+' '+ptY+' '
+ptY+=4
+pathValue+=ptx+' '+ptY+' '
+ptx+=10
+ptY+=4
+pathValue+=ptx+' '+ptY+' '
+pathValue+='L'+ptx+' '+ptY+' '
+//第四条直线
+ptx+=34
+pathValue+='L'+ptx+' '+ptY+' '
+//第四条曲线
+pathValue+='C'+ptx+' '+ptY+' '
+ptx+=6
+pathValue+=ptx+' '+ptY+' '
+ptx+=6
+ptY+=10
+pathValue+=ptx+' '+ptY+' '
+pathValue+='Z'
+//$('#svg1').append('<path d="'+pathValue+'" style="fill:#004B97;stroke:#004B97;stroke-width:1;"/>');
+$('#svg1>path:eq(2)').attr('d',pathValue);
+}
+function path4(){
+ptx=125
+ptY=96
+//起点
+pathValue='M'+ptx+' '+ptY+' '
+//第一条直线
+ptx-=10
+ptY+=52
+pathValue+='L'+ptx+' '+ptY+' '
+//第一条曲线
+pathValue+='C'+ptx+' '+ptY+' '
+ptx+=10
+pathValue+=ptx+' '+ptY+' '
+ptY-=5
+pathValue+=ptx+' '+ptY+' '
+pathValue+='L'+ptx+' '+ptY+' '
+//第二条直线
+ptx+=8
+ptY-=40
+pathValue+='L'+ptx+' '+ptY+' '
+//第二条曲线
+pathValue+='C'+ptx+' '+ptY+' '
+ptY-=6
+pathValue+=ptx+' '+ptY+' '
+ptx-=6
+pathValue+=ptx+' '+ptY+' '
+
+pathValue+='Z'
+//$('#svg1').append('<path d="'+pathValue+'" style="fill:#ccc;stroke:#ccc;stroke-width:1;"/>');
+$('#svg1>path:eq(3)').attr('d',pathValue);
+}
+function path5(){
+ptx=140
+ptY=96
+//起点
+pathValue='M'+ptx+' '+ptY+' '
+//第一条直线
+ptx+=15
+ptY+=52
+pathValue+='L'+ptx+' '+ptY+' '
+//第二条直线
+ptx+=10
+pathValue+='L'+ptx+' '+ptY+' '
+//第三条直线
+ptx+=40
+ptY-=52
+pathValue+='L'+ptx+' '+ptY+' '
+//第一条曲线
+pathValue+='C'+ptx+' '+ptY+' '
+ptx-=15
+pathValue+=ptx+' '+ptY+' '
+ptY+=5
+pathValue+=ptx+' '+ptY+' '
+pathValue+='L'+ptx+' '+ptY+' '
+//第三条直线
+ptx-=27
+ptY+=33
+pathValue+='L'+ptx+' '+ptY+' '
+//第四条直线
+ptx-=11
+ptY-=33
+pathValue+='L'+ptx+' '+ptY+' '
+//第二条曲线
+pathValue+='C'+ptx+' '+ptY+' '
+ptY-=5
+pathValue+=ptx+' '+ptY+' '
+ptx-=12
+pathValue+=ptx+' '+ptY+' '
+pathValue+='L'+ptx+' '+ptY+' '
+
+pathValue+='Z'
+//$('#svg1').append('<path d="'+pathValue+'" style="fill:#ccc;stroke:#ccc;stroke-width:1;"/>');
+$('#svg1>path:eq(4)').attr('d',pathValue);
+}
+function path6(){
+ptx=209
+ptY=96
+//起点
+pathValue='M'+ptx+' '+ptY+' '
+//第一条直线
+ptx+=15
+ptY+=30
+pathValue+='L'+ptx+' '+ptY+' '
+//第二条直线
+ptx-=5
+ptY+=20
+pathValue+='L'+ptx+' '+ptY+' '
+//第一条曲线
+pathValue+='C'+ptx+' '+ptY+' '
+ptx+=15
+pathValue+=ptx+' '+ptY+' '
+ptY-=5
+pathValue+=ptx+' '+ptY+' '
+pathValue+='L'+ptx+' '+ptY+' '
+//第三条直线
+ptx+=5
+ptY-=15
+pathValue+='L'+ptx+' '+ptY+' '
+//第四条直线
+ptx+=30
+ptY-=30
+pathValue+='L'+ptx+' '+ptY+' '
+//第二条曲线
+pathValue+='C'+ptx+' '+ptY+' '
+ptx-=15
+pathValue+=ptx+' '+ptY+' '
+ptY+=3
+pathValue+=ptx+' '+ptY+' '
+pathValue+='L'+ptx+' '+ptY+' '
+//第四条直线
+ptx-=20
+ptY+=18
+pathValue+='L'+ptx+' '+ptY+' '
+//第四条直线
+ptx-=11
+ptY-=16
+pathValue+='L'+ptx+' '+ptY+' '
+//第三条曲线
+pathValue+='C'+ptx+' '+ptY+' '
+ptY-=4
+ptx-=2
+pathValue+=ptx+' '+ptY+' '
+ptx-=4
+pathValue+=ptx+' '+ptY+' '
+pathValue+='L'+ptx+' '+ptY+' '
+
+pathValue+='Z'
+//$('#svg1').append('<path d="'+pathValue+'" style="fill:#ccc;stroke:#ccc;stroke-width:1;"/>');
+$('#svg1>path:eq(5)').attr('d',pathValue);
+}
+path1();
+path2();
+path3();
+path4();
+path5();
+path6();
+</script>
+</body>
+</html>

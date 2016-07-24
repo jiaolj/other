@@ -1,0 +1,40 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jqeruy UI 拖拽练习--延时启动</title>
+<!--导入jquery插件-->
+<script type="text/javascript" src="http://f.jiaolj.com/js/b1.js"></script>
+<!--导入jqueryUI插件-->
+<script type="text/javascript" src="http://f.jiaolj.com/js/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="http://f.jiaolj.com/css/jquery-ui.css"/>
+
+<!--自写脚本-->
+<script type="text/javascript" language="javascript">
+   //在页面加载完之后加载jquery
+   $().ready(function(e) {
+       //按下鼠标，滑动20像素，启动拖动
+       $('#draggable').draggable({ distance:20});
+       //按下鼠标，等待1000毫秒，启动拖动
+      $('#draggable2').draggable({delay:1000});
+});
+</script>
+<!--自写脚本-->
+<style type="text/css">
+  #draggable,#draggable1,#draggable2
+  {
+      width:120px;
+      height:120px;
+      float:left;
+      margin:5px;
+  }
+</style>
+</head>
+
+<body>
+<div id="draggable" class="ui-widget-content">
+<p>按下鼠标，滑动20像素，启动拖拽</p>
+</div>
+<div id="draggable2" class="ui-widget-content">
+<p>按下鼠标，等待1000毫秒，启动拖拽</p>
+</div>
+
+</body>

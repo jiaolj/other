@@ -1,0 +1,6 @@
+.tclose{position:absolute;cursor:pointer;display:block;right:18px;top:5px;width:13px;height:13px;background:url(../img/tool.gif) -9999px -9999px no-repeat;background-position: 0 -80px}
+.atvbg li{position:relative;width:140px;height:20px;background:url(../img/tool.gif) -9999px -9999px no-repeat;background-position: 0 -4px}
+.atvbg .active{background-position: 0px -30px}
+.isopen{cursor:pointer;display:block;position:absolute;top:10px;left:2px;*top:4px;*left:-12px;width:10px;height:10px;background:url(../img/tool.png) -9999px -9999px no-repeat;background-position: 0 -71px}
+#menu li{position:relative;left:10px}
+.top a:hover{color:#eee}

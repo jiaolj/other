@@ -1,0 +1,54 @@
+avalon.efffect.apply = function(el, dir, before, after, opts) {}
+    //el 元素节点,用于动画
+    //dir 0或1, 0表示leave, 1代表enter
+    //before 动画执行前的回调,可选
+    //after 动画结束后的回调,可选
+    //opts 配置对象,可选
+    //           effectName 特效的名字,同ms-effect的值
+    //           effectDriver 使用何种方式实现动画,值分别为t, a, j ,代表transition, animation, javascript
+    //           effectLeaveStagger leave动画的错开时间
+    //           effectEnterStagger enter动画的错开时间
+    //           effectClass  动画开始时要添加的类名
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>ms-repeat</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="avalon.js"></script>
+    <link rel="stylesheet" href="animate.css" type="text/css">
+ 
+    <script>
+        avalon.effect("auto", {
+            leaveClass: function() {
+                return "bounceOutUp" //动画激活时添加的类名(结束时会移除)
+            }
+        })
+        var vm = avalon.define({
+            $id: "test",
+            click: function() {
+                avalon.effect.apply(this, 0, function() {}, function() {
+                    console.log("leave")
+                }, {
+                    effectName: "auto",
+                    effectClass: "animated", //动画开始时添加的类名
+                    effectDriver: "a"
+                })
+            }
+        })
+    </script>
+    <style>
+        .box {
+            width: 250px;
+            height: 250px;
+            background: #f35626;
+        }
+    </style>
+</head>
+ 
+<body ms-controller="test">
+    <div class="box" ms-click="click">点我</div>
+</body>
+ 
+</html>

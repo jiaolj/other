@@ -1,0 +1,75 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>走势图生成接口</title>
+<meta name="keywords" content="走势图,走势图生成,走势图生成接口" />
+<meta name="description" content="一款提供给用户使用的走势图生成接口" />
+<link rel="shortcut icon" href="/imgs/favicon1.ico" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/forceplastics.css" />
+<script src="/js/jquery/jquery-1.4.3.js"></script>
+<script src="/chart/flash.js"></script>
+<style type="text/css">
+.w80px{width:80px;text-align:center}
+</style>
+<script>
+function chanfuc(){
+	var textchart=$('#textchart').val()
+	$('#changediv').html('<b>效果图：</b>'+textchart)
+} 
+
+</script>
+</head>
+<body>
+{%include 'head.html'%}
+
+  <div class="layout mod-spm">
+  	<div class="mod-ind">
+    	<div class="header">
+            <h1>
+            	<span><a href="" title=""><img src="/imgs/kongbai.jpg" width="1px" /></a></span>
+            	<a href="/">首页</a> > <a href="">走势图生成工具</a>
+            </h1>
+        </div>
+        <!--end header-->
+    	<div class="header" style="height:40px;line-height:40px;">
+            	<a href="/chart/example/" {{chartdata.n1}}>示例</a>
+            	<a href="/chart/interface/" {{chartdata.n2}}>调用接口</a>
+            	<img src="/imgs/kongbai.jpg" width="400px" height="30px">
+            	<span style="font-size:18px;font-weight:bold">{{chartdata.text}}</span>
+        </div>
+        <!--end header-->
+
+<br />
+
+<div>
+<div style="float:left;width:50%">
+<b>html文件放入如下代码:</b><br />
+<textarea cols="88" rows="5" id="textchart">
+<iframe width="480px" height="250px" src="http://www.gongjx.com/ichart/?name=水果走势图&tp=1&datalist=苹果(100,200,300,200,100)梨子(200,300,400,300,200)&timelist=11-05,11-06,11-07,11-08,11-09&w=460&h=200"></iframe>
+</textarea><br /><br />
+修改以上代码，点击此处查看效果 
+<input type="button" value="提交" onClick="chanfuc()" style="width:60px;height:30px;"><br />
+<br />
+<div style="width:90%;border:1px solid gray"><b>简单讲解：</b><br />代码里面的name= ,tp= ,datalist= ,timelist= ,w= , h= ,都是生成走势图的参数,<br />
+name是指走势图的名称;<br />
+tp是指走势图的类型,可以等于1或2或3或4;<br />
+datalist是指走势图需要的数据,格式参考代码，可以有多个品种<br />
+timelist是指显示的日期<br />
+w和h分别对应走势图的宽和高。</div>
+<br /><br />
+</div>
+<div id="changediv" style="float:left;width:50%">
+<b>效果图：</b>
+<iframe width="480px" height="250px" src="http://www.gongjx.com/ichart/?name=水果走势图&tp=1&datalist=苹果(100,200,300,200,100)梨子(200,300,400,300,200)&timelist=11-05,11-06,11-07,11-08,11-09&w=460&h=200"></iframe>
+</div>
+</div>
+
+<div style="height:400px">&nbsp;</div>
+{%include 'button.html'%}
+</div>
+  <!--end layout mod-spm-->
+</body>
+</html>

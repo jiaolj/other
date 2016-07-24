@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+<canvas id="myCanvas">your browser does not support the canvas tag </canvas>
+
+<script type="text/javascript">
+/*命令模式用于将请求和实现解耦，比如我们在使用canvas的时候就需要不停地调用内置一些方法，但是你就需要不停地使
+用canvas元素的上下文引用，这在多人项目开发中耦合度是比较高的，如果一下人不小心篡改了canvas元素的上下文引用，
+可能会会造成很大后果。*/
+var log=function(d){console.log(d)}
+var CanvasCommand = (function(){
+	var canvas = document.getElementById('myCanvas'),
+		ctx = canvas.getContext('2d');
+	var Action = {
+		fillStyle : function(c){
+			ctx.fillStyle = c;
+		},
+		fillRect : function(x, y, width, height){
+			ctx.fillRect(x, y, width, height);
+		},
+		strokeStyle : function(c){
+			ctx.strokeStyle = c;
+		},
+		strokeRect : function(x, y, width, height){
+			ctx.strokeRect();
+		},
+		fillText : function(text, x, y){
+			ctx.fillText(text, x, y);
+		},
+		beginPath : function(){
+			ctx.beginPath();
+		},
+		moveTo : function(x, y){
+			ctx.moveTo(x, y);
+		},
+		lineTo : function(x, y){
+			ctx.lineTo(x, y);
+		},
+		arc : function(x, y, r, begin, end, dir){
+			atx.arc(x, y, r, begin, end, dir);
+		},
+		fill : function(){
+			ctx.fill();
+		},
+		stroke : function(){
+			ctx.stroke();
+		}
+	}
+	
+	return {
+		excute : function(msg){
+			if(!msg) return;
+			var len=msg.length;
+			if(len) for(var i = 0;i < len; i++) arguments.callee(msg[i]); //自己调用自己，相当于带入参数多次执行下面else语句块
+			else{
+				msg.param = Object.prototype.toString.call(msg.param) === '[object Array]' ? msg.param : [msg.param];
+				Action[msg.command].apply(Action, msg.param); //apply第一个参数使用Action是为了保证Action里面如果用了this能够指向正确，第二个参数是一个数组，做为arguments传给函数
+			}
+		}
+	}
+})();
+
+CanvasCommand.excute([
+	{command : 'fillStyle', param : 'red'},
+	{command : 'fillRect', param : [0,0,80,100]}
+]);
+
+</script>
+
+</body>
+</html>

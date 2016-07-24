@@ -1,0 +1,51 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jqeruy UI 拖拽练习--移动限制</title>
+<!--导入jquery插件-->
+<script type="text/javascript" src="http://f.jiaolj.com/js/b1.js"></script>
+<!--导入jqueryUI插件-->
+<script type="text/javascript" src="http://f.jiaolj.com/js/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="http://f.jiaolj.com/css/jquery-ui.css"/>
+
+<!--自写脚本-->
+<script type="text/javascript" language="javascript">
+   //在页面加载完之后加载jquery
+   $().ready(function(e) {
+      //拖拽函数
+      $('#draggable').draggable({ axis:"y"});
+      $('#draggable2').draggable({axis:"x"});
+      
+      $('#draggable3').draggable({containment:"#containment-wrapper",scroll:false});
+      $('#draggable5').draggable({containment:"parent"});
+});
+</script>
+<!--自写脚本-->
+<style type="text/css">
+  .draggable { width: 190px; height: 190px; padding: 0.5em; float: left; margin: 0 10px 10px 0; }
+  #draggable, #draggable2 { margin-bottom:20px; }
+  #draggable { cursor: n-resize; }
+  #draggable2 { cursor: e-resize; }
+  #containment-wrapper { width: 95%; height:350px; border:2px solid #ccc; padding: 10px; }
+  h3 { clear: left; }
+</style>
+</head>
+
+<body>
+<h3>限制运动方向:</h3>
+<div id="draggable" class="draggable ui-widget-content">
+<p>我只能在<b>垂直方向</b>拖拽</p>
+</div>
+<div id="draggable2" class="draggable ui-widget-content">
+<p>我只能在<b>水平方向</b>拖拽</p>
+</div>
+<h3>或只能在一个元素中拖拽:</h3>
+<div id="containment-wrapper">
+<div id="draggable3" class="draggable ui-widget-content">
+<p>我被限制在这个框中拖拽</p>
+</div>
+<div class="draggable ui-widget-content">
+<p id="draggable5" class="ui-widget-header">我被限制在父级框中拖拽</p>
+</div>
+</div>
+
+</body>

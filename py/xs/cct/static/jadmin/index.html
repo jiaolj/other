@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>后台管理系统</title>
+<link  type="text/css" href="css/b.css" rel="stylesheet" />
+<link  type="text/css" href="css/f.css" rel="stylesheet" />
+</head>
+<body>
+<div class="top lh30p w bgblue8">
+	<ul class="frt pdr20p">
+		<li><a href="/logout/" class="cfff">退出</a></li>
+	</ul>
+	<div class="cb"></div>
+</div>
+<div class="main psa w h">
+	<div class="w150px psr flt h bggry1">
+		<ul id="menu" class="pdt10p u30 ut1">
+		</ul>
+	</div>
+	<div class="rightdiv psa l150p r0 h">
+		<div class="bggry1 h30p">
+			<ul class="h20p ul cul u20 pdt10p atvbg"></ul>
+			<div class="cb"></div>
+		</div>
+		<div class="frame h"></div>
+	</div>
+</div>
+<script src="js/b.js"></script>
+<script src="js/f.js"></script>
+<script>
+var config=[
+	{
+		id:1,
+		htm:'hospital.html',
+		name:'医院管理'
+	},
+	{
+		id:2,
+		htm:'doctor.html',
+		name:'医生管理'
+	},
+	{
+		id:3,
+		name:'文章管理',
+		items:[
+			{id:31,htm:'knowledge.html',name:'试管知识'},
+			{id:32,htm:'news.html',name:'试管新闻'}
+		]
+	},
+]
+initFunc({config:config});
+</script>
+</body>
+</html>

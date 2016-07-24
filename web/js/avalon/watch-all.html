@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+ 
+<html>
+ 
+<head>
+    <title>$watch</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="avalon.js"></script>
+    <script>
+        var props = ["aaa", "bbb", "ccc", "ddd"]
+        var backup = props.concat()
+        var model = avalon.define({
+            $id: "$watch2",
+            aaa: "xxx",
+            bbb: "yyy",
+            ccc: "zzz",
+            ddd: "uuu",
+            propWatch: "",
+            click: function() {
+                var index = Math.floor(Math.random() * props.length);
+                var prop = props.splice(index, 1)[0];
+				console.log(prop);
+                if (!props.length) {
+                    props = backup.concat()
+                }
+                model[prop] = new Date - 1
+            }
+        })
+        model.$watch("$all", function(name) {
+            if (name !== "propWatch") {
+                model.propWatch = name + "  属性发生改变"
+            }
+        })
+    </script>
+</head>
+ 
+<body>
+    <div ms-controller="$watch2">
+        <ul>
+            <li>aaa: {{aaa}}</li>
+            <li>bbb: {{bbb}}</li>
+            <li>ccc: {{ccc}}</li>
+            <li>ddd: {{ddd}}</li>
+        </ul>
+        <p>{{propWatch}}</p>
+        <p>
+            <button ms-click="click" type="button">点我</button>
+        </p>
+    </div>
+</body>
+ 
+</html>

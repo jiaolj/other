@@ -1,0 +1,27 @@
+<script type="text/javascript">
+/*备忘录模式用于缓存ajax请求过的数据，对于同样的查询条件不做第二次ajax请求，页面刷新之后才会重新请求*/
+var log=function(d){console.log(d)}
+
+var Page = function(){
+	var cache = {};
+	return function(page, fn){
+		if(cache[page]){
+			showPage(page, cache[page]);
+			fn && fn();
+		}else{
+			$.get('/getdata/', {page : page}, function(res){
+				if(res.errNo == 0){
+					showPage(page, res.data);
+					cache[page] = res.data;
+					fn && fn();
+				}else{
+					log('请求失败');
+				}
+			}})
+		}
+	}
+}()
+
+
+
+</script>

@@ -1,0 +1,39 @@
+{% extends 'about/index.html' %}
+{% block menu %}
+<div class="title ti1">试管资讯</div>
+<ul>
+	<li><a href="/knowledge/">试管知识</a></li>
+	<li class="active"><a href="/news/">试管新闻</a></li>
+	<li><a href="/cost/">试管费用</a></li>
+</ul>
+{% endblock %}
+
+{% block cnt %}
+<style>
+.hlist>li{height:160px;border-bottom:1px dashed #ccc;padding:5px}
+.hlist>li>.frt>.tit{line-height:38px}
+.hlist>li>.frt>.tit>a{color:#0068a9}
+.hlist>li>.frt>.cnt{font-size:12px;line-height:22px}
+.hlist>li>.frt>.cnt>.one{color:#999}
+.hlist>li>.frt>.cnt>.two{color:#0068a9}
+
+.hlist>li>.flt{width:150px;height:150px}
+.hlist>li>.frt{width:500px}
+</style>
+<h3>试管新闻</h3>
+<ul class="hlist">
+	{% for lt in listall%}
+	<li>
+		<div class="flt"><a href="/detail/{{tbnm}}-{{lt.id}}.html" target="_blank"><img src="{{lt.pic}}" /></a></div>
+		<div class="frt">
+			<i class="tit"><a href="/detail/{{tbnm}}-{{lt.id}}.html" target="_blank">{{lt.title}}</a></i>
+			<i class="cnt">
+				<a class="one" href="/detail/{{tbnm}}-{{lt.id}}.html" target="_blank">{{lt.abs|slice:"150"}}</a>
+				[ <a class="two" href="/detail/{{tbnm}}-{{lt.id}}.html" target="_blank">详细</a> ]
+			</i>
+		</div>
+		<i class="cb"></i>
+	</li>
+	{%endfor%}
+</ul>
+{% endblock %}
