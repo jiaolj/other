@@ -13,11 +13,16 @@ MSQL = {
     'name': 'root',
     'passwd': 'udms1234',
 }
-def getColumnName(id,cur):
-    cur.execute('select tag from `column` where id=%s',[id])
+def getSiteName(id,cur):
+    cur.execute('select site_name from crawler_site where id=%s',[id])
     rt = cur.fetchone()
     if rt:
         return rt[0]
+def getColumnName(id,cur):
+    cur.execute('select tag,site_id from crawler_column where id=%s',[id])
+    rt = cur.fetchone()
+    if rt:
+        return rt[0],getSiteName(rt[1],cur)
 #----第前几天
 def getPastOneDay(numb):
     today=datetime.date.today()
@@ -41,7 +46,7 @@ def getGroupNum(result,key):
     return r
 
 def main():
-    conn = MySQLdb.connect(host=MSQL['host'], user=MSQL['name'],passwd=MSQL['passwd'],db="nbCrawler2.0",charset="utf8")
+    conn = MySQLdb.connect(host=MSQL['host'], user=MSQL['name'],passwd=MSQL['passwd'],db="nbdata2.0",charset="utf8")
     cur = conn.cursor()
     time3 = getPastOneDay(7).strftime('%Y-%m-%d')
     time3all = time3.split('-')
@@ -57,9 +62,9 @@ def main():
     f = open(today+'.txt','w')
     rs = getGroupNum(result,'column_id')
     for ret in rs:
-        name = getColumnName(ret['name'],cur)
+        name,siteName = getColumnName(ret['name'],cur)
         if name:
-            f.write('栏目：'+name.encode('utf-8')+'  数量：'+str(ret['count'])+' \n')
+            f.write('网站：'+siteName.encode('utf-8')+' 栏目：'+name.encode('utf-8')+'  数量：'+str(ret['count'])+' \n')
     f.close()
     conn.close()
 if __name__ == '__main__':
