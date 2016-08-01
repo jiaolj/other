@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import pymongo,datetime,time,MySQLdb
+import pymongo,datetime,time,MySQLdb,mail
 
 ip = '192.168.0.31'
 MONGODB = {
@@ -67,5 +67,6 @@ def main():
             f.write('网站：'+siteName.encode('utf-8')+' 栏目：'+name.encode('utf-8')+'  数量：'+str(ret['count'])+' \n')
     f.close()
     conn.close()
+    mail.sendSubjectMail()
 if __name__ == '__main__':
     main()
