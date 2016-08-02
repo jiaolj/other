@@ -17,7 +17,7 @@ def sendSubjectMail():
     att1["Content-Disposition"] = 'attachment; filename="'+today+'.txt"'#这里的filename可以任意写，写什么名字，邮件中显示什么名字
     msg.attach(att1)
     #加邮件头
-    msg['to'] = '379348913@qq.com,522938692@qq.com,919325032@qq.com,15813829167@qq.com'
+    msg['to'] = '379348913@qq.com,522938692@qq.com,919325032@qq.com,841232468@qq.com'
     msg['from'] = 'notice@quant-chi.com'
     msg['subject'] = today+' 栏目爬取数量'
     #发送邮件
