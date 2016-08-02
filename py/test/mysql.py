@@ -1,28 +1,22 @@
 # -*- coding: utf-8 -*-
-import MySQLdb
+import MySQLdb,pcity
 
-#conn = MySQLdb.connect(host='192.168.1.251', user='udms',passwd='123456',db="nbdata2.0",charset="utf8")
-conn = MySQLdb.connect(host='localhost', user='root',passwd='10534jun',db="nbdata2.0",charset="utf8")
+
+
+conn = MySQLdb.connect(host='jiaolj.com', user='jiaolj',passwd='10534jun',db="db",charset="utf8")
 cur = conn.cursor()
-def getPvc(pid='0'):
-    cur.execute('select id,name from location where parent_location_id=%s',[pid])
-    rt = cur.fetchall()
-    for r in rt:
-        print str(r[0])+':"'+r[1]+'",'
-#getPvc()
 def getAll():
-    sql='select distinct `column` from news order by pubDate desc'
-    cur.execute(sql)
-    rt = cur.fetchall()
-    for r in rt:
-        cid=r[0]
-        cur.execute('select column_id from column_department where column_id=%s and department_id=%s',[cid,5])
-        rt = cur.fetchone()
-        if rt:
-            print 'ok'
-        else:
-            print rt[0]
-            cur.execute('insert into column_department(column_id,department_id) values(%s,%s)',[cid,5])
+    f = open('number.txt','r')
+    for line in f.readlines():
+        lines = line.split('\t')
+        numb = lines[0]
+        province,city = pcity.getpc(lines[1].replace('"',''))
+        cur.execute('select id from mb_number_area where numb=%s and province=%s and city=%s',[numb,province,city])
+        r = cur.fetchone()
+        if not r:
+            cur.execute('insert into mb_number_area(numb,province,city) values(%s,%s,%s)',[numb,province,city])
             conn.commit()
+            print province,city,'insert ok'
+    f.close()
 getAll()
 conn.close()
