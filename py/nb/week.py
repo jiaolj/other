@@ -67,6 +67,6 @@ def main():
             f.write('网站：'+siteName.encode('utf-8')+' 栏目：'+name.encode('utf-8')+'  数量：'+str(ret['count'])+' \n')
     f.close()
     conn.close()
-    mail.sendSubjectMail()
+    mail.sendSubjectMail(today)
 if __name__ == '__main__':
     main()
