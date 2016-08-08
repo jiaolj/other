@@ -1,1 +1,0 @@
-python E:\code\gitcode\code\py\xs\cct\manage.py runserver 192.168.1.20:802
