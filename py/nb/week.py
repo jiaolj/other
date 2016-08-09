@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import pymongo,datetime,time,MySQLdb,mail
+import pymongo,datetime,time,MySQLdb,mail,xsl
 
 ip = '192.168.0.31'
 MONGODB = {
@@ -13,16 +13,6 @@ MSQL = {
     'name': 'root',
     'passwd': 'udms1234',
 }
-def getSiteName(id,cur):
-    cur.execute('select site_name from crawler_site where id=%s',[id])
-    rt = cur.fetchone()
-    if rt:
-        return rt[0]
-def getColumnName(id,cur):
-    cur.execute('select tag,site_id from crawler_column where id=%s',[id])
-    rt = cur.fetchone()
-    if rt:
-        return rt[0],getSiteName(rt[1],cur)
 #----第前几天
 def getPastOneDay(numb):
     today=datetime.date.today()
@@ -59,14 +49,18 @@ def main():
     col = db.webNews    #连接表
     result = col.find({'pubDate':{'$gte':datetime.datetime(time3y, time3m, time3d, 0, 0, 0)}})
     today = time.strftime('%Y-%m-%d',time.localtime(time.time()))
-    f = open(today+'.txt','w')
     rs = getGroupNum(result,'column_id')
+    '''
+    f = open(today+'.txt','w')
     for ret in rs:
         name,siteName = getColumnName(ret['name'],cur)
         if name:
             f.write('网站：'+siteName.encode('utf-8')+' 栏目：'+name.encode('utf-8')+'  数量：'+str(ret['count'])+' \n')
     f.close()
     conn.close()
+    '''
+    xsl.export(rs,today,cur)
     mail.sendSubjectMail(today)
+
 if __name__ == '__main__':
     main()
