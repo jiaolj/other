@@ -12,15 +12,15 @@ al.horz = Alignment.HORZ_CENTER
 al.vert = Alignment.VERT_CENTER  
 style.alignment = al 
 
-fnt.height = 200
+fnt.height = 200 #字体大小
 style.font = fnt
 
-ws.write(0,0,'bit',style)    #在1行1列写入bit
-ws.write(0,1,u'你好',style)  #在1行2列写入huang
-ws.col(0).width = 6000
-ws.col(1).width = 5000
+ws.write(0,0,'bit',style)
+ws.write(0,1,u'你好',style)
+ws.col(0).width = 10000
+ws.col(1).width = 8000
 
 fnt2.height = 300
-style2.font = fnt2
+style2.font = fnt2 #行高
 ws.row(0).set_style(style2)
-w.save('mini.xls')     #保存
+w.save('mini.xls') #保存
