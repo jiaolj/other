@@ -17,9 +17,9 @@ def export(rs,today,cur):
     w = Workbook()     #创建一个工作簿
     ws = w.add_sheet('number')     #创建一个工作表
     h = 0
-    ws.write(h,0,'网站')    #在1行1列写入bit
-    ws.write(h,1,'栏目')  #在1行2列写入huang
-    ws.write(h,2,'数量')  #在1行2列写入huang
+    ws.write(h,0,u'网站')    #在1行1列写入bit
+    ws.write(h,1,u'栏目')  #在1行2列写入huang
+    ws.write(h,2,u'数量')  #在1行2列写入huang
     for ret in rs:
         name,siteName = getColumnName(ret['name'],cur)
         if name:

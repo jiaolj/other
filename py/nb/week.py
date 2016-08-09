@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import pymongo,datetime,time,MySQLdb,mail,xsl
+import pymongo,datetime,time,MySQLdb,mail,xls
 
 ip = '192.168.0.31'
 MONGODB = {
@@ -59,8 +59,8 @@ def main():
     f.close()
     conn.close()
     '''
-    xsl.export(rs,today,cur)
-    mail.sendSubjectMail(today)
+    xls.export(rs,today,cur)
+    mail.sendSubjectMail(today,'xls')
 
 if __name__ == '__main__':
     main()
