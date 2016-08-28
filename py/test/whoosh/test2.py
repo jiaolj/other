@@ -31,25 +31,29 @@ analyzer=ChineseAnalyzer()
 schema = Schema(title=TEXT(stored=True), path=ID(stored=True), content=TEXT(stored=True, analyzer=analyzer))
 ix = create_in('indexdir', schema)
 writer = ix.writer()
-writer.add_document(title=u'First document',content=u"This is the first document we've added!")
+writer.add_document(title=u'First document title',content=u"This is the first document we've added!")
 writer.add_document(title=u'Second document',content=u'The second one 你 中文测试中文 is even more interesting!')
 writer.commit()
 searcher = ix.searcher()
 import tornado.web
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        arg=self.request.arguments
-        kwd=arg.get('kwd','')
-        if kwd:kwd=kwd[0]
-        t=searcher.find('content', kwd)
+        kwd = self.get_argument('kwd','')
+        #if kwd:
+        t = searcher.find('title', kwd) or searcher.find('content', kwd)
         if t:
-            listall=[]
-            for i in t:listall.append({'title':i['title'],'content':i['content']})
+            listall = []
+            for i in t:
+                listall.append({'title':i['title'],'content':i['content']})
             self.write(json.dumps(listall))
-        else:self.write('没找到')
+        else:
+            self.write('no result')
+        #else:
+        #    self.write('need kwd')
+
 application = tornado.web.Application([
     (r'/', MainHandler),
 ])
 if __name__ == '__main__':
-    application.listen(8888)
+    application.listen(9999)
     tornado.ioloop.IOLoop.instance().start()
